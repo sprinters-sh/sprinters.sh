@@ -6,6 +6,6 @@ kramdown:
   math_engine: mathjax
   syntax_highlighter: rouge
 exclude:
-  - /docker-compose.yml
-  - /Dockerfile
-  - /README.md
+  - docker-compose.yml
+  - Dockerfile
+  - README.md
