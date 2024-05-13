@@ -5,3 +5,15 @@
 .fs-7 {
     font-size: 0.75rem !important;
 }
+
+.pt-6 {
+    padding-top: 5rem !important;
+}
+
+.pt-7 {
+    padding-top: 7.5rem !important;
+}
+
+.text-justify {
+    text-align: justify;
+}
