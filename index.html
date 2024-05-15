@@ -1,0 +1,101 @@
+---
+layout: default
+title: "Run your GitHub Actions jobs faster on your own AWS account at a fraction of the cost"
+---
+
+<div class="col-md-8 mx-auto text-center">
+    <img src="/assets/logo/sprinters.svg" width="200" height="200" alt="Sprinters" class="d-block mx-auto mt-5 mb-3">
+    <h1 class="mb-3 fw-semibold fs-0">Run your GitHub Actions jobs faster on your own AWS account at a fraction of the
+        cost with Sprinters</h1>
+    <p class="lead mb-4">
+        Secure, ephemeral, high-performance runners within the privacy of your own VPC.
+        Launch in the region and subnet of your choice, right-size your instances,
+        and directly access all required services without having to expose them over the public internet.
+    </p>
+    <div class="d-flex flex-column align-items-md-stretch justify-content-md-center gap-3 mb-4">
+        <div class="d-inline-block v-align-middle fs-5">
+            <code class="fs-5 text-start d-inline-block mt-4 mb-4">
+                <span class="text-secondary text-decoration-line-through">runs-on: ubuntu-latest</span><br>
+                <span class="text-warning">runs-on:</span> <span class="text-info">sprinters:aws/us-east-1/m7i-flex.4xlarge</span>
+            </code>
+        </div>
+        <a href="https://console.sprinters.sh"
+           class="btn btn-lg btn-primary d-flex align-items-center justify-content-center fw-semibold">Get started</a>
+    </div>
+    <p class="text-secondary mb-0">
+        <i class="bi bi-ubuntu"></i> Ubuntu <span class="px-1">&middot;</span> <i class="bi bi-cpu"></i> x64 <span
+            class="px-1">&middot;</span> <i class="bi bi-cpu"></i> arm64
+    </p>
+</div>
+
+<div class="col-md-8 mx-auto text-center mt-5">
+    <h2 class="pt-7 fw-semibold">Right-sized runners for the job.</h2>
+    <h4 class="mb-3 text-secondary">From tiny to humongous, and everything in between.</h4>
+    <div class="row">
+        {% include feature.html icon="motherboard" title="Scalable Instances" text="Need lots of CPU? Plenty of RAM? Or
+        very little? Select the right instance type from a wide array of choices." %}
+        {% include feature.html icon="nvme" title="Scalable Disks" text="Freely adjust the runner disk space from a few
+        GB to multiple TB." %}
+        {% include feature.html icon="cpu" title="x64 and arm64" text="Pick the best CPU architecture for the job.
+        Intel, AMD and ARM instances are fully supported." %}
+    </div>
+
+    <table class="table mt-4">
+        <thead>
+        <tr>
+            <th></th>
+            <th class="bg-body-secondary text-warning">Sprinters</th>
+            <th>GitHub (Private Repo)</th>
+            <th>GitHub (Public Repo)</th>
+            <th>GitHub (Larger Runners)</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th>vCPU</th>
+            <td class="bg-body-secondary">2 - 192</td>
+            <td>2</td>
+            <td>4</td>
+            <td>2 - 64</td>
+        </tr>
+        <tr>
+            <th>RAM</th>
+            <td class="bg-body-secondary">0.5 - 768 GB</td>
+            <td>7 GB</td>
+            <td>16 GB</td>
+            <td>8 - 256 GB</td>
+        </tr>
+        <tr>
+            <th>Storage</th>
+            <td class="bg-body-secondary">1 - 16384 GB</td>
+            <td>14 GB</td>
+            <td>14 GB</td>
+            <td>75 - 2040</td>
+        </tr>
+        <tr>
+            <th>CPU Arch</th>
+            <td class="bg-body-secondary">x64 + arm64</td>
+            <td>x64</td>
+            <td>x64</td>
+            <td>x64</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="col-md-8 mx-auto text-center mt-5">
+    <h2 class="pt-7 fw-semibold">100% Fresh and Secure Runners. Every time.</h2>
+    <h4 class="mb-3 text-secondary">Defense in depth at every layer.</h4>
+    <div class="row">
+        {% include feature.html icon="plus-square-dotted" title="Ephemeral VMs" text="Each runner is launched using a
+        new ephemeral EC2 instance, ensuring a 100% clean environment for every build." %}
+        {% include feature.html icon="file-earmark-lock" title="Read-Only Root" text="Immutable runner root filesystem,
+        guaranteeing integrity. Writes are automatically redirected to temporary volumes reformatted on every boot." %}
+        {% include feature.html icon="shield-check" title="Inside your VPC" text="Runners are launched directed within
+        the privacy your VPC. Services your jobs rely on no longer need to be exposed over the public internet." %}
+    </div>
+</div>
+
+<p class="text-center pt-7">
+    <a href="https://console.sprinters.sh" class="btn btn-lg btn-primary fw-semibold">Get started with Sprinters</a>
+</p>

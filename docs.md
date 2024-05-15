@@ -5,13 +5,15 @@ title: "Docs"
 
 ## Introduction
 {: .mt-5 }
-Sprinters lets you run your GitHub Actions jobs directly on your AWS account. You can freely choose the instance type 
-and disk size you require for each job. Whenever a workflow is triggered, Sprinters will launch a fresh new ephemeral
-instance directly within your VPC. You can freely choose which AWS region, availability zone or subnet to use.
+Sprinters runs your GitHub Actions jobs directly on your AWS account. You pick the instance type 
+and disk size required for each job. Then, whenever a workflow is triggered, Sprinters will launch a fresh new ephemeral
+instance directly within your VPC.
 
 ### AWS
 {: .mt-5 }
-Sprinters can launch your runners on your AWS account in any of these regions using any of these x64 and arm64 instance types.
+Sprinters launches runners on your AWS account in AWS region, availability zone and subnet of your choice.
+
+First, you will need to create
 
 #### Supported Regions
 {: .mt-4 }
