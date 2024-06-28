@@ -23,7 +23,6 @@ First, you will need to create
 #### Supported Instance Families 
 {: .mt-4 }
 - `m7i`
-- `m7i-flex`
 - `t3`
 - `t3a`
 - `t4g`
