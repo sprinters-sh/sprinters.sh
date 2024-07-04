@@ -4,6 +4,8 @@ title: "Docs"
 ---
 
 # Introduction
+{: .mt-3 }
+
 Sprinters runs your GitHub Actions jobs directly on your AWS account. All you need to do is change the `runs-on:` label in your
 workflow yaml from `ubuntu-latest` to a Sprinters label (see examples). After that, whenever a run of your workflow is
 triggered Sprinters will automatically launch a new ephemeral instance matching your requested specifications directly
@@ -13,6 +15,7 @@ destroyed. You pay only for what you use and it only costs a fraction of what Gi
 hosted runners.
 
 ## Prerequisites
+{: .mt-6 }
 
 To get started you must first log in to the [Sprinters Console](https://console.sprinters.sh/login) with your GitHub
 account. You will then get a choice of which personal account or GitHub organization you first want to install the
@@ -45,6 +48,7 @@ Once the IAM user has been created, all that is left to do is enter its *Access 
 Sprinters Console to complete the initial setup.
 
 ## Sprinters Label
+{: .mt-6 }
 
 The final step to activate Sprinters for a particular repository is to replace the existing `runs-on: ubuntu-latest` 
 label in your workflow yaml file with a new Sprinters label:
@@ -59,12 +63,14 @@ the `minimal` image with `14` GiB of temp disk space and `4` GiB of swap.
 This specification can be customized by adding various parts to the label. All parts are separated by a `/`.
 
 ### AWS Region
+{: .mt-5 }
 You can set the AWS region where to launch the runner by appending it to the label.
 
 **Format:** _aws-region_\
 **Default:** `us-east-1`
 
 #### Example
+{: .mt-4 }
 To set the region to `eu-central-1`, change the label to:
 
 ```yaml
@@ -79,12 +85,14 @@ runs-on: sprinters:aws/eu-central-1
 More regions will be added soon. To request support for a specific region, file an issue in the [issue tracker](https://github.com/sprinters-sh/sprinters/issues).
 
 ### AWS Subnet ID
+{: .mt-5 }
 Within an AWS region, you can set the AWS region where to launch the runner by appending it to the label.
 
 **Format:** _aws-subnet-id_\
 **Default:** _random subnet of the default VPC of the selected region_
 
 #### Example
+{: .mt-4 }
 To set the subnet to `subnet-0123456789abcdef0`, change the label to:
 
 ```yaml
@@ -92,12 +100,14 @@ runs-on: sprinters:aws/eu-central-1/subnet-0123456789abcdef0
 ```
 
 ### AWS Instance Type
+{: .mt-5 }
 You can set the AWS EC2 instance type on which launch the runner by appending it to the label.
 
 **Format:** _aws-instance-type_\
 **Default:** `t3.2xlarge`
 
 #### Example
+{: .mt-4 }
 To set the instance type to `m7i.8xlarge`, change the label to:
 
 ```yaml
@@ -114,12 +124,14 @@ runs-on: sprinters:aws/m7i.8xlarge
 More instance families will be added soon. To request support for a specific instance family, file an issue in the [issue tracker](https://github.com/sprinters-sh/sprinters/issues).
 
 ### Image
+{: .mt-5 }
 You can set the image for the runner by appending it to the label.
 
 **Format:** image=_image-name_\
 **Default:** `minimal` for the CPU architecture of the selected AWS instance type.
 
 #### Example
+{: .mt-4 }
 To set the image to `ubuntu-22.04`, change the label to:
 
 ```yaml
@@ -127,6 +139,7 @@ runs-on: sprinters:aws/image=ubuntu-22.04
 ```
 
 #### Supported Image Types
+{: .mt-4 }
 
 | Type | Arch | Description |
 +-|-|-+
@@ -136,12 +149,14 @@ runs-on: sprinters:aws/image=ubuntu-22.04
 {: .table }
 
 ### Temp Disk Space
+{: .mt-5 }
 You can set the temp disk space available for the runner from `1` GiB to `16384` GiB by appending it to the label.
 
 **Format:** temp=_size-in-gib_\
 **Default:** `14`
 
 #### Example
+{: .mt-4 }
 To set the temp disk space to `512` GiB, change the label to:
 
 ```yaml
@@ -149,12 +164,14 @@ runs-on: sprinters:aws/temp=512
 ```
 
 ### Swap
+{: .mt-5 }
 You can set the swap size for the runner from `1` GiB to `16384` GiB by appending it to the label.
 
 **Format:** swap=_size-in-gib_\
 **Default:** `4`
 
 #### Example
+{: .mt-4 }
 To set the swap size to `64` GiB, change the label to:
 
 ```yaml

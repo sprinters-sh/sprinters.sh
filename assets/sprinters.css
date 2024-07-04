@@ -1,9 +1,27 @@
 .fs-0 {
     font-size: calc(1.5rem + 1.5vw) !important;
 }
-
 .fs-7 {
-    font-size: 0.75rem !important;
+    font-size: 0.875rem !important;
+}
+.fs-8 {
+    font-size: 0.765rem !important;
+}
+.fs-9 {
+    font-size: 0.670rem !important;
+}
+
+.mt-6 {
+    margin-top: 5rem !important;
+}
+.mt-7 {
+    margin-top: 7.5rem !important;
+}
+.mb-6 {
+    margin-bottom: 5rem !important;
+}
+.mb-7 {
+    margin-bottom: 7.5rem !important;
 }
 
 .pt-6 {
