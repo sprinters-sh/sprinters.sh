@@ -17,3 +17,7 @@
 .text-justify {
     text-align: justify;
 }
+
+pre.highlight {
+    padding: 10px;
+}
