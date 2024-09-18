@@ -5,10 +5,12 @@ title: "Run your GitHub Actions jobs faster on your own AWS account at a fractio
 
 <div class="col-md-8 mx-auto text-center">
     <img src="/assets/logo/sprinters.svg" width="200" height="200" alt="Sprinters" class="d-block mx-auto mt-5 mb-3">
-    <h1 class="mb-3 fw-semibold fs-0">Run your GitHub Actions jobs faster on your own AWS account at a fraction of the
-        cost with Sprinters</h1>
+    <h1 class="mb-3 fw-semibold fs-0 text-warning">Run your GitHub Actions jobs faster<br>on your own AWS account<br>at a fraction of the
+        cost</h1>
+    <p class="lead">
+        Secure, ephemeral, high-performance, low-cost runners within the privacy of your own VPC.
+    </p>
     <p class="lead mb-4">
-        Secure, ephemeral, high-performance runners within the privacy of your own VPC.
         Launch in the region and subnet of your choice, right-size your instances and disks,
         and directly access all required services without having to expose them over the public internet.
     </p>
@@ -16,7 +18,7 @@ title: "Run your GitHub Actions jobs faster on your own AWS account at a fractio
         <div class="d-inline-block v-align-middle fs-5">
             <code class="fs-5 text-start d-inline-block mt-4 mb-4">
                 <span class="text-secondary text-decoration-line-through">runs-on: ubuntu-latest</span><br>
-                <span class="text-warning">runs-on:</span> <span class="text-info">sprinters:aws/us-east-1/m7i-flex.4xlarge</span>
+                <span class="text-warning">runs-on:</span> <span class="text-info">sprinters:aws/us-east-1/m7i.4xlarge</span>
             </code>
         </div>
         <a href="https://console.sprinters.sh"
@@ -29,7 +31,7 @@ title: "Run your GitHub Actions jobs faster on your own AWS account at a fractio
 </div>
 
 <div class="col-md-8 mx-auto text-center mt-5">
-    <h2 class="pt-7 fw-semibold">Right-sized for the job.</h2>
+    <h2 class="pt-7 fw-semibold text-warning-emphasis fs-1">Right-sized for the job.</h2>
     <h4 class="mb-3 text-secondary">Runners in all sizes. From tiny to humongous, and everything in between.</h4>
     <div class="row">
         {% include feature.html icon="motherboard" title="Scalable Instances" text="Need lots of CPU? Plenty of RAM? Or
@@ -84,7 +86,7 @@ title: "Run your GitHub Actions jobs faster on your own AWS account at a fractio
 </div>
 
 <div class="col-md-8 mx-auto text-center mt-5">
-    <h2 class="pt-7 fw-semibold">100% Fresh and Secure. Every time.</h2>
+    <h2 class="pt-7 fw-semibold text-warning-emphasis fs-1">100% Fresh and Secure. Every time.</h2>
     <h4 class="mb-3 text-secondary">Defense in depth at every layer.</h4>
     <div class="row">
         {% include feature.html icon="plus-square-dotted" title="Ephemeral VMs" text="Each runner is launched using a
@@ -97,12 +99,58 @@ title: "Run your GitHub Actions jobs faster on your own AWS account at a fractio
 </div>
 
 <div class="col-md-8 mx-auto text-center mt-5">
-    <h2 class="pt-7 fw-semibold">Decimate your costs with a one-line change.</h2>
+    <h2 class="pt-7 fw-semibold text-warning-emphasis fs-1">Decimate your costs with a one-line change.</h2>
     <h4 class="mb-3 text-secondary">Pay only for what you use. And what you use only costs a fraction.</h4>
     <div class="row">
         {% include feature.html icon="clock-history" title="Per minute pricing" text="Simple per minute pricing. You only pay for what you use. No monthly subscriptions. No long term commitments or contracts." %}
-        {% include feature.html icon="fire" title="4x cheaper" text="Total cost per minute is at least 4x cheaper than the equivalent runner from GitHub. More compute at the same price or same compute at a lower price. The choice is yours." %}
+        {% include feature.html icon="fire" title="Up to 4x cheaper" text="Total cost per minute is up to 4x cheaper than the equivalent runner from GitHub. More compute at the same price or same compute at a lower price. The choice is yours." %}
         {% include feature.html icon="sun" title="No lock-in" text="Easy to try. Easy to leave. No complicated migrations. It's literally a one-line change in your workflow to convert a job to Sprinters. And just as easy to migrate back. But once you see the change in your bill, you won't want to." %}
+    </div>
+    <div class="row">
+        <table class="table table-bordered table-striped-columns table-sm mt-4">
+            <tr>
+                <td class="fw-normal">Public Repo</td>
+                <td class="text-warning">Free <span class="text-secondary">+ AWS cost</span></td>
+            </tr>
+            <tr>
+                <td class="fw-normal">Private Repo</td>
+                <td class="text-warning">$0.0004 / vCPU-minute <span class="text-secondary">+ AWS cost</span></td>
+            </tr>
+        </table>
+        <p>100,000 vCPU Minutes for private repos free during your first month</p>
+        <h5 class="text-info-emphasis mt-4">Runner with 2 vCPUs</h5>
+        <table class="table table-bordered table-striped-columns table-sm">
+            <tr>
+                <td class="fw-normal">GitHub<br><span class="text-secondary fs-7">(2 vCPUs + 7 GiB RAM)</span></td>
+                <td class="text-warning align-middle">$0.0080 per minute</td>
+            </tr>
+            <tr>
+                <td class="fw-normal">Sprinters + AWS t3a.large<br><span class="text-secondary fs-7">(2 vCPUs + 8 GiB RAM)</span></td>
+                <td class="text-warning align-middle">$0.0021 per minute<br><span class="text-warning-emphasis">($0.0004/vCPU * 2 vCPUs) + $0.0013</span></td>
+            </tr>
+        </table>
+        <h5 class="text-info-emphasis mt-4">Runner with 64 vCPUs</h5>
+        <table class="table table-bordered table-striped-columns table-sm">
+            <tr>
+                <td class="fw-normal">GitHub<br><span class="text-secondary fs-7">(64 vCPUs + 256 GiB RAM)</span></td>
+                <td class="text-warning align-middle">$0.1600 per minute</td>
+            </tr>
+            <tr>
+                <td class="fw-normal">Sprinters + AWS m7i.16xlarge<br><span class="text-secondary fs-7">(64 vCPUs + 256 GiB RAM)</span></td>
+                <td class="text-warning align-middle">$0.0760 per minute<br><span class="text-warning-emphasis">($0.0004/vCPU * 64 vCPUs) + $0.0504</span></td>
+            </tr>
+        </table>
+        <h5 class="text-info-emphasis mt-4">Runner with 192 vCPUs</h5>
+        <table class="table table-bordered table-striped-columns table-sm">
+            <tr>
+                <td class="fw-normal">GitHub</td>
+                <td class="text-danger align-middle">Not available</td>
+            </tr>
+            <tr>
+                <td class="fw-normal">Sprinters + AWS m7i.48xlarge<br><span class="text-secondary fs-7">(192 vCPUs + 768 GiB RAM)</span></td>
+                <td class="text-warning align-middle">$0.2381 per minute<br><span class="text-warning-emphasis">($0.0004/vCPU * 192 vCPUs) + $0.1613</span></td>
+            </tr>
+        </table>
     </div>
 </div>
 
