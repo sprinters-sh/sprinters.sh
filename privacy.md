@@ -25,17 +25,17 @@ When creating your account, we store the data that is transmitted and provided b
 {% include h3.html text="3.2. Data collection when GitHub Actions jobs" %}
 To run GitHub Actions jobs on virtual machines (referred to as “instances”) on a hosting or cloud service provider (“service provider”) that is supported by us, you will need to provide us with the relevant credentials for an account you own at that service provider. You can enter these yourself in the settings section of your Sprinters account on the Sprinters website. We store and use these credentials in order to access your account with your service provider and to launch, enumerate and terminate the instances there. We also record the identifier and the placement details (region, VPC, ...) of each instance launched as well the time it took to launch the instance and the duration for which it ran.
 
-{% include h3.html text="3.3. Data collection for a credit card saved as means of payment" %}
-If you enter your credit card and billing details, they will be handled by the company [Paddle](https://paddle.com), who process payments on our behalf with full PCI compliance.
+{% include h3.html text="3.3. Data collection for payments" %}
+If you enter your payment and billing details, they will be handled by the company [Paddle](https://paddle.com), who process payments on our behalf in full PCI compliance.
 
 {% include h2.html text="4. Objection" %}
-You may object to the use of your data at any time with future effect by contacting us using the details below. Please note that Sprinters only collects, stores and processes the data that is necessary for operating the service. If you object to the use of your data, use of the service will be restricted or no longer possible.
+You may object to the use of your data at any time with future effect by contacting us using the details below. Please note that Sprinters only collects, stores and processes the data that is necessary for operating the service. If you object to the use of your data, your use of the service will be restricted or no longer possible.
 
 {% include h2.html text="5. Use of cookies" %}
-After you log in, when your web browser communicates with Sprinters, an encrypted cookie is sent to determine to identify your user. This cookie is also stored locally on your computer in encrypted form.
+After you log in, when your web browser communicates with Sprinters, it transmits an encrypted session cookie Sprinters needs in order to identify your user. This cookie is also stored locally on your computer in encrypted form.
 
 {% include h2.html text="6. Right to information" %}
 Under the German Federal Data Protection Act (Bundesdatenschutzgesetz), you have a right to obtain information regarding your stored data free of charge, as well as a right to amend, block or delete this data.
 
-{% include h2.html text="8. Contact details for questions relating to our privacy policy" %}
+{% include h2.html text="7. Contact details for questions relating to our privacy policy" %}
 For any questions regarding the collection, processing or use of your personal data, as well as to request information on, to amend, block or delete data and to withdraw granted consent, please contact: InfrastructureX GmbH, Baubergerstr. 59, 80992 München, Germany
