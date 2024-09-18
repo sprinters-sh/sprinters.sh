@@ -2,7 +2,7 @@
 layout: default
 title: Impressum
 ---
-# Impressum
+{% include h1.html text="Impressum" %}
 
 **InfrastructureX GmbH**<br>
 Baubergerstr. 59<br>
@@ -11,7 +11,7 @@ Germany
 
 Legally represented by its managing director: Axel Fontaine
 
-Commercially registered in München (HRB 284022)<br>
+Commercially registered in München: HRB 284022<br>
 VAT number in Germany: DE324977313
 
 Contact us at hello@infrastructurex.io
