@@ -51,11 +51,11 @@ The final step to activate Sprinters for a particular repository is to replace t
 label in your workflow yaml file with a new Sprinters label:
 
 ```yaml
-runs-on: sprinters:aws
+runs-on: sprinters:aws/ubuntu-latest
 ```
 
 This tells Sprinters to run your job in AWS's `us-east-1` region (in the default VPC) on a `t3.2xlarge` instance using
-the `minimal` image with `14` GiB of temp disk space and `4` GiB of swap.
+the `ubuntu-latest` image with `14` GiB of temp disk space and `4` GiB of swap.
 
 This specification can be customized by adding various parts to the label. All parts are separated by a `/`.
 
@@ -115,13 +115,14 @@ runs-on: sprinters:aws/m7i.8xlarge
 {% include h3.html text="Image" %}
 You can set the image for the runner by appending it to the label.
 
-**Format:** image=_image-name_\
-**Default:** `minimal` for the CPU architecture of the selected AWS instance type.
+**Format:** _image-name_\
+**Default:** `ubuntu-latest`
 
 {% include h4.html text="Supported Image Types" %}
 | Type | Arch | Description |
 +-|-|-+
 | `minimal` | `x64` and `arm64` | Minimal, fast-booting image containing only Git and Docker |
+| `ubuntu-latest` | `x64` | Ubuntu 24.04 image identical to the one available for GitHub hosted runners |
 | `ubuntu-24.04` | `x64` | Ubuntu 24.04 image identical to the one available for GitHub hosted runners |
 | `ubuntu-22.04` | `x64` | Ubuntu 22.04 image identical to the one available for GitHub hosted runners |
 {: .table }
@@ -130,7 +131,7 @@ You can set the image for the runner by appending it to the label.
 To set the image to `ubuntu-22.04`, change the label to:
 
 ```yaml
-runs-on: sprinters:aws/image=ubuntu-22.04
+runs-on: sprinters:aws/ubuntu-22.04
 ```
 
 {% include h3.html text="Temp Disk Space" %}
