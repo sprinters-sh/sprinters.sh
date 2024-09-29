@@ -1,0 +1,35 @@
+---
+layout: default
+title: "Docs"
+---
+<div class="row">
+    <div class="col-lg-2 sidebar">
+        <div class="offcanvas-lg offcanvas-start" tabindex="-1" id="offcanvasResponsive"
+             aria-labelledby="offcanvasResponsiveLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title fw-bold text-white" id="staticBackdropLabel">Docs</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                        data-bs-target="#offcanvasResponsive"
+                        aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="nav nav-pills flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link disabled d-none d-lg-block fw-bold text-white fs-5 px-0 mt-3"
+                           aria-disabled="true">Docs</a>
+                    </li>
+
+                    <li class="nav-item"><a href="/docs" class="nav-link active">Introduction</a></li>
+                    <li class="nav-item"><a href="/docs/label" class="nav-link">Sprinters Label</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-lg-10">
+        <button class="btn btn-outline-secondary d-lg-none mt-3" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasResponsive" aria-controls="offcanvasResponsive">Jump to ...
+        </button>
+
+        {{ content }}
+    </div>
+</div>
