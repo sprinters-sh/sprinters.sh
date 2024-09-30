@@ -39,3 +39,7 @@
 pre.highlight {
     padding: 10px;
 }
+
+.sidebar .nav-item>a:not(.active):hover {
+    background-color: var(--bs-secondary);
+}

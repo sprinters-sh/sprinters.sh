@@ -14,6 +14,27 @@ the `ubuntu-latest` image with `14` GiB of temp disk space and `4` GiB of swap.
 
 This specification can be customized by adding various parts to the label. All parts are separated by a `/`.
 
+{% include h2.html text="Image" %}
+You can set the image for the runner by appending it to the label.
+
+**Format:** _image-name_\
+**Default:** `ubuntu-latest`
+
+{% include h3.html text="Supported Image Types" %}
+| Type | Arch | Description |
++-|-|-+
+| `ubuntu-latest` <br> `ubuntu-24.04` | `x64` | Ubuntu 24.04 image identical to the one available for GitHub hosted runners |
+| `ubuntu-22.04` | `x64` | Ubuntu 22.04 image identical to the one available for GitHub hosted runners |
+| `minimal` | `x64` and `arm64` | Minimal, fast-booting image containing only Git and Docker |
+{: .table }
+
+{% include h3.html text="Example" %}
+To set the image to `ubuntu-22.04`, change the label to:
+
+```yaml
+runs-on: sprinters:aws/ubuntu-22.04
+```
+
 {% include h2.html text="AWS Region" %}
 You can set the AWS region where to launch the runner by appending it to the label.
 
@@ -65,28 +86,6 @@ To set the instance type to `m7i.8xlarge`, change the label to:
 
 ```yaml
 runs-on: sprinters:aws/m7i.8xlarge
-```
-
-{% include h2.html text="Image" %}
-You can set the image for the runner by appending it to the label.
-
-**Format:** _image-name_\
-**Default:** `ubuntu-latest`
-
-{% include h3.html text="Supported Image Types" %}
-| Type | Arch | Description |
-+-|-|-+
-| `minimal` | `x64` and `arm64` | Minimal, fast-booting image containing only Git and Docker |
-| `ubuntu-latest` | `x64` | Ubuntu 24.04 image identical to the one available for GitHub hosted runners |
-| `ubuntu-24.04` | `x64` | Ubuntu 24.04 image identical to the one available for GitHub hosted runners |
-| `ubuntu-22.04` | `x64` | Ubuntu 22.04 image identical to the one available for GitHub hosted runners |
-{: .table }
-
-{% include h3.html text="Example" %}
-To set the image to `ubuntu-22.04`, change the label to:
-
-```yaml
-runs-on: sprinters:aws/ubuntu-22.04
 ```
 
 {% include h2.html text="Temp Disk Space" %}
