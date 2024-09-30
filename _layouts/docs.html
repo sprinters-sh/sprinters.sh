@@ -19,8 +19,8 @@ title: "Docs"
                            aria-disabled="true">Docs</a>
                     </li>
 
-                    <li class="nav-item"><a href="/docs" class="nav-link active">Introduction</a></li>
-                    <li class="nav-item"><a href="/docs/label" class="nav-link">Sprinters Label</a></li>
+                    {% include nav-item.html path="docs/index.md" %}
+                    {% include nav-item.html path="docs/label.md" %}
                 </ul>
             </div>
         </div>
@@ -30,6 +30,7 @@ title: "Docs"
                 data-bs-target="#offcanvasResponsive" aria-controls="offcanvasResponsive">Jump to ...
         </button>
 
+        {% include h1.html text=page.title %}
         {{ content }}
     </div>
 </div>

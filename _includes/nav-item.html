@@ -1,0 +1,2 @@
+{% assign nav-item = site.pages | where: "path", include.path | first %}
+<li class="nav-item"><a href="{{ nav-item.url | remove: ".html" }}" class="nav-link {% if include.path == page.path %}active{% endif %}">{{ nav-item.title }}</a></li>

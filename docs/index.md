@@ -1,10 +1,7 @@
 ---
 layout: docs
-title: "Docs"
+title: "Introduction"
 ---
-
-{% include h1.html text="Introduction" %}
-
 Sprinters runs your GitHub Actions jobs directly on your AWS account. All you need to do is change the `runs-on:` label in your
 workflow yaml from `ubuntu-latest` to a Sprinters label (see examples). After that, whenever a run of your workflow is
 triggered Sprinters will automatically launch a new ephemeral instance matching your requested specifications directly

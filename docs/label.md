@@ -1,10 +1,7 @@
 ---
 layout: docs
-title: "Docs"
+title: "Sprinters Label"
 ---
-
-{% include h1.html text="Sprinters Label" %}
-
 The final step to activate Sprinters for a particular repository is to replace the existing `runs-on: ubuntu-latest` 
 label in your workflow yaml file with a new Sprinters label:
 
