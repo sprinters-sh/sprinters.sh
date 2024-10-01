@@ -14,12 +14,12 @@ After you first {% include external-link.html text="log in to Sprinters" href="h
 will
 be redirected to the installation prompt:
 
-![Sprinters GitHub App installation](/assets/setup/github/install.png)
+![Sprinters GitHub App installation](/assets/setup/github/install.png){: .screenshot}
 
 After selecting the GitHub personal or organization account where you want to install it, confirm the installation by
 clicking _Install_:
 
-![Sprinters GitHub App permissions](/assets/setup/github/permissions.png)
+![Sprinters GitHub App permissions](/assets/setup/github/permissions.png){: .screenshot}
 
 {% include h3.html id="permissions" text="Permissions" %}
 
@@ -76,6 +76,6 @@ operate:
 
 The installation now proceeds and after a few seconds GitHub redirects you back to Sprinters:
 
-![Sprinters GitHub App installed](/assets/setup/github/welcome.png)
+![Sprinters GitHub App installed](/assets/setup/github/welcome.png){: .screenshot}
 
 Congratulations! The Sprinters GitHub App is now fully installed and activated.

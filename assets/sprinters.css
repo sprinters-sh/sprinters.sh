@@ -55,3 +55,8 @@ h2[id]:hover::after,h3[id]:hover::after {
 .sidebar .nav-item>.nav>.nav-item>a {
     padding: 4px 8px 4px 32px;
 }
+
+.screenshot {
+    padding: 4px;
+    border: 1px dashed var(--bs-secondary);
+}
