@@ -1,7 +1,7 @@
 ---
 layout: docs
-title: "Getting Started"
-next: docs/label.md
+title: "AWS Account"
+next: docs/setup/job.md
 ---
 
 {% include h2.html text="Prerequisites" %}

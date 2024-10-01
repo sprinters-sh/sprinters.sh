@@ -25,12 +25,12 @@
      inkscape:document-units="px"
      showgrid="false"
      inkscape:zoom="2.8237469"
-     inkscape:cx="310.40317"
-     inkscape:cy="166.26844"
-     inkscape:window-width="2524"
+     inkscape:cx="177.6009"
+     inkscape:cy="156.35254"
+     inkscape:window-width="1683"
      inkscape:window-height="1230"
-     inkscape:window-x="2485"
-     inkscape:window-y="1375"
+     inkscape:window-x="4974"
+     inkscape:window-y="1567"
      inkscape:window-maximized="0"
      inkscape:current-layer="layer1" /><defs
      id="defs2"><marker
@@ -127,7 +127,7 @@
          d="M 8,0 C 3.58,0 0,3.58 0,8 c 0,3.54 2.29,6.53 5.47,7.59 0.4,0.07 0.55,-0.17 0.55,-0.38 0,-0.19 -0.01,-0.82 -0.01,-1.49 C 4,14.09 3.48,13.23 3.32,12.78 3.23,12.55 2.84,11.84 2.5,11.65 2.22,11.5 1.82,11.13 2.49,11.12 3.12,11.11 3.57,11.7 3.72,11.94 4.44,13.15 5.59,12.81 6.05,12.6 6.12,12.08 6.33,11.73 6.56,11.53 4.78,11.33 2.92,10.64 2.92,7.58 2.92,6.71 3.23,5.99 3.74,5.43 3.66,5.23 3.38,4.41 3.82,3.31 c 0,0 0.67,-0.21 2.2,0.82 0.64,-0.18 1.32,-0.27 2,-0.27 0.68,0 1.36,0.09 2,0.27 1.53,-1.04 2.2,-0.82 2.2,-0.82 0.44,1.1 0.16,1.92 0.08,2.12 0.51,0.56 0.82,1.27 0.82,2.15 0,3.07 -1.87,3.75 -3.65,3.95 0.29,0.25 0.54,0.73 0.54,1.48 0,1.07 -0.01,1.93 -0.01,2.2 0,0.21 0.15,0.46 0.55,0.38 A 8.01,8.01 0 0 0 16,8 C 16,3.58 12.42,0 8,0"
          id="path4884"
          style="fill:#eeeeee;fill-opacity:1" /></g><rect
-       style="fill:#effac6;fill-opacity:1;stroke:#e6a931;stroke-width:2.44289;stroke-dasharray:2.44289, 2.44289;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+       style="fill:#effac6;fill-opacity:1;stroke:#7d5919;stroke-width:2.443;stroke-dasharray:2.443, 2.443;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
        id="rect5310"
        width="86.696342"
        height="108.7328"
@@ -199,7 +199,13 @@
          sodipodi:role="line"
          id="tspan14556"
          x="164.91423"
-         y="243.57233">4. Execute Job</tspan></text></g><style
+         y="243.57233">4. Execute Job</tspan></text><g
+       style="fill:#7d5919;fill-opacity:1"
+       id="g21509"
+       transform="matrix(1.4869417,0,0,1.4829173,394.97032,151.35547)"><path
+         d="M 4.406,3.342 A 5.53,5.53 0 0 1 8,2 c 2.69,0 4.923,2 5.166,4.579 C 14.758,6.804 16,8.137 16,9.773 16,11.569 14.502,13 12.687,13 H 3.781 C 1.708,13 0,11.366 0,9.318 0,7.555 1.266,6.095 2.942,5.725 3.085,4.862 3.64,4.002 4.406,3.342"
+         id="path21500"
+         style="fill:#7d5919;fill-opacity:1" /></g></g><style
      type="text/css"
      id="style2517">
 		polygon{stroke-width:275;stroke-linejoin:round;stroke:hsl(247, 15%, 23%)}

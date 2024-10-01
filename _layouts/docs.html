@@ -20,7 +20,14 @@ title: "Docs"
                     </li>
 
                     {% include nav-item.html path="docs/index.md" %}
-                    {% include nav-item.html path="docs/getting-started.md" %}
+                    {% include nav-item.html path="docs/setup/index.md" %}
+                    <li class="nav-item">
+                        <ul class="nav nav-pills fs-8 flex-column w-100">
+                            {% include nav-item.html path="docs/setup/github.md" %}
+                            {% include nav-item.html path="docs/setup/aws.md" %}
+                            {% include nav-item.html path="docs/setup/job.md" %}
+                        </ul>
+                    </li>
                     {% include nav-item.html path="docs/label.md" %}
                 </ul>
             </div>

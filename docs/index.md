@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: "Introduction"
-next: docs/getting-started.md
+next: docs/setup/index.md
 ---
 
 <img src="/assets/logo/sprinters.svg" width="128px" alt="Sprinters Logo">
@@ -14,7 +14,7 @@ next: docs/getting-started.md
 you add to your GitHub user or organization account.
 
 Once installed, you must {% include external-link.html text="log in to Sprinters" href="https://console.sprinters.sh" %} with your
-GitHub account and provide credentials to your AWS account so that Sprinters will be able to launch instances there on your behalf.
+GitHub account and provide credentials to your AWS account so that **Sprinters** will be able to launch instances there on your behalf.
 
 Finally, all that's left to do is edit a GitHub Actions workflow yaml file in a repository in your GitHub account and 
 change a job definition's `runs-on:` attribute from
@@ -29,14 +29,14 @@ to
 runs: sprinters:aws/ubuntu-latest
 ```
 
-Sprinters is now ready to kick into action.
+And **Sprinters** is now ready to kick into action.
 
 The entire flow looks like this:
 
 <img src="/assets/introduction.svg" width="378" alt="How Sprinters Works Diagram">
 
-The next time a run of that workflow job is triggered, it won't be run by GitHub anymore. Instead, **(1)** GitHub Actions notifies
-Sprinters, which immediately **(2)** launches an instance in your AWS account. 
+When a run of that workflow job is triggered, it won't be run by GitHub anymore. Instead, **(1)** GitHub Actions notifies
+**Sprinters**, which immediately **(2)** launches an instance in your AWS account. 
 This instance is fully ephemeral and automatically starts up 
 a fresh {% include external-link.html text="GitHub Self-Hosted Runner" href="https://docs.github.com/en/actions/hosting-your-own-runners/managing-self-hosted-runners/about-self-hosted-runners" %} which
 then **(3)** registers itself with GitHub Actions.
