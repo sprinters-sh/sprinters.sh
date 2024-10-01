@@ -41,5 +41,12 @@
 &copy; 2024 InfrastructureX GmbH <span class="px-2">&middot;</span> <a href="/terms" class="link-secondary text-nowrap">Terms of Service</a><span class="px-2">&middot;</span> <a href="/privacy" class="link-secondary text-nowrap">Privacy Policy</a><span class="px-2">&middot;</span> <a href="/impressum" class="link-secondary text-nowrap">Impressum</a><span class="px-2">&middot;</span> <span class="text-nowrap">Made with ♥️ in München</span>
 </div>
 <script src="/assets/bootstrap/5.3.3/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"></script>
+<script>
+    document.querySelectorAll('h2[id],h3[id]').forEach(function(link) {
+        link.addEventListener('click', function() {
+            window.location.hash = `#${(this.getAttribute('id'))}`;
+        });
+    });
+</script>
 </body>
 </html>

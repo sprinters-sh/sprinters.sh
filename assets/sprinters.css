@@ -40,6 +40,14 @@ pre.highlight {
     padding: 10px;
 }
 
+h2[id]:hover, h3[id]:hover {
+    cursor: pointer;
+}
+
+h2[id]:hover::after,h3[id]:hover::after {
+    content: " #";
+}
+
 .sidebar .nav-item>a:not(.active):hover {
     background-color: var(--bs-secondary);
 }
