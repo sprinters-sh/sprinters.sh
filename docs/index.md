@@ -1,49 +1,48 @@
 ---
 layout: docs
 title: "Introduction"
-next: docs/label.md
+next: docs/getting-started.md
 ---
 
 <img src="/assets/logo/sprinters.svg" width="128px" alt="Sprinters Logo">
 
 **Sprinters** runs your GitHub Actions jobs faster on your own AWS account at a fraction of the cost.
 
-All you need to do is change the `runs-on:` label in your
-workflow yaml from `ubuntu-latest` to a Sprinters label (see examples). After that, whenever a run of your workflow is
-triggered Sprinters will automatically launch a new ephemeral instance matching your requested specifications directly
-within your VPC and instruct GitHub Actions to run your job on it. The job will integrate with GitHub Actions just like
-any regular GitHub hosted job. Once it terminates, the AWS instance and all the data on its volumes are automatically
-destroyed. You pay only for what you use and it only costs a fraction of what GitHub would have charged you for their
-hosted runners.
+{% include h2.html text="How does Sprinters work?" %}
 
-{% include h2.html text="Prerequisites" %}
+**Sprinters** is a {% include external-link.html text="GitHub App" href="https://docs.github.com/en/apps/using-github-apps/about-using-github-apps" %} that
+you add to your GitHub user or organization account.
 
-To get started you must first log in to the [Sprinters Console](https://console.sprinters.sh/login) with your GitHub
-account. You will then get a choice of which personal account or GitHub organization you first want to install the
-[sprinters.sh GitHub app](https://github.com/apps/sprinters-sh) onto (you can add others later).
+Once installed, you must {% include external-link.html text="log in to Sprinters" href="https://console.sprinters.sh" %} with your
+GitHub account and provide credentials to your AWS account so that Sprinters will be able to launch instances there on your behalf.
 
-After installing the app (and accepting the [terms of service](https://sprinters.sh/terms) and [privacy policy](https://sprinters.sh/privacy)),
-all that is left to do is connecting your AWS account. You will need to create an IAM user with the following minimal
-policy that will allow Sprinters to launch, enumerate and terminate EC2 instances on your behalf:
+Finally, all that's left to do is edit a GitHub Actions workflow yaml file in a repository in your GitHub account and 
+change a job definition's `runs-on:` attribute from
 
-```json
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "sprinters",
-            "Effect": "Allow",
-            "Action": [
-                "ec2:DescribeInstances",
-                "ec2:RunInstances",
-                "ec2:TerminateInstances",
-                "ec2:CreateTags"
-            ],
-            "Resource": ["*"]
-        }
-    ]
-}
+```yaml
+runs: ubuntu-latest
 ```
 
-Once the IAM user has been created, all that is left to do is enter its *Access Key ID* and *Secret Access Key* in the
-Sprinters Console to complete the initial setup.
+to
+
+```yaml
+runs: sprinters:aws/ubuntu-latest
+```
+
+Sprinters is now ready to kick into action.
+
+The entire flow looks like this:
+
+<img src="/assets/introduction.svg" width="378" alt="How Sprinters Works Diagram">
+
+The next time a run of that workflow job is triggered, it won't be run by GitHub anymore. Instead, **(1)** GitHub Actions notifies
+Sprinters, which immediately **(2)** launches an instance in your AWS account. 
+This instance is fully ephemeral and automatically starts up 
+a fresh {% include external-link.html text="GitHub Self-Hosted Runner" href="https://docs.github.com/en/actions/hosting-your-own-runners/managing-self-hosted-runners/about-self-hosted-runners" %} which
+then **(3)** registers itself with GitHub Actions.
+
+GitHub Actions then **(4)** executes your job on your brand-new AWS instance. The job execution logs will appear in GitHub Actions
+as usual, but each vCPU minute will only cost you a fraction of what GitHub would have charged you. Once the job
+completes, the instance terminates, all its associated volumes are discarded, and you stop paying for it.
+
+And that's it! You're now ready to get started!
