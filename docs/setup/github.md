@@ -26,7 +26,7 @@ clicking _Install_:
 As you will no doubt have noticed, Sprinters needs a few important {% include external-link.html text="permissions"
 href="https://docs.github.com/en/rest/authentication/permissions-required-for-github-apps" %} in order to work.
 Sprinters strictly
-adheres to the principle of _least privilege_ and only requests the absolute minimum set of permissions required to
+adheres to the principle of _least-privilege_ and only requests the absolute minimum set of permissions required to
 operate:
 
 <div class="table-responsive">
