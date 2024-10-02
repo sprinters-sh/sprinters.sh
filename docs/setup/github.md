@@ -29,6 +29,7 @@ Sprinters strictly
 adheres to the principle of _least privilege_ and only requests the absolute minimum set of permissions required to
 operate:
 
+<div class="table-responsive">
 <table class="table table-bordered">
 <thead>
     <tr class="table-active">
@@ -40,13 +41,13 @@ operate:
 </thead>
 <tbody>
     <tr>
-        <td>{% include external-link.html text="Metadata" href="https://docs.github.com/en/rest/authentication/permissions-required-for-github-apps#repository-permissions-for-metadata" %}</td>
+        <td>Metadata</td>
         <td>repository</td>
         <td>read</td>
         <td>Mandatory permission for all GitHub Apps</td>
     </tr>
     <tr>
-        <td rowspan="2">{% include external-link.html text="Actions" href="https://docs.github.com/en/rest/authentication/permissions-required-for-github-apps#repository-permissions-for-actions" %}</td>
+        <td rowspan="2">Actions</td>
         <td>repository</td>
         <td>read</td>
         <td>Get details about workflow jobs and workflow runs to check whether Sprinters should launch a runner</td>
@@ -57,7 +58,7 @@ operate:
         <td>Cancel a workflow run in case there was an issue with a runner</td>
     </tr>
     <tr>
-        <td>{% include external-link.html text="Administration" href="https://docs.github.com/en/rest/authentication/permissions-required-for-github-apps?apiVersion=2022-11-28#repository-permissions-for-administration" %}</td>
+        <td>Administration</td>
         <td>repository</td>
         <td>write</td>
         <td>Create a registration token for a new runner to ensure it can interact with GitHub Actions</td>
@@ -70,7 +71,7 @@ operate:
     </tr>
 </tbody>
 </table>
-
+</div>
 
 {% include h2.html text="Success" %}
 

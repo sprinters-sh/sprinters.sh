@@ -56,6 +56,10 @@ h2[id]:hover::after,h3[id]:hover::after {
     padding: 4px 8px 4px 32px;
 }
 
+img {
+    max-width: 100%;
+}
+
 .screenshot {
     padding: 4px;
     border: 1px dashed var(--bs-secondary);
