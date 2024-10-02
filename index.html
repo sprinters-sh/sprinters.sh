@@ -27,7 +27,7 @@ title: "Run your GitHub Actions jobs faster on your own AWS account at a fractio
     </div>
     <p class="text-secondary mb-0">
         <i class="bi bi-ubuntu"></i> Ubuntu <span class="px-1">&middot;</span> <i class="bi bi-cpu"></i> x64 <span
-            class="px-1">&middot;</span> <i class="bi bi-cpu"></i> arm64
+                class="px-1">&middot;</span> <i class="bi bi-cpu"></i> arm64
     </p>
 </div>
 
@@ -167,11 +167,29 @@ title: "Run your GitHub Actions jobs faster on your own AWS account at a fractio
                     Sprinters + AWS m7i.48xlarge<br><span class="text-secondary fs-7">(192 vCPUs + 768 GiB RAM)</span>
                 </td>
                 <td class="text-warning align-middle">
-                    $0.2381 per minute<br><span class="text-warning-emphasis">($0.0004/vCPU * 192 vCPUs) + $0.1613</span>
+                    $0.2381 per minute<br><span
+                            class="text-warning-emphasis">($0.0004/vCPU * 192 vCPUs) + $0.1613</span>
                 </td>
             </tr>
         </table>
     </div>
+</div>
+
+<div class="col-md-8 mx-auto text-center mt-5">
+    <h2 class="pt-7 fw-semibold text-warning-emphasis fs-1">Is Sprinters a good fit for me?</h2>
+    <h4 class="mb-3 text-secondary">Ask yourself these questions and decide for yourself.</h4>
+
+    <div class="text-start mx-auto d-table">
+        <h5 class="text-info-emphasis mt-4">Do your account or your workflows ...</h5>
+        <ul class=" my-0 ">
+            <li>exceed GitHub's 2000 minute free tier?</li>
+            <li>require or benefit from having more than 2 vCPUs?</li>
+            <li>require or benefit from having more than 7 GiBs of RAM?</li>
+            <li>require or benefit from having more than 14 GiBs of temp space?</li>
+            <li>need to access private resources in your AWS account?</li>
+        </ul>
+    </div>
+    <p class="mt-5 fw-bold fs-4">If you answered yes to any of these questions,<br>Sprinters is for you.</p>
 </div>
 
 <p class="text-center pt-7">
