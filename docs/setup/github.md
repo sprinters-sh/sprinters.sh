@@ -33,40 +33,40 @@ operate:
 <table class="table table-bordered">
 <thead>
     <tr class="table-active">
-        <th>Functionality</th>
-        <th>Scope</th>
         <th>Permission</th>
+        <th>Access</th>
+        <th>Scope</th>
         <th>Usage</th>
     </tr>
 </thead>
 <tbody>
     <tr>
-        <td>Metadata</td>
-        <td>repository</td>
+        <td><code>metadata</code></td>
         <td>read</td>
+        <td>repository</td>
         <td>Mandatory permission for all GitHub Apps</td>
     </tr>
     <tr>
-        <td rowspan="2">Actions</td>
-        <td>repository</td>
+        <td rowspan="2"><code>actions</code></td>
         <td>read</td>
+        <td>repository</td>
         <td>Get details about workflow jobs and workflow runs to check whether Sprinters should launch a runner</td>
     </tr>
     <tr>
-        <td>repository</td>
         <td>write</td>
+        <td>repository</td>
         <td>Cancel a workflow run in case there was an issue with a runner</td>
     </tr>
     <tr>
-        <td>Administration</td>
-        <td>repository</td>
+        <td><code>administration</code></td>
         <td>write</td>
+        <td>repository</td>
         <td>Create a registration token for a new runner to ensure it can interact with GitHub Actions</td>
     </tr>
     <tr>
-        <td>Email Addresses</td>
-        <td>user</td>
+        <td><code class="text-nowrap">email addresses</code></td>
         <td>read</td>
+        <td>user</td>
         <td>Notify you in case an issue with a runner needs your attention</td>
     </tr>
 </tbody>
