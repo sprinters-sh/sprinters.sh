@@ -88,11 +88,11 @@ Your IAM policy is now fully set up.
 Now create the IAM user which will have that policy attached by navigating to 
 the {% include external-link.html text="AWS Console create user page" href="https://us-east-1.console.aws.amazon.com/iam/home#/users/create" %}.
 
-Begin give your user the `sprinters-user` name:
+Give your user the `sprinters-user` name:
 
 ![AWS Console user name](/assets/setup/aws/user-name.png){: .screenshot}
 
-Then assign it your newly created `sprinters-policy`:
+Then attach your newly created `sprinters-policy`:
 
 ![AWS Console user policy](/assets/setup/aws/user-policy.png){: .screenshot}
 
@@ -104,7 +104,7 @@ Your IAM user is now fully set up.
 
 {% include h2.html text="Create the credentials" %}
 
-Your IAM user now needs credentials which you can create by navigating to
+Your IAM user now needs credentials. You can create them by navigating to
 the {% include external-link.html text="AWS Console create access key page" href="https://us-east-1.console.aws.amazon.com/iam/home#/users/details/sprinters-user/create-access-key" %}.
 
 ![AWS Console access key type](/assets/setup/aws/accesskey-other.png){: .screenshot}
