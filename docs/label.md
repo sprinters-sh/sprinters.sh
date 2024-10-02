@@ -2,20 +2,25 @@
 layout: docs
 title: "Sprinters Label"
 ---
-The final step to activate Sprinters for a particular repository is to replace the existing `runs-on: ubuntu-latest` 
-label in your workflow yaml file with a new Sprinters label:
+The Sprinters label is the label you assign to your `runs-on:` directive in your GitHub Actions workflow yml:
 
 ```yaml
 runs-on: sprinters:aws/ubuntu-latest
 ```
 
-This tells Sprinters to run your job in AWS's `us-east-1` region (in the default VPC) on a `t3.2xlarge` instance using
-the `ubuntu-latest` image with `14` GiB of temp disk space and `4` GiB of swap.
+This label is highly customizable and lets you directly control where your instances run, on what instance type they run,
+what image they use and how much temp storage they get.
+
+To make the migration from GitHub hosted runners as smooth as possible all defaults align with the ones from GitHub.
+
+The example label above tells Sprinters to run your job in AWS's `us-east-1` region (in the default VPC)
+on a `t3.2xlarge` instance (same number of vCPUs and as much RAM as regular GitHub hosted runners) using
+the `ubuntu-latest` image (same as the one used by GitHub) with `14` GiB of temp disk space and `4` GiB of swap (again, just like GitHub).
 
 This specification can be customized by adding various parts to the label. All parts are separated by a `/`.
 
 {% include h2.html text="Image" %}
-You can set the image for the runner by appending it to the label.
+You can set the image for the runner by replacing the one in the label.
 
 **Format:** _image-name_\
 **Default:** `ubuntu-latest`
@@ -29,10 +34,10 @@ You can set the image for the runner by appending it to the label.
 {: .table }
 
 {% include h3.html text="Example" %}
-To set the image to `ubuntu-22.04`, change the label to:
+To set the image to `minimal`, change the label to:
 
 ```yaml
-runs-on: sprinters:aws/ubuntu-22.04
+runs-on: sprinters:aws/minimal
 ```
 
 {% include h2.html text="AWS Region" %}
