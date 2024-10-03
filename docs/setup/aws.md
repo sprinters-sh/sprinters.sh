@@ -40,6 +40,10 @@ permissions required to operate:
         <td>List runner EC2 instances and check whether they are running</td>
     </tr>
     <tr>
+        <td><code>ec2:ModifyVolume</code></td>
+        <td>Optimize boot speed of runner EC2 instances</td>
+    </tr>
+    <tr>
         <td><code>ec2:TerminateInstances</code></td>
         <td>Clean up runner EC2 instances in case they fail to gracefully shut down</td>
     </tr>
@@ -65,6 +69,7 @@ href="https://us-east-1.console.aws.amazon.com/iam/home#/policies/create" %} and
                 "ec2:RunInstances",
                 "ec2:CreateTags",
                 "ec2:DescribeInstances",
+                "ec2:ModifyVolume",
                 "ec2:TerminateInstances"
             ],
             "Resource": ["*"]
