@@ -7,7 +7,7 @@ next: docs/label.md
 With Sprinters fully set up, the final thing left to do is to tell GitHub to run your workflow jobs using Sprinters
 on AWS instead of GitHub hosted runners.
 
-This is done by locating the `runs-on` directive in your workflow yml from
+This is done by locating the `runs-on` directive in your workflow yml and change the label from
 
 ```yml
 runs-on: ubuntu-latest
@@ -50,4 +50,4 @@ Congratulations! You have just run your first GitHub Actions workflow job on you
 {% include h2.html text="Next steps" %}
 
 Now it's your turn. Migrate your workflow jobs over to Sprinters. Customize where they run, on what instance type they run and
-how much temp storage they get by tweaking the [Sprinters Label](/docs/label).
+how much temp storage they get by tweaking the `runs-on:` label.
