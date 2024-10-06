@@ -7,7 +7,7 @@ next: docs/setup/job.md
 The next step is to connect your AWS account to Sprinters. For this you'll need the credentials of an AWS user that has
 enough permissions for Sprinters to launch, list and terminate EC2 instances.
 
-We can achieve this by
+You can achieve this by
 1. Creating an IAM policy with the required permissions
 2. Creating an IAM user with that policy attached
 3. Creating credentials for that IAM user
