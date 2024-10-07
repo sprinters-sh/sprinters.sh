@@ -28,7 +28,7 @@ runs-on: sprinters:aws/ubuntu-22.04/eu-central-1/m7i.24xlarge/temp=64
 
 This will launch a runner using the `ubuntu-22.04` image in the `eu-central-1` region on a `m7i.24xlarge` instance with `64` GiB of temp space.
 
-{% include h2.html text="Image" %}
+{% include h2.html id="image" text="Image" %}
 You can set the image for the runner by replacing the one in the label.
 
 **Format:** _image-name_\
@@ -49,7 +49,7 @@ To set the image to `minimal`, change the label to:
 runs-on: sprinters:aws/minimal
 ```
 
-{% include h2.html text="AWS Region" %}
+{% include h2.html id="region" text="AWS Region" %}
 You can set the AWS region where to launch the runner by appending it to the label.
 
 **Format:** _aws-region_\
@@ -68,7 +68,7 @@ To set the region to `eu-central-1` and run using the `minimal` image, change th
 runs-on: sprinters:aws/minimal/eu-central-1
 ```
 
-{% include h2.html text="AWS VPC / Subnet ID" %}
+{% include h2.html id="subnet" text="AWS VPC / Subnet ID" %}
 Within an AWS region, you can pick the subnet in the VPC of your choice where to launch the runner by appending the subnet ID to the label.
 
 **Format:** _aws-subnet-id_\
@@ -81,7 +81,7 @@ To use the `subnet-0123456789abcdef0` subnet, change the label to:
 runs-on: sprinters:aws/ubuntu-latest/subnet-0123456789abcdef0
 ```
 
-{% include h2.html text="AWS Instance Type" %}
+{% include h2.html id="instance-type" text="AWS Instance Type" %}
 You can set the AWS EC2 instance type on which launch the runner by appending it to the label.
 
 **Format:** _aws-instance-type_\
@@ -109,7 +109,7 @@ To set the instance type to `m7i.8xlarge`, change the label to:
 runs-on: sprinters:aws/ubuntu-latest/m7i.8xlarge
 ```
 
-{% include h2.html text="Temp Disk Space" %}
+{% include h2.html id="temp" text="Temp Disk Space" %}
 You can set the temp disk space available for the runner from `1` GiB to `16384` GiB by appending it to the label.
 
 **Format:** temp=_size-in-gib_\
@@ -122,7 +122,7 @@ To set the temp disk space to `512` GiB, change the label to:
 runs-on: sprinters:aws/ubuntu-latest/temp=512
 ```
 
-{% include h2.html text="Swap" %}
+{% include h2.html id="swap" text="Swap" %}
 You can set the swap size for the runner from `1` GiB to `16384` GiB by appending it to the label.
 
 **Format:** swap=_size-in-gib_\
