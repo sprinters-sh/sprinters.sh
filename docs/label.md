@@ -2,7 +2,8 @@
 layout: docs
 title: "runs-on: label"
 ---
-The `runs-on:` label is the label you assign to your `runs-on:` directive in your GitHub Actions workflow yml.
+The label you assign to your `runs-on:` directive in your GitHub Actions workflow yml lets you directly control where
+your jobs run, on what instance type they run, what image they use and how much temp storage they get.
 
 For Sprinters at the bare minimum it looks like this:
 
@@ -10,24 +11,22 @@ For Sprinters at the bare minimum it looks like this:
 runs-on: sprinters:aws/ubuntu-latest
 ```
 
-This label is highly customizable and lets you directly control where your instances run, on what instance type they run,
-what image they use and how much temp storage they get.
+The label in the example above tells Sprinters to run your job on AWS using the `ubuntu-latest` image. This image is
+identical to the one provided by GitHub.
 
-To make the migration from GitHub hosted runners as smooth as possible all defaults align with the ones from GitHub.
-
-The example label above tells Sprinters to run your job in AWS's `us-east-1` region (in the default VPC)
-on a `t3.2xlarge` instance (same number of vCPUs and as much RAM as regular GitHub hosted runners) using
-the `ubuntu-latest` image (same as the one used by GitHub) with `14` GiB of temp disk space and `4` GiB of swap (again, just like GitHub).
+By default, the runner instance for your job will be launched in the `us-east-1`
+region in your account's default VPC. The instance will by default be a `t3.2xlarge` with `14` GiB of temp disk space and
+`4` GiB of swap, as this most closely matches the capacity of GitHub hosted runners.
 
 This specification can be customized by adding various parts to the label. The order doesn't matter. All parts are separated by a `/`.
 
 Here is a more complex example:
 
 ```yaml
-runs-on: sprinters:aws/ubuntu-latest/eu-central-1/m7i.24xlarge/temp=64
+runs-on: sprinters:aws/ubuntu-22.04/eu-central-1/m7i.24xlarge/temp=64
 ```
 
-This will launch a runner using the `minimal` image on a `m7i.24xlarge` instance in the `eu-central-1` region with `64` GiB of temp space.
+This will launch a runner using the `ubuntu-22.04` image in the `eu-central-1` region on a `m7i.24xlarge` instance with `64` GiB of temp space.
 
 {% include h2.html text="Image" %}
 You can set the image for the runner by replacing the one in the label.
@@ -69,22 +68,22 @@ To set the region to `eu-central-1` and run using the `minimal` image, change th
 runs-on: sprinters:aws/minimal/eu-central-1
 ```
 
-{% include h2.html text="AWS Subnet ID" %}
-Within an AWS region, you can set the AWS region where to launch the runner by appending it to the label.
+{% include h2.html text="AWS VPC / Subnet ID" %}
+Within an AWS region, you can pick the subnet in the VPC of your choice where to launch the runner by appending the subnet ID to the label.
 
 **Format:** _aws-subnet-id_\
 **Default:** _random subnet of the default VPC of the selected region_
 
 {% include h3.html text="Example" %}
-To set the subnet to `subnet-0123456789abcdef0` in the `eu-central-1` region and run using the `minimal` image, change the label to:
+To use the `subnet-0123456789abcdef0` subnet, change the label to:
 
 ```yaml
-runs-on: sprinters:aws/minimal/eu-central-1/subnet-0123456789abcdef0
+runs-on: sprinters:aws/ubuntu-latest/subnet-0123456789abcdef0
 ```
 
 {% include h2.html text="AWS Instance Type" %}
 You can set the AWS EC2 instance type on which launch the runner by appending it to the label.
-s
+
 **Format:** _aws-instance-type_\
 **Default:** `t3.2xlarge`
 
