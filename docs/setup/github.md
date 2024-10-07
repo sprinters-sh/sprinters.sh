@@ -77,3 +77,5 @@ The installation now proceeds and after a few seconds GitHub redirects you back 
 ![Sprinters GitHub App installed](/assets/setup/github/welcome.png){: .screenshot}
 
 Congratulations! The Sprinters GitHub App is now fully installed and activated.
+
+Now you can connect it with your AWS account.

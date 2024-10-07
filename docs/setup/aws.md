@@ -142,3 +142,5 @@ And paste them into Sprinters:
 Congratulations! Your AWS account is now successfully connected to Sprinters:
 
 ![AWS account connected](/assets/setup/aws/credentials-success.png){: .screenshot}
+
+All that's left to do is run your first workflow job using Sprinters.

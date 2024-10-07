@@ -7,7 +7,7 @@ next: docs/label.md
 With Sprinters fully set up, the final thing left to do is to tell GitHub to run your workflow jobs using Sprinters
 on AWS instead of GitHub hosted runners.
 
-This is done by locating the `runs-on` directive in your workflow yml and change the label from
+This is done by locating the `runs-on` directive in your workflow yml and changing the label from
 
 ```yml
 runs-on: ubuntu-latest
@@ -23,7 +23,7 @@ runs-on: sprinters:aws/ubuntu-latest
 
 The easiest way to see this in action (and validate your Sprinters setup) is as follows.
 
-Begin by {% include external-link.html text="forking the `sprinters-sh/sprinters-test` repository" href="https://github.com/sprinters-sh/sprinters-test/fork" %}
+{% include external-link.html text="Fork the `sprinters-sh/sprinters-test` repository" class="btn btn-sm btn-primary" href="https://github.com/sprinters-sh/sprinters-test/fork" %}
 
 ![Fork test repository](/assets/setup/job/fork.png){: .screenshot}
 
@@ -41,7 +41,7 @@ After a few seconds the workflow will appear on GitHub and once it has completed
 
 ![Run workflow](/assets/setup/job/github-succeeded.png){: .screenshot}
 
-Equally on the Sprinters side, you will also see the job with all the details the EC2 instance that ran it:
+The job now also appears in the {% include external-link.html text="Sprinters Console" href="https://console.sprinters.sh" %} with all the details the EC2 instance that ran it:
 
 ![Run workflow](/assets/setup/job/sprinters-succeeded.png){: .screenshot}
 
