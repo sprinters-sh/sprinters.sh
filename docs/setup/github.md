@@ -5,8 +5,7 @@ next: docs/setup/aws.md
 ---
 
 The very first step is to install the {% include external-link.html text="Sprinters GitHub App"
-href="https://github.com/apps/sprinters-sh/installations/select_target" %} on
-your personal or organization account.
+href="https://github.com/apps/sprinters-sh" %} on your personal or organization account.
 
 {% include h2.html text="Installation" %}
 
@@ -23,11 +22,7 @@ clicking _Install_:
 
 {% include h3.html id="permissions" text="Permissions" %}
 
-As you will no doubt have noticed, Sprinters needs a few important {% include external-link.html text="permissions"
-href="https://docs.github.com/en/rest/authentication/permissions-required-for-github-apps" %} in order to work.
-Sprinters strictly
-adheres to the principle of _least-privilege_ and only requests the absolute minimum set of permissions required to
-operate:
+Sprinters strictly adheres to the principle of _least-privilege_ and only requests this absolute minimum set of permissions to be able to operate:
 
 <div class="table-responsive">
 <table class="table table-bordered">
@@ -72,6 +67,8 @@ operate:
 </tbody>
 </table>
 </div>
+
+Sprinters has **no access to the contents of your repositories**, **no access to your secrets** and **no access to your environment variables**.
 
 {% include h2.html text="Success" %}
 

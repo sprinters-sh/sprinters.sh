@@ -10,14 +10,14 @@ next: docs/setup/index.md
 
 {% include h2.html text="How does Sprinters work?" %}
 
-**Sprinters** is a {% include external-link.html text="GitHub App" href="https://docs.github.com/en/apps/using-github-apps/about-using-github-apps" %} that
+**Sprinters** is a {% include external-link.html text="GitHub App" href="https://github.com/apps/sprinters-sh" %} that
 you add to your GitHub user or organization account.
 
 Once installed, you must {% include external-link.html text="log in to Sprinters" href="https://console.sprinters.sh/login" %} with your
 GitHub account and provide credentials to your AWS account so that **Sprinters** will be able to launch instances there on your behalf.
 
 Finally, all that's left to do is edit a GitHub Actions workflow yaml file in a repository in your GitHub account and 
-change a job definition's `runs-on:` attribute from
+change a job definition's `runs-on:` directive from
 
 ```yaml
 runs: ubuntu-latest

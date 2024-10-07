@@ -4,8 +4,9 @@ title: "AWS Account"
 next: docs/setup/job.md
 ---
 
-The next step is to connect your AWS account to Sprinters. For this you'll need the credentials of an AWS user that has
-enough permissions for Sprinters to launch, list and terminate EC2 instances.
+The next step is to connect your AWS account to Sprinters.
+
+For this you'll need the credentials of an AWS user that has enough permissions for Sprinters to launch, list and terminate EC2 instances.
 
 You can achieve this by
 1. Creating an IAM policy with the required permissions
@@ -15,8 +16,8 @@ You can achieve this by
 
 {% include h2.html text="Permissions" %}
 
-Sprinters strictly adheres to the principle of _least-privilege_ and only requests the absolute minimum set of 
-permissions required to operate:
+Sprinters strictly adheres to the principle of _least-privilege_ and only requests this absolute minimum set of
+permissions to be able to operate:
 
 <div class="table-responsive">
 <table class="table table-bordered">
@@ -51,12 +52,16 @@ permissions required to operate:
 </table>
 </div>
 
+Sprinters has **no login access to your EC2 instances**, **no access to the contents of your EBS volumes** and **no access to your EBS snapshots**.
+
 {% include h2.html text="Create the IAM policy" %}
 
-The IAM policy sets the permissions your IAM user will have. You can create it in a few steps in the AWS Console.
+This IAM policy sets the permissions your IAM user will have.
 
-Begin by navigating to the {% include external-link.html text="AWS Console create policy page"
-href="https://us-east-1.console.aws.amazon.com/iam/home#/policies/create" %} and paste this policy document
+{% include external-link.html text="Create the required policy in the AWS Console" class="btn btn-sm btn-primary"
+href="https://us-east-1.console.aws.amazon.com/iam/home#/policies/create" %}
+
+To do so, paste this policy document:
 
 ```json
 {
@@ -90,8 +95,9 @@ Your IAM policy is now fully set up.
 
 {% include h2.html text="Create the IAM user" %}
 
-Now create the IAM user which will have that policy attached by navigating to 
-the {% include external-link.html text="AWS Console create user page" href="https://us-east-1.console.aws.amazon.com/iam/home#/users/create" %}.
+Now you'll need an IAM user which will have that policy attached.
+
+{% include external-link.html text="Create the required user in the AWS Console" class="btn btn-sm btn-primary" href="https://us-east-1.console.aws.amazon.com/iam/home#/users/create" %}
 
 Give your user the `sprinters-user` name:
 
@@ -109,12 +115,15 @@ Your IAM user is now fully set up.
 
 {% include h2.html text="Create the credentials" %}
 
-Your IAM user now needs credentials. You can create them by navigating to
-the {% include external-link.html text="AWS Console create access key page" href="https://us-east-1.console.aws.amazon.com/iam/home#/users/details/sprinters-user/create-access-key" %}.
+Your IAM user now needs credentials.
+
+{% include external-link.html text="Create the required credentials in the AWS Console" class="btn btn-sm btn-primary" href="https://us-east-1.console.aws.amazon.com/iam/home#/users/details/sprinters-user/create-access-key" %}
+
+Select `Other`:
 
 ![AWS Console access key type](/assets/setup/aws/accesskey-other.png){: .screenshot}
 
-And confirming the creation:
+And confirm the creation:
 
 ![AWS Console access key creation](/assets/setup/aws/accesskey-create.png){: .screenshot}
 
