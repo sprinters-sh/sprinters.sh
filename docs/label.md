@@ -50,9 +50,9 @@ You can set the image for the runner by replacing the one in the label.
 {% include h4.html text="Supported Image Types" %}
 | Type | Arch | Description |
 +-|-|-+
-| `ubuntu-latest` <br> `ubuntu-24.04` | `x64` | Ubuntu 24.04 image identical to the one available for GitHub hosted runners |
-| `ubuntu-22.04` | `x64` | Ubuntu 22.04 image identical to the one available for GitHub hosted runners |
-| `minimal` | `x64` and `arm64` | Minimal, fast-booting image containing only Git and Docker |
+| `ubuntu-latest` <br> `ubuntu-24.04` | x64 | Ubuntu 24.04 image identical to the one available for GitHub hosted runners |
+| `ubuntu-22.04` | x64 | Ubuntu 22.04 image identical to the one available for GitHub hosted runners |
+| `minimal` | x64 and arm64 | Minimal, fast-booting image containing only Git and Docker |
 {: .table }
 
 {% include h4.html text="Example" %}
@@ -102,12 +102,12 @@ You can set the AWS EC2 instance type on which launch the runner by appending it
 
 {% include h4.html text="Supported Instance Types" %}
 
-| Family | Sizes |
-+-|-+
-| **m7i** | `m7i.large` , `m7i.xlarge` , `m7i.2xlarge` , `m7i.4xlarge` , `m7i.8xlarge` , `m7i.12xlarge` , `m7i.16xlarge` , `m7i.24xlarge` , `m7i.48xlarge` |
-| **t3** | `t3.nano` , `t3.micro` , `t3.small` , `t3.medium` , `t3.large` , `t3.xlarge` , `t3.2xlarge` |
-| **t3a** | `t3a.nano` , `t3a.micro` , `t3a.small` , `t3a.medium` , `t3a.large` , `t3a.xlarge` , `t3a.2xlarge` |
-| **t4g** | `t4g.nano` , `t4g.micro` , `t4g.small` , `t4g.medium` , `t4g.large` , `t4g.xlarge` , `t4g.2xlarge` |
+| Family | Arch | Sizes |
++-|-|-+
+| m7i | x64 | `m7i.large` , `m7i.xlarge` , `m7i.2xlarge` , `m7i.4xlarge` , `m7i.8xlarge` , `m7i.12xlarge` , `m7i.16xlarge` , `m7i.24xlarge` , `m7i.48xlarge` |
+| t3 | x64 | `t3.nano` , `t3.micro` , `t3.small` , `t3.medium` , `t3.large` , `t3.xlarge` , `t3.2xlarge` |
+| t3a | x64 | `t3a.nano` , `t3a.micro` , `t3a.small` , `t3a.medium` , `t3a.large` , `t3a.xlarge` , `t3a.2xlarge` |
+| t4g | arm64 | `t4g.nano` , `t4g.micro` , `t4g.small` , `t4g.medium` , `t4g.large` , `t4g.xlarge` , `t4g.2xlarge` |
 {: .table }
 
 More instance families will be added soon. To request support for a specific instance family, file an issue in the [issue tracker](https://github.com/sprinters-sh/sprinters/issues).
