@@ -28,13 +28,26 @@ runs-on: sprinters:aws/ubuntu-22.04/eu-central-1/m7i.24xlarge/temp=64
 
 This will launch a runner using the `ubuntu-22.04` image in the `eu-central-1` region on a `m7i.24xlarge` instance with `64` GiB of temp space.
 
-{% include h2.html id="image" text="Image" %}
+{% include h2.html id="customization" text="Customization" %}
+
+The following label parts can be added or modified to customize the placement and capacity of the instance:
+
+- [Image](#image)
+- [AWS Region](#region)
+- [AWS VPC / Subnet ID](#subnet)
+- [AWS Instance Type](#instance-type)
+- [AWS Spot Instances](#spot)
+- [Temp Disk Space](#temp)
+- [Swap Disk Space](#swap)
+
+
+{% include h3.html id="image" text="Image" %}
 You can set the image for the runner by replacing the one in the label.
 
 **Format:** _image-name_\
 **Default:** `ubuntu-latest`
 
-{% include h3.html text="Supported Image Types" %}
+{% include h4.html text="Supported Image Types" %}
 | Type | Arch | Description |
 +-|-|-+
 | `ubuntu-latest` <br> `ubuntu-24.04` | `x64` | Ubuntu 24.04 image identical to the one available for GitHub hosted runners |
@@ -42,93 +55,103 @@ You can set the image for the runner by replacing the one in the label.
 | `minimal` | `x64` and `arm64` | Minimal, fast-booting image containing only Git and Docker |
 {: .table }
 
-{% include h3.html text="Example" %}
+{% include h4.html text="Example" %}
 To set the image to `minimal`, change the label to:
 
 ```yaml
 runs-on: sprinters:aws/minimal
 ```
 
-{% include h2.html id="region" text="AWS Region" %}
+{% include h3.html id="region" text="AWS Region" %}
 You can set the AWS region where to launch the runner by appending it to the label.
 
 **Format:** _aws-region_\
 **Default:** `us-east-1`
 
-{% include h3.html text="Supported Regions" %}
+{% include h4.html text="Supported Regions" %}
 - `eu-central-1`
 - `us-east-1`
 
 More regions will be added soon. To request support for a specific region, file an issue in the [issue tracker](https://github.com/sprinters-sh/sprinters/issues).
 
-{% include h3.html text="Example" %}
+{% include h4.html text="Example" %}
 To set the region to `eu-central-1` and run using the `minimal` image, change the label to:
 
 ```yaml
 runs-on: sprinters:aws/minimal/eu-central-1
 ```
 
-{% include h2.html id="subnet" text="AWS VPC / Subnet ID" %}
+{% include h3.html id="subnet" text="AWS VPC / Subnet ID" %}
 Within an AWS region, you can pick the subnet in the VPC of your choice where to launch the runner by appending the subnet ID to the label.
 
 **Format:** _aws-subnet-id_\
 **Default:** _random subnet of the default VPC of the selected region_
 
-{% include h3.html text="Example" %}
+{% include h4.html text="Example" %}
 To use the `subnet-0123456789abcdef0` subnet, change the label to:
 
 ```yaml
 runs-on: sprinters:aws/ubuntu-latest/subnet-0123456789abcdef0
 ```
 
-{% include h2.html id="instance-type" text="AWS Instance Type" %}
+{% include h3.html id="instance-type" text="AWS Instance Type" %}
 You can set the AWS EC2 instance type on which launch the runner by appending it to the label.
 
 **Format:** _aws-instance-type_\
 **Default:** `t3.2xlarge`
 
-{% include h3.html text="Supported Instance Types" %}
-{% include h4.html text="m7i" %}
-`m7i.large`, `m7i.xlarge`, `m7i.2xlarge`, `m7i.4xlarge`, `m7i.8xlarge`, `m7i.12xlarge`, `m7i.16xlarge`, `m7i.24xlarge`, `m7i.48xlarge`
+{% include h4.html text="Supported Instance Types" %}
 
-{% include h4.html text="t3" %}
-`t3.nano`, `t3.micro`. `t3.small`, `t3.medium`, `t3.large`, `t3.xlarge`, `t3.2xlarge`
-
-{% include h4.html text="t3a" %}
-`t3a.nano`, `t3a.micro`. `t3a.small`, `t3a.medium`, `t3a.large`, `t3a.xlarge`, `t3a.2xlarge`
-
-{% include h4.html text="t4g" %}
-`t4g.nano`, `t4g.micro`. `t4g.small`, `t4g.medium`, `t4g.large`, `t4g.xlarge`, `t4g.2xlarge`
+| Family | Sizes |
++-|-+
+| **m7i** | `m7i.large` , `m7i.xlarge` , `m7i.2xlarge` , `m7i.4xlarge` , `m7i.8xlarge` , `m7i.12xlarge` , `m7i.16xlarge` , `m7i.24xlarge` , `m7i.48xlarge` |
+| **t3** | `t3.nano` , `t3.micro` , `t3.small` , `t3.medium` , `t3.large` , `t3.xlarge` , `t3.2xlarge` |
+| **t3a** | `t3a.nano` , `t3a.micro` , `t3a.small` , `t3a.medium` , `t3a.large` , `t3a.xlarge` , `t3a.2xlarge` |
+| **t4g** | `t4g.nano` , `t4g.micro` , `t4g.small` , `t4g.medium` , `t4g.large` , `t4g.xlarge` , `t4g.2xlarge` |
+{: .table }
 
 More instance families will be added soon. To request support for a specific instance family, file an issue in the [issue tracker](https://github.com/sprinters-sh/sprinters/issues).
 
-{% include h3.html text="Example" %}
+{% include h4.html text="Example" %}
 To set the instance type to `m7i.8xlarge`, change the label to:
 
 ```yaml
 runs-on: sprinters:aws/ubuntu-latest/m7i.8xlarge
 ```
 
-{% include h2.html id="temp" text="Temp Disk Space" %}
+{% include h3.html id="spot" text="AWS Spot Instances" %}
+To save significant amounts of money at a slight risk of being interrupted, you can switch to spot instances by appending `spot=true` to the label.
+
+**Format:** spot=_true|false_\
+**Default:** `false`
+
+{% include h4.html text="Example" %}
+To use a much cheaper spot instance, change the label to:
+
+```yaml
+runs-on: sprinters:aws/ubuntu-latest/spot=true
+```
+
+{% include h3.html id="temp" text="Temp Disk Space" %}
 You can set the temp disk space available for the runner from `1` GiB to `16384` GiB by appending it to the label.
 
 **Format:** temp=_size-in-gib_\
 **Default:** `14`
 
-{% include h3.html text="Example" %}
+{% include h4.html text="Example" %}
 To set the temp disk space to `512` GiB, change the label to:
 
 ```yaml
 runs-on: sprinters:aws/ubuntu-latest/temp=512
 ```
 
-{% include h2.html id="swap" text="Swap" %}
+{% include h3.html id="swap" text="Swap Disk Space" %}
 You can set the swap size for the runner from `1` GiB to `16384` GiB by appending it to the label.
 
 **Format:** swap=_size-in-gib_\
 **Default:** `4`
 
-{% include h3.html text="Example" %}
+{% include h4.html text="Example" %}
 To set the swap size to `64` GiB, change the label to:
 
 ```yaml
