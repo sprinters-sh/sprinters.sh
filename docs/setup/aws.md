@@ -48,6 +48,10 @@ permissions to be able to operate:
         <td><code>ec2:TerminateInstances</code></td>
         <td>Clean up runner EC2 instances in case they fail to gracefully shut down</td>
     </tr>
+    <tr>
+        <td><code>ec2:DescribeSpotPriceHistory</code></td>
+        <td>Determine the price paid when using spot instances to calculate savings</td>
+    </tr>
 </tbody>
 </table>
 </div>
@@ -75,7 +79,8 @@ To do so, paste this policy document:
                 "ec2:CreateTags",
                 "ec2:DescribeInstances",
                 "ec2:ModifyVolume",
-                "ec2:TerminateInstances"
+                "ec2:TerminateInstances",
+                "ec2:DescribeSpotPriceHistory"
             ],
             "Resource": ["*"]
         }
