@@ -87,6 +87,7 @@ To do so, paste this policy document:
     ]
 }
 ```
+{: .user-select-all }
 
 in the JSON policy editor:
 
