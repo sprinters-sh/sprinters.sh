@@ -34,6 +34,7 @@ The following label parts can be added or modified to customize the placement an
 
 - [Image](#image)
 - [AWS Region](#region)
+- [AWS Availability Zone](#availability-zone)
 - [AWS VPC / Subnet ID](#subnet)
 - [AWS Instance Type](#instance-type)
 - [AWS Spot Instances](#spot)
@@ -74,6 +75,11 @@ You can set the AWS region where to launch the runner by appending it to the lab
 
 More regions will be added soon. To request support for a specific region, file an issue in the [issue tracker](https://github.com/sprinters-sh/sprinters/issues).
 
+{% include h4.html text="Notes" %}
+
+- If you specify both a _region_ and an _availability zone_, you must ensure the _availability zone_ resides in that _region_.
+- If you specify both a _region_ and a _subnet id_, you must ensure the _subnet_ resides in that _region_.
+
 {% include h4.html text="Example" %}
 To set the region to `eu-central-1` and run using the `minimal` image, change the label to:
 
@@ -81,11 +87,35 @@ To set the region to `eu-central-1` and run using the `minimal` image, change th
 runs-on: sprinters:aws/minimal/eu-central-1
 ```
 
+{% include h3.html id="availability-zone" text="AWS Availability Zone" %}
+Within an AWS region, you can pick the availability of your choice where to launch the runner by appending the availability zone to the label.
+
+**Format:** _aws-availability-zone_\
+**Default:** _random subnet of the default VPC of the selected region_
+
+{% include h4.html text="Notes" %}
+
+- If you don't specify a _region_, Sprinters will automatically select the matching _region_ for the _availability zone_.
+- If you specify both an _availability zone_ and a _region_, you must ensure the _availability zone_ resides in that _region_.
+- If you specify both an _availability zone_ and a _subnet id_, you must ensure the _subnet_ resides in that _availability zone_.
+
+{% include h4.html text="Example" %}
+To use the `eu-central-1c` availability zone, change the label to:
+
+```yaml
+runs-on: sprinters:aws/ubuntu-latest/eu-central-1c
+```
+
 {% include h3.html id="subnet" text="AWS VPC / Subnet ID" %}
 Within an AWS region, you can pick the subnet in the VPC of your choice where to launch the runner by appending the subnet ID to the label.
 
 **Format:** _aws-subnet-id_\
 **Default:** _random subnet of the default VPC of the selected region_
+
+{% include h4.html text="Notes" %}
+
+- If you specify both a _subnet id_ and a _region_, you must ensure the _subnet_ resides in that _region_.
+- If you specify both a _subnet id_ and an _availability zone_, you must ensure the _subnet_ resides in that _availability zone_.
 
 {% include h4.html text="Example" %}
 To use the `subnet-0123456789abcdef0` subnet, change the label to:

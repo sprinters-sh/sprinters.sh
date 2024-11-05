@@ -56,7 +56,10 @@ permissions to be able to operate:
 </table>
 </div>
 
-Sprinters has **no login access to your EC2 instances**, **no access to the contents of your EBS volumes** and **no access to your EBS snapshots**.
+Just as important as the permissions Sprinters has, are the permissions Sprinters doesn't have:
+- **no login access to your EC2 instances**
+- **no access to the contents of your EBS volumes**
+- **no access to your EBS snapshots**
 
 {% include h2.html text="Create the IAM policy" %}
 
