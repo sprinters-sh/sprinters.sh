@@ -50,7 +50,7 @@ permissions to be able to operate:
     </tr>
     <tr>
         <td><code>ec2:DescribeSpotPriceHistory</code></td>
-        <td>Determine the price paid when using spot instances to calculate savings</td>
+        <td>Automatically select cheapest availability zone for spot instances and calculate savings</td>
     </tr>
 </tbody>
 </table>

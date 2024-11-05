@@ -155,6 +155,10 @@ To save significant amounts of money at a slight risk of being interrupted, you 
 **Format:** spot=_true|false_\
 **Default:** `false`
 
+{% include h4.html text="Note" %}
+
+If neither a _subnet id_ nor an _availability zone_ was specified, Sprinters will automatically select the _availability zone_ with the cheapest spot price.
+
 {% include h4.html text="Example" %}
 To use a much cheaper spot instance, change the label to:
 
