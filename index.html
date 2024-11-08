@@ -19,8 +19,8 @@ title: "Run your GitHub Actions jobs faster on your own AWS account at a fractio
         All with a simple one line change in your GitHub Actions workflow yml:
     </p>
     <div class="d-flex flex-column align-items-md-stretch justify-content-md-center gap-3 mb-4">
-        <div class="d-inline-block v-align-middle fs-5">
-            <code class="fs-5 text-start d-inline-block mt-4 mb-4">
+        <div class="d-inline-block v-align-middle">
+            <code class="code fs-5 text-start d-inline-block mt-4 mb-4">
                 <span class="text-secondary text-decoration-line-through">runs-on: ubuntu-latest</span><br>
                 <span class="text-warning">runs-on:</span> <span class="text-info">sprinters:aws/ubuntu-latest</span>
             </code>
@@ -53,47 +53,49 @@ title: "Run your GitHub Actions jobs faster on your own AWS account at a fractio
     <h2 class="pt-7 fw-semibold text-warning-emphasis fs-1">Larger Runners. Larger Disks. x64 and arm64.</h2>
     <h4 class="mb-5 text-secondary">Runners in all sizes. From tiny to humongous, and everything in between.</h4>
 
-    <table class="table">
-        <thead>
-        <tr>
-            <th></th>
-            <th class="bg-body-secondary text-warning">Sprinters</th>
-            <th>GitHub (Private Repo)</th>
-            <th>GitHub (Public Repo)</th>
-            <th>GitHub (Larger Runners)</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <th>vCPU</th>
-            <td class="bg-body-secondary">2 - 192</td>
-            <td>2</td>
-            <td>4</td>
-            <td>2 - 64</td>
-        </tr>
-        <tr>
-            <th>RAM</th>
-            <td class="bg-body-secondary">0.5 - 768 GB</td>
-            <td>7 GB</td>
-            <td>16 GB</td>
-            <td>8 - 256 GB</td>
-        </tr>
-        <tr>
-            <th>Storage</th>
-            <td class="bg-body-secondary">1 - 16384 GB</td>
-            <td>14 GB</td>
-            <td>14 GB</td>
-            <td>75 - 2040</td>
-        </tr>
-        <tr>
-            <th>CPU Arch</th>
-            <td class="bg-body-secondary">x64 + arm64</td>
-            <td>x64</td>
-            <td>x64</td>
-            <td>x64</td>
-        </tr>
-        </tbody>
-    </table>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+            <tr>
+                <th></th>
+                <th class="bg-body-secondary text-warning">Sprinters</th>
+                <th>GitHub (Private Repo)</th>
+                <th>GitHub (Public Repo)</th>
+                <th>GitHub (Larger Runners)</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th>vCPU</th>
+                <td class="bg-body-secondary">2 - 192</td>
+                <td>2</td>
+                <td>4</td>
+                <td>2 - 64</td>
+            </tr>
+            <tr>
+                <th>RAM</th>
+                <td class="bg-body-secondary">0.5 - 768 GB</td>
+                <td>7 GB</td>
+                <td>16 GB</td>
+                <td>8 - 256 GB</td>
+            </tr>
+            <tr>
+                <th>Storage</th>
+                <td class="bg-body-secondary">1 - 16384 GB</td>
+                <td>14 GB</td>
+                <td>14 GB</td>
+                <td>75 - 2040</td>
+            </tr>
+            <tr>
+                <th>CPU Arch</th>
+                <td class="bg-body-secondary">x64 + arm64</td>
+                <td>x64</td>
+                <td>x64</td>
+                <td>x64</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
     <div class="row">
         {% include feature.html icon="motherboard" title="Scalable Instances" text="Need lots of CPU? Plenty of RAM? Or
         very little? Select the right instance type from a wide array of choices." %}
@@ -173,8 +175,8 @@ title: "Run your GitHub Actions jobs faster on your own AWS account at a fractio
 
     <p class="fs-5">To migrate to Sprinters, simply connect your AWS account and<br>change one line in your GitHub Actions workflow yml:</p>
 
-    <div class="d-inline-block v-align-middle fs-5">
-        <code class="fs-5 text-start d-inline-block mt-3 mb-4">
+    <div class="d-inline-block v-align-middle">
+        <code class="code fs-5 text-start d-inline-block mt-3 mb-4">
             <span class="text-secondary text-decoration-line-through">runs-on: ubuntu-latest</span><br>
             <span class="text-warning">runs-on:</span> <span class="text-info">sprinters:aws/ubuntu-latest</span>
         </code>

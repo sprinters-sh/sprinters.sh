@@ -1,12 +1,15 @@
 .fs-0 {
     font-size: calc(1.5rem + 1.5vw) !important;
 }
+
 .fs-7 {
     font-size: 0.875rem !important;
 }
+
 .fs-8 {
     font-size: 0.765rem !important;
 }
+
 .fs-9 {
     font-size: 0.670rem !important;
 }
@@ -14,12 +17,15 @@
 .mt-6 {
     margin-top: 5rem !important;
 }
+
 .mt-7 {
     margin-top: 7.5rem !important;
 }
+
 .mb-6 {
     margin-bottom: 5rem !important;
 }
+
 .mb-7 {
     margin-bottom: 7.5rem !important;
 }
@@ -44,15 +50,15 @@ h2[id]:hover, h3[id]:hover {
     cursor: pointer;
 }
 
-h2[id]:hover::after,h3[id]:hover::after {
+h2[id]:hover::after, h3[id]:hover::after {
     content: " #";
 }
 
-.sidebar .nav-item>a:not(.active):hover {
+.sidebar .nav-item > a:not(.active):hover {
     background-color: var(--bs-secondary);
 }
 
-.sidebar .nav-item>.nav>.nav-item>a {
+.sidebar .nav-item > .nav > .nav-item > a {
     padding: 4px 8px 4px 32px;
 }
 
@@ -63,4 +69,15 @@ img {
 .screenshot {
     padding: 4px;
     border: 1px dashed var(--bs-secondary);
+}
+
+@media (max-width: 480px) {
+    .code {
+        font-size: 1.2rem !important;
+    }
+}
+@media (max-width: 400px) {
+    .code {
+        font-size: 1.1rem !important;
+    }
 }
