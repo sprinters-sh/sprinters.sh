@@ -71,8 +71,14 @@ img {
     border: 1px dashed var(--bs-secondary);
 }
 
-@media (max-width: 575.98px) {
+@media (max-width: 399px) {
     .code {
         font-size: 1.0rem !important;
+    }
+}
+
+@media (min-width: 400px) and (max-width: 576px) {
+    .code {
+        font-size: 1.125rem !important;
     }
 }
