@@ -48,10 +48,16 @@ pre.highlight {
 
 h2[id]:hover, h3[id]:hover {
     cursor: pointer;
+    position: relative;
+    text-decoration: none;
 }
 
 h2[id]:hover::after, h3[id]:hover::after {
-    content: " #";
+    position: absolute;
+    top: 0;
+    left: -2rem;
+    content:" \f470";
+    font-family: bootstrap-icons !important;
 }
 
 .sidebar .nav-item > a:not(.active):hover {
