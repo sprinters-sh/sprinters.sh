@@ -105,7 +105,7 @@ runs-on: sprinters:aws/minimal/eu-central-1
 Within an AWS region, you can pick the availability of your choice where to launch the runner by appending the availability zone to the label.
 
 **Format:** _aws-availability-zone_\
-**Default:** _random subnet of the default VPC of the selected region_
+**Default:** _availability zone of the selected region that currently has the lowest spot price for the selected instance type_
 
 {% include h4.html text="Notes" %}
 
@@ -127,7 +127,7 @@ runs-on: sprinters:aws/ubuntu-latest/eu-central-1c
 Within an AWS region, you can pick the subnet in the VPC of your choice where to launch the runner by appending the subnet ID to the label.
 
 **Format:** _aws-subnet-id_\
-**Default:** _random subnet of the default VPC of the selected region_
+**Default:** _default subnet of the default VPC in the selected availability zone of the selected region_
 
 {% include h4.html text="Notes" %}
 
