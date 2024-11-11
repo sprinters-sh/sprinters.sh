@@ -19,42 +19,7 @@ You can achieve this by
 Sprinters strictly adheres to the principle of _least-privilege_ and only requests this absolute minimum set of
 permissions to be able to operate:
 
-<div class="table-responsive">
-<table class="table table-bordered">
-<thead>
-    <tr class="table-active">
-        <th>Action</th>
-        <th>Usage</th>
-    </tr>
-</thead>
-<tbody>
-    <tr>
-        <td><code>ec2:RunInstances</code></td>
-        <td>Launch ephemeral EC2 instances for your runners</td>
-    </tr>
-    <tr>
-        <td><code>ec2:CreateTags</code></td>
-        <td>Tag those EC2 instances as runners</td>
-    </tr>
-    <tr>
-        <td><code>ec2:DescribeInstances</code></td>
-        <td>List runner EC2 instances and check whether they are running</td>
-    </tr>
-    <tr>
-        <td><code>ec2:ModifyVolume</code></td>
-        <td>Optimize boot speed of runner EC2 instances</td>
-    </tr>
-    <tr>
-        <td><code>ec2:TerminateInstances</code></td>
-        <td>Clean up runner EC2 instances in case they fail to gracefully shut down</td>
-    </tr>
-    <tr>
-        <td><code>ec2:DescribeSpotPriceHistory</code></td>
-        <td>Automatically select cheapest availability zone for spot instances and calculate savings</td>
-    </tr>
-</tbody>
-</table>
-</div>
+{% include aws-permissions.html %}
 
 Just as important as the permissions Sprinters has, are the permissions Sprinters doesn't have:
 - **no login access to your EC2 instances**

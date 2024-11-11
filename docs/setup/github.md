@@ -24,49 +24,7 @@ clicking _Install_:
 
 Sprinters strictly adheres to the principle of _least-privilege_ and only requests this absolute minimum set of permissions to be able to operate:
 
-<div class="table-responsive">
-<table class="table table-bordered">
-<thead>
-    <tr class="table-active">
-        <th>Permission</th>
-        <th>Access</th>
-        <th>Scope</th>
-        <th>Usage</th>
-    </tr>
-</thead>
-<tbody>
-    <tr>
-        <td><code>metadata</code></td>
-        <td>read</td>
-        <td>repository</td>
-        <td>Mandatory permission for all GitHub Apps</td>
-    </tr>
-    <tr>
-        <td rowspan="2"><code>actions</code></td>
-        <td>read</td>
-        <td>repository</td>
-        <td>Get details about workflow jobs and workflow runs to check whether Sprinters should launch a runner</td>
-    </tr>
-    <tr>
-        <td>write</td>
-        <td>repository</td>
-        <td>Cancel a workflow run in case there was an issue with a runner</td>
-    </tr>
-    <tr>
-        <td><code>administration</code></td>
-        <td>write</td>
-        <td>repository</td>
-        <td>Create a registration token for a new runner to ensure it can interact with GitHub Actions</td>
-    </tr>
-    <tr>
-        <td><code class="text-nowrap">email addresses</code></td>
-        <td>read</td>
-        <td>user</td>
-        <td>Notify you in case an issue with a runner needs your attention</td>
-    </tr>
-</tbody>
-</table>
-</div>
+{% include github-permissions.html %}
 
 Sprinters has **no access to the contents of your repositories**, **no access to your secrets** and **no access to your environment variables**.
 

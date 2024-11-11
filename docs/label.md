@@ -1,6 +1,7 @@
 ---
 layout: docs
 title: "runs-on: label"
+next: docs/security.md
 ---
 The label you assign to your `runs-on:` directive in your GitHub Actions workflow yml lets you directly control where
 your jobs run, on what instance type they run, what image they use and how much temp storage they get.
