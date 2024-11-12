@@ -7,7 +7,7 @@ Security is Job Zero. Sprinters' approach can be summarized as a combination of 
 
 Let's dive deeper into the two main parts of the system: the Sprinters **platform** and the Sprinters **runner instances** on your AWS account.
 
-<img src="/assets/overview.svg" alt="How Sprinters Works Diagram">
+![How Sprinters Works Diagram](/assets/overview.svg)
 
 {% include h2.html id="platform" text="Platform" %}
 
@@ -55,14 +55,21 @@ Communications between Sprinters and your browser are fully encrypted with TLS 1
 
 {% include h2.html id="runner" text="Runner Instances" %}
 
-Runner instances run within your AWS account. They have a hardened kernel and are based on GitHub's official runner images.
+Runner instances run within your AWS account. Their security group prohibits ingress.
 
-The instances have no open ports. Additionally, the security group associated with them also specifically blocks all ports.
+They have a hardened kernel and are
+{% include external-link.html text="based on GitHub's official runner images" href="https://github.com/sprinters-sh/sprinters-images" %}. The instances have no open ports.
 
-The volume where the software is installed is read-only.
+**The runner software doesn't communicate with Sprinters.**
+It only opens an outbound HTTPS connection to GitHub in order to receive job steps and send back execution logs.
+
+![Runner Instance Diagram](/assets/runner.svg)
+
+The boot volume, where the software is installed, is read-only.
+
 All runner write activity (including, if configured in your workflow yml, the checkout of your repository contents)
-is redirected to an ephemeral encrypted volume which is wiped on every boot and destroyed when the instance terminates.
+is redirected to an ephemeral encrypted temp volume which is wiped on every boot and destroyed when the instance terminates.
 
 Swap space is also allocated on another ephemeral encrypted volume which is also wiped on every boot and destroyed when the instance terminates.
 
-**The runner software doesn't communicate with Sprinters.** It only opens an outbound HTTPS connection to GitHub in order to receive job steps and send execution logs.
+**Sprinters has no access to the contents of these volumes.**
