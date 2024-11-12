@@ -1,6 +1,8 @@
+{% if include.path %}
 {% assign next-page = site.pages | where: "path", include.path | first %}
 {% if next-page %}
 <div class="text-end mt-5">
-<a class="btn btn-outline-info" href="{{ next-page.url | remove: ".html" }}">{{ next-page.title }} <i class="bi bi-arrow-right"></i></a></a>
+<a class="btn btn-outline-info" href="{{ next-page.url | remove: ".html" }}">{{ next-page.title }} <i class="bi bi-arrow-right"></i></a>
 </div>
+{% endif %}
 {% endif %}
