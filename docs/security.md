@@ -3,7 +3,7 @@ layout: docs
 title: "Security"
 ---
 
-Security is Job Zero. Sprinters' approach can be summarized as a combination of the **principle of least privilege**, **data austerity** and **defense in depth**.
+Security is Job Zero for Sprinters. Sprinters' approach can be summarized as a combination of the **principle of least privilege**, **data austerity** and **defense in depth**.
 
 Let's dive deeper into the two main parts of the system: the Sprinters **platform** and the Sprinters **runner instances** on your AWS account.
 
@@ -55,20 +55,22 @@ Communications between Sprinters and your browser are fully encrypted with TLS 1
 
 {% include h2.html id="runner" text="Runner Instances" %}
 
-Runner instances run within your AWS account. Their security group prohibits ingress.
+Runner instances run on your AWS account within the privacy of your VPC.
+Services your jobs rely on no longer need to be exposed over the public internet.
 
-They have a hardened kernel and are
-{% include external-link.html text="based on GitHub's official runner images" href="https://github.com/sprinters-sh/sprinters-images" %}. The instances have no open ports.
+To ensure a 100% clean environment for every job, each runner is launched using a new ephemeral EC2 instance and a security group that prohibits ingress.
 
-**The runner software doesn't communicate with Sprinters.**
+It has a {% include external-link.html text="hardened kernel" href="https://github.com/infrastructurex/kernel" %} and is
+{% include external-link.html text="based on GitHub's official runner image" href="https://github.com/sprinters-sh/sprinters-images" %}.
+
+The instance doesn't listen on any ports. **The runner software doesn't communicate with Sprinters.**
 It only opens an outbound HTTPS connection to GitHub in order to receive job steps and send back execution logs.
 
 ![Runner Instance Diagram](/assets/runner.svg)
 
-The boot volume, where the software is installed, is read-only.
+The boot volume, where the software is installed, is read-only, guaranteeing integrity.
 
-All runner write activity (including, if configured in your workflow yml, the checkout of your repository contents)
-is redirected to an ephemeral encrypted temp volume which is wiped on every boot and destroyed when the instance terminates.
+Writes are automatically redirected to an ephemeral encrypted temp volume which is reformatted on every boot and destroyed when the instance terminates.
 
 Swap space is also allocated on another ephemeral encrypted volume which is also wiped on every boot and destroyed when the instance terminates.
 
