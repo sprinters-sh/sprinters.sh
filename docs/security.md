@@ -61,7 +61,7 @@ Services your jobs rely on no longer need to be exposed over the public internet
 
 To ensure a 100% clean environment for every job, each runner is launched using a new ephemeral EC2 instance and a security group that prohibits ingress.
 
-It has a {% include external-link.html text="hardened kernel" href="https://github.com/infrastructurex/kernel" %} and is
+The image is
 {% include external-link.html text="based on GitHub's official runner image" href="https://github.com/sprinters-sh/sprinters-images" %}.
 
 The instance doesn't listen on any ports. **The runner software doesn't communicate with Sprinters.**
