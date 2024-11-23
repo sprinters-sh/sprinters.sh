@@ -16,7 +16,7 @@ runs-on: ubuntu-latest
 to
 
 ```yml
-runs-on: sprinters:aws/ubuntu-latest
+runs-on: sprinters:aws:ubuntu-latest
 ```
 
 {% include h2.html text="See it in action" %}

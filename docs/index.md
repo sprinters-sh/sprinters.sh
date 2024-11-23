@@ -26,7 +26,7 @@ runs: ubuntu-latest
 to
 
 ```yaml
-runs: sprinters:aws/ubuntu-latest
+runs: sprinters:aws:ubuntu-latest
 ```
 
 And **Sprinters** is now ready to kick into action.

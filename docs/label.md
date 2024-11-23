@@ -9,7 +9,7 @@ your jobs run, on what instance type they run, what image they use and how much 
 For Sprinters at the bare minimum it looks like this:
 
 ```yaml
-runs-on: sprinters:aws/ubuntu-latest
+runs-on: sprinters:aws:ubuntu-latest
 ```
 
 The label in the example above tells Sprinters to run your job on AWS using the `ubuntu-latest` image. This image is
@@ -27,12 +27,12 @@ The instance placement will be as follows:
 
 {% include h2.html id="customization" text="Customization" %}
 
-This specification can be customized by adding various parts to the label. The order doesn't matter. All parts are separated by a `/`.
+This specification can be customized by adding various parts to the label. The order doesn't matter. All parts are separated by a `:`.
 
 Here is a more complex example:
 
 ```yaml
-runs-on: sprinters:aws/ubuntu-22.04/eu-central-1/m7i.24xlarge/temp=64
+runs-on: sprinters:aws:ubuntu-22.04:eu-central-1:m7i.24xlarge:temp=64
 ```
 
 This will launch a runner using the `ubuntu-22.04` image in the `eu-central-1` region on a `m7i.24xlarge` instance with `64` GiB of temp space.
@@ -69,7 +69,7 @@ You can set the image for the runner by replacing the one in the label.
 To set the image to `minimal`, change the label to:
 
 ```yaml
-runs-on: sprinters:aws/minimal
+runs-on: sprinters:aws:minimal
 ```
 
 ---
@@ -96,7 +96,7 @@ More regions will be added soon. To request support for a specific region, file 
 To set the region to `eu-central-1` and run using the `minimal` image, change the label to:
 
 ```yaml
-runs-on: sprinters:aws/minimal/eu-central-1
+runs-on: sprinters:aws:minimal:eu-central-1
 ```
 
 ---
@@ -118,7 +118,7 @@ Within an AWS region, you can pick the availability of your choice where to laun
 To use the `eu-central-1c` availability zone, change the label to:
 
 ```yaml
-runs-on: sprinters:aws/ubuntu-latest/eu-central-1c
+runs-on: sprinters:aws:ubuntu-latest:eu-central-1c
 ```
 
 ---
@@ -139,7 +139,7 @@ Within an AWS region, you can pick the subnet in the VPC of your choice where to
 To use the `subnet-0123456789abcdef0` subnet, change the label to:
 
 ```yaml
-runs-on: sprinters:aws/ubuntu-latest/subnet-0123456789abcdef0
+runs-on: sprinters:aws:ubuntu-latest:subnet-0123456789abcdef0
 ```
 
 ---
@@ -167,7 +167,7 @@ More instance families will be added soon. To request support for a specific ins
 To set the instance type to `m7i.8xlarge`, change the label to:
 
 ```yaml
-runs-on: sprinters:aws/ubuntu-latest/m7i.8xlarge
+runs-on: sprinters:aws:ubuntu-latest:m7i.8xlarge
 ```
 
 ---
@@ -196,7 +196,7 @@ If neither a _subnet id_ nor an _availability zone_ was specified, Sprinters wil
 To use a much cheaper spot instance, change the label to:
 
 ```yaml
-runs-on: sprinters:aws/ubuntu-latest/spot=true
+runs-on: sprinters:aws:ubuntu-latest:spot=true
 ```
 
 ---
@@ -212,7 +212,7 @@ You can set the temp disk space available for the runner from `1` GiB to `16384`
 To set the temp disk space to `512` GiB, change the label to:
 
 ```yaml
-runs-on: sprinters:aws/ubuntu-latest/temp=512
+runs-on: sprinters:aws:ubuntu-latest:temp=512
 ```
 
 ---
@@ -228,5 +228,5 @@ You can set the swap size for the runner from `1` GiB to `16384` GiB by appendin
 To set the swap size to `64` GiB, change the label to:
 
 ```yaml
-runs-on: sprinters:aws/ubuntu-latest/swap=64
+runs-on: sprinters:aws:ubuntu-latest:swap=64
 ```
