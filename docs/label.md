@@ -32,17 +32,16 @@ This specification can be customized by adding various parts to the label. The o
 Here is a more complex example:
 
 ```yaml
-runs-on: sprinters:aws:ubuntu-22.04:eu-central-1:m7i.24xlarge:temp=64
+runs-on: sprinters:aws:ubuntu-22.04:eu-central-1/subnet-0123456789abcdef0:m7i.24xlarge:temp=64
 ```
 
-This will launch a runner using the `ubuntu-22.04` image in the `eu-central-1` region on a `m7i.24xlarge` instance with `64` GiB of temp space.
+This will launch a runner using the `ubuntu-22.04` image in the `eu-central-1` region
+within the `subnet-0123456789abcdef0` subnet on a `m7i.24xlarge` instance with `64` GiB of temp space.
 
 The following label parts can be added or modified to customize the placement and capacity of the instance:
 
 - [Image](#image)
-- [AWS Region](#region)
-- [AWS Availability Zone](#availability-zone)
-- [AWS VPC / Subnet ID](#subnet)
+- [AWS Placement (Region / VPC / Availability Zone / Subnet)](#placement)
 - [AWS Instance Type](#instance-type)
 - [AWS Spot Instances](#spot)
 - [Temp Disk Space](#temp)
@@ -75,11 +74,15 @@ runs-on: sprinters:aws:minimal
 ---
 {: .mt-5 }
 
-{% include h3.html id="region" text="AWS Region" %}
-You can set the AWS region where to launch the runner by appending it to the label.
+{% include h3.html id="placement" text="AWS Placement (Region / VPC / Availability Zone / Subnet)" %}
+You can determine where the runner instance is launched by appending a placement config to the label.
 
-**Format:** _aws-region_\
-**Default:** `us-east-1`
+This placement config specifies the _region_, _availability zone_ and _subnet id_ of the instance.
+At least one of _region_ and _availability zone_ must be specified. _subnet id_ is optional.
+All parts are separated by a `/`.
+
+**Format:** _aws-region_/_aws-availability-zone_/_aws-subnet-id_\
+**Default:** `us-east-1` (random subnet of a random availability zone of the default VPC of `us-east-1`)
 
 {% include h4.html text="Supported Regions" %}
 - `eu-central-1`
@@ -90,56 +93,27 @@ More regions will be added soon. To request support for a specific region, file 
 {% include h4.html text="Notes" %}
 
 - If you specify both a _region_ and an _availability zone_, you must ensure the _availability zone_ resides in that _region_.
+- If you don't specify a _region_, Sprinters will automatically select the matching _region_ for the _availability zone_.
 - If you specify both a _region_ and a _subnet id_, you must ensure the _subnet_ resides in that _region_.
+- If you specify both an _availability zone_ and a _subnet id_, you must ensure the _subnet_ resides in that _availability zone_.
 
-{% include h4.html text="Example" %}
+{% include h4.html text="Examples" %}
 To set the region to `eu-central-1` and run using the `minimal` image, change the label to:
 
 ```yaml
 runs-on: sprinters:aws:minimal:eu-central-1
 ```
 
----
-{: .mt-5 }
-
-{% include h3.html id="availability-zone" text="AWS Availability Zone" %}
-Within an AWS region, you can pick the availability of your choice where to launch the runner by appending the availability zone to the label.
-
-**Format:** _aws-availability-zone_\
-**Default:** _availability zone of the selected region that currently has the lowest spot price for the selected instance type_
-
-{% include h4.html text="Notes" %}
-
-- If you don't specify a _region_, Sprinters will automatically select the matching _region_ for the _availability zone_.
-- If you specify both an _availability zone_ and a _region_, you must ensure the _availability zone_ resides in that _region_.
-- If you specify both an _availability zone_ and a _subnet id_, you must ensure the _subnet_ resides in that _availability zone_.
-
-{% include h4.html text="Example" %}
 To use the `eu-central-1c` availability zone, change the label to:
 
 ```yaml
 runs-on: sprinters:aws:ubuntu-latest:eu-central-1c
 ```
 
----
-{: .mt-5 }
-
-{% include h3.html id="subnet" text="AWS VPC / Subnet ID" %}
-Within an AWS region, you can pick the subnet in the VPC of your choice where to launch the runner by appending the subnet ID to the label.
-
-**Format:** _aws-subnet-id_\
-**Default:** _default subnet of the default VPC in the selected availability zone of the selected region_
-
-{% include h4.html text="Notes" %}
-
-- If you specify both a _subnet id_ and a _region_, you must ensure the _subnet_ resides in that _region_.
-- If you specify both a _subnet id_ and an _availability zone_, you must ensure the _subnet_ resides in that _availability zone_.
-
-{% include h4.html text="Example" %}
-To use the `subnet-0123456789abcdef0` subnet, change the label to:
+To use the `subnet-0123456789abcdef0` subnet in the `us-east-1` region, change the label to:
 
 ```yaml
-runs-on: sprinters:aws:ubuntu-latest:subnet-0123456789abcdef0
+runs-on: sprinters:aws:us-east-1/subnet-0123456789abcdef0:ubuntu-latest
 ```
 
 ---
