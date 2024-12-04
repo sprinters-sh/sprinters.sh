@@ -20,7 +20,14 @@ Sprinters also needs to store
 - the credentials to your AWS account in order to be able to launch runner instances
 - the history of the jobs you ran with Sprinters in order to display them in the Sprinters Console
 
+{% include h3.html id="data" text="Data" %}
+
+All data stored by Sprinters is **encrypted at rest**. All data transferred by Sprinters is **encrypted while in motion**.
+
+Communication between Sprinters and your browser is fully encrypted with TLS 1.3 or 1.2.
+
 {% include h3.html id="github" text="GitHub" %}
+{% include h4.html id="github-permissions" text="Permissions" %}
 
 Sprinters strictly adheres to the principle of **least-privilege** and only requests this absolute minimum set of permissions to be able to operate:
 
@@ -31,9 +38,11 @@ Sprinters has:
 - **no access to your secrets**
 - **no access to your environment variables**
 
-Communications between Sprinters and GitHub are fully encrypted with TLS 1.3.
+{% include h4.html id="github-data" text="Data in motion" %}
+Communication between Sprinters and GitHub is fully encrypted with TLS 1.3.
 
 {% include h3.html id="aws" text="AWS" %}
+{% include h4.html id="aws-permissions" text="Permissions" %}
 
 Sprinters strictly adheres to the principle of **least-privilege** and only requests this absolute minimum set of permissions to be able to operate:
 
@@ -44,15 +53,27 @@ Sprinters has:
 - **no access to the contents of your EBS volumes**
 - **no access to your EBS snapshots**
 
-Communications between Sprinters and AWS are fully encrypted with TLS 1.3.
+{% include h4.html id="aws-credentials" text="Credentials" %}
 
-{% include h3.html id="data" text="Data" %}
+To be able to operate, Sprinters needs to access to your AWS account.
 
-All data stored by Sprinters is encrypted at rest.
-On top of that AWS login credentials stored by Sprinters are fully encrypted with AES-256 GCM.
-Each GitHub organization or personal account has a distinct encryption key. All keys are themselves also encrypted.
+{% include h5.html text="Secure cross-account IAM roles" %}
 
-Communications between Sprinters and your browser are fully encrypted with TLS 1.3 or 1.2.
+By default, Sprinters will use
+{% include external-link.html text="secure cross-account IAM roles" href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_common-scenarios_third-party.html" %} to
+obtain temporary short-lived credentials to access your AWS account.
+
+This is made possible through a trust policy that grants permission to Sprinters' AWS account to assume an
+IAM role in your AWS accounts with the [permissions defined above](#aws-permissions). To prevent the
+{% include external-link.html text="confused deputy problem" href="https://docs.aws.amazon.com/IAM/latest/UserGuide/confused-deputy.html" %},
+this trust policy is secured with an external id.
+
+{% include h5.html text="Access keys" %}
+Alternatively, Sprinters also gives you the possibility to store an access key to access your AWS account.
+This access key is fully encrypted with AES-256 GCM. Each account has a distinct encryption key. All keys are themselves also encrypted.
+
+{% include h4.html id="aws-data" text="Data in motion" %}
+Communication between Sprinters and AWS is fully encrypted with TLS 1.3.
 
 {% include h2.html id="runner" text="Runner Instances" %}
 
