@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: "Introduction"
-next: docs/setup/index.md
+next: docs/setup.md
 ---
 
 <img src="/assets/logo/sprinters.svg" width="128px" alt="Sprinters Logo">
@@ -26,7 +26,7 @@ runs: ubuntu-latest
 to
 
 ```yaml
-runs: sprinters:aws:ubuntu-latest
+runs: sprinters:aws/123456789012:ubuntu-latest
 ```
 
 And **Sprinters** is now ready to kick into action.
