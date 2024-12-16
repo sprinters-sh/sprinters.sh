@@ -34,7 +34,7 @@ Sprinters:
 
 {% include h4.html id="browser-cookies" text="Javascript and cookies" %}
 
-Sprinters **does not load any javascript from external sources** and does not store any third party cookies.
+Sprinters **does not load any javascript from external sources** and **does not store any third party cookies**.
 
 Sprinters only uses a single cookie to keep track of the user's session.
 
