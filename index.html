@@ -22,7 +22,7 @@ title: "Run your GitHub Actions jobs faster on your own AWS account at a fractio
         <div class="d-inline-block v-align-middle">
             <code class="code fs-5 text-start d-inline-block mt-4 mb-4">
                 <span class="text-secondary text-decoration-line-through">runs-on: ubuntu-latest</span><br>
-                <span class="text-warning">runs-on:</span> <span class="text-info">sprinters:aws:ubuntu-latest</span>
+                <span class="text-warning">runs-on:</span> <span class="text-info">sprinters:aws/123456789012:ubuntu-latest</span>
             </code>
         </div>
         <a href="https://console.sprinters.sh/login"
@@ -50,7 +50,7 @@ title: "Run your GitHub Actions jobs faster on your own AWS account at a fractio
 </div>
 
 <div class="col-md-8 mx-auto text-center mt-5">
-    <h2 class="pt-7 fw-semibold text-warning-emphasis fs-1">Larger Runners. Larger Disks. x64 and arm64.</h2>
+    <h2 class="pt-7 fw-semibold text-warning-emphasis fs-1">Larger runners. Larger disks. x64 and arm64.</h2>
     <h4 class="mb-5 text-secondary">Runners in all sizes. From tiny to humongous, and everything in between.</h4>
 
     <div class="table-responsive">
@@ -106,34 +106,103 @@ title: "Run your GitHub Actions jobs faster on your own AWS account at a fractio
     </div>
 </div>
 
-<div class="col-md-8 mx-auto text-center mt-5">
-    <h2 class="pt-7 fw-semibold text-warning-emphasis fs-1">Up to 10x cheaper.</h2>
-    <h4 class="mb-3 text-secondary">Pay only for what you use. And what you use only costs a fraction.</h4>
+<div class="col-md-8 mx-auto text-center mt-5 pb-4">
+    <h2 class="pt-7 fw-semibold text-warning-emphasis fs-1">Where, which and how. The choice is yours.</h2>
+    <h4 class="mb-3 text-secondary">Flexible placement of runners across AWS accounts, regions and markets.</h4>
 
     <div class="row">
-        <table class="table table-bordered table-striped table-sm mt-4 fs-4">
-            <tr>
-                <td class="fw-normal">Public Repo</td>
-                <td class="fw-normal">Private Repo</td>
-            </tr>
-            <tr>
-                <td class="text-warning align-middle">Free <span class="text-secondary text-nowrap">+ AWS cost</span></td>
-                <td class="text-warning align-middle">
-                    $0.0004 / vCPU-minute <span class="text-secondary text-nowrap">+ AWS cost</span>
-                    <p class="fs-7 text-body mt-1 mb-2">100,000 vCPU Minutes free during your first month</p>
-                </td>
-            </tr>
-        </table>
-
+        {% include feature.html icon="cloud-check" title="Multiple Accounts" text="Launch all your runners in the same AWS account. Or use a different one per repository, workflow or job. The choice is yours." %}
+        {% include feature.html icon="globe" title="Multiple Regions" text="Put your runners next to the infrastructure they need. Pick the required region, VPC or subnet and never unnecesarily expose a resource over the public internet again." %}
+        {% include feature.html icon="flower1" title="On-Demand or Spot" text="Go uninterrupted with On-Demand instances. Or go for maximum savings with Spot. Optionally with cheapest availability zone auto-selection." %}
     </div>
+</div>
+
+<div class="col-md-8 mx-auto text-center mt-5">
+    <h2 id="pricing" class="mt-7 fw-semibold text-warning-emphasis fs-1">Unbeatable pricing. Simple and transparent.</h2>
+    <h4 class="mb-3 text-secondary">Pay only for what you use. And what you use only costs a fraction.</h4>
+
+    <div class="fs-2 fw-semibold text-warning mt-5 mb-4 border border-1" style="border-style: dashed !important;">
+        $0.0001 / vCPU-minute <span class="text-secondary text-nowrap">+ AWS cost</span>
+        <p class="fs-7 text-body mt-1 mb-2">1,000,000 vCPU Minutes free during your first month</p>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table mb-1">
+            <thead>
+            <tr>
+                <th></th>
+                <th class="text-warning">Sprinters <span class="text-secondary text-nowrap">+ AWS<sup>*</sup></span><br></th>
+                <th>GitHub</th>
+                <th class="border-start">Savings</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th>2 vCPUs</th>
+                <td class="bg-body-secondary">$0.0007</td>
+                <td>$0.0080</td>
+                <td class="border-start text-success fw-bold">91%</td>
+            </tr>
+            <tr>
+                <th>4 vCPUs</th>
+                <td class="bg-body-secondary">$0.0016</td>
+                <td>$0.0160</td>
+                <td class="border-start text-success fw-bold">90%</td>
+            </tr>
+            <tr>
+                <th>8 vCPUs</th>
+                <td class="bg-body-secondary">$0.0034</td>
+                <td>$0.0320</td>
+                <td class="border-start text-success fw-bold">89%</td>
+            </tr>
+            <tr>
+                <th>16 vCPUs</th>
+                <td class="bg-body-secondary">$0.0064</td>
+                <td>$0.0640</td>
+                <td class="border-start text-success fw-bold">90%</td>
+            </tr>
+            <tr>
+                <th>32 vCPUs</th>
+                <td class="bg-body-secondary">$0.0135</td>
+                <td>$0.1280</td>
+                <td class="border-start text-success fw-bold">89%</td>
+            </tr>
+            <tr>
+                <th>48 vCPUs</th>
+                <td class="bg-body-secondary">$0.0176</td>
+                <td><i>Not supported</i></td>
+                <td class="border-start fst-italic">n/a</td>
+            </tr>
+            <tr>
+                <th>64 vCPUs</th>
+                <td class="bg-body-secondary">$0.0223</td>
+                <td>$0.2560</td>
+                <td class="border-start text-success fw-bold">91%</td>
+            </tr>
+            <tr>
+                <th>96 vCPUs</th>
+                <td class="bg-body-secondary">$0.0281</td>
+                <td><i>Not supported</i></td>
+                <td class="border-start fst-italic">n/a</td>
+            </tr>
+            <tr>
+                <th>192 vCPU</th>
+                <td class="bg-body-secondary">$0.0654</td>
+                <td><i>Not supported</i></td>
+                <td class="border-start fst-italic">n/a</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="fs-8 text-secondary text-nowrap text-start">* m7i (spot) in us-east-1</div>
 
     <div class="row">
         {% include feature.html icon="clock-history" title="Per minute pricing" text="Simple per minute pricing. You
-        only pay for what you use. No monthly subscriptions. No long term commitments or contracts. No idle capacity. No extra infrastructure." %}
-        {% include feature.html icon="fire" title="Up to 10x cheaper" text="Total cost per minute is up to 10x cheaper
+        only pay for what you use. No monthly subscriptions. No long term commitments or contracts. No hidden costs." %}
+        {% include feature.html icon="fire" title="10x cheaper" text="Total cost per minute is usually around 10x cheaper
         than the equivalent runner from GitHub. More compute at the same price or same compute at a lower price. The
         choice is yours." %}
-        {% include feature.html icon="flower1" title="On-Demand or Spot" text="Go uninterrupted with On-Demand instances. Or go for maximum savings with Spot. Optionally with cheapest availability zone auto-selection." %}
+        {% include feature.html icon="arrow-down-up" title="Scale to zero" text="Scale to zero. Or to infinity. No management infrastructure to run. Just your runners. For the duration of your jobs. At an unbeatable price." %}
     </div>
 </div>
 
@@ -158,7 +227,7 @@ title: "Run your GitHub Actions jobs faster on your own AWS account at a fractio
     <h2 class="pt-7 fw-semibold text-warning-emphasis fs-1">Get started with a one-line change.</h2>
     <h4 class="mb-5 text-secondary">Easy to try. Easy to leave. No complicated migrations. No lock-in.</h4>
 
-    <p class="fs-5">To migrate to Sprinters, simply connect your AWS account and<br>change one line in your GitHub Actions workflow yml:</p>
+    <p class="fs-5">To migrate to Sprinters, simply set up your AWS account and<br>change one line in your GitHub Actions workflow yml:</p>
 
     <div class="d-inline-block v-align-middle">
         <code class="code fs-5 text-start d-inline-block mt-3 mb-4">
