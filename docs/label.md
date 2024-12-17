@@ -12,8 +12,8 @@ For Sprinters at the bare minimum it looks like this:
 runs-on: sprinters:aws/123456789012:ubuntu-latest
 ```
 
-The label in the example above tells Sprinters to run your job on AWS account `123456789012`using the `ubuntu-latest` image.
-This image is identical to the one provided by GitHub.
+The label in the example above tells Sprinters to connect to AWS account `123456789012` (using the default `sprinters-role` role)
+and launch a runner instance using the `ubuntu-latest` image, which is identical to the one provided by GitHub.
 
 A number of defaults will also be applied automatically to most closely matches the capacity of GitHub hosted runners:
 
@@ -27,18 +27,21 @@ The instance placement will be as follows:
 
 {% include h2.html id="customization" text="Customization" %}
 
-This specification can be customized by adding various parts to the label. The order doesn't matter. All parts are separated by a `:`.
+This specification can be customized by adding various parts to the label. The order doesn't matter. All parts are separated by a colon (`:`).
 
 Here is a more complex example:
 
 ```yaml
-runs-on: sprinters:aws/123456789012:ubuntu-22.04:eu-central-1/subnet-0123456789abcdef0:m7i.24xlarge:temp=64
+runs-on: sprinters:aws/111122223333/my-custom-role-name:ubuntu-22.04:eu-central-1/subnet-0123456789abcdef0:m7i.24xlarge:temp=64
 ```
 
-This will launch a runner using the `ubuntu-22.04` image in the `eu-central-1` region
+Sprinters will connect to the `111122223333` AWS account using the cross-account role named `my-custom-role-name` and
+launch a runner using the `ubuntu-22.04` image in the `eu-central-1` region
 within the `subnet-0123456789abcdef0` subnet on a `m7i.24xlarge` instance with `64` GiB of temp space.
 
-The following label parts can be added or modified to customize the placement and capacity of the instance:
+{% include h2.html id="parts" text="Parts" %}
+
+The following label parts can be added or modified to customize the image, placement and capacity of the runner instance:
 
 - [Image](#image)
 - [AWS Account (Account Number / IAM Role Name)](#account)
