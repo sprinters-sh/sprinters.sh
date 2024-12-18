@@ -153,10 +153,10 @@ Success! This job is running on a fresh EC2 instance in your AWS account using S
 
 Congratulations! You now have a fully operational Sprinters setup.
 
-<a class="btn btn-secondary" data-bs-toggle="collapse" href="#test" aria-expanded="false" aria-controls="test">
+<a class="btn btn-secondary" data-bs-toggle="collapse" href="#test-job" aria-expanded="false" aria-controls="test-job">
     <i class="bi bi-image me-1"></i>
     See it in action
 </a>
-<div class="collapse" id="test">
+<div class="collapse" id="test-job">
     <img src="/assets/setup/test.png" alt="Test job run" class="screenshot">
 </div>
