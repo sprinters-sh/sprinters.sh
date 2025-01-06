@@ -122,8 +122,8 @@ title: "Run your GitHub Actions jobs faster on your own AWS account at a fractio
     <h4 class="mb-3 text-secondary">Save ~90% per build minute. Every build minute.</h4>
 
     <div class="fs-2 fw-semibold text-warning mt-5 mb-4 border border-1" style="border-style: dashed !important;">
-        $0.0001 / vCPU-minute <span class="text-secondary text-nowrap">+ AWS cost</span>
-        <p class="fs-7 text-body mt-1 mb-2">1,000,000 vCPU Minutes free during your first month</p>
+        $0.0002 / vCPU-minute <span class="text-secondary text-nowrap">+ AWS cost</span>
+        <p class="fs-7 text-body mt-1 mb-2">500,000 vCPU Minutes free during your first month</p>
     </div>
 
     <div class="table-responsive">
@@ -138,90 +138,71 @@ title: "Run your GitHub Actions jobs faster on your own AWS account at a fractio
             </thead>
             <tbody>
             <tr>
-                <th>2 vCPUs</th>
-                <td class="bg-body-secondary">$0.0007</td>
+                <th>2 vCPUs <sup class="text-secondary">*</sup></th>
+                <td class="bg-body-secondary">$0.0009</td>
                 <td>$0.0080</td>
-                <td class="border-start text-success fw-bold">91%</td>
+                <td class="border-start text-success fw-bold">89%</td>
             </tr>
             <tr>
-                <th>4 vCPUs</th>
+                <th>4 vCPUs <sup class="text-secondary">*</sup></th>
                 <td class="bg-body-secondary">$0.0016</td>
                 <td>$0.0160</td>
                 <td class="border-start text-success fw-bold">90%</td>
             </tr>
             <tr>
-                <th>8 vCPUs</th>
-                <td class="bg-body-secondary">$0.0034</td>
+                <th>8 vCPUs <sup class="text-secondary">*</sup></th>
+                <td class="bg-body-secondary">$0.0033</td>
                 <td>$0.0320</td>
-                <td class="border-start text-success fw-bold">89%</td>
-            </tr>
-            <tr>
-                <th>16 vCPUs</th>
-                <td class="bg-body-secondary">$0.0064</td>
-                <td>$0.0640</td>
                 <td class="border-start text-success fw-bold">90%</td>
             </tr>
             <tr>
-                <th>32 vCPUs</th>
-                <td class="bg-body-secondary">$0.0135</td>
+                <th>16 vCPUs <sup class="text-secondary">**</sup></th>
+                <td class="bg-body-secondary">$0.0079</td>
+                <td>$0.0640</td>
+                <td class="border-start text-success fw-bold">88%</td>
+            </tr>
+            <tr>
+                <th>32 vCPUs <sup class="text-secondary">**</sup></th>
+                <td class="bg-body-secondary">$0.0152</td>
                 <td>$0.1280</td>
-                <td class="border-start text-success fw-bold">89%</td>
+                <td class="border-start text-success fw-bold">88%</td>
             </tr>
             <tr>
-                <th>48 vCPUs</th>
-                <td class="bg-body-secondary">$0.0176</td>
+                <th>48 vCPUs <sup class="text-secondary">***</sup></th>
+                <td class="bg-body-secondary">$0.0233</td>
                 <td><i>Not supported</i></td>
                 <td class="border-start fst-italic">n/a</td>
             </tr>
             <tr>
-                <th>64 vCPUs</th>
-                <td class="bg-body-secondary">$0.0223</td>
+                <th>64 vCPUs <sup class="text-secondary">***</sup></th>
+                <td class="bg-body-secondary">$0.0309</td>
                 <td>$0.2560</td>
-                <td class="border-start text-success fw-bold">91%</td>
+                <td class="border-start text-success fw-bold">88%</td>
             </tr>
             <tr>
-                <th>96 vCPUs</th>
-                <td class="bg-body-secondary">$0.0281</td>
+                <th>96 vCPUs <sup class="text-secondary">***</sup></th>
+                <td class="bg-body-secondary">$0.0442</td>
                 <td><i>Not supported</i></td>
                 <td class="border-start fst-italic">n/a</td>
             </tr>
             <tr>
-                <th>192 vCPU</th>
-                <td class="bg-body-secondary">$0.0654</td>
+                <th>192 vCPU <sup class="text-secondary">***</sup></th>
+                <td class="bg-body-secondary">$0.0930</td>
                 <td><i>Not supported</i></td>
                 <td class="border-start fst-italic">n/a</td>
             </tr>
             </tbody>
         </table>
     </div>
-    <div class="fs-8 text-secondary text-nowrap text-start">* m7i (spot) in us-east-1</div>
+    <div class="fs-8 text-secondary text-nowrap text-start">* t3a (spot), ** m7i-flex (spot), *** m7i (spot) in us-east-1</div>
 
     <div class="row">
-        {% include feature.html icon="clock-history" title="Per minute pricing" text="Simple per minute pricing. You
-        only pay for what you use. No monthly subscriptions. No long term commitments or contracts. No hidden costs." %}
+        {% include feature.html icon="clock-history" title="Per minute pricing" text="No monthly subscriptions. No long term commitments or contracts. No hidden costs. Simple per minute pricing. You only pay for what you use." %}
         {% include feature.html icon="fire" title="10x cheaper" text="Total cost per minute is usually around 10x cheaper
-        than the equivalent runner from GitHub. More compute at the same price or same compute at a lower price. The
-        choice is yours." %}
+        than the equivalent runner from GitHub. Much more compute at the same price or the same compute at a much lower price. The choice is yours." %}
         {% include feature.html icon="arrow-down-up" title="Scale to zero" text="Scale to zero. Or to infinity. No management infrastructure to run. Just your runners. For the duration of your jobs. At an unbeatable price." %}
     </div>
 </div>
-
-<!-- div class="col-md-8 mx-auto text-center mt-5">
-    <h2 class="pt-7 fw-semibold text-warning-emphasis fs-1">Is Sprinters a good fit for me?</h2>
-    <h4 class="mb-3 text-secondary">Ask yourself these questions and decide for yourself.</h4>
-
-    <div class="text-start mx-auto d-table">
-        <h5 class="text-info-emphasis mt-4">Do your account or your workflows ...</h5>
-        <ul class=" my-0 ">
-            <li>exceed GitHub's 2000 minute free tier?</li>
-            <li>require or benefit from having more than 2 vCPUs?</li>
-            <li>require or benefit from having more than 7 GiBs of RAM?</li>
-            <li>require or benefit from having more than 14 GiBs of temp space?</li>
-            <li>need to access private resources in your AWS account?</li>
-        </ul>
-    </div>
-    <p class="mt-5 fw-bold fs-4">If you answered yes to any of these questions,<br>Sprinters is for you.</p>
-</div -->
 
 <div class="col-md-8 mx-auto text-center mt-5">
     <h2 class="pt-7 fw-semibold text-warning-emphasis fs-1">Get started with a one-line change.</h2>
