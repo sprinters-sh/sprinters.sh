@@ -138,12 +138,11 @@ Congratulations! Your GitHub Actions job is fully set up and will execute on AWS
 
 The easiest way to validate your setup, is to run a test job.
 
-{% include external-link.html text="Fork the `sprinters-sh/sprinters-test` repository on GitHub" class="btn btn-sm btn-primary" href="https://github.com/sprinters-sh/sprinters-test/fork" %}
+{% include external-link.html text="Generate a new GitHub repository from the `sprinters-sh/sprinters-test` template" class="btn btn-sm btn-primary" href="https://github.com/new?template_name=sprinters-test&template_owner=sprinters-sh" %}
 
-On your forked repo:
+On your new repo:
 1. Edit the `.github/workflows/test.yml` workflow definition and replace `your-12-digit-aws-account-number` with your own AWS account number.
-2. Go to the _Actions_ tab and enable workflows.
-3. Run the `sprinters-test` workflow and inspect the workflow run logs.
+2. Run the `sprinters-test` workflow and inspect the workflow run logs.
 
 You should now see:
 
