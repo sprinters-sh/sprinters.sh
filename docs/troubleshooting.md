@@ -1,6 +1,7 @@
 ---
 layout: docs
 title: "Troubleshooting"
+next: docs/changelog.md
 ---
 
 Learn how to solve the most common issues you may encounter during setup or on GitHub workflow summaries:
