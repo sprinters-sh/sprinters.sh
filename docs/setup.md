@@ -33,7 +33,7 @@ To set up your AWS account, you'll need to create an **IAM policy** and a **cros
 
 {% include h3.html id="aws-policy" text="Create the IAM policy" %}
 
-To set the permissions Sprinters will have, you'll need an IAM policy.
+To set the [permissions Sprinters will have](/docs/security#aws-permissions), you'll need an IAM policy.
 
 {% include external-link.html text="Create the IAM policy in the AWS Console" class="btn btn-sm btn-primary"
         href="https://us-east-1.console.aws.amazon.com/iam/home#/policies/create" %}
@@ -41,21 +41,28 @@ To set the permissions Sprinters will have, you'll need an IAM policy.
 <p class="mb-1">To do so, paste this <span class="fw-bold text-warning">JSON policy document</span> in the policy editor:</p>
 <div class="alert alert-info font-monospace p-0 mb-2 position-relative" role="alert">
     <button type="button" class="btn-copy" title="Copy to clipboard"><i class="bi bi-copy"></i></button>
-    <pre class="mb-0 p-2 fs-7">{
+    <pre class="mb-0 p-2 fs-8">{
     "Version": "2012-10-17",
     "Statement": [
         {
-            "Sid": "sprinters",
+            "Sid": "Regular",
             "Effect": "Allow",
-            "Action": [
-                "ec2:RunInstances",
-                "ec2:CreateTags",
-                "ec2:DescribeInstances",
-                "ec2:ModifyVolume",
-                "ec2:TerminateInstances",
-                "ec2:DescribeSpotPriceHistory"
-            ],
-            "Resource": ["*"]
+            "Action": [ "ec2:RunInstances", "ec2:DescribeInstances", "ec2:DescribeSpotPriceHistory" ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "RestrictCreateTagsToRunInstances",
+            "Effect": "Allow",
+            "Action": [ "ec2:CreateTags" ],
+            "Resource": "*",
+            "Condition": { "StringEquals": { "ec2:CreateAction": "RunInstances" } }
+        },
+        {
+            "Sid": "RestrictToSprintersResources",
+            "Effect": "Allow",
+            "Action": [ "ec2:ModifyVolume", "ec2:TerminateInstances" ],
+            "Resource": "*",
+            "Condition": { "StringEquals": { "aws:ResourceTag/sprinters:sprinters": "true" } }
         }
     ]
 }</pre>
@@ -81,20 +88,14 @@ To establish trust between Sprinters and your AWS account, you'll need a cross-a
     <strong>Adjust the one below</strong> and paste it in the trust policy editor:</p>
 <div class="alert alert-info font-monospace p-0 mb-2 position-relative" role="alert">
     <button type="button" class="btn-copy" title="Copy to clipboard"><i class="bi bi-copy"></i></button>
-    <pre class="mb-0 p-2 fs-7">{
+    <pre class="mb-0 p-2 fs-8">{
     "Version": "2012-10-17",
     "Statement": [
         {
             "Effect": "Allow",
-            "Principal": {
-                "AWS": "381491863103"
-            },
+            "Principal": { "AWS": "381491863103" },
             "Action": "sts:AssumeRole",
-            "Condition": {
-                "StringEquals": {
-                    "sts:ExternalId": "<span class="fw-bold fst-italic text-warning">your-github-account-name</span>"
-                }
-            }
+            "Condition": { "StringEquals": { "sts:ExternalId": "<span class="fw-bold fst-italic text-warning">your-github-account-name</span>" } }
         }
     ]
 }</pre>
