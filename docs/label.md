@@ -114,6 +114,7 @@ All parts are separated by a `/`.
 
 {% include h4.html text="Supported Regions" %}
 - `eu-central-1`
+- `eu-west-1`
 - `us-east-1`
 
 More regions will be added soon. To request support for a specific region, file an issue in the [issue tracker](https://github.com/sprinters-sh/sprinters/issues).
