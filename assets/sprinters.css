@@ -57,6 +57,7 @@ h2[id]:hover::after, h3[id]:hover::after, h4[id]:hover::after {
     top: 0;
     left: -2rem;
     content:" \f470";
+    /*noinspection CssNoGenericFontName*/
     font-family: bootstrap-icons !important;
 }
 
@@ -102,6 +103,10 @@ img {
     .code {
         font-size: 1.125rem !important;
     }
+}
+
+#instance-types {
+    word-break: keep-all;
 }
 
 .timeline {
