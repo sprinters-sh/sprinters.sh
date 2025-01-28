@@ -60,7 +60,7 @@ To set the [permissions Sprinters will have](/docs/security#aws-permissions), yo
         {
             "Sid": "RestrictToSprintersResources",
             "Effect": "Allow",
-            "Action": [ "ec2:ModifyVolume", "ec2:TerminateInstances" ],
+            "Action": [ "ec2:CreateTags", "ec2:ModifyVolume", "ec2:TerminateInstances" ],
             "Resource": "*",
             "Condition": { "StringEquals": { "aws:ResourceTag/sprinters:sprinters": "true" } }
         }
