@@ -29,7 +29,7 @@ to
 runs: sprinters:aws/123456789012:ubuntu-latest
 ```
 
-(where `123456789012` is your AWS account number)
+(where `123456789012` is your AWS account ID)
 
 **Sprinters** will then be ready to kick into action.
 

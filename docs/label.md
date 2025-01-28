@@ -44,7 +44,7 @@ within the `subnet-0123456789abcdef0` subnet on a `m7i.24xlarge` instance with `
 The following label parts can be added or modified to customize the image, placement and capacity of the runner instance:
 
 - [Image](#image)
-- [AWS Account (Account Number / IAM Role Name)](#account)
+- [AWS Account (Account ID / IAM Role Name)](#account)
 - [AWS Placement (Region / VPC / Availability Zone / Subnet)](#placement)
 - [AWS Instance Type](#instance-type)
 - [AWS Spot Instances](#spot)
@@ -78,22 +78,22 @@ runs-on: sprinters:aws/123456789012:minimal
 ---
 {: .mt-5 }
 
-{% include h3.html id="account" text="AWS Account (Account Number / IAM Role Name)" %}
-You must include the AWS account where the runner instance is launched in the label.
+{% include h3.html id="account" text="AWS Account (Account ID / IAM Role Name)" %}
+You must include the AWS account ID where the runner instance is launched in the label.
 
 Optionally you can also customize the name of IAM Role that Sprinters uses to connect to your AWS account by appending it to the label.
 
-**Format:** `aws`/_aws-account-number_/_iam-role-name_\
-**Default:** `aws`/_aws-account-number_/`sprinters-role`
+**Format:** `aws`/_aws-account-id_/_iam-role-name_\
+**Default:** `aws`/_aws-account-id_/`sprinters-role`
 
 {% include h4.html text="Examples" %}
-To use the `112233445566` AWS account and the default `sprinters-role` role name, change the label to:
+To use the `112233445566` AWS account ID and the default `sprinters-role` role name, change the label to:
 
 ```yaml
 runs-on: sprinters:aws/112233445566:ubuntu-latest
 ```
 
-To use the `112233445566` AWS account and `my-custom-role-name` as the role name, change the label to:
+To use the `112233445566` AWS account ID and `my-custom-role-name` as the role name, change the label to:
 
 ```yaml
 runs-on: sprinters:aws/112233445566/my-custom-role-name:ubuntu-latest

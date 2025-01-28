@@ -120,9 +120,9 @@ With Sprinters fully set up, let's tell GitHub to run your workflow jobs on AWS 
     <pre class="mb-0 p-2 fs-7">runs-on: ubuntu-latest</pre>
 </div>
 
-<p class="mb-1">Lookup your 12-digit AWS account number and adjust it to:</p>
+<p class="mb-1">Lookup your 12-digit AWS account ID and adjust it to:</p>
 <div class="alert alert-info font-monospace p-0 mb-2 position-relative" role="alert">
-    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws/<span class="fw-bold fst-italic text-warning">your-12-digit-aws-account-number</span>:ubuntu-latest</pre>
+    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws/<span class="fw-bold fst-italic text-warning">your-12-digit-aws-account-id</span>:ubuntu-latest</pre>
 </div>
 
 Congratulations! Your GitHub Actions job is fully set up and will execute on AWS from now on.
@@ -142,7 +142,7 @@ The easiest way to validate your setup, is to run a test job.
 {% include external-link.html text="Generate a new GitHub repository from the `sprinters-sh/sprinters-test` template" class="btn btn-sm btn-primary" href="https://github.com/new?template_name=sprinters-test&template_owner=sprinters-sh" %}
 
 On your new repo:
-1. Edit the `.github/workflows/test.yml` workflow definition and replace `your-12-digit-aws-account-number` with your own AWS account number.
+1. Edit the `.github/workflows/test.yml` workflow definition and replace `your-12-digit-aws-account-id` with your own AWS account ID.
 2. Run the `sprinters-test` workflow and inspect the workflow run logs.
 
 You should now see:
