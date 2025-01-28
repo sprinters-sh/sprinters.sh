@@ -163,3 +163,7 @@ img {
     padding-left: 30px;
     margin-top: 0;
 }
+
+.timeline .description code {
+    word-break: keep-all;
+}
