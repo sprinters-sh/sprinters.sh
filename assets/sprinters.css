@@ -128,7 +128,6 @@ img {
 /* Event container */
 .timeline .event {
     position: relative;
-    min-height: 50px;
 }
 
 /* Circle markers */
@@ -140,7 +139,7 @@ img {
     background-color: rgb(33, 37, 41);
     border: 2px solid rgb(110, 223, 246);
     border-radius: 50%;
-    top: 6px;
+    top: 5px;
     left: 120px;
     transform: translateX(-50%);
     z-index: 1;
