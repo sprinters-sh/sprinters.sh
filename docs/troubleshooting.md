@@ -24,6 +24,8 @@ this runner instance was terminated because of this and that eventually GitHub A
 
 In the [Sprinters Console](https://console.sprinters.sh), the workflow run will show the exact cause of the error and how to fix it.
 
+Note that AWS **does not charge you** for {% include external-link.html text="spot instance interrupted in the first hour" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-for-interrupted-spot-instances.html" %}.
+
 {% include h2.html id="shared-aws-account" text="I want to run jobs from multiple GitHub accounts onto the same AWS account." %}
 
 To the run jobs from multiple GitHub accounts onto the same AWS account, simply adjust the [IAM role trust policy](/docs/setup/#aws-role)
