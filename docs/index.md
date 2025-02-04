@@ -16,8 +16,7 @@ you add to your GitHub user or organization account.
 After you [establish trust](/docs/setup#aws) between Sprinters and your AWS account,
 **Sprinters** will be able to launch GitHub Actions Runner instances there on your behalf.
 
-You can tell it to do so by editing your GitHub Actions workflow yaml file in a repository in your
-GitHub account and changing a job definition's `runs-on:` directive from
+You can tell it to do so by editing your GitHub Actions workflow yaml file and changing a job definition's `runs-on:` label from
 
 <div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
     <pre class="mb-0 p-2 fs-7">runs-on: ubuntu-latest</pre>
