@@ -41,7 +41,7 @@ only include the [absolute minimal set of permissions required for Sprinters to 
 
 {% include h3.html id="cloudformation" text="CloudFormation Setup (recommended)" %}
 
-To set everything up, simply create the {% include external-link.html text="Sprinters CloudFormation stack"
+To set everything up, simply create the IAM cross-account role and policy using the {% include external-link.html text="Sprinters CloudFormation stack"
         href="https://github.com/sprinters-sh/sprinters/blob/main/setup/aws/sprinters-setup.yml" %}:
 
 {% include external-link.html text="<i class='bi bi-amazon me-2'></i>Create with CloudFormation in the AWS Console" class="btn btn-sm btn-primary"
