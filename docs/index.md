@@ -42,6 +42,6 @@ registers itself with GitHub Actions.
 
 GitHub Actions then executes your job on your brand-new AWS instance. The job execution logs will appear in GitHub Actions
 as usual, but each vCPU minute will only cost you a fraction of what GitHub would have charged you. Once the job
-completes, the instance terminates, all its associated volumes are discarded, and you stop paying for it.
+completes, the instance terminates, all its associated volumes are destroyed, and you stop paying for it.
 
 And that's it!
