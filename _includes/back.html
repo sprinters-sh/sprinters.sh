@@ -1,0 +1,8 @@
+{% if include.path %}
+{% assign back-page = site.pages | where: "path", include.path | first %}
+{% if back-page %}
+<div class="text-start mt-5">
+<a class="btn btn-outline-info" href="{{ back-page.url | remove: ".html" }}"><i class="bi bi-arrow-left"></i> {{ back-page.title }}</a>
+</div>
+{% endif %}
+{% endif %}

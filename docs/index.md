@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: "Introduction"
-next: docs/setup.md
+next: docs/setup/index.md
 ---
 
 <img src="/assets/logo/sprinters.svg" width="128px" alt="Sprinters Logo">
@@ -19,17 +19,15 @@ After you [establish trust](/docs/setup#aws) between Sprinters and your AWS acco
 You can tell it to do so by editing your GitHub Actions workflow yaml file in a repository in your
 GitHub account and changing a job definition's `runs-on:` directive from
 
-```yaml
-runs: ubuntu-latest
-```
+<div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
+    <pre class="mb-0 p-2 fs-7">runs-on: ubuntu-latest</pre>
+</div>
 
-to
+to (where `123456789012` is your AWS account ID)
 
-```yaml
-runs: sprinters:aws/123456789012:ubuntu-latest
-```
-
-(where `123456789012` is your AWS account ID)
+<div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
+    <pre class="mb-0 p-2 fs-7">runs-on: <span class="fw-bold fst-italic text-warning">sprinters:aws/123456789012:</span>ubuntu-latest</pre>
+</div>
 
 **Sprinters** will then be ready to kick into action.
 
