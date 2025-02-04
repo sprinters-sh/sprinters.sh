@@ -10,7 +10,7 @@ To set up your account without CloudFormation you need to create both the IAM po
 
 To set the [permissions Sprinters will have](/docs/security#aws-permissions), you'll need an IAM policy.
 
-{% include external-link.html text="Create the IAM policy in the AWS Console" class="btn btn-sm btn-primary"
+{% include external-link.html text="<i class='bi bi-amazon me-2'></i>Create the IAM policy in the AWS Console" class="btn btn-sm btn-primary"
         href="https://us-east-1.console.aws.amazon.com/iam/home#/policies/create" %}
 
 <p class="mb-1">To do so, paste this <span class="fw-bold text-warning">JSON policy document</span> in the policy editor:</p>
@@ -57,7 +57,7 @@ Assign it the `sprinters-policy` name and create it. Your IAM policy is now full
 
 To establish trust between Sprinters and your AWS account, you'll need a cross-account IAM role.
 
-{% include external-link.html text="Create the cross-account IAM role in the AWS Console" class="btn btn-sm btn-primary" href="https://us-east-1.console.aws.amazon.com/iam/home#/roles/create" %}
+{% include external-link.html text="<i class='bi bi-amazon me-2'></i>Create the cross-account IAM role in the AWS Console" class="btn btn-sm btn-primary" href="https://us-east-1.console.aws.amazon.com/iam/home#/roles/create" %}
 
 <p class="mb-1">Your role will need a <span class="fw-bold text-warning">custom trust policy</span> that references your GitHub Account.
     <strong>Adjust the one below</strong> and paste it in the trust policy editor:</p>

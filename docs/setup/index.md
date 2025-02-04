@@ -14,7 +14,7 @@ This enables Sprinters to connect to respond to GitHub Actions job events and la
 This integration strictly follows the principle of least-privilege and
 only asks for the [absolute minimal set of permissions required for Sprinters to operate](/docs/security#github-permissions).
 
-{% include external-link.html text="Log in to Sprinters with your GitHub account" class="btn btn-sm btn-primary"
+{% include external-link.html text="<i class='bi bi-github me-2'></i>Log in to Sprinters with your GitHub account" class="btn btn-sm btn-primary"
         href="https://console.sprinters.sh/login" %}
 
 Select the GitHub personal account or organization you want Sprinters to integrate with and confirm
@@ -44,7 +44,7 @@ only include the [absolute minimal set of permissions required for Sprinters to 
 To set everything up, simply create the {% include external-link.html text="Sprinters CloudFormation stack"
         href="https://github.com/sprinters-sh/sprinters/blob/main/setup/aws/sprinters-setup.yml" %}:
 
-{% include external-link.html text="Create with CloudFormation in the AWS Console" class="btn btn-sm btn-primary"
+{% include external-link.html text="<i class='bi bi-amazon me-2'></i>Create with CloudFormation in the AWS Console" class="btn btn-sm btn-primary"
         href="https://us-east-1.console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/create/review?templateURL=https://s3.us-east-1.amazonaws.com/sprinters/sprinters-setup.yml&stackName=Sprinters" %}
 
 Fill in your **GitHub account name**, acknowledge the required capabilities and click on _Create Stack_.
