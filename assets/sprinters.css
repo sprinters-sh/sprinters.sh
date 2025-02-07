@@ -18,6 +18,24 @@ a {
     font-size: 0.670rem !important;
 }
 
+@media (min-width: 768px) {
+    .fs-md-6 {
+        font-size: 1rem !important;
+    }
+
+    .fs-md-7 {
+        font-size: 0.875rem !important;
+    }
+
+    .fs-md-8 {
+        font-size: 0.765rem !important;
+    }
+
+    .fs-md-9 {
+        font-size: 0.670rem !important;
+    }
+}
+
 .mt-6 {
     margin-top: 5rem !important;
 }
@@ -60,7 +78,7 @@ h2[id]:hover::after, h3[id]:hover::after, h4[id]:hover::after {
     position: absolute;
     top: 0;
     left: -2rem;
-    content:" \f470";
+    content: " \f470";
     /*noinspection CssNoGenericFontName*/
     font-family: bootstrap-icons !important;
 }
@@ -93,6 +111,7 @@ img {
     opacity: 0.7;
     transition: opacity 0.3s ease;
 }
+
 .btn-copy:hover {
     opacity: 1;
 }
