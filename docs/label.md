@@ -40,7 +40,7 @@ and launch a runner instance using the `ubuntu-latest` image, which is identical
 
 A number of defaults will also be applied automatically to most closely matches the capacity of GitHub hosted runners:
 
-- The instance will be a `t3.2xlarge` (x64 with 2 vCPUs).
+- The instance will be a `t3.large` (x64 with 2 vCPUs).
 - It will have `14` GiB of temp disk space and `4` GiB of swap.
 
 The instance placement will be as follows:
@@ -175,7 +175,7 @@ To use the `subnet-0123456789abcdef0` subnet in the `us-east-1` region, change t
 You can set the AWS EC2 instance type on which launch the runner by appending it to the label.
 
 **Format:** _aws-instance-type_\
-**Default:** `t3.2xlarge`
+**Default:** `t3.large`
 
 {% include h4.html text="Supported <strong>x64</strong> Instance Types" %}
 
