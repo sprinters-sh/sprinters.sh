@@ -110,7 +110,8 @@ You can set the image for the runner by replacing the one in the label.
 {% include h4.html text="Supported Image Types" %}
 | Type | Arch | Description |
 +-|-|-+
-| `ubuntu-latest`{: .text-nowrap } <br> `ubuntu-24.04`{: .text-nowrap } | x64 | Ubuntu 24.04 image identical to the one available for GitHub hosted runners |
+| `ubuntu-latest`{: .text-nowrap } <br> `ubuntu-24.04`{: .text-nowrap } | x64 | Ubuntu 24.04 x64 image identical to the one available for GitHub hosted runners |
+| `ubuntu-24.04-arm`{: .text-nowrap } | arm64 | Ubuntu 24.04 arm64 image identical to the one available for GitHub hosted runners |
 | `ubuntu-22.04`{: .text-nowrap } | x64 | Ubuntu 22.04 image identical to the one available for GitHub hosted runners |
 | `minimal` | x64 and arm64 | Minimal, fast-booting image containing only Git and Docker |
 {: .table }
@@ -136,9 +137,11 @@ All parts are separated by a `/`.
 **Default:** `us-east-1` (random subnet of a random availability zone of the default VPC of `us-east-1`)
 
 {% include h4.html text="Supported Regions" %}
+- `ap-northeast-1`
 - `eu-central-1`
 - `eu-west-1`
 - `us-east-1`
+- `us-west-2`
 
 More regions will be added soon. To request support for a specific region, file an issue in the [issue tracker](https://github.com/sprinters-sh/sprinters/issues).
 
