@@ -95,6 +95,11 @@ img {
     max-width: 100%;
 }
 
+.nav-link-current {
+    text-decoration: underline 3px var(--bs-info-border-subtle);
+    text-underline-offset: 10px;
+}
+
 .screenshot {
     padding: 8px;
     border: 1px dashed var(--bs-secondary);
