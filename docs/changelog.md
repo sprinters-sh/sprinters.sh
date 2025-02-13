@@ -5,6 +5,7 @@ title: "Changelog"
 
 <div class="timeline mt-4">
     {% include changelog-event.html date="2025-02-13" text="AWS <code>c7i</code>, <code>c7i-flex</code> and <code>r7i</code> instance support" %}
+    {% include changelog-event.html date="2025-02-12" text="<code>ubuntu-22.04-arm</code> image support" %}
     {% include changelog-event.html date="2025-02-10" text="AWS <code>ap-northeast-1</code> and <code>us-west-2</code> region support" %}
     {% include changelog-event.html date="2025-02-09" text="<code>ubuntu-24.04-arm</code> image support" %}
     {% include changelog-event.html date="2025-02-07" text="AWS <code>m6g</code>, <code>m7g</code> and <code>m8g</code> instance support" %}

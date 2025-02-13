@@ -107,13 +107,20 @@ You can set the image for the runner by replacing the one in the label.
 **Format:** _image-name_\
 **Default:** `ubuntu-latest`
 
-{% include h4.html text="Supported Image Types" %}
-| Type | Arch | Description |
+{% include h4.html text="Supported <strong>x64</strong> Image Types" %}
+| Type | Description |
 +-|-|-+
-| `ubuntu-latest`{: .text-nowrap } <br> `ubuntu-24.04`{: .text-nowrap } | x64 | Ubuntu 24.04 x64 image identical to the one available for GitHub hosted runners |
-| `ubuntu-24.04-arm`{: .text-nowrap } | arm64 | Ubuntu 24.04 arm64 image identical to the one available for GitHub hosted runners |
-| `ubuntu-22.04`{: .text-nowrap } | x64 | Ubuntu 22.04 image identical to the one available for GitHub hosted runners |
-| `minimal` | x64 and arm64 | Minimal, fast-booting image containing only Git and Docker |
+| `ubuntu-latest`{: .text-nowrap } <br> `ubuntu-24.04`{: .text-nowrap } | Ubuntu 24.04 x64 image identical to the one available for GitHub hosted runners |
+| `ubuntu-22.04`{: .text-nowrap } | Ubuntu 22.04 image identical to the one available for GitHub hosted runners |
+| `minimal` | Minimal, fast-booting image containing only Git and Docker |
+{: .table }
+
+{% include h4.html text="Supported <strong>arm64</strong> Image Types" %}
+| Type | Description |
++-|-|-+
+| `ubuntu-24.04-arm`{: .text-nowrap } | Ubuntu 24.04 arm64 image identical to the one available for GitHub hosted runners |
+| `ubuntu-22.04-arm`{: .text-nowrap } | Ubuntu 22.04 arm64 image identical to the one available for GitHub hosted runners |
+| `minimal` | Minimal, fast-booting image containing only Git and Docker |
 {: .table }
 
 {% include h4.html text="Example" %}
