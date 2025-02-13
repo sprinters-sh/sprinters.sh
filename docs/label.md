@@ -111,7 +111,7 @@ You can set the image for the runner by replacing the one in the label.
 | Type | Description |
 +-|-|-+
 | `ubuntu-latest`{: .text-nowrap } <br> `ubuntu-24.04`{: .text-nowrap } | Ubuntu 24.04 x64 image identical to the one available for GitHub hosted runners |
-| `ubuntu-22.04`{: .text-nowrap } | Ubuntu 22.04 image identical to the one available for GitHub hosted runners |
+| `ubuntu-22.04`{: .text-nowrap } | Ubuntu 22.04 x64 image identical to the one available for GitHub hosted runners |
 | `minimal` | Minimal, fast-booting image containing only Git and Docker |
 {: .table }
 
