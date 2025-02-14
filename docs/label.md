@@ -144,11 +144,14 @@ All parts are separated by a `/`.
 **Default:** `us-east-1` (random subnet of a random availability zone of the default VPC of `us-east-1`)
 
 {% include h4.html text="Supported Regions" %}
-- `ap-northeast-1`
-- `eu-central-1`
-- `eu-west-1`
-- `us-east-1`
-- `us-west-2`
+| Region | Location |
++-|-|-+
+| `ap-northeast-1` | Tokyo |
+| `eu-central-1` | Frankfurt |
+| `eu-west-1` | Ireland |
+| `us-east-1` | N. Virginia |
+| `us-west-2` | Oregon |
+{: .table }
 
 More regions will be added soon. To request support for a specific region, file an issue in the [issue tracker](https://github.com/sprinters-sh/sprinters/issues).
 
