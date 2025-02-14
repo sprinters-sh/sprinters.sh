@@ -17,6 +17,7 @@
             <description><![CDATA[{{ entry.details }}]]></description>
             <pubDate>{{ entry.date | date_to_rfc822 }}</pubDate>
             <guid>{{ site.url }}/new#{{ entry.date }}</guid>
+            <enclosure url="{{ site.url }}{{ entry.image }}" length="0" type="image/png"/>
         </item>
         {% endfor %}
     </channel>
