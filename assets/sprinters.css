@@ -95,9 +95,14 @@ img {
     max-width: 100%;
 }
 
-.nav-link-current {
-    text-decoration: underline 3px var(--bs-info-border-subtle);
-    text-underline-offset: 10px;
+@media (min-width: 992px) {
+    .navbar-nav {
+        text-align: left;
+    }
+    .nav-link-current {
+        text-decoration: underline 3px var(--bs-info-border-subtle);
+        text-underline-offset: 10px;
+    }
 }
 
 .screenshot {
