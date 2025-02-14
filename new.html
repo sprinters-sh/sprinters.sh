@@ -3,19 +3,28 @@ layout: default
 title: "New for you"
 ---
 <div class="text-center">
-<h1 class="text-warning mt-5 mb-3">New for you</h1>
-<p class="fs-4"><strong>We're constantly making Sprinters better.</strong></p>
-<p>Here are some of the notable features and improvements that we’ve made to Sprinters since it first launched.</p>
-<div class="timeline position-relative mt-5">
-    {% for entry in site.data.new %}
-        <div class="timeline-entry border border-4 border-info rounded-4 bg-info-subtle mx-auto mb-6" id="{{entry.date}}" href="#{{entry.date}}">
-            <a href="{{ entry.href }}" class="p-3 d-block text-body">
-            <h3 class="timeline-title fs-4 mb-1 fw-semibold lh-base text-warning-emphasis">{{ entry.title }}</h3>
-            <div class="text-secondary-emphasis fs-6">{{entry.date}}</div>
-            <img class="my-4" src="{{ entry.image }}">
-            <div class="timeline-description mb-2">{{ entry.details }}</div>
-            </a>
+    <h1 class="text-warning mt-5 mb-3">New for you</h1>
+    <p class="fs-4"><strong>We're constantly making Sprinters better.</strong></p>
+    <p>Here are some of the notable features and improvements that we’ve made to Sprinters since it first launched.</p>
+
+    <div class="mt-5 mb-6 mx-auto text-center">
+    </div>
+
+    <div class="timeline position-relative mt-5">
+        <div class="mb-6">
+        <a href="/feed.xml" class="px-3 py-2 bg-info-subtle rounded-pill border border-info border-4 text-body fs-8 fs-md-6">
+            <i class="bi bi-rss-fill me-2"></i>Grab the RSS feed
+        </a>
         </div>
-    {% endfor %}
-</div>
+        {% for entry in site.data.new %}
+            <div class="timeline-entry border border-4 border-info rounded-4 bg-info-subtle mx-auto mb-6" id="{{ entry.date }}" href="#{{ entry.date }}">
+                <a href="{{ entry.href }}" class="p-3 d-block text-body">
+                <h3 class="timeline-title fs-4 mb-1 fw-semibold lh-base text-warning-emphasis">{{ entry.title }}</h3>
+                <div class="text-secondary-emphasis fs-6">{{ entry.date }}</div>
+                <img class="my-4" src="{{ entry.image }}">
+                <div class="timeline-description mb-2">{{ entry.details }}</div>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
 </div>
