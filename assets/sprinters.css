@@ -137,61 +137,36 @@ img {
     word-break: keep-all;
 }
 
-.timeline {
-    position: relative;
-}
-
-/* Vertical line */
+/* Vertical connecting line */
 .timeline::after {
     content: '';
     position: absolute;
-    width: 2px;
-    background-color: #333;
-    top: 18px; /* Start from bottom of first circle */
-    height: calc(100% - 48px); /* Adjusted to account for new starting position */
-    left: 120px;
-    margin-left: -1px;
-}
-
-/* Event container */
-.timeline .event {
-    position: relative;
-}
-
-/* Circle markers */
-.timeline .event::after {
-    content: '';
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    background-color: rgb(33, 37, 41);
-    border: 2px solid rgb(110, 223, 246);
-    border-radius: 50%;
-    top: 5px;
-    left: 120px;
-    transform: translateX(-50%);
-    z-index: 1;
-}
-
-/* Date styling */
-.timeline .date {
-    position: absolute;
-    width: 120px;
-    text-align: right;
-    left: 0;
-    padding-right: 30px;
+    width: 4px;
+    background: var(--bs-info);
     top: 0;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
 }
 
-/* Description styling */
-.timeline .description {
-    position: relative;
-    max-width: calc(100% - 120px - 30px - 30px);
-    left: 120px;
-    padding-left: 30px;
-    margin-top: 0;
+.timeline-entry {
+    width: 700px;
+    max-width: 100%;
 }
 
-.timeline .description code {
+.timeline:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-title {
+    margin: 0 0 12px 0;
+}
+
+.timeline-title code {
+    color: var(--bs-warning);
+}
+
+.timeline-description code {
     word-break: keep-all;
 }

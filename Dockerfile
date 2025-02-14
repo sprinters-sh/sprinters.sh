@@ -9,4 +9,6 @@ RUN apt-get update  \
 
 WORKDIR /jekyll
 
-CMD jekyll serve -H $(hostname) --incremental --watch --verbose --force_polling
+# No --incremental due to https://github.com/jekyll/jekyll/issues/9772
+# No JSON syntax as otherwise hostname isn't resolved
+CMD jekyll serve -H $(hostname) --watch --verbose --force_polling
