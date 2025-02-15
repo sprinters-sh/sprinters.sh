@@ -69,7 +69,7 @@ Making it much easier to ensure each job runs on the intended AWS account.
 
 {% include h2.html id="shared-aws-account" text="Run jobs from multiple GitHub accounts onto the same AWS account" %}
 
-To the run jobs from multiple GitHub accounts onto the same AWS account, simply adjust the [IAM role trust policy](/docs/setup/#aws-role)
+To the run jobs from multiple GitHub accounts onto the same AWS account, simply adjust the [IAM role trust policy](https://github.com/sprinters-sh/sprinters/blob/main/setup/aws/sprinters-setup.yml#L26)
 to include a list of GitHub accounts instead of a single one:
 
 <div class="alert alert-info font-monospace p-0 mb-2 position-relative" role="alert">
