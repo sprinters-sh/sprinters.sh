@@ -71,6 +71,7 @@ The following label parts can be added or modified to customize the image, place
 - [AWS Placement (Region / VPC / Availability Zone / Subnet)](#placement)
 - [AWS Instance Type](#instance-type)
 - [AWS Spot Instances](#spot)
+- [AWS Instance Profile](#instance-profile)
 - [Temp Disk Space](#temp)
 - [Swap Disk Space](#swap)
 
@@ -249,6 +250,25 @@ To force the use of much cheaper spot instances, change the label to:
 
 <div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
     <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws/123456789012:ubuntu-latest:<span class="fw-bold fst-italic text-warning">spot=true</span></pre>
+</div>
+
+---
+{: .mt-5 }
+
+{% include h3.html id="instance-profile" text="AWS Instance Profile" %}
+To access resources in your AWS account without the need to store long-lived AWS credentials as GitHub Actions secrets,
+you can {% include external-link.html text="associate an IAM instance profile" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html" %} with
+your runner instance. The instance will then automatically have AWS credentials available with the permissions of
+the IAM role linked to the instance profile.
+
+**Format:** profile=_instance-profile-name_\
+**Default:** _none_
+
+{% include h4.html text="Example" %}
+To associate your instance with the `my-instance-profile` instance profile, change the label to:
+
+<div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
+    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws/123456789012:ubuntu-latest:<span class="fw-bold fst-italic text-warning">profile=my-instance-profile</span></pre>
 </div>
 
 ---

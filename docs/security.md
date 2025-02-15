@@ -98,6 +98,17 @@ Sprinters has:
 Communication between Sprinters and GitHub is fully encrypted with TLS 1.3.
 
 {% include h3.html id="aws" text="AWS" %}
+
+{% include h4.html id="aws-credentials" text="Cross-account IAM role" %}
+
+The {% include external-link.html text="Sprinters CloudFormation stack" href="https://github.com/sprinters-sh/sprinters/blob/main/setup/aws/sprinters-setup.yml" %} creates
+a {% include external-link.html text="cross-account IAM role" href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_common-scenarios_third-party.html" %}.
+To prevent the {% include external-link.html text="confused deputy problem" href="https://docs.aws.amazon.com/IAM/latest/UserGuide/confused-deputy.html" %},
+this role's trust policy is secured with an external id matching your GitHub account name.
+
+This role is used to obtain temporary short-lived credentials to access your AWS account using an inline IAM policy
+with the permissions defined below.
+
 {% include h4.html id="aws-permissions" text="Permissions" %}
 
 Sprinters strictly adheres to the principle of **least-privilege** and only requests this absolute minimum set of permissions to be able to operate:
@@ -134,6 +145,10 @@ Sprinters strictly adheres to the principle of **least-privilege** and only requ
             <td><code>ec2:DescribeSpotPriceHistory</code></td>
             <td>Automatically select cheapest availability zone for spot instances and calculate savings</td>
         </tr>
+        <tr>
+            <td><code>iam:PassRole</code></td>
+            <td>Enable EC2 instances to use IAM instance profiles</td>
+        </tr>
         </tbody>
     </table>
 </div>
@@ -142,14 +157,6 @@ Sprinters has:
 - **no login access to your EC2 instances**
 - **no access to the contents of your EBS volumes**
 - **no access to your EBS snapshots**
-
-{% include h4.html id="aws-credentials" text="Cross-account IAM role" %}
-
-Sprinters uses a
-{% include external-link.html text="cross-account IAM role" href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_common-scenarios_third-party.html" %} to
-obtain temporary short-lived credentials to access your AWS account with the [permissions defined above](#aws-permissions). To prevent the
-{% include external-link.html text="confused deputy problem" href="https://docs.aws.amazon.com/IAM/latest/UserGuide/confused-deputy.html" %},
-this trust policy is secured with an external id matching your GitHub account name.
 
 {% include h4.html id="aws-data" text="Data in motion" %}
 Communication between Sprinters and AWS is fully encrypted with TLS 1.3.

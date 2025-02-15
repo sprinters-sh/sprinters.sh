@@ -1,3 +1,9 @@
+- date: "2025-02-15"
+  title: "AWS instance profile support"
+  href: "/docs/label#instance-profile"
+  image: "/assets/new/2025-02-15-instance-profile.png"
+  details: "You can now access resources in your AWS account from your runners without the need to store long-lived AWS credentials as GitHub Actions secrets. By appending an IAM instance profile name to your label, your runner instance will automatically have AWS credentials available with the permissions of the IAM role linked to that instance profile."
+
 - date: "2025-02-13"
   title: "AWS <code>c7i</code>, <code>c7i-flex</code> and <code>r7i</code> instance support"
   href: "/docs/label#instance-type"
