@@ -5,14 +5,14 @@ next: docs/security.md
 ---
 
 <p class="mb-1">To tell GitHub to run your workflow jobs using Sprinters on AWS instead of GitHub hosted runners,
-    locate the <code>runs-on:</code> directive in your workflow yml:</p>
+    locate the <code>runs-on:</code> label in your workflow yml:</p>
 <div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
     <pre class="mb-0 p-2 fs-7">runs-on: ubuntu-latest</pre>
 </div>
 
-<p class="mb-1">Lookup your <strong>12-digit AWS account ID</strong> and adjust it to:</p>
+<p class="mb-1">Lookup your <strong>12-digit AWS account ID</strong> (ex.: <code>123456789012</code>) and adjust it to:</p>
 <div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
-    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws/<span class="fw-bold fst-italic text-warning">your-12-digit-aws-account-id</span>:ubuntu-latest</pre>
+    <pre class="mb-0 p-2 fs-7">runs-on: <span class="fw-bold fst-italic text-warning">sprinters:aws/123456789012:</span>ubuntu-latest</pre>
 </div>
 
 Congratulations! Your GitHub Actions job is fully set up and will execute with Sprinters on AWS going forward.
