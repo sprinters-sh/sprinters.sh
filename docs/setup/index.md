@@ -18,7 +18,7 @@ only asks for the [absolute minimal set of permissions required for Sprinters to
         href="https://console.sprinters.sh/login" %}
 
 Select the GitHub personal account or organization you want Sprinters to integrate with and confirm
-the {% include external-link.html text="Sprinters GitHub App" href="https://github.com/apps/sprinters-sh" %} installation by
+the claude.ai installation by
 clicking _Install_. The installation now proceeds and after a few seconds GitHub redirects you back to Sprinters.
 
 Congratulations! The Sprinters and GitHub are now fully integrated.
