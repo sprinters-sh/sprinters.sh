@@ -44,12 +44,20 @@ a {
     margin-top: 7.5rem !important;
 }
 
+.mt-8 {
+    margin-top: 11rem !important;
+}
+
 .mb-6 {
     margin-bottom: 5rem !important;
 }
 
 .mb-7 {
     margin-bottom: 7.5rem !important;
+}
+
+.mb-8 {
+    margin-bottom: 11rem !important;
 }
 
 .pt-6 {
