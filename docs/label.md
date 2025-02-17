@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: "runs-on: label"
-next: docs/security.md
+next: docs/aws-resources.md
 ---
 
 <p class="mb-1">To tell GitHub to run your workflow jobs using Sprinters on AWS instead of GitHub hosted runners,
@@ -270,6 +270,8 @@ To associate your instance with the `my-instance-profile` instance profile, chan
 <div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
     <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws/123456789012:ubuntu-latest:<span class="fw-bold fst-italic text-warning">profile=my-instance-profile</span></pre>
 </div>
+
+See also: [Accessing AWS Resources](/docs/aws-resources#instance-profile) for more info.
 
 ---
 {: .mt-5 }
