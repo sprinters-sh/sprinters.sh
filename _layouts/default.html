@@ -71,52 +71,9 @@
     <p id="newsletter-confirm" class="fs-5 text-info d-none"></p>
 </div>
 
-<script>
-    let newsletterForm = document.getElementById('newsletter-form');
-    newsletterForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-
-        const form = e.target;
-
-        if (!form.checkValidity()) {
-            e.stopPropagation();
-            form.classList.add('was-validated');
-            return;
-        }
-
-        const email = document.getElementById('newsletter-email').value;
-
-        // Create URL with JSONP callback
-        const timestamp = new Date().getTime();
-        const callbackName = `ml_callback_${timestamp}`;
-        const baseUrl = 'https://sprinters.us16.list-manage.com/subscribe/post-json';
-        const queryParams = new URLSearchParams({
-            u: '9fdbd60c88530df7c7e182221',
-            id: '1758545ed5',
-            f_id: '00cbc2e1f0',
-            EMAIL: email,
-            c: callbackName
-        });
-
-        // Define callback function
-        window[callbackName] = function(response) {
-            if (response.result === 'success') {
-                newsletterForm.classList.add('d-none');
-                document.getElementById('newsletter-confirm').textContent = "Thanks for joining! We sent a confirmation email to " + email;
-                document.getElementById('newsletter-confirm').classList.remove('d-none');
-            }
-
-            // Cleanup
-            document.body.removeChild(script);
-            delete window[callbackName];
-        };
-
-        // Create and append script element
-        const script = document.createElement('script');
-        script.src = `${baseUrl}?${queryParams.toString()}`;
-        document.body.appendChild(script);
-    });
-</script>
+<div class="mt-7 text-center container fs-4">
+    <strong>Need help?</strong> We’re there for you at <a href="mailto:hello@sprinters.sh">hello@sprinters.sh</a>
+</div>
 
 <div class="text-body-tertiary mt-5 pt-5 pb-5 fs-7 text-center">
     <div class="fs-5">
@@ -132,9 +89,9 @@
     </div>
     <br>
     &copy; 2025 InfrastructureX GmbH<br>
-    <a href="/docs" class="link-secondary text-nowrap">Docs</a>
+    <a href="/new" class="link-secondary text-nowrap">What's new?</a>
+    <span class="px-1">&middot;</span> <a href="/docs" class="link-secondary text-nowrap">Docs</a>
     <span class="px-1">&middot;</span> <a href="/docs/security" class="link-secondary text-nowrap">Security</a>
-    <span class="px-1">&middot;</span> <a href="/docs/changelog" class="link-secondary text-nowrap">Changelog</a>
     <span class="px-1">&middot;</span> <a href="/terms" class="link-secondary text-nowrap">Terms of Service</a>
     <span class="px-1">&middot;</span> <a href="/privacy" class="link-secondary text-nowrap">Privacy Policy</a>
     <span class="px-1">&middot;</span> <a href="/impressum" class="link-secondary text-nowrap">Impressum</a><br>
