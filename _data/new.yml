@@ -2,7 +2,7 @@
   title: "AWS <code>m5</code>, <code>m5a</code>, <code>m6a</code>, <code>m6i</code> and <code>m7a</code> instance support"
   href: "/docs/label#instance-type"
   image: "/assets/new/2025-02-19-m567ai.png"
-  details: "Looking for the lowest-cost per hour x64 without CPU credits? Sprinters now has you covered with <code>m5</code>, <code>m5a</code>, <code>m6a</code>, <code>m6i</code> and <code>m7a</code> instances."
+  details: "Looking for the lowest-cost per hour x64 instances that don't depend on CPU credits? Sprinters now has you covered with <code>m5</code>, <code>m5a</code>, <code>m6a</code>, <code>m6i</code> and <code>m7a</code> instances."
 
 - date: "2025-02-15"
   title: "AWS instance profile support"
