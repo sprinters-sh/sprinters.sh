@@ -86,9 +86,8 @@ To set the image to `minimal`, change the label to:
 {: .mt-5 }
 
 {% include h3.html id="placement" text="AWS Region / Availability Zone / Subnet" %}
-You can specify where the runner instance is launched by appending a placement config to the label.
+You can specify where the runner instance is launched by appending a  _region_, _availability zone_ and _subnet id_ to the label.
 
-This placement config specifies the _region_, _availability zone_ and _subnet id_ of the instance.
 At least one of _region_ and _availability zone_ must be specified. _subnet id_ is optional.
 All parts are separated by a `/`.
 
@@ -115,7 +114,7 @@ More regions will be added soon. To request support for a specific region, file 
 - If you specify both an _availability zone_ and a _subnet id_, you must ensure the _subnet_ resides in that _availability zone_.
 
 {% include h4.html text="Examples" %}
-To set the region to `eu-central-1` and run using the `minimal` image, change the label to:
+To launch the runner using the `minimal` image in the `eu-central-1` region, change the label to:
 
 <div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
     <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:minimal:<span class="fw-bold fst-italic text-warning">eu-central-1</span></pre>
