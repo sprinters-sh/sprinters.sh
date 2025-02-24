@@ -12,8 +12,8 @@ Start by logging in to Sprinters with your GitHub account:
 
 <a href="https://console.sprinters.sh/login" target="_blank" class="btn btn-primary"><i class='bi bi-github me-2'></i>Log in with GitHub</a>
 
-Select your GitHub personal account or organization Sprinters should be installed on and confirm
-by clicking _Install_. After a few seconds you will be redirected to Sprinters to set up your AWS account.
+Select your GitHub personal account or organization Sprinters should be installed on and
+click _Install_. After a few seconds you will be redirected to Sprinters to set up your AWS account.
 
 <img src="/assets/setup/github.png" alt="Sprinters GitHub App setup" class="screenshot">
 
