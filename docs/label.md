@@ -43,7 +43,7 @@ Sprinters will launch a runner in the `eu-central-1` region using the `ubuntu-22
 The following label parts can be added or modified to customize the image, placement and capacity of the runner instance:
 
 - [Image](#image)
-- [AWS Placement (Region / VPC / Availability Zone / Subnet)](#placement)
+- [AWS Region / Availability Zone / Subnet](#placement)
 - [AWS Instance Type](#instance-type)
 - [AWS Spot Instances](#spot)
 - [AWS Instance Profile](#instance-profile)
@@ -59,16 +59,16 @@ You can set the image for the runner by replacing the one in the label.
 **Format:** _image-name_\
 **Default:** `ubuntu-latest`
 
-{% include h4.html text="Supported <strong>x64</strong> Image Types" %}
-| Type | Description |
+{% include h4.html text="Supported <strong>x64</strong> Images" %}
+| Image | Description |
 +-|-|-+
 | `ubuntu-latest`{: .text-nowrap } <br> `ubuntu-24.04`{: .text-nowrap } | Ubuntu 24.04 x64 image identical to the one available for GitHub hosted runners |
 | `ubuntu-22.04`{: .text-nowrap } | Ubuntu 22.04 x64 image identical to the one available for GitHub hosted runners |
 | `minimal` | Minimal, fast-booting image containing only Git and Docker |
 {: .table }
 
-{% include h4.html text="Supported <strong>arm64</strong> Image Types" %}
-| Type | Description |
+{% include h4.html text="Supported <strong>arm64</strong> Images" %}
+| Image | Description |
 +-|-|-+
 | `ubuntu-24.04-arm`{: .text-nowrap } | Ubuntu 24.04 arm64 image identical to the one available for GitHub hosted runners |
 | `ubuntu-22.04-arm`{: .text-nowrap } | Ubuntu 22.04 arm64 image identical to the one available for GitHub hosted runners |
@@ -85,7 +85,7 @@ To set the image to `minimal`, change the label to:
 ---
 {: .mt-5 }
 
-{% include h3.html id="placement" text="AWS Placement (Region / VPC / Availability Zone / Subnet)" %}
+{% include h3.html id="placement" text="AWS Region / Availability Zone / Subnet" %}
 You can specify where the runner instance is launched by appending a placement config to the label.
 
 This placement config specifies the _region_, _availability zone_ and _subnet id_ of the instance.
