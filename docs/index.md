@@ -22,10 +22,10 @@ You can tell it to do so by editing your GitHub Actions workflow yaml file and c
     <pre class="mb-0 p-2 fs-7">runs-on: ubuntu-latest</pre>
 </div>
 
-to (where `123456789012` is your AWS account ID)
+to
 
 <div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
-    <pre class="mb-0 p-2 fs-7">runs-on: <span class="fw-bold fst-italic text-warning">sprinters:aws/123456789012:</span>ubuntu-latest</pre>
+    <pre class="mb-0 p-2 fs-7">runs-on: <span class="fw-bold fst-italic text-warning">sprinters:aws:</span>ubuntu-latest</pre>
 </div>
 
 **Sprinters** will then be ready to kick into action.

@@ -10,37 +10,17 @@ next: docs/aws-resources.md
     <pre class="mb-0 p-2 fs-7">runs-on: ubuntu-latest</pre>
 </div>
 
-<p class="mb-1">Lookup your <strong>12-digit AWS account ID</strong> (ex.: <code>123456789012</code>) and adjust it to:</p>
+<p class="mb-1">And adjust it to:</p>
 <div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
-    <pre class="mb-0 p-2 fs-7">runs-on: <span class="fw-bold fst-italic text-warning">sprinters:aws/123456789012:</span>ubuntu-latest</pre>
+    <pre class="mb-0 p-2 fs-7">runs-on: <span class="fw-bold fst-italic text-warning">sprinters:aws:</span>ubuntu-latest</pre>
 </div>
 
-Congratulations! Your GitHub Actions job is fully set up and will execute with Sprinters on AWS going forward.
-
-<a class="btn btn-secondary btn-sm" data-bs-toggle="collapse" href="#job-setup" aria-expanded="false" aria-controls="job-setup">
-    <i class="bi bi-image me-1"></i>
-    See it in action
-</a>
-<div class="collapse" id="job-setup">
-    <img src="/assets/label/aws-account-id.png" alt="AWS account ID lookup" class="screenshot">
-</div>
-
-{% include h2.html id="label" text="Label" %}
-
-The label lets you directly control where your jobs run, on what instance type they run, what image they use and how much temp storage they get.
-
-For Sprinters at the bare minimum it looks like this:
-
-<div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
-    <pre class="mb-0 p-2 fs-7">runs-on: <span class="fw-bold fst-italic text-warning">sprinters:aws/123456789012:ubuntu-latest</span></pre>
-</div>
-
-The label in the example above tells Sprinters to connect to AWS account `123456789012` (using the default `sprinters-role` role)
+This label tells Sprinters to connect to your AWS account
 and launch a runner instance using the `ubuntu-latest` image, which is identical to the one provided by GitHub.
 
 A number of defaults will also be applied automatically to most closely matches the capacity of GitHub hosted runners:
 
-- The instance will be a `t3.large` (x64 with 2 vCPUs).
+- The instance will be a `t3.large` (x64 with 2 vCPUs and 8 GiB RAM).
 - It will have `14` GiB of temp disk space and `4` GiB of swap.
 
 The instance placement will be as follows:
@@ -50,23 +30,18 @@ The instance placement will be as follows:
 
 {% include h2.html id="customization" text="Customization" %}
 
-This specification can be customized by adding various parts to the label. The order doesn't matter. All parts are separated by a colon (`:`).
+You can fully customize this by adding various parts to the label. The order doesn't matter. All parts are separated by a colon (`:`).
 
 Here is a more complex example:
 
 <div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
-    <pre class="mb-0 p-2 fs-7">runs-on: <span class="fw-bold fst-italic text-warning">sprinters:aws/111122223333/my-custom-role-name:ubuntu-22.04:eu-central-1/subnet-0123456789abcdef0:m7i.24xlarge:temp=64</span></pre>
+    <pre class="mb-0 p-2 fs-7">runs-on: <span class="fw-bold fst-italic text-warning">sprinters:aws:eu-central-1:ubuntu-22.04:m7i.24xlarge:temp=64</span></pre>
 </div>
 
-Sprinters will connect to the `111122223333` AWS account using the cross-account role named `my-custom-role-name` and
-launch a runner using the `ubuntu-22.04` image in the `eu-central-1` region
-within the `subnet-0123456789abcdef0` subnet on a `m7i.24xlarge` instance with `64` GiB of temp space.
-
-{% include h2.html id="parts" text="Parts" %}
+Sprinters will launch a runner in the `eu-central-1` region using the `ubuntu-22.04` image on a `m7i.24xlarge` instance with `64` GiB of temp space.
 
 The following label parts can be added or modified to customize the image, placement and capacity of the runner instance:
 
-- [AWS Account (Account ID / IAM Role Name)](#account)
 - [Image](#image)
 - [AWS Placement (Region / VPC / Availability Zone / Subnet)](#placement)
 - [AWS Instance Type](#instance-type)
@@ -74,30 +49,6 @@ The following label parts can be added or modified to customize the image, place
 - [AWS Instance Profile](#instance-profile)
 - [Temp Disk Space](#temp)
 - [Swap Disk Space](#swap)
-
----
-{: .mt-5 }
-
-{% include h3.html id="account" text="AWS Account (Account ID / IAM Role Name)" %}
-You must include the AWS account ID where the runner instance is launched in the label.
-
-Optionally you can also customize the name of IAM Role that Sprinters uses to connect to your AWS account by appending it to the label.
-
-**Format:** `aws`/_aws-account-id_/_iam-role-name_\
-**Default:** `aws`/_aws-account-id_/`sprinters-role`
-
-{% include h4.html text="Examples" %}
-To use the `112233445566` AWS account ID and the default `sprinters-role` role name, change the label to:
-
-<div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
-    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws/<span class="fw-bold fst-italic text-warning">112233445566</span>:ubuntu-latest</pre>
-</div>
-
-To use the `112233445566` AWS account ID and `my-custom-role-name` as the role name, change the label to:
-
-<div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
-    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws/<span class="fw-bold fst-italic text-warning">112233445566/my-custom-role-name</span>:ubuntu-latest</pre>
-</div>
 
 ---
 {: .mt-5 }
@@ -128,7 +79,7 @@ You can set the image for the runner by replacing the one in the label.
 To set the image to `minimal`, change the label to:
 
 <div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
-    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws/123456789012:<span class="fw-bold fst-italic text-warning">minimal</span></pre>
+    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:<span class="fw-bold fst-italic text-warning">minimal</span></pre>
 </div>
 
 ---
@@ -167,19 +118,19 @@ More regions will be added soon. To request support for a specific region, file 
 To set the region to `eu-central-1` and run using the `minimal` image, change the label to:
 
 <div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
-    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws/123456789012:minimal:<span class="fw-bold fst-italic text-warning">eu-central-1</span></pre>
+    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:minimal:<span class="fw-bold fst-italic text-warning">eu-central-1</span></pre>
 </div>
 
 To use the `eu-central-1c` availability zone, change the label to:
 
 <div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
-    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws/123456789012:ubuntu-latest:<span class="fw-bold fst-italic text-warning">eu-central-1c</span></pre>
+    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:<span class="fw-bold fst-italic text-warning">eu-central-1c</span></pre>
 </div>
 
 To use the `subnet-0123456789abcdef0` subnet in the `us-east-1` region, change the label to:
 
 <div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
-    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws/123456789012:<span class="fw-bold fst-italic text-warning">us-east-1/subnet-0123456789abcdef0</span>:ubuntu-latest</pre>
+    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:<span class="fw-bold fst-italic text-warning">us-east-1/subnet-0123456789abcdef0</span>:ubuntu-latest</pre>
 </div>
 
 ---
@@ -225,7 +176,7 @@ More instance families will be added soon. To request support for a specific ins
 To set the instance type to `m7i.8xlarge`, change the label to:
 
 <div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
-    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws/123456789012:ubuntu-latest:<span class="fw-bold fst-italic text-warning">m7i.8xlarge</span></pre>
+    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:<span class="fw-bold fst-italic text-warning">m7i.8xlarge</span></pre>
 </div>
 
 ---
@@ -254,7 +205,7 @@ If neither a _subnet id_ nor an _availability zone_ was specified, Sprinters wil
 To force the use of much cheaper spot instances, change the label to:
 
 <div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
-    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws/123456789012:ubuntu-latest:<span class="fw-bold fst-italic text-warning">spot=true</span></pre>
+    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:<span class="fw-bold fst-italic text-warning">spot=true</span></pre>
 </div>
 
 ---
@@ -273,7 +224,7 @@ the IAM role linked to the instance profile.
 To associate your instance with the `my-instance-profile` instance profile, change the label to:
 
 <div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
-    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws/123456789012:ubuntu-latest:<span class="fw-bold fst-italic text-warning">profile=my-instance-profile</span></pre>
+    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:<span class="fw-bold fst-italic text-warning">profile=my-instance-profile</span></pre>
 </div>
 
 See also: [Accessing AWS Resources](/docs/aws-resources#instance-profile) for more info.
@@ -291,7 +242,7 @@ You can set the temp disk space available for the runner from `1` GiB to `16384`
 To set the temp disk space to `512` GiB, change the label to:
 
 <div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
-    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws/123456789012:ubuntu-latest:<span class="fw-bold fst-italic text-warning">temp=512</span></pre>
+    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:<span class="fw-bold fst-italic text-warning">temp=512</span></pre>
 </div>
 
 ---
@@ -307,5 +258,5 @@ You can set the swap size for the runner from `1` GiB to `16384` GiB by appendin
 To set the swap size to `64` GiB, change the label to:
 
 <div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
-    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws/123456789012:ubuntu-latest:<span class="fw-bold fst-italic text-warning">swap=64</span></pre>
+    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:<span class="fw-bold fst-italic text-warning">swap=64</span></pre>
 </div>

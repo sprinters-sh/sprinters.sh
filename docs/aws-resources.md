@@ -42,7 +42,7 @@ All you need to do is create a role with the required permissions in the AWS con
 instance profile name to sprinters:
 
 <div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
-    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws/123456789012:ubuntu-latest:<span class="fw-bold fst-italic text-warning">profile=my-instance-profile</span></pre>
+    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:<span class="fw-bold fst-italic text-warning">profile=my-instance-profile</span></pre>
 </div>
 
 And all software on your runner that uses an AWS SDK will automatically pick up these credentials to securely connect
