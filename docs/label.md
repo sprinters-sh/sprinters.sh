@@ -104,7 +104,7 @@ All parts are separated by a `/`.
 | `us-west-2` | Oregon |
 {: .table }
 
-More regions will be added soon. To request support for a specific region, file an issue in the [issue tracker](https://github.com/sprinters-sh/sprinters/issues).
+Need a different region? [Simply request it in the issue tracker](https://github.com/sprinters-sh/sprinters/issues).
 
 {% include h4.html text="Notes" %}
 
@@ -169,7 +169,7 @@ You can set the AWS EC2 instance type on which launch the runner by appending it
 | t4g | `t4g.nano` , `t4g.micro` , `t4g.small` , `t4g.medium` , `t4g.large` , `t4g.xlarge` , `t4g.2xlarge` |
 {: .table #instance-types }
 
-More instance families will be added soon. To request support for a specific instance family, file an issue in the [issue tracker](https://github.com/sprinters-sh/sprinters/issues).
+Need a different instance family? [Simply request it in the issue tracker](https://github.com/sprinters-sh/sprinters/issues).
 
 {% include h4.html text="Example" %}
 To set the instance type to `m7i.8xlarge`, change the label to:
