@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: "Introduction"
-next: docs/setup/index.md
+next: docs/setup.md
 ---
 
 <img src="/assets/logo/sprinters.svg" width="128px" alt="Sprinters Logo">
