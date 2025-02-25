@@ -36,15 +36,15 @@ title: "Pricing"
     <div>
         <div class="text-start d-inline-block">
             <ul class="lh-lg fs-md-5 ps-0" style="list-style: none;">
-                <li>✓ Simple 2 minute <a href="/docs/setup">click-through setup</a></li>
-                <li>✓ Choice of <a href="/docs/label#placement">AWS regions</a> in us, eu and ap</li>
-                <li>✓ Large selection of <a href="/docs/label#instance-type">x64 and arm64 instances</a> from 1 to 192
+                <li><i class="bi bi-check-lg text-success-emphasis"></i> Simple 2 minute <a href="/docs/setup">click-through setup</a></li>
+                <li><i class="bi bi-check-lg text-success-emphasis"></i> Choice of <a href="/docs/label#placement">AWS regions</a> in us, eu and ap</li>
+                <li><i class="bi bi-check-lg text-success-emphasis"></i> Large selection of <a href="/docs/label#instance-type">x64 and arm64 instances</a> from 1 to 192
                     vCPUs</li>
-                <li>✓ 100% compatibility with official <a href="/docs/label#image">Ubuntu x64 and arm64 images</a></li>
-                <li>✓ Additional lightweight <a href="/docs/label#image">minimal images</a></li>
-                <li>✓ <a href="/docs/label#spot">Spot instances</a> for maximum savings</li>
-                <li>✓ Freely configurable <a href="/docs/label#temp">disks from 1 GiB to 16 TiB</a></li>
-                <li>✓ Strong security with <a href="/docs/security">minimal permissions</a> required</li>
+                <li><i class="bi bi-check-lg text-success-emphasis"></i> 100% compatibility with official <a href="/docs/label#image">Ubuntu x64 and arm64 images</a></li>
+                <li><i class="bi bi-check-lg text-success-emphasis"></i> Additional lightweight <a href="/docs/label#image">minimal images</a></li>
+                <li><i class="bi bi-check-lg text-success-emphasis"></i> <a href="/docs/label#spot">Spot instances</a> for maximum savings</li>
+                <li><i class="bi bi-check-lg text-success-emphasis"></i> Freely configurable <a href="/docs/label#temp">disks from 1 GiB to 16 TiB</a></li>
+                <li><i class="bi bi-check-lg text-success-emphasis"></i> Strong security with <a href="/docs/security">minimal permissions</a> required</li>
             </ul>
         </div>
     </div>
@@ -52,22 +52,22 @@ title: "Pricing"
     <div class="mx-auto" style="width: 600px; max-width: 100%;">
         <h2 class="text-info mt-6">Common Questions</h2>
 
-        <h3 class="text-info-emphasis mt-5">How do you define a job?</h3>
+        <h4 class="text-info-emphasis mt-5">How do you define a job?</h4>
         <p>A job is a job in a GitHub Actions workflow that runs on a Sprinters-launched runner.</p>
 
-        <h3 class="text-info-emphasis mt-5">Do I get charged if a job's runner fails to launch?</h3>
+        <h4 class="text-info-emphasis mt-5">Do I get charged if a job's runner fails to launch?</h4>
         <p>No. Only jobs that succeed in launching a runner are counted. Jobs that error out or get cancelled before
             that do not incur charges.</p>
 
-        <h3 class="text-info-emphasis mt-5">Do I get charged if no jobs are running?</h3>
+        <h4 class="text-info-emphasis mt-5">Do I get charged if no jobs are running?</h4>
         <p>No. Sprinters scales down to zero. There is no agent or control plane to run in your account. And you don't
             incur any charges when no jobs are running.</p>
 
-        <h3 class="text-info-emphasis mt-5">Does AWS charge me for the runner instances?</h3>
+        <h4 class="text-info-emphasis mt-5">Does AWS charge me for the runner instances?</h4>
         <p>Yes. Sprinters launches runner instances in your AWS account. AWS charges you for compute, storage and
             bandwidth costs while the instances are running.</p>
 
-        <h3 class="text-info-emphasis mt-5">Does Sprinters work with reserved instances?</h3>
+        <h4 class="text-info-emphasis mt-5">Does Sprinters work with reserved instances?</h4>
         <p>Yes. Sprinters launches instances in your AWS account. Select the instance type and subnet in the AZs of your
             reservation to automatically make use of your purchased reserved instances.</p>
     </div>
