@@ -32,7 +32,7 @@
                     <a class="nav-link {% if page.name == 'new.html' %}nav-link-current{% endif %}" href="/new">What's new?</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/#pricing">Pricing</a>
+                    <a class="nav-link {% if page.name == 'pricing.html' %}nav-link-current{% endif %}" href="/pricing">Pricing</a>
                 </li>
                 <li class="nav-item me-lg-3 mb-3 mb-lg-0">
                     <a class="nav-link {% if page.layout == 'docs' %}nav-link-current{% endif %}" href="/docs">Docs</a>
@@ -50,25 +50,6 @@
     <div class="{{ page.classes }}">
         {{ content }}
     </div>
-</div>
-
-<div class="mt-8 text-center container">
-    <p><strong class="fs-4 text-warning-emphasis">Join our monthly email newsletter.</strong><br>We’ll share product updates, new releases and other tidbits we think you’ll find interesting.</p>
-
-    <form method="post" id="newsletter-form">
-        <div style="position: absolute; left: -5000px;" aria-hidden="true">
-            /* real people should not fill this in and expect good things - do not remove this or risk form bot signups */
-            <input type="text" name="b_9fdbd60c88530df7c7e182221_1758545ed5" tabindex="-1" value="">
-        </div>
-        <div class="input-group mb-1 mx-auto mw-100" style="width: 500px">
-            <input type="email" name="EMAIL" class="form-control d-inline-block border-info" id="newsletter-email" required="required" placeholder="you@example.com">
-            <input type="submit" name="subscribe" class="btn btn-info text-white fw-bold" value="Subscribe">
-        </div>
-
-        <p class="fs-8 text-body-secondary">Unsubscribe at any time. No spam ever. We hate it just as much as you do.</p>
-    </form>
-
-    <p id="newsletter-confirm" class="fs-5 text-info d-none"></p>
 </div>
 
 <div class="mt-7 text-center container fs-4">

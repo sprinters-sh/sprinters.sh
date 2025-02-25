@@ -35,7 +35,7 @@ title: "Run your GitHub Actions jobs 10x cheaper on your own AWS account"
         <a href="https://console.sprinters.sh/login"
            class="btn btn-lg btn-primary fw-semibold">
             <div><i class='bi bi-github me-2'></i>Log in with GitHub to get started</div>
-            <div class="fs-8 mt-1 fw-normal">500,000 vCPU minutes FREE in your first 30 days</div>
+            <div class="fs-8 mt-1 fw-normal">1000 jobs FREE in your first 30 days</div>
         </a>
         <a href="/docs"
            class="btn btn-lg btn-secondary d-flex align-items-center justify-content-center fw-semibold">Read the docs</a>
@@ -132,82 +132,12 @@ title: "Run your GitHub Actions jobs 10x cheaper on your own AWS account"
     <h4 class="mb-3 text-secondary">Save ~90% per build minute. Every build minute.</h4>
 
     <div class="fs-2 fw-semibold text-warning mt-5 mb-4 border border-1" style="border-style: dashed !important;">
-        $0.0002 / vCPU-minute <span class="text-secondary text-nowrap">+ AWS cost</span>
-        <p class="fs-7 text-body mt-1 mb-2">500,000 vCPU Minutes free during your first month</p>
+        $0.01 per job <span class="text-secondary text-nowrap">+ AWS cost</span>
+        <p class="fs-7 text-body mt-1 mb-2">1000 jobs free during your first 30 days</p>
     </div>
-
-    <div class="table-responsive">
-        <table class="table mb-1">
-            <thead>
-            <tr>
-                <th></th>
-                <th class="text-warning">Sprinters <span class="text-secondary text-nowrap">+ AWS<sup>*</sup></span><br></th>
-                <th>GitHub</th>
-                <th class="border-start">Savings</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <th>2 vCPUs <sup class="text-secondary">*</sup></th>
-                <td class="bg-body-secondary">$0.0009</td>
-                <td>$0.0080</td>
-                <td class="border-start text-success fw-bold">89%</td>
-            </tr>
-            <tr>
-                <th>4 vCPUs <sup class="text-secondary">*</sup></th>
-                <td class="bg-body-secondary">$0.0016</td>
-                <td>$0.0160</td>
-                <td class="border-start text-success fw-bold">90%</td>
-            </tr>
-            <tr>
-                <th>8 vCPUs <sup class="text-secondary">*</sup></th>
-                <td class="bg-body-secondary">$0.0033</td>
-                <td>$0.0320</td>
-                <td class="border-start text-success fw-bold">90%</td>
-            </tr>
-            <tr>
-                <th>16 vCPUs <sup class="text-secondary">**</sup></th>
-                <td class="bg-body-secondary">$0.0079</td>
-                <td>$0.0640</td>
-                <td class="border-start text-success fw-bold">88%</td>
-            </tr>
-            <tr>
-                <th>32 vCPUs <sup class="text-secondary">**</sup></th>
-                <td class="bg-body-secondary">$0.0152</td>
-                <td>$0.1280</td>
-                <td class="border-start text-success fw-bold">88%</td>
-            </tr>
-            <tr>
-                <th>48 vCPUs <sup class="text-secondary">**</sup></th>
-                <td class="bg-body-secondary">$0.0213</td>
-                <td><i>Not supported</i></td>
-                <td class="border-start fst-italic">n/a</td>
-            </tr>
-            <tr>
-                <th>64 vCPUs <sup class="text-secondary">**</sup></th>
-                <td class="bg-body-secondary">$0.0289</td>
-                <td>$0.2560</td>
-                <td class="border-start text-success fw-bold">89%</td>
-            </tr>
-            <tr>
-                <th>96 vCPUs <sup class="text-secondary">***</sup></th>
-                <td class="bg-body-secondary">$0.0442</td>
-                <td><i>Not supported</i></td>
-                <td class="border-start fst-italic">n/a</td>
-            </tr>
-            <tr>
-                <th>192 vCPU <sup class="text-secondary">***</sup></th>
-                <td class="bg-body-secondary">$0.0930</td>
-                <td><i>Not supported</i></td>
-                <td class="border-start fst-italic">n/a</td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="fs-8 text-secondary text-nowrap text-start">* t3a (spot), ** m7i-flex (spot), *** m7i (spot) in us-east-1</div>
 
     <div class="row">
-        {% include feature.html icon="clock-history" title="Per minute pricing" text="No monthly subscriptions. No long term commitments or contracts. No hidden costs. Simple per minute pricing. You only pay for what you use." %}
+        {% include feature.html icon="clock-history" title="Per job pricing" text="No monthly subscriptions. No long term commitments or contracts. No hidden costs. Simple per minute pricing. You only pay for what you use." %}
         {% include feature.html icon="fire" title="10x cheaper" text="Total cost per minute is usually around 10x cheaper
         than the equivalent runner from GitHub. Much more compute at the same price or the same compute at a much lower price. The choice is yours." %}
         {% include feature.html icon="arrow-down-up" title="Scale to zero" text="Scale to zero. Or to infinity. No management infrastructure to run. Just your runners. For the duration of your jobs. At an unbeatable price." %}
@@ -230,4 +160,23 @@ title: "Run your GitHub Actions jobs 10x cheaper on your own AWS account"
     <p class="fs-5 pb-3">That's it. Literally.</p>
 
     <a href="https://console.sprinters.sh/login" class="btn btn-lg btn-primary fw-semibold">Get started in under 5 minutes</a>
+</div>
+
+<div class="mt-8 text-center container">
+    <p><strong class="fs-4">Stay updated</strong><br>Once a month we share product updates, new releases and other tidbits we think you’ll find interesting.</p>
+
+    <form method="post" id="newsletter-form">
+        <div style="position: absolute; left: -5000px;" aria-hidden="true">
+            /* real people should not fill this in and expect good things - do not remove this or risk form bot signups */
+            <input type="text" name="b_9fdbd60c88530df7c7e182221_1758545ed5" tabindex="-1" value="">
+        </div>
+        <div class="input-group mb-1 mx-auto mw-100" style="width: 500px">
+            <input type="email" name="EMAIL" class="form-control d-inline-block border-info" id="newsletter-email" required="required" placeholder="Type your email ...">
+            <input type="submit" name="subscribe" class="btn btn-info text-white fw-bold" value="Subscribe">
+        </div>
+
+        <p class="fs-8 text-body-secondary">Unsubscribe at any time. No spam ever. We hate it just as much as you do.</p>
+    </form>
+
+    <p id="newsletter-confirm" class="fs-5 text-info d-none"></p>
 </div>
