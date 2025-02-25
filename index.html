@@ -4,8 +4,9 @@ title: "Run your GitHub Actions jobs 10x cheaper on your own AWS account"
 ---
 
 <div class="mt-5 mb-6 mx-auto text-center">
-    <a href="/new#2025-02-19" class="px-3 py-2 bg-info-subtle rounded-pill border border-info text-info fs-8 fs-md-6">
-        <strong class="text-body">New:</strong> AWS <code>m5</code>, <code>m5a</code>, <code>m6a</code>, <code>m6i</code> and <code>m7a</code> instance support
+    {% assign entry = site.data.new | first %}
+    <a href="/new#{{ entry.date }}" class="px-3 py-2 bg-info-subtle rounded-pill border border-info text-info fs-8 fs-md-6">
+        <strong class="text-body me-2">{{ entry.date }}</strong>{{ entry.title }}
         <i class="bi bi-arrow-right"></i>
     </a>
 </div>

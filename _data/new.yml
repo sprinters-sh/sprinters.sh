@@ -1,3 +1,9 @@
+- date: "2025-02-25"
+  title: "Simplified per job pricing"
+  href: "/pricing"
+  image: "/assets/new/2025-02-25-per-job-pricing.png"
+  details: "We've simplified Sprinters' pricing to make it both clearer and more predicable. Sprinters now costs $0.01 per job for any number of vCPUs, any number of build minutes and any number of concurrent jobs."
+
 - date: "2025-02-19"
   title: "AWS <code>m5</code>, <code>m5a</code>, <code>m6a</code>, <code>m6i</code> and <code>m7a</code> instance support"
   href: "/docs/label#instance-type"
