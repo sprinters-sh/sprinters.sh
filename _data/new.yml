@@ -1,3 +1,9 @@
+- date: "2025-03-02"
+  title: "Adjustable root, swap and temp volume performance"
+  href: "/docs/label#root"
+  image: "/assets/new/2025-03-02-volume-performance.png"
+  details: "In addition to configuring the size of the swap and temp volumes, you can now also configure the performance of the root, swap and temp volumes. High-performance volumes significantly reduce run times for I/O-bound jobs."
+
 - date: "2025-02-25"
   title: "Simplified per job pricing"
   href: "/pricing"

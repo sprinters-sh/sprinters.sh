@@ -47,8 +47,9 @@ The following label parts can be added or modified to customize the image, place
 - [AWS Instance Type](#instance-type)
 - [AWS Spot Instances](#spot)
 - [AWS Instance Profile](#instance-profile)
-- [Temp Disk Space](#temp)
-- [Swap Disk Space](#swap)
+- [Root Volume](#root)
+- [Swap Volume](#swap)
+- [Temp Volume](#temp)
 
 ---
 {: .mt-5 }
@@ -56,8 +57,11 @@ The following label parts can be added or modified to customize the image, place
 {% include h3.html id="image" text="Image" %}
 You can set the image for the runner by replacing the one in the label.
 
-**Format:** _image-name_\
-**Default:** `ubuntu-latest`
+{% include h4.html text="Format" %}
+_image-name_
+
+{% include h4.html text="Default" %}
+`ubuntu-latest`
 
 {% include h4.html text="Supported <strong>x64</strong> Images" %}
 | Image | Description |
@@ -91,8 +95,11 @@ You can specify where the runner instance is launched by appending a  _region_, 
 At least one of _region_ and _availability zone_ must be specified. _subnet id_ is optional.
 All parts are separated by a `/`.
 
-**Format:** _aws-region_/_aws-availability-zone_/_aws-subnet-id_\
-**Default:** `us-east-1` (random subnet of a random availability zone of the default VPC of `us-east-1`)
+{% include h4.html text="Format" %}
+_aws-region_/_aws-availability-zone_/_aws-subnet-id_
+
+{% include h4.html text="Default" %}
+`us-east-1` (random subnet of a random availability zone of the default VPC of `us-east-1`)
 
 {% include h4.html text="Supported Regions" %}
 | Region | Location |
@@ -138,8 +145,11 @@ To use the `subnet-0123456789abcdef0` subnet in the `us-east-1` region, change t
 {% include h3.html id="instance-type" text="AWS Instance Type" %}
 You can set the AWS EC2 instance type on which launch the runner by appending it to the label.
 
-**Format:** _aws-instance-type_\
-**Default:** `t3.large`
+{% include h4.html text="Format" %}
+_aws-instance-type_
+
+{% include h4.html text="Default" %}
+`t3.large`
 
 {% include h4.html text="Supported <strong>x64</strong> Instance Types" %}
 
@@ -184,8 +194,11 @@ To set the instance type to `m7i.8xlarge`, change the label to:
 {% include h3.html id="spot" text="AWS Spot Instances" %}
 To save significant amounts of money at a slight risk of being interrupted, the instance can be launched as a spot instance.
 
-**Format:** spot=_auto|true|false_\
-**Default:** `auto`
+{% include h4.html text="Format" %}
+spot=_auto|true|false_\
+
+{% include h4.html text="Default" %}
+`auto`
 
 {% include h4.html text="Supported Modes" %}
 
@@ -216,8 +229,11 @@ you can {% include external-link.html text="associate an IAM instance profile" h
 your runner instance. The instance will then automatically have AWS credentials available with the permissions of
 the IAM role linked to the instance profile.
 
-**Format:** profile=_instance-profile-name_\
-**Default:** _none_
+{% include h4.html text="Format" %}
+profile=_instance-profile-name_
+
+{% include h4.html text="Default" %}
+_none_
 
 {% include h4.html text="Example" %}
 To associate your instance with the `my-instance-profile` instance profile, change the label to:
@@ -231,31 +247,126 @@ See also: [Accessing AWS Resources](/docs/aws-resources#instance-profile) for mo
 ---
 {: .mt-5 }
 
-{% include h3.html id="temp" text="Temp Disk Space" %}
-You can set the temp disk space available for the runner from `1` GiB to `16384` GiB by appending it to the label.
+{% include h3.html id="root" text="Root Volume" %}
+You can adjust the performance of the root volume by appending a performance specification to the label.
 
-**Format:** temp=_size-in-gib_\
-**Default:** `14`
+{% include h4.html text="Format" %}
+root=_volume-type_/_iops_/_throughput_
 
-{% include h4.html text="Example" %}
-To set the temp disk space to `512` GiB, change the label to:
+{% include h4.html text="Default" %}
+`gp3` volume with `3000` IOPS and `150` MiB/s throughput.
+
+{% include h4.html text="Volume Type" %}
+
+Only `gp3` volumes are supported for now.
+
+{% include h4.html text="IOPS" %}
+
+Between `3000` and `16000` IOPS are supported, depending on the size of the volume.
+Use `max` for the maximum number of IOPS for the current volume size.
+
+{% include h4.html text="Throughput" %}
+
+Between `125` and `1000` MiB/s are supported, depending on the number of IOPS of the volume.
+Use `max` for the maximum throughput for the current number of IOPS.
+
+{% include h4.html text="Examples" %}
+To increase the root volume to `4000` IOPS and `1000` MiB/s throughput, change the label to:
 
 <div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
-    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:<span class="fw-bold fst-italic text-warning">temp=512</span></pre>
+    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:<span class="fw-bold fst-italic text-warning">root=gp3/4000/1000</span></pre>
+</div>
+
+To increase the root volume to the maximum number of IOPS for its size and the maximum throughput for these IOPS, change the label to:
+
+<div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
+    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:<span class="fw-bold fst-italic text-warning">root=gp3/max/max</span></pre>
 </div>
 
 ---
 {: .mt-5 }
 
-{% include h3.html id="swap" text="Swap Disk Space" %}
-You can set the swap size for the runner from `1` GiB to `16384` GiB by appending it to the label.
+{% include h3.html id="swap" text="Swap Volume" %}
+You can adjust the size and performance of the swap volume by modifying the label.
 
-**Format:** swap=_size-in-gib_\
-**Default:** `4`
+{% include h4.html text="Formats" %}
+- swap=_size-in-gib_
+- swap=_size-in-gib_/_volume-type_/_iops_/_throughput_
 
-{% include h4.html text="Example" %}
+{% include h4.html text="Default" %}
+`4` GiB `gp3` volume with `3000` IOPS and `150` MiB/s throughput.
+
+{% include h4.html text="Size" %}
+
+Sizes from `1` GiB to `16384` GiB are supported.
+
+{% include h4.html text="Volume Type" %}
+
+Only `gp3` volumes are supported for now.
+
+{% include h4.html text="IOPS" %}
+
+Between `3000` and `16000` IOPS are supported, depending on the size of the volume.
+Use `max` for the maximum number of IOPS for the current volume size.
+
+{% include h4.html text="Throughput" %}
+
+Between `125` and `1000` MiB/s are supported, depending on the number of IOPS of the volume.
+Use `max` for the maximum throughput for the current number of IOPS.
+
+{% include h4.html text="Examples" %}
 To set the swap size to `64` GiB, change the label to:
 
 <div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
     <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:<span class="fw-bold fst-italic text-warning">swap=64</span></pre>
+</div>
+
+To set the swap size to `64` GiB and max out the volume performance, change the label to:
+
+<div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
+    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:<span class="fw-bold fst-italic text-warning">swap=64/gp3/max/max</span></pre>
+</div>
+
+---
+{: .mt-5 }
+
+{% include h3.html id="temp" text="Temp Volume" %}
+You can adjust the size and performance of the temp volume by modifying the label.
+
+{% include h4.html text="Formats" %}
+- temp=_size-in-gib_
+- temp=_size-in-gib_/_volume-type_/_iops_/_throughput_
+
+{% include h4.html text="Default" %}
+`4` GiB `gp3` volume with `3000` IOPS and `150` MiB/s throughput.
+
+{% include h4.html text="Size" %}
+
+Sizes from `1` GiB to `16384` GiB are supported.
+
+{% include h4.html text="Volume Type" %}
+
+Only `gp3` volumes are supported for now.
+
+{% include h4.html text="IOPS" %}
+
+Between `3000` and `16000` IOPS are supported, depending on the size of the volume.
+Use `max` for the maximum number of IOPS for the current volume size.
+
+{% include h4.html text="Throughput" %}
+
+Between `125` and `1000` MiB/s are supported, depending on the number of IOPS of the volume.
+Use `max` for the maximum throughput for the current number of IOPS.
+
+{% include h4.html text="Examples" %}
+To set the temp size to `64` GiB, change the label to:
+
+<div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
+    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:<span class="fw-bold fst-italic text-warning">temp=64</span></pre>
+</div>
+
+To set the temp size to `64` GiB and max out the volume throughput, change the label to:
+
+<div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
+    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:<span class="fw-bold fst-italic text-warning">temp=64/gp3/3000/max</span></pre>
 </div>
