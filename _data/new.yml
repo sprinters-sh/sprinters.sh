@@ -1,3 +1,9 @@
+- date: "2025-03-03"
+  title: "Free for public repositories"
+  href: "/pricing"
+  image: "/assets/new/2025-03-03-public-free.png"
+  details: "Sprinters is now free for public repositories. You can now combine this with the AWS free tier to get AWS runners at zero cost."
+
 - date: "2025-03-02"
   title: "Adjustable root, swap and temp volume performance"
   href: "/docs/label#root"
