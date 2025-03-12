@@ -129,12 +129,27 @@ title: "Run your GitHub Actions jobs 10x cheaper on your own AWS account"
 </div>
 
 <div class="col-md-8 mx-auto text-center mt-5">
-    <h2 id="pricing" class="mt-7 fw-semibold text-warning-emphasis fs-1">Pricing: simple, transparent and unbeatable.</h2>
-    <h4 class="mb-3 text-secondary">Save ~90% per build minute. Every build minute.</h4>
+    <h2 id="pricing" class="mt-7 fw-semibold text-warning-emphasis fs-1">Pricing: simple, transparent and fair.</h2>
+    <h4 class="mb-3 text-secondary">You bring your own AWS account. Sprinters runs the jobs.<br>You save ~90% per build minute. Every build minute.</h4>
 
-    <div class="fs-2 fw-semibold text-warning mt-5 mb-4 border border-1" style="border-style: dashed !important;">
-        $0.01 per job <span class="text-secondary text-nowrap">+ AWS cost</span>
-        <p class="fs-7 text-body mt-1 mb-2">1000 jobs free during your first 30 days</p>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+            <tr class="fs-5 fw-semibold">
+                <th>Public Repository</th>
+                <th>Private Repository</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td class="fs-2 fw-semibold text-warning">FREE</td>
+                <td>
+                    <span class="fs-2 fw-semibold text-warning">$0.01 per job</span><br>
+                    <p class="fs-7 text-body mt-1 mb-2">1000 jobs free during your first 30 days</p>
+                </td>
+            </tr>
+            </tbody>
+        </table>
     </div>
 
     <div class="row">
@@ -142,6 +157,11 @@ title: "Run your GitHub Actions jobs 10x cheaper on your own AWS account"
         {% include feature.html icon="fire" title="10x cheaper" text="Total cost per minute is usually around 10x cheaper
         than the equivalent runner from GitHub. Much more compute at the same price or the same compute at a much lower price. The choice is yours." %}
         {% include feature.html icon="arrow-down-up" title="Scale to zero" text="Scale to zero. Or to infinity. No management infrastructure to run. Just your runners. For the duration of your jobs. At an unbeatable price." %}
+    </div>
+
+    <div class="mt-3">
+    <a href="/pricing"
+       class="btn btn-lg btn-secondary fw-semibold">Pricing details <i class="bi bi-arrow-right"></i></a>
     </div>
 </div>
 
@@ -160,7 +180,11 @@ title: "Run your GitHub Actions jobs 10x cheaper on your own AWS account"
 
     <p class="fs-5 pb-3">That's it. Literally.</p>
 
-    <a href="https://console.sprinters.sh/login" class="btn btn-lg btn-primary fw-semibold">Get started in under 5 minutes</a>
+    <a href="https://console.sprinters.sh/login"
+       class="btn btn-lg btn-primary fw-semibold">
+        <div><i class='bi bi-github me-2'></i>Log in with GitHub to get started</div>
+        <div class="fs-8 mt-1 fw-normal">1000 jobs FREE in your first 30 days</div>
+    </a>
 </div>
 
 <div class="mt-7 text-center container">
