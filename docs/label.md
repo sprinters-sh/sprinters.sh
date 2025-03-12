@@ -173,9 +173,15 @@ _aws-instance-type_
 
 | Family | Sizes |
 +-|-|-+
+| c6g | `c6g.medium` , `c6g.large` , `c6g.xlarge` , `c6g.2xlarge` , `c6g.4xlarge` , `c6g.8xlarge` , `c6g.12xlarge` , `c6g.16xlarge` |
+| c7g | `c7g.medium` , `c7g.large` , `c7g.xlarge` , `c7g.2xlarge` , `c7g.4xlarge` , `c7g.8xlarge` , `c7g.12xlarge` , `c7g.16xlarge` |
+| c8g | `c8g.medium` , `c8g.large` , `c8g.xlarge` , `c8g.2xlarge` , `c8g.4xlarge` , `c8g.8xlarge` , `c8g.12xlarge` , `c8g.16xlarge` , `c8g.24xlarge` , `c8g.48xlarge` |
 | m6g | `m6g.medium` , `m6g.large` , `m6g.xlarge` , `m6g.2xlarge` , `m6g.4xlarge` , `m6g.8xlarge` , `m6g.12xlarge` , `m6g.16xlarge` |
 | m7g | `m7g.medium` , `m7g.large` , `m7g.xlarge` , `m7g.2xlarge` , `m7g.4xlarge` , `m7g.8xlarge` , `m7g.12xlarge` , `m7g.16xlarge` |
 | m8g | `m8g.medium` , `m8g.large` , `m8g.xlarge` , `m8g.2xlarge` , `m8g.4xlarge` , `m8g.8xlarge` , `m8g.12xlarge` , `m8g.16xlarge` , `m8g.24xlarge` , `m8g.48xlarge` |
+| r6g | `r6g.medium` , `r6g.large` , `r6g.xlarge` , `r6g.2xlarge` , `r6g.4xlarge` , `r6g.8xlarge` , `r6g.12xlarge` , `r6g.16xlarge` |
+| r7g | `r7g.medium` , `r7g.large` , `r7g.xlarge` , `r7g.2xlarge` , `r7g.4xlarge` , `r7g.8xlarge` , `r7g.12xlarge` , `r7g.16xlarge` |
+| r8g | `r8g.medium` , `r8g.large` , `r8g.xlarge` , `r8g.2xlarge` , `r8g.4xlarge` , `r8g.8xlarge` , `r8g.12xlarge` , `r8g.16xlarge` , `r8g.24xlarge` , `r8g.48xlarge` |
 | t4g | `t4g.nano` , `t4g.micro` , `t4g.small` , `t4g.medium` , `t4g.large` , `t4g.xlarge` , `t4g.2xlarge` |
 {: .table #instance-types }
 

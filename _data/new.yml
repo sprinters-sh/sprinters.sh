@@ -1,3 +1,9 @@
+- date: "2025-03-12"
+  title: "AWS <code>c6g</code>, <code>c7g</code>, <code>c8g</code>, <code>r6g</code>, <code>r7g</code> and <code>r8g</code> instance support"
+  href: "/docs/label#instance-type"
+  image: "/assets/new/2025-03-12-cr678g.png"
+  details: "Need more compute, but not more RAM? Or more RAM, but not more compute? You can now right-size your AWS arm64 runners by picking compute-optimized <code>c6g</code>, <code>c7g</code> and <code>c8g</code> instances and RAM-optimized <code>r6g</code>, <code>r7g</code> and <code>r8g</code> instances."
+
 - date: "2025-03-03"
   title: "Free for public repositories"
   href: "/pricing"
