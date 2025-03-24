@@ -204,7 +204,7 @@ To save significant amounts of money at a slight risk of being interrupted, the 
 spot=_auto|true|false_\
 
 {% include h4.html text="Default" %}
-`auto`
+`false`
 
 {% include h4.html text="Supported Modes" %}
 
