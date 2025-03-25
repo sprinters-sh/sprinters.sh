@@ -24,7 +24,7 @@ This includes:
 - the history of the jobs you ran with Sprinters in order to display them in the Sprinters Console
 - the number of vCPU minutes you used for each job and how many are left in your account
 
-All data stored by Sprinters is **encrypted at rest**. All data transferred by Sprinters is **encrypted while in motion**.
+All data stored by Sprinters is **encrypted at rest**. All data transferred by Sprinters is **encrypted in transit**.
 
 Sprinters:
 - **does not store any access credentials to your GitHub or AWS account**
@@ -170,15 +170,27 @@ Services your jobs rely on no longer need to be exposed over the public internet
 
 To ensure a 100% clean environment for every job, each runner is launched using a new ephemeral EC2 instance and a security group that prohibits ingress.
 
+![Runner Instance Diagram](/assets/runner.svg)
+
 The image is
 {% include external-link.html text="based on GitHub's official runner image" href="https://github.com/sprinters-sh/sprinters-images" %}.
 
-The instance doesn't listen on any ports. **The runner software doesn't communicate with Sprinters.**
-It only opens an outbound HTTPS connection to GitHub in order to receive job steps and send back execution logs.
+{% include h4.html id="ingress" text="Network Ingress" %}
+The runner doesn't listen on any ports.
 
-![Runner Instance Diagram](/assets/runner.svg)
+{% include h4.html id="egress" text="Network Egress" %}
+The runner only
+- opens a long-lived outbound HTTPS connection to GitHub in order to receive job steps and send back execution logs.
+- {% include external-link.html text="publishes lifecycle events" href="https://github.com/sprinters-sh/sprinters-images/blob/main/publish-event.sh" %} to
+Sprinters to improve the handling of unexpected instance termination due spot capacity reclaim, underlying host issues, ...
 
-The boot volume, where the software is installed, is read-only, guaranteeing integrity.
+Communication between the runner and both GitHub and Sprinters is fully encrypted with TLS 1.3.
+
+The lifecycle event publishing can be disabled if desired by [adjusting the runs-on: label](/docs/label#events).
+
+{% include h4.html id="volumes" text="Volumes" %}
+
+The boot volume containing all installed software is read-only, guaranteeing integrity.
 
 Writes are automatically redirected to an ephemeral encrypted temp volume which is reformatted on every boot and destroyed when the instance terminates.
 

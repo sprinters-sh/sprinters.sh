@@ -50,6 +50,7 @@ The following label parts can be added or modified to customize the image, place
 - [Root Volume](#root)
 - [Swap Volume](#swap)
 - [Temp Volume](#temp)
+- [Runner Lifecycle Events](#events)
 
 ---
 {: .mt-5 }
@@ -201,7 +202,7 @@ To set the instance type to `m7i.8xlarge`, change the label to:
 To save significant amounts of money at a slight risk of being interrupted, the instance can be launched as a spot instance.
 
 {% include h4.html text="Format" %}
-spot=_auto|true|false_\
+spot=_`auto|true|false`_
 
 {% include h4.html text="Default" %}
 `false`
@@ -375,4 +376,24 @@ To set the temp size to `64` GiB and max out the volume throughput, change the l
 
 <div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
     <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:<span class="fw-bold fst-italic text-warning">temp=64/gp3/3000/max</span></pre>
+</div>
+
+---
+{: .mt-5 }
+
+{% include h3.html id="events" text="Runner Lifecycle Events" %}
+In order to react more quickly to instances becoming unhealthy, runners {% include external-link.html text="publish lifecycle events"
+        href="https://github.com/sprinters-sh/sprinters-images/blob/main/publish-event.sh" %} to Sprinters.
+
+{% include h4.html text="Format" %}
+events=_`true|false`_
+
+{% include h4.html text="Default" %}
+`true`
+
+{% include h4.html text="Example" %}
+To disable the instance lifecycle events publishing (at the cost of longer timeouts when an instance becomes unhealthy or is terminated as part of a spot capacity reclaim), change the label to:
+
+<div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
+    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:<span class="fw-bold fst-italic text-warning">events=false</span></pre>
 </div>
