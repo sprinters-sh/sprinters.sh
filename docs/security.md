@@ -1,7 +1,6 @@
 ---
 layout: docs
 title: "Security"
-next: docs/tips.md
 ---
 
 Security is Job Zero for Sprinters. Sprinters' approach can be summarized as a combination of the **principle of least privilege**, **data austerity** and **defense in depth**.

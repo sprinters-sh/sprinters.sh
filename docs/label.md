@@ -1,7 +1,6 @@
 ---
 layout: docs
 title: "runs-on: label"
-next: docs/aws-resources.md
 ---
 
 <p class="mb-1">To tell GitHub to run your workflow jobs using Sprinters on AWS instead of GitHub hosted runners,

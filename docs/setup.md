@@ -1,7 +1,6 @@
 ---
 layout: docs
 title: "Setup"
-next: docs/label.md
 ---
 
 Setting up Sprinters usually takes around **2 minutes**. All you need is a GitHub account and an AWS account.

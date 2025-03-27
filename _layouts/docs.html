@@ -19,13 +19,20 @@ title: "Docs"
                            aria-disabled="true">Docs</a>
                     </li>
 
-                    {% include nav-item.html path="docs/index.md" %}
-                    {% include nav-item.html path="docs/setup.md" %}
-                    {% include nav-item.html path="docs/label.md" %}
-                    {% include nav-item.html path="docs/aws-resources.md" %}
-                    {% include nav-item.html path="docs/security.md" %}
-                    {% include nav-item.html path="docs/tips.md" %}
-                    {% include nav-item.html path="docs/troubleshooting.md" %}
+                    {% for entry in site.data.docs %}
+                        {% include nav-item.html path=entry.path %}
+                        {% if entry.path == page.path %}
+                            {% assign current_page = entry %}
+                            {% if forloop.first == false %}
+                                {% assign previous_page_index = forloop.index0 | minus: 1 %}
+                                {% assign previous_page = site.data.docs[previous_page_index] %}
+                            {% endif %}
+                            {% if forloop.last == false %}
+                                {% assign next_page_index = forloop.index0 | plus: 1 %}
+                                {% assign next_page = site.data.docs[next_page_index] %}
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
                 </ul>
             </div>
         </div>
@@ -38,6 +45,6 @@ title: "Docs"
         {% include h1.html text=page.title %}
         {{ content }}
         {% include back.html path=page.back %}
-        {% include next.html path=page.next %}
+        {% include previousNext.html previous=previous_page.path next=next_page.path %}
     </div>
 </div>

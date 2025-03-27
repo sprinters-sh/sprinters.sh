@@ -1,0 +1,18 @@
+{% if include.previous %}
+    {% assign previous-page = site.pages | where: "path", include.previous | first %}
+{% endif %}
+{% if include.next %}
+    {% assign next-page = site.pages | where: "path", include.next | first %}
+{% endif %}
+{% if include.previous or include.next %}
+<div class="mt-5">
+    <div class="d-flex align-items-center">
+        {% if previous-page %}
+            <a class="btn btn-outline-info me-auto" href="{{ previous-page.url | remove: ".html" }}"><i class="bi bi-arrow-left"></i> {{ previous-page.title }}</a>
+        {% endif %}
+        {% if next-page %}
+            <a class="btn btn-outline-info ms-auto" href="{{ next-page.url | remove: ".html" }}">{{ next-page.title }} <i class="bi bi-arrow-right"></i></a>
+        {% endif %}
+    </div>
+</div>
+{% endif %}

@@ -1,0 +1,8 @@
+- path: "docs/index.md"
+- path: "docs/setup.md"
+- path: "docs/label.md"
+- path: "docs/volumes.md"
+- path: "docs/aws-resources.md"
+- path: "docs/security.md"
+- path: "docs/tips.md"
+- path: "docs/troubleshooting.md"

@@ -1,7 +1,6 @@
 ---
 layout: docs
 title: "Tips"
-next: docs/troubleshooting.md
 ---
 
 Learn useful tips for common scenarios:
