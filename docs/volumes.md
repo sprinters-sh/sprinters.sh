@@ -36,7 +36,8 @@ By default all volumes are provisioned as GP3 with 3,000 IOPS and 150 MiB/s thro
 
 For I/O-intensive jobs, you can trade cost for performance by cranking up these values and scale all the way up
 to 16,000 IOPS and 1,000 MiB/s throughput. The exact performance upper limits depend on the size of the volume.
-You can also use the convenience value `max` to automatically calculate the maximum number of IOPS of throughput MiB/s for the specified volume size.
+You can also use the convenience value `max` to automatically calculate the maximum number of IOPS or throughput MiB/s
+for the specified volume size.
 
 This can be [specified in the label](/docs/label#root) for each volume:
 <div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
