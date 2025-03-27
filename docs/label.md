@@ -53,7 +53,7 @@ The following label parts can be added or modified to customize the image, place
 - [Runner Lifecycle Events](#events)
 
 ---
-{: .mt-5 }
+{: .mb-7 }
 
 {% include h3.html id="image" text="Image" %}
 You can set the image for the runner by replacing the one in the label.
@@ -88,7 +88,8 @@ To set the image to `minimal`, change the label to:
 </div>
 
 ---
-{: .mt-5 }
+{: .mb-7 }
+
 
 {% include h3.html id="placement" text="AWS Region / Availability Zone / Subnet" %}
 You can specify where the runner instance is launched by appending a  _region_, _availability zone_ and _subnet id_ to the label.
@@ -141,7 +142,8 @@ To use the `subnet-0123456789abcdef0` subnet in the `us-east-1` region, change t
 </div>
 
 ---
-{: .mt-5 }
+{: .mb-7 }
+
 
 {% include h3.html id="instance-type" text="AWS Instance Type" %}
 You can set the AWS EC2 instance type on which launch the runner by appending it to the label.
@@ -196,7 +198,8 @@ To set the instance type to `m7i.8xlarge`, change the label to:
 </div>
 
 ---
-{: .mt-5 }
+{: .mb-7 }
+
 
 {% include h3.html id="spot" text="AWS Spot Instances" %}
 To save significant amounts of money at a slight risk of being interrupted, the instance can be launched as a spot instance.
@@ -228,7 +231,8 @@ To force the use of much cheaper spot instances, change the label to:
 </div>
 
 ---
-{: .mt-5 }
+{: .mb-7 }
+
 
 {% include h3.html id="instance-profile" text="AWS Instance Profile" %}
 To access resources in your AWS account without the need to store long-lived AWS credentials as GitHub Actions secrets,
@@ -252,7 +256,8 @@ To associate your instance with the `my-instance-profile` instance profile, chan
 See also: [Accessing AWS Resources](/docs/aws-resources#instance-profile) for more info.
 
 ---
-{: .mt-5 }
+{: .mb-7 }
+
 
 {% include h3.html id="root" text="Root Volume" %}
 You can adjust the performance of the root volume by appending a performance specification to the label.
@@ -291,7 +296,8 @@ To increase the root volume to the maximum number of IOPS for its size and the m
 </div>
 
 ---
-{: .mt-5 }
+{: .mb-7 }
+
 
 {% include h3.html id="swap" text="Swap Volume" %}
 You can adjust the size and performance of the swap volume by modifying the label.
@@ -335,7 +341,8 @@ To set the swap size to `64` GiB and max out the volume performance, change the 
 </div>
 
 ---
-{: .mt-5 }
+{: .mb-7 }
+
 
 {% include h3.html id="temp" text="Temp Volume" %}
 You can adjust the size and performance of the temp volume by modifying the label.
@@ -379,7 +386,8 @@ To set the temp size to `64` GiB and max out the volume throughput, change the l
 </div>
 
 ---
-{: .mt-5 }
+{: .mb-7 }
+
 
 {% include h3.html id="events" text="Runner Lifecycle Events" %}
 In order to react more quickly to instances becoming unhealthy, runners {% include external-link.html text="publish lifecycle events"
