@@ -1,3 +1,9 @@
+- date: "2025-03-28"
+  title: "Size optimization for temp volume"
+  href: "/docs/volumes#size"
+  image: "/assets/new/2025-03-28-temp-optimization.png"
+  details: "Not sure how large your temp volume should be? You can now see its actual usage at the end of every job run, allowing you to right-size it and lower your EBS costs with confidence."
+
 - date: "2025-03-12"
   title: "AWS <code>c6g</code>, <code>c7g</code>, <code>c8g</code>, <code>r6g</code>, <code>r7g</code> and <code>r8g</code> instance support"
   href: "/docs/label#instance-type"
