@@ -5,4 +5,5 @@
 - path: "docs/aws-resources.md"
 - path: "docs/security.md"
 - path: "docs/tips.md"
+- path: "docs/benchmarks.md"
 - path: "docs/troubleshooting.md"
