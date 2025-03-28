@@ -32,10 +32,10 @@ you can safely slash your EBS cost in half by [adjusting its size](/docs/label#t
 
 {% include h2.html id="performance" text="Performance Optimization" %}
 
-By default all volumes are provisioned as GP3 with 3,000 IOPS and 150 MiB/s throughput.
+By default all volumes are provisioned as `gp3` with `3000` IOPS and `150` MiB/s throughput.
 
 For I/O-intensive jobs, you can trade cost for performance by cranking up these values and scale all the way up
-to 16,000 IOPS and 1,000 MiB/s throughput. The exact performance upper limits depend on the size of the volume.
+to `16000` IOPS and `1000` MiB/s throughput. The exact performance upper limits depend on the size of the volume.
 You can also use the convenience value `max` to automatically calculate the maximum number of IOPS or throughput MiB/s
 for the specified volume size.
 
