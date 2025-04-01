@@ -1,0 +1,104 @@
+<p id="{{ include.repo }}" class="fs-4 text-warning-emphasis mt-6 mb-1">
+    <img src="https://avatars.githubusercontent.com/u/{{ include.org-user-id }}?s=40&v=4"> {{ include.org }} / {{ include.repo }}
+</p>
+{% assign external-link="https://github.com/sprinters-sh/sprinters/actions/workflows/benchmark-" | append: include.repo | append: ".yml" %}
+{% include external-link.html text="Benchmark Workflow" href=external-link %}{: .fs-8 }
+
+<p class="mb-1">Performance</p>
+{% assign sprinters-perf-percentage= include.perf-sprinters | times: 100 | divided_by: include.perf-github %}
+<div class="px-3 py-0 border border-1 border-secondary rounded">
+    <table class="table mb-0">
+        <tr>
+            <th style="width: 150px">GitHub</th>
+            <td style="width: 75px">{% include timing.html seconds=include.perf-github %}</td>
+            <td><div class="d-inline-block bg-info" style="height: 10px; width: 100%; "></div></td>
+        </tr>
+        <tr>
+            <th class="border-bottom-0 text-warning-emphasis">Sprinters<br>
+                <span class="fw-bold text-success">{{ 100 | minus: sprinters-perf-percentage }}% faster</span></th>
+            <td class="border-bottom-0">{% include timing.html seconds=include.perf-sprinters %}</td>
+            <td class="border-bottom-0"><div class="d-inline-block bg-info" style="height: 10px; width: {{ sprinters-perf-percentage }}%"></div>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<p class="mb-1 mt-3">Cost</p>
+{% assign price-sprinters= include.price-sprinters-ec2 | plus: include.price-sprinters-ebs | plus: 0.01 %}
+{% assign sprinters-price-percentage= price-sprinters | times: 100 | divided_by: include.price-github %}
+{% assign spot-factor = 100.0 | minus: include.spot-discount-percentage | divided_by: 100 %}
+{% assign price-sprinters-ec2-spot = include.price-sprinters-ec2 | times: 100000 | times: spot-factor | round | divided_by: 100000.0 %}
+{% assign price-sprinters-spot = price-sprinters-ec2-spot | plus: include.price-sprinters-ebs | plus: 0.01 %}
+{% assign sprinters-spot-price-percentage= price-sprinters-spot | times: 100 | divided_by: include.price-github %}
+<div class="mt-2 px-3 py-0 border border-1 border-secondary rounded">
+    <table class="table mb-0">
+        <tr>
+            <th style="width: 150px">GitHub</th>
+            <td style="width: 75px">${{ include.price-github }}</td>
+            <td><div class="d-inline-block bg-info" style="height: 10px; width: 100%; "></div></td>
+        </tr>
+        <tr>
+            <th class="text-warning-emphasis">Sprinters<br>
+                <span class="fw-bold text-success">{{ 100 | minus: sprinters-price-percentage | round }}% cheaper</span></th>
+            <td>
+                <span class="text-tooltip"
+                      data-bs-toggle="tooltip"
+                      data-bs-custom-class="tooltip-dark"
+                      data-bs-html="true"
+                      data-bs-title='
+                        <table class="mb-2">
+                            <tr>
+                                <td class="text-start pe-2">EC2</td>
+                                <td class="text-end">${{ include.price-sprinters-ec2 }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-start pe-2">EBS</td>
+                                <td class="text-end">${{ include.price-sprinters-ebs }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-start pe-2">Sprinters</td>
+                                <td class="text-end">$0.01000</td>
+                            </tr>
+                            <tr class="border-top">
+                                <td class="text-start pe-2">Total</td>
+                                <td class="text-end">${{ price-sprinters }}</td>
+                            </tr>
+                            </table>
+                        </span>'>${{ price-sprinters }}</span>
+            </td>
+            <td><div class="d-inline-block bg-info" style="height: 10px; width: {{ sprinters-price-percentage }}%"></div>
+            </td>
+        </tr>
+        <tr>
+            <th class="border-bottom-0 text-warning-emphasis">Sprinters (spot)<br>
+                <span class="fw-bold text-success">{{ 100 | minus: sprinters-spot-price-percentage | round }}% cheaper</span></th>
+            <td class="border-bottom-0">
+                <span class="text-tooltip"
+                      data-bs-toggle="tooltip"
+                      data-bs-custom-class="tooltip-dark"
+                      data-bs-html="true"
+                      data-bs-title='
+                        <table class="mb-2">
+                            <tr>
+                                <td class="text-start pe-2">EC2</td>
+                                <td class="text-end">${{ price-sprinters-ec2-spot }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-start pe-2">EBS</td>
+                                <td class="text-end">${{ include.price-sprinters-ebs }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-start pe-2">Sprinters</td>
+                                <td class="text-end">$0.01000</td>
+                            </tr>
+                            <tr class="border-top">
+                                <td class="text-start pe-2">Total</td>
+                                <td class="text-end">${{ price-sprinters-spot }}</td>
+                            </tr>
+                            </table>
+                        </span>'>${{ price-sprinters-spot }}</span></td>
+            <td class="border-bottom-0"><div class="d-inline-block bg-info" style="height: 10px; width: {{ sprinters-spot-price-percentage }}%"></div>
+            </td>
+        </tr>
+    </table>
+</div>

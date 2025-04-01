@@ -99,6 +99,32 @@ function initNewsletterForm() {
     });
 }
 
+function initTooltips() {
+    const tooltipSelector = '[data-bs-toggle="tooltip"]';
+
+    // Needed due to https://github.com/twbs/bootstrap/issues/36399
+    const tooltipAllowList = bootstrap.Tooltip.Default.allowList;
+    tooltipAllowList.table = [];
+    tooltipAllowList.thead = [];
+    tooltipAllowList.tbody = [];
+    tooltipAllowList.th = [];
+    tooltipAllowList.tr = [];
+    tooltipAllowList.td = [];
+
+    const initTooltip = el => new bootstrap.Tooltip(el, {allowList: tooltipAllowList});
+    const disposeTooltip = el => bootstrap.Tooltip.getInstance(el)?.dispose();
+
+    document.querySelectorAll(tooltipSelector).forEach(el => initTooltip(el));
+
+    document.body.addEventListener('htmx:afterSettle', event => {
+        event.detail.elt.querySelectorAll(tooltipSelector).forEach(el => initTooltip(el));
+    });
+
+    document.body.addEventListener('htmx:beforeSwap', event => {
+        event.detail.target.querySelectorAll(tooltipSelector).forEach(el => disposeTooltip(el));
+    });
+}
+
 document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll('h2[id],h3[id]').forEach(function(link) {
         link.addEventListener('click', function() {
@@ -107,4 +133,5 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     initCopyToClipboard();
+    initTooltips();
 });

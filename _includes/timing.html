@@ -1,0 +1,1 @@
+{% assign minutes = include.seconds | divided_by: 60 | floor %}{% assign remaining_seconds = include.seconds | modulo: 60 %}{% if minutes > 0 %}{{ minutes }}m{% endif %}{% if remaining_seconds > 0 %} {{ remaining_seconds }}s{% endif %}
