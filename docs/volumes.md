@@ -18,7 +18,7 @@ You can see details about the size of these volumes in the _Set up runner_ secti
 
 {% include h2.html id="size-increase" text="Size Increase" %}
 
-Unlike GitHub-hosted runners, Sprinters-powered runners are not restricted by a fixed amount of temp space. If your job
+Unlike GitHub-hosted runners, **Sprinters-powered runners are not restricted by a fixed amount of temp space**. If your job
 needs more temp space, you do not need to resort to brittle hacks like deleting the preinstalled software using
 actions like _jlumbroso/free-disk-space_.
 
