@@ -16,7 +16,19 @@ You can see details about the size of these volumes in the _Set up runner_ secti
 
 ![Set up runner output](/assets/volumes/set-up-runner.png){: .screenshot }
 
-{% include h2.html id="size" text="Size Optimization" %}
+{% include h2.html id="size-increase" text="Size Increase" %}
+
+Unlike GitHub-hosted runners, Sprinters-powered runners are not restricted by a fixed amount of temp space. If your job
+needs more temp space, you do not need to resort to brittle hacks like deleting the preinstalled software using
+actions like _jlumbroso/free-disk-space_.
+
+Instead, you can freely increase or decrease temp space by [appending your desired amount in GiB to the label](/docs/label#temp):
+
+<div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
+    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:<span class="text-warning">temp=<span class="fw-bold">4096</span></span></pre>
+</div>
+
+{% include h2.html id="size-optimization" text="Size Optimization" %}
 
 It's often difficult to guess the exact size required for the temp volume. At the end of every job run,
 the _Complete runner_ section of the output shows the usage of the temp volume:

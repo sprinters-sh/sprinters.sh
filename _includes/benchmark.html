@@ -31,7 +31,7 @@
 {% assign sprinters-c4xl-cost-spot-percentage = sprinters-c4xl-cost-spot | times: 100 | divided_by: include.github-cost %}
 {% assign sprinters-c4xl-cost-spot-percentage-saved = 100 | minus: sprinters-c4xl-cost-spot-percentage | round %}
 
-<p class="mb-1 mt-3 fw-bold">{{ github-machine }}</p>
+<p class="mb-1 mt-3"><span class="fw-bold">{{ github-machine }}</span></p>
 <table class="table mb-0 fs-7">
     <tr>
         <td style="width: 150px">{% include timing.html seconds=include.github-duration %}</td>
@@ -43,7 +43,7 @@
     </tr>
 </table>
 
-<p class="mb-1 mt-5 fw-bold text-warning-emphasis">{{ sprinters-mxl-machine }}</p>
+<p class="mb-1 mt-5 text-warning-emphasis"><span class="fw-bold">{{ sprinters-mxl-machine }}</span> <span class="fst-italic">{{ include.sprinters-mxl-config }}</span></p>
 <table class="table mb-0 fs-7">
     <tr>
         <td style="width: 150px">{% include timing.html seconds=include.sprinters-mxl-duration %}<br>
@@ -108,7 +108,7 @@
     </tr>
 </table>
 
-<p class="mb-1 mt-4 fw-bold text-warning-emphasis">{{ sprinters-c4xl-machine }}</p>
+<p class="mb-1 mt-4 text-warning-emphasis"><span class="fw-bold">{{ sprinters-c4xl-machine }}</span> <span class="fst-italic">{{ include.sprinters-c4xl-config }}</span></p>
 <table class="table mb-0 fs-7">
     <tr>
         <td style="width: 150px">{% include timing.html seconds=include.sprinters-c4xl-duration %}<br>

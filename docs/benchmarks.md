@@ -3,7 +3,9 @@ layout: docs
 title: "Benchmarks"
 ---
 
-Here are some benchmarks that compare the performance and cost of GitHub-hosted runners and Sprinters-powered AWS runners:
+Here are some benchmarks that compare the performance and cost of GitHub-hosted runners and Sprinters-powered AWS runners.
+
+By default, the following configurations are used:
 
 <div class="table-responsive fs-7">
 <table class="table">
@@ -38,11 +40,18 @@ Here are some benchmarks that compare the performance and cost of GitHub-hosted 
 </table>
 </div>
 
-EC2 instances launched in the `us-east-1` region.
+Also note:
+- EC2 instances launched in the `us-east-1` region.
+- EBS volumes are `gp3` with `3000` IOPS and `150` MiB/s throughput.
+- Spot savings are calculated based on the historical average for this instance type in this region.
+- If a configuration differs from the ones above, the different setting sill be shown in the benchmark.
 
-EBS volumes are `gp3` with `3000` IOPS and `150` MiB/s throughput.
-
-Spot savings are calculated based on the historical average for this instance type in this region.
+{% include benchmark.html
+        org="gohugoio" repo="hugo" org-user-id="29385237"
+        github-duration="2636" github-cost="0.70400"
+        sprinters-mxl-config="temp=32" sprinters-mxl-duration="2210" sprinters-mxl-cost-ec2="0.11810" sprinters-mxl-cost-ebs="0.00324" sprinters-mxl-spot-discount-percentage="62"
+        sprinters-c4xl-config="temp=32" sprinters-c4xl-duration="1541" sprinters-c4xl-cost-ec2="0.29394" sprinters-c4xl-cost-ebs="0.00228" sprinters-c4xl-spot-discount-percentage="65"
+%}
 
 {% include benchmark.html
     org="spring-projects" repo="spring-boot" org-user-id="317776"
