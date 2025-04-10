@@ -1,4 +1,4 @@
-<p id="{{ include.repo }}" class="fs-4 text-warning mt-6 mb-1">
+<p id="{{ include.repo }}" class="fs-4 text-warning mt-7 mb-1">
     <img src="https://avatars.githubusercontent.com/u/{{ include.org-user-id }}?s=40&v=4" class="rounded-circle"> {{ include.org }} / {{ include.repo }}
 </p>
 {% assign external-link="https://github.com/sprinters-sh/sprinters/actions/workflows/benchmark-" | append: include.repo | append: ".yml" %}
@@ -46,7 +46,7 @@
 <p class="mb-1 mt-5 text-warning-emphasis"><span class="fw-bold">{{ sprinters-mxl-machine }}</span> <span class="fst-italic">{{ include.sprinters-mxl-config }}</span></p>
 <table class="table mb-0 fs-7">
     <tr>
-        <td style="width: 150px">{% include timing.html seconds=include.sprinters-mxl-duration %}<br>
+        <td style="width: 160px">{% include timing.html seconds=include.sprinters-mxl-duration %}<br>
             <span class="fw-bold text-success">{{ sprinters-mxl-duration-percentage-faster }}% faster</span></td>
         <td><div class="d-inline-block bg-info" style="height: 10px; width: {{ sprinters-mxl-duration-percentage }}%; "></div></td>
     </tr>
