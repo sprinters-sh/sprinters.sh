@@ -1,5 +1,6 @@
 ---
 layout: default
+classes: container
 title: Privacy Policy
 ---
 {% include h1.html text="Privacy Policy" %}

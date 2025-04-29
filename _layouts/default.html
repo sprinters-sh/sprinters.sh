@@ -46,10 +46,8 @@
     </div>
 </nav>
 
-<div class="container">
-    <div class="{{ page.classes }}">
-        {{ content }}
-    </div>
+<div class="{{ layout.classes }} {{ page.classes }}">
+    {{ content }}
 </div>
 
 <div class="mt-7 text-center container fs-4">

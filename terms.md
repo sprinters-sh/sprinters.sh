@@ -1,5 +1,6 @@
 ---
 layout: default
+classes: container
 title: Terms of Service
 ---
 {% include h1.html text="Terms of Service" %}

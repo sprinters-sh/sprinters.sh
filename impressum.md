@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Impressum
+classes: container
 ---
 {% include h1.html text="Impressum" %}
 
