@@ -4,6 +4,8 @@
 {% assign external-link="https://github.com/sprinters-sh/sprinters/actions/workflows/benchmark-" | append: include.repo | append: ".yml" %}
 {% include external-link.html text="Benchmark Workflow" href=external-link %}{: .fs-8 }
 
+{% assign col1-width="110px" %}
+
 {% assign github-machine="github-4vcpu" %}
 {% assign sprinters-mxl-machine="sprinters-mxl" %}
 {% assign sprinters-c4xl-machine="sprinters-c4xl" %}
@@ -34,7 +36,7 @@
 <p class="mb-1 mt-3"><span class="fw-bold">{{ github-machine }}</span></p>
 <table class="table mb-0 fs-7">
     <tr>
-        <td style="width: 160px">{% include timing.html seconds=include.github-duration %}</td>
+        <td style="width: {{ col1-width }}">{% include timing.html seconds=include.github-duration %}</td>
         <td><div class="d-inline-block bg-info" style="height: 10px; width: 100%; "></div></td>
     </tr>
     <tr>
@@ -46,7 +48,7 @@
 <p class="mb-1 mt-5 text-warning-emphasis"><span class="fw-bold">{{ sprinters-mxl-machine }}</span> <span class="fst-italic">{{ include.sprinters-mxl-config }}</span></p>
 <table class="table mb-0 fs-7">
     <tr>
-        <td style="width: 160px">{% include timing.html seconds=include.sprinters-mxl-duration %}</td>
+        <td style="width: {{ col1-width }}">{% include timing.html seconds=include.sprinters-mxl-duration %}</td>
         <td><div class="d-inline-block bg-info" style="height: 10px; width: {{ sprinters-mxl-duration-percentage }}%; "></div></td>
     </tr>
     <tr>
@@ -119,7 +121,7 @@
 <p class="mb-1 mt-4 text-warning-emphasis"><span class="fw-bold">{{ sprinters-c4xl-machine }}</span> <span class="fst-italic">{{ include.sprinters-c4xl-config }}</span></p>
 <table class="table mb-0 fs-7">
     <tr>
-        <td style="width: 160px">{% include timing.html seconds=include.sprinters-c4xl-duration %}</td>
+        <td style="width: {{ col1-width }}">{% include timing.html seconds=include.sprinters-c4xl-duration %}</td>
         <td><div class="d-inline-block bg-info" style="height: 10px; width: {{ sprinters-c4xl-duration-percentage }}%; "></div></td>
     </tr>
     <tr>
