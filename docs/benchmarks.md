@@ -47,6 +47,13 @@ Also note:
 - If a configuration differs from the ones above, the different setting sill be shown in the benchmark.
 
 {% include benchmark.html
+        org="django" repo="django" org-user-id="27804"
+        github-duration="388" github-cost="0.11200"
+        sprinters-mxl-duration="313" sprinters-mxl-cost-ec2="0.01915" sprinters-mxl-cost-ebs="0.00033" sprinters-mxl-spot-discount-percentage="62"
+        sprinters-c4xl-duration="165" sprinters-c4xl-cost-ec2="0.03392" sprinters-c4xl-cost-ebs="0.00016" sprinters-c4xl-spot-discount-percentage="65"
+%}
+
+{% include benchmark.html
         org="gohugoio" repo="hugo" org-user-id="29385237"
         github-duration="2636" github-cost="0.70400"
         sprinters-mxl-config="temp=32" sprinters-mxl-duration="2210" sprinters-mxl-cost-ec2="0.11810" sprinters-mxl-cost-ebs="0.00324" sprinters-mxl-spot-discount-percentage="62"

@@ -10,26 +10,26 @@
 
 {% assign sprinters-cost = "0.01000" %}
 {% assign sprinters-mxl-duration-percentage = include.sprinters-mxl-duration | times: 100 | divided_by: include.github-duration %}
-{% assign sprinters-mxl-duration-percentage-faster = 100 | minus: sprinters-mxl-duration-percentage %}
+{% assign sprinters-mxl-duration-times-faster = 100.0 | divided_by: sprinters-mxl-duration-percentage | round: 1 %}
 {% assign sprinters-mxl-cost = include.sprinters-mxl-cost-ec2 | plus: include.sprinters-mxl-cost-ebs | plus: sprinters-cost %}
 {% assign sprinters-mxl-cost-percentage = sprinters-mxl-cost | times: 100 | divided_by: include.github-cost %}
-{% assign sprinters-mxl-cost-percentage-saved = 100 | minus: sprinters-mxl-cost-percentage | round %}
+{% assign sprinters-mxl-cost-times-saved = 100 | divided_by: sprinters-mxl-cost-percentage | round: 1 %}
 {% assign sprinters-mxl-spot-factor = 100.0 | minus: include.sprinters-mxl-spot-discount-percentage | divided_by: 100 %}
 {% assign sprinters-mxl-cost-ec2-spot = include.sprinters-mxl-cost-ec2 | times: sprinters-mxl-spot-factor | round: 5 %}
 {% assign sprinters-mxl-cost-spot = sprinters-mxl-cost-ec2-spot | plus: include.sprinters-mxl-cost-ebs | plus: sprinters-cost %}
 {% assign sprinters-mxl-cost-spot-percentage = sprinters-mxl-cost-spot | times: 100 | divided_by: include.github-cost %}
-{% assign sprinters-mxl-cost-spot-percentage-saved = 100 | minus: sprinters-mxl-cost-spot-percentage | round %}
+{% assign sprinters-mxl-cost-spot-times-saved = 100 | divided_by: sprinters-mxl-cost-spot-percentage | round: 1 %}
 
 {% assign sprinters-c4xl-duration-percentage = include.sprinters-c4xl-duration | times: 100 | divided_by: include.github-duration %}
-{% assign sprinters-c4xl-duration-percentage-faster = 100 | minus: sprinters-c4xl-duration-percentage %}
+{% assign sprinters-c4xl-duration-times-faster = 100.0 | divided_by: sprinters-c4xl-duration-percentage | round: 1 %}
 {% assign sprinters-c4xl-cost = include.sprinters-c4xl-cost-ec2 | plus: include.sprinters-c4xl-cost-ebs | plus: sprinters-cost %}
 {% assign sprinters-c4xl-cost-percentage = sprinters-c4xl-cost | times: 100 | divided_by: include.github-cost %}
-{% assign sprinters-c4xl-cost-percentage-saved = 100 | minus: sprinters-c4xl-cost-percentage | round %}
+{% assign sprinters-c4xl-cost-times-saved = 100 | divided_by: sprinters-c4xl-cost-percentage | round: 1 %}
 {% assign sprinters-c4xl-spot-factor = 100.0 | minus: include.sprinters-c4xl-spot-discount-percentage | divided_by: 100 %}
 {% assign sprinters-c4xl-cost-ec2-spot = include.sprinters-c4xl-cost-ec2 | times: sprinters-c4xl-spot-factor | round: 5 %}
 {% assign sprinters-c4xl-cost-spot = sprinters-c4xl-cost-ec2-spot | plus: include.sprinters-c4xl-cost-ebs | plus: sprinters-cost %}
 {% assign sprinters-c4xl-cost-spot-percentage = sprinters-c4xl-cost-spot | times: 100 | divided_by: include.github-cost %}
-{% assign sprinters-c4xl-cost-spot-percentage-saved = 100 | minus: sprinters-c4xl-cost-spot-percentage | round %}
+{% assign sprinters-c4xl-cost-spot-times-saved = 100 | divided_by: sprinters-c4xl-cost-spot-percentage | round: 1 %}
 
 <p class="mb-1 mt-3"><span class="fw-bold">{{ github-machine }}</span></p>
 <table class="table mb-0 fs-7">
@@ -46,12 +46,12 @@
 <p class="mb-1 mt-5 text-warning-emphasis"><span class="fw-bold">{{ sprinters-mxl-machine }}</span> <span class="fst-italic">{{ include.sprinters-mxl-config }}</span></p>
 <table class="table mb-0 fs-7">
     <tr>
-        <td style="width: 160px">{% include timing.html seconds=include.sprinters-mxl-duration %}<br>
-            <span class="fw-bold text-success">{{ sprinters-mxl-duration-percentage-faster }}% faster</span></td>
+        <td style="width: 160px">{% include timing.html seconds=include.sprinters-mxl-duration %}</td>
         <td><div class="d-inline-block bg-info" style="height: 10px; width: {{ sprinters-mxl-duration-percentage }}%; "></div></td>
     </tr>
     <tr>
-        <td><span class="text-tooltip"
+        <td><span class="fst-italic text-warning-emphasis">on-demand</span><br>
+            <span class="text-tooltip"
                   data-bs-toggle="tooltip"
                   data-bs-custom-class="tooltip-dark"
                   data-bs-html="true"
@@ -74,12 +74,17 @@
                             <td class="text-end">${{ sprinters-mxl-cost }}</td>
                         </tr>
                         </table>
-                    </span>'>${{ sprinters-mxl-cost }}</span> <span class="fst-italic">on-demand</span><br>
-            <span class="fw-bold text-success">{{ sprinters-mxl-cost-percentage-saved }}% cheaper</span></td>
-        <td><div class="d-inline-block bg-primary" style="height: 10px; width: {{ sprinters-mxl-cost-percentage }}%; "></div></td>
+                    </span>'>${{ sprinters-mxl-cost }}</span>
+        </td>
+        <td>
+            <span class="fw-bold text-success-emphasis">{{ sprinters-mxl-duration-times-faster }}x faster <i class="fw-normal text-success">and</i> {{ sprinters-mxl-cost-times-saved }}x cheaper</span><br>
+            <div class="d-inline-block bg-primary" style="height: 10px; width: {{ sprinters-mxl-cost-percentage }}%;"></div>
+        </td>
     </tr>
     <tr>
-        <td><span class="text-tooltip"
+        <td>
+            <span class="fst-italic text-warning-emphasis">spot</span><br>
+            <span class="text-tooltip"
                   data-bs-toggle="tooltip"
                   data-bs-custom-class="tooltip-dark"
                   data-bs-html="true"
@@ -102,21 +107,25 @@
                             <td class="text-end">${{ sprinters-mxl-cost-spot }}</td>
                         </tr>
                         </table>
-                    </span>'>${{ sprinters-mxl-cost-spot }}</span> <span class="fst-italic">spot</span><br>
-            <span class="fw-bold text-success">{{ sprinters-mxl-cost-spot-percentage-saved }}% cheaper</span></td>
-        <td><div class="d-inline-block bg-primary" style="height: 10px; width: {{ sprinters-mxl-cost-spot-percentage }}%; "></div></td>
+                    </span>'>${{ sprinters-mxl-cost-spot }}</span>
+        </td>
+        <td>
+            <span class="fw-bold text-success-emphasis">{{ sprinters-mxl-duration-times-faster }}x faster <i class="fw-normal text-success">and</i> {{ sprinters-mxl-cost-spot-times-saved }}x cheaper</span><br>
+            <div class="d-inline-block bg-primary" style="height: 10px; width: {{ sprinters-mxl-cost-spot-percentage }}%; "></div>
+        </td>
     </tr>
 </table>
 
 <p class="mb-1 mt-4 text-warning-emphasis"><span class="fw-bold">{{ sprinters-c4xl-machine }}</span> <span class="fst-italic">{{ include.sprinters-c4xl-config }}</span></p>
 <table class="table mb-0 fs-7">
     <tr>
-        <td style="width: 160px">{% include timing.html seconds=include.sprinters-c4xl-duration %}<br>
-            <span class="fw-bold text-success">{{ sprinters-c4xl-duration-percentage-faster }}% faster</span></td>
+        <td style="width: 160px">{% include timing.html seconds=include.sprinters-c4xl-duration %}</td>
         <td><div class="d-inline-block bg-info" style="height: 10px; width: {{ sprinters-c4xl-duration-percentage }}%; "></div></td>
     </tr>
     <tr>
-        <td><span class="text-tooltip"
+        <td>
+            <span class="fst-italic text-warning-emphasis">on-demand</span><br>
+            <span class="text-tooltip"
                                    data-bs-toggle="tooltip"
                                    data-bs-custom-class="tooltip-dark"
                                    data-bs-html="true"
@@ -139,12 +148,17 @@
                             <td class="text-end">${{ sprinters-c4xl-cost }}</td>
                         </tr>
                         </table>
-                    </span>'>${{ sprinters-c4xl-cost }}</span> <span class="fst-italic">on-demand</span><br>
-            <span class="fw-bold text-success">{{ sprinters-c4xl-cost-percentage-saved }}% cheaper</span></td>
-        <td><div class="d-inline-block bg-primary" style="height: 10px; width: {{ sprinters-c4xl-cost-percentage }}%; "></div></td>
+                    </span>'>${{ sprinters-c4xl-cost }}</span>
+        </td>
+        <td>
+            <span class="fw-bold text-success-emphasis">{{ sprinters-c4xl-duration-times-faster }}x faster <i class="fw-normal text-success">and</i> {{ sprinters-c4xl-cost-times-saved }}x cheaper</span><br>
+            <div class="d-inline-block bg-primary" style="height: 10px; width: {{ sprinters-c4xl-cost-percentage }}%; "></div>
+        </td>
     </tr>
     <tr>
-        <td><span class="text-tooltip"
+        <td>
+            <span class="fst-italic text-warning-emphasis">spot</span><br>
+            <span class="text-tooltip"
                   data-bs-toggle="tooltip"
                   data-bs-custom-class="tooltip-dark"
                   data-bs-html="true"
@@ -167,8 +181,11 @@
                             <td class="text-end">${{ sprinters-c4xl-cost-spot }}</td>
                         </tr>
                         </table>
-                    </span>'>${{ sprinters-c4xl-cost-spot }}</span> <span class="fst-italic">spot</span><br>
-            <span class="fw-bold text-success">{{ sprinters-c4xl-cost-spot-percentage-saved }}% cheaper</span></td>
-        <td><div class="d-inline-block bg-primary" style="height: 10px; width: {{ sprinters-c4xl-cost-spot-percentage }}%; "></div></td>
+                    </span>'>${{ sprinters-c4xl-cost-spot }}</span>
+        </td>
+        <td>
+            <span class="fw-bold text-success-emphasis">{{ sprinters-c4xl-duration-times-faster }}x faster <i class="fw-normal text-success">and</i> {{ sprinters-c4xl-cost-spot-times-saved }}x cheaper</span><br>
+            <div class="d-inline-block bg-primary" style="height: 10px; width: {{ sprinters-c4xl-cost-spot-percentage }}%; "></div>
+        </td>
     </tr>
 </table>
