@@ -1,3 +1,9 @@
+- date: "2025-03-12"
+  title: "AWS <code>c5</code>, <code>c5a</code>, <code>c6a</code>, <code>c6i</code> and <code>c7a</code> instance support"
+  href: "/docs/label#instance-type"
+  image: "/assets/new/2025-05-12-c567ia.png"
+  details: "Need compute-optimized x64 instances with high spot savings? Sprinters has you covered with <code>c5</code>, <code>c5a</code>, <code>c6a</code>, <code>c6i</code> and <code>c7a</code> instances."
+
 - date: "2025-03-28"
   title: "Size optimization for temp volume"
   href: "/docs/volumes#size"

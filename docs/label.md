@@ -155,19 +155,30 @@ _aws-instance-type_
 
 {% include h4.html text="Supported <strong>x64</strong> Instance Types" %}
 
+{% include h5.html text="Intel" %}
 | Family | Sizes |
 +-|-|-+
+| c5 | `c5.large` , `c5.xlarge` , `c5.2xlarge` , `c5.4xlarge` , `c5.8xlarge` , `c5.12xlarge` , `c5.16xlarge` , `c5.24xlarge` |
+| c6i | `c6i.large` , `c6i.xlarge` , `c6i.2xlarge` , `c6i.4xlarge` , `c6i.8xlarge` , `c6i.12xlarge` , `c6i.16xlarge` , `c6i.24xlarge` , `c6i.32xlarge` |
 | c7i | `c7i.large` , `c7i.xlarge` , `c7i.2xlarge` , `c7i.4xlarge` , `c7i.8xlarge` , `c7i.12xlarge` , `c7i.16xlarge` , `c7i.24xlarge` , `c7i.48xlarge` |
 | c7i-flex | `c7i-flex.large` , `c7i-flex.xlarge` , `c7i-flex.2xlarge` , `c7i-flex.4xlarge` , `c7i-flex.8xlarge` , `c7i-flex.12xlarge` , `c7i-flex.16xlarge` |
 | m5 | `m5.large` , `m5.xlarge` , `m5.2xlarge` , `m5.4xlarge` , `m5.8xlarge` , `m5.12xlarge` , `m5.16xlarge` , `m5.24xlarge` |
-| m5a | `m5a.large` , `m5a.xlarge` , `m5a.2xlarge` , `m5a.4xlarge` , `m5a.8xlarge` , `m5a.12xlarge` , `m5a.16xlarge` , `m5a.24xlarge` |
-| m6a | `m6a.large` , `m6a.xlarge` , `m6a.2xlarge` , `m6a.4xlarge` , `m6a.8xlarge` , `m6a.12xlarge` , `m6a.16xlarge` , `m6a.24xlarge` , `m6a.32xlarge` , `m6a.48xlarge` |
 | m6i | `m6i.large` , `m6i.xlarge` , `m6i.2xlarge` , `m6i.4xlarge` , `m6i.8xlarge` , `m6i.12xlarge` , `m6i.16xlarge` , `m6i.24xlarge` , `m6i.32xlarge` |
-| m7a | `m7a.medium` , `m7a.large` , `m7a.xlarge` , `m7a.2xlarge` , `m7a.4xlarge` , `m7a.8xlarge` , `m7a.12xlarge` , `m7a.16xlarge` , `m7a.24xlarge` , `m7a.32xlarge` , `m7a.48xlarge` |
 | m7i | `m7i.large` , `m7i.xlarge` , `m7i.2xlarge` , `m7i.4xlarge` , `m7i.8xlarge` , `m7i.12xlarge` , `m7i.16xlarge` , `m7i.24xlarge` , `m7i.48xlarge` |
 | m7i-flex | `m7i-flex.large` , `m7i-flex.xlarge` , `m7i-flex.2xlarge` , `m7i-flex.4xlarge` , `m7i-flex.8xlarge` , `m7i-flex.12xlarge` , `m7i-flex.16xlarge` |
 | r7i | `r7i.large` , `r7i.xlarge` , `r7i.2xlarge` , `r7i.4xlarge` , `r7i.8xlarge` , `r7i.12xlarge` , `r7i.16xlarge` , `r7i.24xlarge` , `r7i.48xlarge` |
 | t3 | `t3.nano` , `t3.micro` , `t3.small` , `t3.medium` , `t3.large` , `t3.xlarge` , `t3.2xlarge` |
+{: .table #instance-types }
+
+{% include h5.html text="AMD" %}
+| Family | Sizes |
++-|-|-+
+| c5a | `c5a.large` , `c5a.xlarge` , `c5a.2xlarge` , `c5a.4xlarge` , `c5a.8xlarge` , `c5a.12xlarge` , `c5a.16xlarge` , `c5a.24xlarge` |
+| c6a | `c6a.large` , `c6a.xlarge` , `c6a.2xlarge` , `c6a.4xlarge` , `c6a.8xlarge` , `c6a.12xlarge` , `c6a.16xlarge` , `c6a.24xlarge` , `c6a.32xlarge` , `c6a.48xlarge` |
+| c7a | `c7a.medium` , `c7a.large` , `c7a.xlarge` , `c7a.2xlarge` , `c7a.4xlarge` , `c7a.8xlarge` , `c7a.12xlarge` , `c7a.16xlarge` , `c7a.24xlarge` , `c7a.32xlarge` , `c7a.48xlarge` |
+| m5a | `m5a.large` , `m5a.xlarge` , `m5a.2xlarge` , `m5a.4xlarge` , `m5a.8xlarge` , `m5a.12xlarge` , `m5a.16xlarge` , `m5a.24xlarge` |
+| m6a | `m6a.large` , `m6a.xlarge` , `m6a.2xlarge` , `m6a.4xlarge` , `m6a.8xlarge` , `m6a.12xlarge` , `m6a.16xlarge` , `m6a.24xlarge` , `m6a.32xlarge` , `m6a.48xlarge` |
+| m7a | `m7a.medium` , `m7a.large` , `m7a.xlarge` , `m7a.2xlarge` , `m7a.4xlarge` , `m7a.8xlarge` , `m7a.12xlarge` , `m7a.16xlarge` , `m7a.24xlarge` , `m7a.32xlarge` , `m7a.48xlarge` |
 | t3a | `t3a.nano` , `t3a.micro` , `t3a.small` , `t3a.medium` , `t3a.large` , `t3a.xlarge` , `t3a.2xlarge` |
 {: .table #instance-types }
 
