@@ -2,7 +2,12 @@
     <img src="https://avatars.githubusercontent.com/u/{{ include.org-user-id }}?s=40&v=4" class="rounded-circle"> {{ include.org }} / {{ include.repo }}
 </p>
 {% assign external-link="https://github.com/sprinters-sh/sprinters/actions/workflows/benchmark-" | append: include.repo | append: ".yml" %}
-{% include external-link.html text="Benchmark Workflow" href=external-link %}{: .fs-8 }
+{% include external-link.html text="Benchmark Workflow" href=external-link %}{: .fs-8 .mb-1 }
+
+<div class="fs-7">
+    <div class="d-inline-block bg-info" style="height: 10px; width: 10px; "></div> Duration
+    <div class="d-inline-block bg-primary ms-3" style="height: 10px; width: 10px; "></div> Cost
+</div>
 
 {% assign col1-width="110px" %}
 
@@ -33,7 +38,7 @@
 {% assign sprinters-c4xl-cost-spot-percentage = sprinters-c4xl-cost-spot | times: 100 | divided_by: include.github-cost %}
 {% assign sprinters-c4xl-cost-spot-times-saved = 100 | divided_by: sprinters-c4xl-cost-spot-percentage | round: 1 %}
 
-<p class="mb-1 mt-3"><span class="fw-bold">{{ github-machine }}</span></p>
+<p class="mb-1 mt-5"><span class="fw-bold">{{ github-machine }}</span></p>
 <table class="table mb-0 fs-7">
     <tr>
         <td style="width: {{ col1-width }}">{% include timing.html seconds=include.github-duration %}</td>
