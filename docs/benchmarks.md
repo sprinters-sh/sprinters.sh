@@ -44,7 +44,7 @@ Also note:
 - EC2 instances launched in the `us-east-1` region.
 - EBS volumes are `gp3` with `3000` IOPS and `150` MiB/s throughput.
 - Spot savings are calculated based on the historical average for this instance type in this region.
-- If a configuration differs from the ones above, the different setting sill be shown in the benchmark.
+- If a configuration differs from the ones above, the different setting will be shown in the benchmark.
 
 {% include benchmark.html
         org="django" repo="django" org-user-id="27804"
