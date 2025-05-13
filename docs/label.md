@@ -67,23 +67,29 @@ _image-name_
 | Image | Description |
 +-|-|-+
 | `ubuntu-latest`{: .text-nowrap } <br> `ubuntu-24.04`{: .text-nowrap } | Ubuntu 24.04 x64 image identical to the one available for GitHub hosted runners |
+| `ubuntu-24.04-slim`{: .text-nowrap } | Ubuntu 24.04 x64 image identical to the one available for GitHub hosted runners, minus Android, CodeQL, Haskell and Julia |
+| `ubuntu-24.04-minimal`{: .text-nowrap } | Minimal, fast-booting Ubuntu 24.04 x64 image containing only Git and Docker |
 | `ubuntu-22.04`{: .text-nowrap } | Ubuntu 22.04 x64 image identical to the one available for GitHub hosted runners |
-| `minimal` | Minimal, fast-booting image containing only Git and Docker |
+| `ubuntu-22.04-slim`{: .text-nowrap } | Ubuntu 22.04 x64 image identical to the one available for GitHub hosted runners, minus Android, CodeQL, Haskell and Julia |
+| `ubuntu-22.04-minimal`{: .text-nowrap } | Minimal, fast-booting Ubuntu 22.04 x64 image containing only Git and Docker |
 {: .table }
 
 {% include h4.html text="Supported <strong>arm64</strong> Images" %}
 | Image | Description |
 +-|-|-+
 | `ubuntu-24.04-arm`{: .text-nowrap } | Ubuntu 24.04 arm64 image identical to the one available for GitHub hosted runners |
+| `ubuntu-24.04-arm-slim`{: .text-nowrap } | Ubuntu 24.04 arm64 image identical to the one available for GitHub hosted runners, minus Android, CodeQL, Haskell and Julia |
+| `ubuntu-24.04-arm-minimal`{: .text-nowrap } | Minimal, fast-booting Ubuntu 24.04 arm64 image containing only Git and Docker |
 | `ubuntu-22.04-arm`{: .text-nowrap } | Ubuntu 22.04 arm64 image identical to the one available for GitHub hosted runners |
-| `minimal` | Minimal, fast-booting image containing only Git and Docker |
+| `ubuntu-22.04-arm-slim`{: .text-nowrap } | Ubuntu 22.04 arm64 image identical to the one available for GitHub hosted runners, minus Android, CodeQL, Haskell and Julia |
+| `ubuntu-22.04-arm-minimal`{: .text-nowrap } | Minimal, fast-booting Ubuntu 22.04 arm64 image containing only Git and Docker |
 {: .table }
 
 {% include h4.html text="Example" %}
-To set the image to `minimal`, change the label to:
+To set the image to `ubuntu-24.04-minimal`, change the label to:
 
 <div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
-    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:<span class="fw-bold fst-italic text-warning">minimal</span></pre>
+    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:<span class="fw-bold fst-italic text-warning">ubuntu-24.04-minimal</span></pre>
 </div>
 
 ---
@@ -91,7 +97,7 @@ To set the image to `minimal`, change the label to:
 
 
 {% include h3.html id="placement" text="AWS Region / Availability Zone / Subnet" %}
-You can specify where the runner instance is launched by appending a  _region_, _availability zone_ and _subnet id_ to the label.
+You can specify where the runner instance is launched by appending a _region_, _availability zone_ and _subnet id_ to the label.
 
 At least one of _region_ and _availability zone_ must be specified. _subnet id_ is optional.
 All parts are separated by a `/`.
@@ -122,10 +128,10 @@ Need a different region? [Simply request it in the issue tracker](https://github
 - If you specify both an _availability zone_ and a _subnet id_, you must ensure the _subnet_ resides in that _availability zone_.
 
 {% include h4.html text="Examples" %}
-To launch the runner using the `minimal` image in the `eu-central-1` region, change the label to:
+To launch the runner using the `ubuntu-24.04-minimal` image in the `eu-central-1` region, change the label to:
 
 <div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
-    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:minimal:<span class="fw-bold fst-italic text-warning">eu-central-1</span></pre>
+    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-24.04-minimal:<span class="fw-bold fst-italic text-warning">eu-central-1</span></pre>
 </div>
 
 To use the `eu-central-1c` availability zone, change the label to:
