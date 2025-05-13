@@ -158,7 +158,7 @@ _aws-instance-type_
 {% include h5.html text="Intel" %}
 | Family | Sizes |
 +-|-|-+
-| c5 | `c5.large` , `c5.xlarge` , `c5.2xlarge` , `c5.4xlarge` , `c5.8xlarge` , `c5.12xlarge` , `c5.16xlarge` , `c5.24xlarge` |
+| c5 | `c5.large` , `c5.xlarge` , `c5.2xlarge` , `c5.4xlarge` , `c5.9xlarge` , `c5.12xlarge` , `c5.18xlarge` , `c5.24xlarge` |
 | c6i | `c6i.large` , `c6i.xlarge` , `c6i.2xlarge` , `c6i.4xlarge` , `c6i.8xlarge` , `c6i.12xlarge` , `c6i.16xlarge` , `c6i.24xlarge` , `c6i.32xlarge` |
 | c7i | `c7i.large` , `c7i.xlarge` , `c7i.2xlarge` , `c7i.4xlarge` , `c7i.8xlarge` , `c7i.12xlarge` , `c7i.16xlarge` , `c7i.24xlarge` , `c7i.48xlarge` |
 | c7i-flex | `c7i-flex.large` , `c7i-flex.xlarge` , `c7i-flex.2xlarge` , `c7i-flex.4xlarge` , `c7i-flex.8xlarge` , `c7i-flex.12xlarge` , `c7i-flex.16xlarge` |
