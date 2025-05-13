@@ -1,6 +1,7 @@
 - path: "docs/index.md"
 - path: "docs/setup.md"
 - path: "docs/label.md"
+- path: "docs/images.md"
 - path: "docs/volumes.md"
 - path: "docs/aws-resources.md"
 - path: "docs/security.md"
