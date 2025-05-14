@@ -2,7 +2,7 @@
   title: "Faster-booting <code>-slim</code> and <code>-minimal</code> images with lower EBS costs"
   href: "/docs/images"
   image: "/assets/new/2025-05-14-slim-minimal.png"
-  details: "Faster-booting runners? Much lower EBS costs? Choose both with our new <code>-slim<code> and <code>-minimal<code> images."
+  details: "Faster-booting runners? Much lower EBS costs? Choose both with our new <code>-slim</code> and <code>-minimal</code> images."
 
 - date: "2025-03-12"
   title: "AWS <code>c5</code>, <code>c5a</code>, <code>c6a</code>, <code>c6i</code> and <code>c7a</code> instance support"
