@@ -26,19 +26,19 @@ These images are split across three dimensions:
         <tr>
             <td><code>ubuntu-24.04</code></td>
             <td>Full</td>
-            <td class="text-end">12 GiB</td>
+            <td class="text-end text-nowrap">12 GiB</td>
             <td class="text-end">25-55s</td>
         </tr>
         <tr>
             <td><code>ubuntu-24.04-slim</code></td>
             <td>Slim</td>
-            <td class="text-end">7 GiB</td>
+            <td class="text-end text-nowrap">7 GiB</td>
             <td class="text-end">20-40s</td>
         </tr>
         <tr>
             <td><code>ubuntu-24.04-minimal</code></td>
             <td>Minimal</td>
-            <td class="text-end">1 GiB</td>
+            <td class="text-end text-nowrap">1 GiB</td>
             <td class="text-end">10-18s</td>
         </tr>
         </tbody>
@@ -60,19 +60,19 @@ These images are split across three dimensions:
         <tr>
             <td><code>ubuntu-24.04-arm</code></td>
             <td>Full</td>
-            <td class="text-end">7 GiB</td>
+            <td class="text-end text-nowrap">7 GiB</td>
             <td class="text-end">20-40s</td>
         </tr>
         <tr>
             <td><code>ubuntu-24.04-arm-slim</code></td>
             <td>Slim</td>
-            <td class="text-end">5 GiB</td>
+            <td class="text-end text-nowrap">5 GiB</td>
             <td class="text-end">18-35s</td>
         </tr>
         <tr>
             <td><code>ubuntu-24.04-arm-minimal</code></td>
             <td>Minimal</td>
-            <td class="text-end">1 GiB</td>
+            <td class="text-end text-nowrap">1 GiB</td>
             <td class="text-end">10-18s</td>
         </tr>
         </tbody>
@@ -95,19 +95,19 @@ These images are split across three dimensions:
         <tr>
             <td><code>ubuntu-22.04</code></td>
             <td>Full</td>
-            <td class="text-end">13 GiB</td>
+            <td class="text-end text-nowrap">13 GiB</td>
             <td class="text-end">25-55s</td>
         </tr>
         <tr>
             <td><code>ubuntu-22.04-slim</code></td>
             <td>Slim</td>
-            <td class="text-end">8 GiB</td>
+            <td class="text-end text-nowrap">8 GiB</td>
             <td class="text-end">21-41s</td>
         </tr>
         <tr>
             <td><code>ubuntu-22.04-minimal</code></td>
             <td>Minimal</td>
-            <td class="text-end">1 GiB</td>
+            <td class="text-end text-nowrap">1 GiB</td>
             <td class="text-end">10-18s</td>
         </tr>
         </tbody>
@@ -129,19 +129,19 @@ These images are split across three dimensions:
         <tr>
             <td><code>ubuntu-22.04-arm</code></td>
             <td>Full</td>
-            <td class="text-end">7 GiB</td>
+            <td class="text-end text-nowrap">7 GiB</td>
             <td class="text-end">20-40s</td>
         </tr>
         <tr>
             <td><code>ubuntu-22.04-arm-slim</code></td>
             <td>Slim</td>
-            <td class="text-end">6 GiB</td>
+            <td class="text-end text-nowrap">6 GiB</td>
             <td class="text-end">19-38s</td>
         </tr>
         <tr>
             <td><code>ubuntu-22.04-arm-minimal</code></td>
             <td>Minimal</td>
-            <td class="text-end">1 GiB</td>
+            <td class="text-end text-nowrap">1 GiB</td>
             <td class="text-end">10-18s</td>
         </tr>
         </tbody>
