@@ -1,3 +1,9 @@
+- date: "2025-03-14"
+  title: "Faster-booting <code>-slim</code> and <code>-minimal</code> images with lower EBS costs"
+  href: "/docs/images"
+  image: "/assets/new/2025-05-14-slim-minimal.png"
+  details: "Faster-booting runners? Much lower EBS costs? Choose both with our new <code>-slim<code> and <code>-minimal<code> images."
+
 - date: "2025-03-12"
   title: "AWS <code>c5</code>, <code>c5a</code>, <code>c6a</code>, <code>c6i</code> and <code>c7a</code> instance support"
   href: "/docs/label#instance-type"
@@ -68,7 +74,7 @@
   title: "<code>ubuntu-24.04-arm</code> image support"
   href: "/docs/label#image"
   image: "/assets/new/2025-02-09-ubuntu-24.04-arm.png"
-  details: "In addition to the <code>minimal</code> image, you can now also choose the <code>ubuntu-24.04-arm</code> image for arm64 runners. This image is identical to the official one from GitHub."
+  details: "Arm64 runners now come with full Ubuntu support using the new <code>ubuntu-24.04-arm</code> image. This image is identical to the official one from GitHub."
 
 - date: "2025-02-07"
   title: "AWS <code>m6g</code>, <code>m7g</code> and <code>m8g</code> instance support"

@@ -2,6 +2,11 @@ a {
     text-decoration: none;
 }
 
+code {
+    word-break: keep-all;
+    white-space: nowrap;
+}
+
 .fs-0 {
     font-size: calc(1.5rem + 1.5vw) !important;
 }
@@ -182,10 +187,6 @@ img {
 
 .timeline-title code {
     color: var(--bs-warning);
-}
-
-.timeline-description code {
-    word-break: keep-all;
 }
 
 .text-tooltip {

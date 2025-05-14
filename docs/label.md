@@ -55,7 +55,7 @@ The following label parts can be added or modified to customize the image, place
 {: .mb-7 }
 
 {% include h3.html id="image" text="Image" %}
-You can set the image for the runner by replacing the one in the label.
+You can set the [image](/docs/images) for the runner by replacing the one in the label.
 
 {% include h4.html text="Format" %}
 _image-name_
@@ -64,25 +64,37 @@ _image-name_
 `ubuntu-latest`
 
 {% include h4.html text="Supported <strong>x64</strong> Images" %}
+{% include h5.html text="Ubuntu 24.04" %}
 | Image | Description |
 +-|-|-+
-| `ubuntu-latest`{: .text-nowrap } <br> `ubuntu-24.04`{: .text-nowrap } | Ubuntu 24.04 x64 image identical to the one available for GitHub hosted runners |
-| `ubuntu-24.04-slim`{: .text-nowrap } | Ubuntu 24.04 x64 image identical to the one available for GitHub hosted runners, minus Android, CodeQL, Haskell and Julia |
-| `ubuntu-24.04-minimal`{: .text-nowrap } | Minimal, fast-booting Ubuntu 24.04 x64 image containing only Git and Docker |
-| `ubuntu-22.04`{: .text-nowrap } | Ubuntu 22.04 x64 image identical to the one available for GitHub hosted runners |
-| `ubuntu-22.04-slim`{: .text-nowrap } | Ubuntu 22.04 x64 image identical to the one available for GitHub hosted runners, minus Android, CodeQL, Haskell and Julia |
-| `ubuntu-22.04-minimal`{: .text-nowrap } | Minimal, fast-booting Ubuntu 22.04 x64 image containing only Git and Docker |
+| `ubuntu-latest`{: .text-nowrap } <br> `ubuntu-24.04`{: .text-nowrap } | Identical to the one available for GitHub-hosted runners |
+| `ubuntu-24.04-slim`{: .text-nowrap } | Identical to the one available for GitHub-hosted runners, minus Android, CodeQL, Haskell and Julia |
+| `ubuntu-24.04-minimal`{: .text-nowrap } | Minimal, fast-booting image containing only Git, Git LFS, the GitHub CLI and Docker |
+{: .table }
+
+{% include h5.html text="Ubuntu 22.04" %}
+| Image | Description |
++-|-|-+
+| `ubuntu-22.04`{: .text-nowrap } | Identical to the one available for GitHub-hosted runners |
+| `ubuntu-22.04-slim`{: .text-nowrap } | Identical to the one available for GitHub-hosted runners, minus Android, CodeQL, Haskell and Julia |
+| `ubuntu-22.04-minimal`{: .text-nowrap } | Minimal, fast-booting image containing only Git, Git LFS, the GitHub CLI and Docker |
 {: .table }
 
 {% include h4.html text="Supported <strong>arm64</strong> Images" %}
+{% include h5.html text="Ubuntu 24.04" %}
 | Image | Description |
 +-|-|-+
-| `ubuntu-24.04-arm`{: .text-nowrap } | Ubuntu 24.04 arm64 image identical to the one available for GitHub hosted runners |
-| `ubuntu-24.04-arm-slim`{: .text-nowrap } | Ubuntu 24.04 arm64 image identical to the one available for GitHub hosted runners, minus Android, CodeQL, Haskell and Julia |
-| `ubuntu-24.04-arm-minimal`{: .text-nowrap } | Minimal, fast-booting Ubuntu 24.04 arm64 image containing only Git and Docker |
-| `ubuntu-22.04-arm`{: .text-nowrap } | Ubuntu 22.04 arm64 image identical to the one available for GitHub hosted runners |
-| `ubuntu-22.04-arm-slim`{: .text-nowrap } | Ubuntu 22.04 arm64 image identical to the one available for GitHub hosted runners, minus Android, CodeQL, Haskell and Julia |
-| `ubuntu-22.04-arm-minimal`{: .text-nowrap } | Minimal, fast-booting Ubuntu 22.04 arm64 image containing only Git and Docker |
+| `ubuntu-22.04-arm`{: .text-nowrap } | Identical to the one available for GitHub-hosted runners |
+| `ubuntu-22.04-arm-slim`{: .text-nowrap } | Identical to the one available for GitHub-hosted runners, minus Android, CodeQL, Haskell and Julia |
+| `ubuntu-22.04-arm-minimal`{: .text-nowrap } | Minimal, fast-booting image containing only Git, Git LFS, the GitHub CLI and Docker |
+{: .table }
+
+{% include h5.html text="Ubuntu 22.04" %}
+| Image | Description |
++-|-|-+
+| `ubuntu-22.04-arm`{: .text-nowrap } | Identical to the one available for GitHub-hosted runners |
+| `ubuntu-22.04-arm-slim`{: .text-nowrap } | Identical to the one available for GitHub-hosted runners, minus Android, CodeQL, Haskell and Julia |
+| `ubuntu-22.04-arm-minimal`{: .text-nowrap } | Minimal, fast-booting image containing only Git, Git LFS, the GitHub CLI and Docker |
 {: .table }
 
 {% include h4.html text="Example" %}
@@ -276,7 +288,7 @@ See also: [Accessing AWS Resources](/docs/aws-resources#instance-profile) for mo
 
 
 {% include h3.html id="root" text="Root Volume" %}
-You can adjust the performance of the root volume by appending a performance specification to the label.
+You can adjust the performance of the [root volume](/docs/volumes) by appending a performance specification to the label.
 
 {% include h4.html text="Format" %}
 root=_volume-type_/_iops_/_throughput_
@@ -316,7 +328,7 @@ To increase the root volume to the maximum number of IOPS for its size and the m
 
 
 {% include h3.html id="swap" text="Swap Volume" %}
-You can adjust the size and performance of the swap volume by modifying the label.
+You can adjust the size and performance of the [swap volume](/docs/volumes) by modifying the label.
 
 {% include h4.html text="Formats" %}
 - swap=_size-in-gib_
@@ -361,7 +373,7 @@ To set the swap size to `64` GiB and max out the volume performance, change the 
 
 
 {% include h3.html id="temp" text="Temp Volume" %}
-You can adjust the size and performance of the temp volume by modifying the label.
+You can adjust the size and performance of the [temp volume](/docs/volumes) by modifying the label.
 
 {% include h4.html text="Formats" %}
 - temp=_size-in-gib_
