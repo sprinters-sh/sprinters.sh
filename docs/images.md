@@ -159,7 +159,7 @@ There are three variants of each image:
 
 **On AWS, the smaller the image, the faster the instance boots and the lower the EBS costs are.**
 
-All Sprinters images are fully optimized for this by using a _read-only zstd-compressed filesystem_.
+All Sprinters images are fully optimized for this by using a _read-only zstd-compressed root volume_.
 
 You can, however, take things further by using `-slim` or `-minimal` variants.
 
