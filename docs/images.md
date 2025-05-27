@@ -170,7 +170,7 @@ They are otherwise identical to full images, boot slightly faster and have much 
 
 {% include h4.html text="Minimal images" %}
 
-If you mostly install your own versions of the tools you use by downloading them directly, installing `apt` packages or
+If you set up your own environment by downloading the tools you use directly, installing `apt` packages or
 using setup actions like `actions/setup-xyz`, you are ready to take things to their natural conclusion and go for our `-minimal` images.
 
 They are less than 1 GiB in size, boot very fast and have very low EBS costs. We highly recommend you give them a try.

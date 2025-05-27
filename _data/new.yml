@@ -1,3 +1,9 @@
+- date: "2025-05-27"
+  title: "AWS <code>eu-west-2</code> region support"
+  href: "/docs/label#placement"
+  image: "/assets/new/2025-05-27-eu-west-2.png"
+  details: "You now run your jobs in the UK by choosing the <code>eu-west-2</code> AWS region (London)."
+
 - date: "2025-05-14"
   title: "Faster-booting <code>-slim</code> and <code>-minimal</code> images with lower EBS costs"
   href: "/docs/images"
