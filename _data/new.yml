@@ -1,7 +1,13 @@
 - date: "2025-05-27"
+  title: "AWS <code>r5</code>, <code>r5a</code>, <code>r6a</code>, <code>r6i</code> and <code>r7a</code> instance support"
+  href: "/docs/label#instance-type"
+  image: "/assets/new/2025-05-27-r567ia.png"
+  details: "Need memory-optimized x64 instances with high spot savings? Sprinters has you covered with <code>r5</code>, <code>r5a</code>, <code>r6a</code>, <code>r6i</code> and <code>r7a</code> instances."
+
+- date: "2025-05-26"
   title: "AWS <code>eu-west-2</code> region support"
   href: "/docs/label#placement"
-  image: "/assets/new/2025-05-27-eu-west-2.png"
+  image: "/assets/new/2025-05-26-eu-west-2.png"
   details: "You now run your jobs in the UK by choosing the <code>eu-west-2</code> AWS region (London)."
 
 - date: "2025-05-14"

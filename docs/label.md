@@ -185,6 +185,8 @@ _aws-instance-type_
 | m6i | `m6i.large` , `m6i.xlarge` , `m6i.2xlarge` , `m6i.4xlarge` , `m6i.8xlarge` , `m6i.12xlarge` , `m6i.16xlarge` , `m6i.24xlarge` , `m6i.32xlarge` |
 | m7i | `m7i.large` , `m7i.xlarge` , `m7i.2xlarge` , `m7i.4xlarge` , `m7i.8xlarge` , `m7i.12xlarge` , `m7i.16xlarge` , `m7i.24xlarge` , `m7i.48xlarge` |
 | m7i-flex | `m7i-flex.large` , `m7i-flex.xlarge` , `m7i-flex.2xlarge` , `m7i-flex.4xlarge` , `m7i-flex.8xlarge` , `m7i-flex.12xlarge` , `m7i-flex.16xlarge` |
+| r5 | `r5.large` , `r5.xlarge` , `r5.2xlarge` , `r5.4xlarge` , `r5.8xlarge` , `r5.12xlarge` , `r5.16xlarge` , `r5.24xlarge` |
+| r6i | `r6i.large` , `r6i.xlarge` , `r6i.2xlarge` , `r6i.4xlarge` , `r6i.8xlarge` , `r6i.12xlarge` , `r6i.16xlarge` , `r6i.24xlarge` , `r6i.32xlarge` |
 | r7i | `r7i.large` , `r7i.xlarge` , `r7i.2xlarge` , `r7i.4xlarge` , `r7i.8xlarge` , `r7i.12xlarge` , `r7i.16xlarge` , `r7i.24xlarge` , `r7i.48xlarge` |
 | t3 | `t3.nano` , `t3.micro` , `t3.small` , `t3.medium` , `t3.large` , `t3.xlarge` , `t3.2xlarge` |
 {: .table #instance-types }
@@ -198,6 +200,9 @@ _aws-instance-type_
 | m5a | `m5a.large` , `m5a.xlarge` , `m5a.2xlarge` , `m5a.4xlarge` , `m5a.8xlarge` , `m5a.12xlarge` , `m5a.16xlarge` , `m5a.24xlarge` |
 | m6a | `m6a.large` , `m6a.xlarge` , `m6a.2xlarge` , `m6a.4xlarge` , `m6a.8xlarge` , `m6a.12xlarge` , `m6a.16xlarge` , `m6a.24xlarge` , `m6a.32xlarge` , `m6a.48xlarge` |
 | m7a | `m7a.medium` , `m7a.large` , `m7a.xlarge` , `m7a.2xlarge` , `m7a.4xlarge` , `m7a.8xlarge` , `m7a.12xlarge` , `m7a.16xlarge` , `m7a.24xlarge` , `m7a.32xlarge` , `m7a.48xlarge` |
+| r5a | `r5a.large` , `r5a.xlarge` , `r5a.2xlarge` , `r5a.4xlarge` , `r5a.8xlarge` , `r5a.12xlarge` , `r5a.16xlarge` , `r5a.24xlarge` |
+| r6a | `r6a.large` , `r6a.xlarge` , `r6a.2xlarge` , `r6a.4xlarge` , `r6a.8xlarge` , `r6a.12xlarge` , `r6a.16xlarge` , `r6a.24xlarge` , `r6a.32xlarge` , `r6a.48xlarge` |
+| r7a | `r7a.medium` , `r7a.large` , `r7a.xlarge` , `r7a.2xlarge` , `r7a.4xlarge` , `r7a.8xlarge` , `r7a.12xlarge` , `r7a.16xlarge` , `r7a.24xlarge` , `r7a.32xlarge` , `r7a.48xlarge` |
 | t3a | `t3a.nano` , `t3a.micro` , `t3a.small` , `t3a.medium` , `t3a.large` , `t3a.xlarge` , `t3a.2xlarge` |
 {: .table #instance-types }
 
