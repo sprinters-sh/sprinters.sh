@@ -164,7 +164,7 @@ To use the `subnet-0123456789abcdef0` subnet in the `us-east-1` region, change t
 
 
 {% include h3.html id="instance-type" text="AWS Instance Type" %}
-You can set the AWS EC2 instance type on which launch the runner by appending it to the label.
+You can set the [AWS EC2 instance type](/docs/instances#type) on which launch the runner by appending it to the label.
 
 {% include h4.html text="Format" %}
 _aws-instance-type_
@@ -236,7 +236,7 @@ To set the instance type to `m7i.8xlarge`, change the label to:
 
 
 {% include h3.html id="spot" text="AWS Spot Instances" %}
-To save significant amounts of money at a slight risk of being interrupted, the instance can be launched as a spot instance.
+To save significant amounts of money at a slight risk of being interrupted, the instance can be launched as a [spot instance](/docs/instances#spot).
 
 {% include h4.html text="Format" %}
 spot=_`auto|true|false`_
