@@ -170,7 +170,7 @@ You can set the [AWS EC2 instance type](/docs/instances#type) on which launch th
 _aws-instance-type_
 
 {% include h4.html text="Default" %}
-`t3.large`
+`t3.large` for x64 images, `t4g.large` for arm64 images.
 
 {% include h4.html text="Supported <strong>x64</strong> Instance Types" %}
 

@@ -16,6 +16,7 @@ GitHub-hosted runners always come in a 1:4 ratio (ex.: 2 vCPUs and 8 GiBs of RAM
 
 With Sprinters-powered runners, you can freely choose between:
 - 1:2 (`c` instances: compute-optimized)
+- 1:4 (`t` instances: burstable general-purpose)
 - 1:4 (`m` instances: general-purpose)
 - 1:8 (`r` instances: memory-optimized).
 
@@ -27,7 +28,7 @@ And jobs requiring more vCPUs but not more memory, can be run at reduced cost on
 
 {% include h3.html text="Usage"  %}
 
-If not explicitly specified, a job will use a `t3.large` instance.
+If not explicitly specified, a job using an x64 image will run on a `t3.large` instance and a job using an arm64 image will run on a `t4g.large` instance.
 
 To use a different instance type, simply [append it to the label](/docs/label#instance-type):
 
