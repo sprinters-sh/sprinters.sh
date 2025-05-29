@@ -21,7 +21,7 @@ title: "Docs"
                     </li>
 
                     {% for entry in site.data.docs %}
-                        {% include nav-item.html path=entry.path %}
+                        {% include nav-item.html path=entry.path indent=entry.indent %}
                         {% if entry.path == page.path %}
                             {% assign current_page = entry %}
                             {% if forloop.first == false %}

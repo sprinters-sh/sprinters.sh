@@ -1,7 +1,7 @@
 {% assign nav-item = site.pages | where: "path", include.path | first %}
 <li class="nav-item">
     <a href="{{ nav-item.url | remove: ".html" }}"
-       class="nav-link text-body {% if include.path == page.path %}active bg-info bg-opacity-50 fw-bold {% endif %}">
+       class="nav-link text-body {% if include.path == page.path %}active bg-info bg-opacity-50 fw-bold {% endif %} {% if include.indent %}fs-7 ms-3 py-1{% endif %}">
         {{ nav-item.title }}
     </a>
 </li>
