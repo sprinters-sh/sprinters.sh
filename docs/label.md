@@ -236,7 +236,7 @@ To set the instance type to `m7i.8xlarge`, change the label to:
 
 
 {% include h3.html id="spot" text="AWS Spot Instances" %}
-To save significant amounts of money at a slight risk of being interrupted, the instance can be launched as a [spot instance](/docs/instances#spot).
+To save significant amounts of money at a slight risk of being interrupted, the instance can be launched as a [spot instance](/docs/instances/spot).
 
 {% include h4.html text="Format" %}
 spot=_`auto|true|false`_
