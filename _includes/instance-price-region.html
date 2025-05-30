@@ -1,0 +1,17 @@
+{% if include.price == include.lowest %}
+    {% assign is_lowest = true %}
+{% else %}
+    {% assign is_lowest = false %}
+{% endif %}
+{% assign percentage_highest = include.price | times: 100.0 | divided_by: include.highest %}
+{% assign percentage_lowest = include.price | times: 100.0 | divided_by: include.lowest | round | minus: 100 %}
+
+<tr>
+    <td style="width: 120px" class="fw-bold {% if is_lowest %}text-light{% else %}text-body-secondary{% endif %}">{{ include.region }}</td>
+    {% if include.price == "0" %}
+        <td colspan="2" class="text-body-tertiary fst-italic">not available in region</td>
+    {% else %}
+        <td style="width: 60px" class="{% if is_lowest %}text-success-emphasis{% else %}text-body-tertiary{% endif %}">{% if is_lowest %}best{% else %}+{{ percentage_lowest }}%{% endif %}</td>
+        <td><div class="d-inline-block {% if is_lowest %}bg-success{% else %}bg-secondary{% endif %}" style="height: 5px; margin-bottom: 2px; width: {{ percentage_highest }}%; "></div></td>
+    {% endif %}
+</tr>

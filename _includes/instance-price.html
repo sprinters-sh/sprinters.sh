@@ -1,0 +1,44 @@
+{% assign highest = include.us-east-1 %}
+{% if include.ap-northeast-1 > highest %}
+    {% assign highest = include.ap-northeast-1 %}
+{% endif %}
+{% if include.eu-central-1 > highest %}
+    {% assign highest = include.eu-central-1 %}
+{% endif %}
+{% if include.eu-west-1 > highest %}
+    {% assign highest = include.eu-west-1 %}
+{% endif %}
+{% if include.eu-west-2 > highest %}
+    {% assign highest = include.eu-west-2 %}
+{% endif %}
+{% if include.us-west-2 > highest %}
+    {% assign highest = include.us-west-2 %}
+{% endif %}
+
+{% assign lowest = include.us-east-1 %}
+{% if include.ap-northeast-1 != "0" and include.ap-northeast-1 < lowest %}
+    {% assign lowest = include.ap-northeast-1 %}
+{% endif %}
+{% if include.eu-central-1 != "0" and include.eu-central-1 < lowest %}
+    {% assign lowest = include.eu-central-1 %}
+{% endif %}
+{% if include.eu-west-1 != "0" and include.eu-west-1 < lowest %}
+    {% assign lowest = include.eu-west-1 %}
+{% endif %}
+{% if include.eu-west-2 != "0" and include.eu-west-2 < lowest %}
+    {% assign lowest = include.eu-west-2 %}
+{% endif %}
+{% if include.us-west-2 != "0" and include.us-west-2 < lowest %}
+    {% assign lowest = include.us-west-2 %}
+{% endif %}
+
+<div class="tab-pane {% if include.active == "true" %} show active{% endif %}" id="nav-price-{{ include.family }}" role="tabpanel" aria-labelledby="nav-price-{{ include.family }}-tab" tabindex="0">
+    <table class="table mb-0 fs-7 border-dark-subtle table-sm table-hover mb-4">
+        {% include instance-price-region.html region="ap-northeast-1" price=include.ap-northeast-1 lowest=lowest highest=highest %}
+        {% include instance-price-region.html region="eu-central-1" price=include.eu-central-1 lowest=lowest highest=highest %}
+        {% include instance-price-region.html region="eu-west-1" price=include.eu-west-1 lowest=lowest highest=highest %}
+        {% include instance-price-region.html region="eu-west-2" price=include.eu-west-2 lowest=lowest highest=highest %}
+        {% include instance-price-region.html region="us-east-1" price=include.us-east-1 lowest=lowest highest=highest %}
+        {% include instance-price-region.html region="us-west-2" price=include.us-west-2 lowest=lowest highest=highest %}
+    </table>
+</div>

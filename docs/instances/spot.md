@@ -14,7 +14,7 @@ interruptible parts on spot instances and non-interruptible parts on on-demand i
 
 Note that {% include external-link.html text="AWS doesn't charge you for spot instances interrupted less than 1 hour after launch" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-for-interrupted-spot-instances.html" %}.
 
-{% include h3.html text="Prerequisite" %}
+{% include h2.html text="Prerequisite" %}
 
 In order to use spot instances, your AWS account must have the `AWSServiceRoleForEC2Spot` IAM service-linked role.
 
@@ -22,7 +22,7 @@ When you launch your first spot instance using the AWS Console automatically, it
 
 Alternatively, you can {% include external-link.html text="create it manually" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/service-linked-roles-spot-instance-requests.html" %} using the AWS CLI or the {% include external-link.html text="IAM console" href=" https://console.aws.amazon.com/iam/" %}.
 
-{% include h3.html text="Usage"  %}
+{% include h2.html text="Usage"  %}
 
 By default, a job uses an on-demand instance.
 
