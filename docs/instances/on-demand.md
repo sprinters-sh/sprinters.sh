@@ -8,9 +8,9 @@ without any risk of interruption.
 
 {% include h2.html text="Pricing" %}
 
-**Pricing for EC2 on-demand instances varies greatly depending on the region.**
+AWS charges vastly different amounts for EC2 on-demand instances in each region.
 
-If you don't need your jobs to run in a specific AWS region, consider picking the cheapest one as it can lead to substantial savings:
+If your jobs can tolerate it, consider **switching to a more cost-effective region** as it can yield **up to 31% in savings for the same instance type**:
 
 {% include h3.html text="x64" %}
 {% include h4.html text="Intel" %}
