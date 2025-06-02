@@ -425,7 +425,7 @@ To set the temp size to `64` GiB and max out the volume throughput, change the l
 
 {% include h3.html id="events" text="Runner Lifecycle Events" %}
 In order to react more quickly to instances becoming unhealthy, runners {% include external-link.html text="publish lifecycle events"
-        href="https://github.com/sprinters-sh/sprinters-images/blob/main/publish-event.sh" %} to Sprinters.
+        href="https://github.com/sprinters-sh/sprinters-images/blob/main/images/common/publish-event.sh" %} to Sprinters.
 
 {% include h4.html text="Format" %}
 events=_`true|false`_

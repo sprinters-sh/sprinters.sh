@@ -180,7 +180,7 @@ The runner doesn't listen on any ports.
 {% include h4.html id="egress" text="Network Egress" %}
 The runner only
 - opens a long-lived outbound HTTPS connection to GitHub in order to receive job steps and send back execution logs.
-- {% include external-link.html text="publishes lifecycle events" href="https://github.com/sprinters-sh/sprinters-images/blob/main/publish-event.sh" %} to
+- {% include external-link.html text="publishes lifecycle events" href="https://github.com/sprinters-sh/sprinters-images/blob/main/images/common/publish-event.sh" %} to
 Sprinters to improve the handling of unexpected instance termination due spot capacity reclaim, underlying host issues, ...
 
 Communication between the runner and both GitHub and Sprinters is fully encrypted with TLS 1.3.
