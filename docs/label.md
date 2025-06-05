@@ -124,6 +124,7 @@ _aws-region_/_aws-availability-zone_/_aws-subnet-id_
 | Region | Location |
 +-|-|-+
 | `ap-northeast-1` | Tokyo |
+| `ap-south-1` | Mumbai |
 | `eu-central-1` | Frankfurt |
 | `eu-west-1` | Ireland |
 | `eu-west-2` | London |

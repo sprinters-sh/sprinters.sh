@@ -1,3 +1,9 @@
+- date: "2025-06-05"
+  title: "AWS <code>ap-south-1</code> region support"
+  href: "/docs/label#placement"
+  image: "/assets/new/2025-06-05-ap-south-1.png"
+  details: "With <code>ap-south-1</code> (Mumbai), Sprinters now supports AWS' most cost-effective region, by far, for x64 AMD and arm64 instances, with certain instance types costing less than half of what they cost in other regions."
+
 - date: "2025-05-27"
   title: "AWS <code>r5</code>, <code>r5a</code>, <code>r6a</code>, <code>r6i</code> and <code>r7a</code> instance support"
   href: "/docs/label#instance-type"
@@ -8,7 +14,7 @@
   title: "AWS <code>eu-west-2</code> region support"
   href: "/docs/label#placement"
   image: "/assets/new/2025-05-26-eu-west-2.png"
-  details: "You now run your jobs in the UK by choosing the <code>eu-west-2</code> AWS region (London)."
+  details: "You can now run your jobs in the UK by choosing the <code>eu-west-2</code> AWS region (London)."
 
 - date: "2025-05-14"
   title: "Faster-booting <code>-slim</code> and <code>-minimal</code> images with lower EBS costs"
