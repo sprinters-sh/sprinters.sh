@@ -39,7 +39,7 @@ If your jobs can tolerate it, consider **switching to a more cost-effective regi
     {% include instance-price.html active="false" family="m5" ap-northeast-1="0.062" ap-south-1="0.0505" eu-central-1="0.0575" eu-west-1="0.0535" eu-west-2="0.0555" us-east-1="0.048" us-west-2="0.048" %}
     {% include instance-price.html active="false" family="m6i" ap-northeast-1="0.062" ap-south-1="0.0505" eu-central-1="0.0575" eu-west-1="0.0535" eu-west-2="0.0555" us-east-1="0.048" us-west-2="0.048" %}
     {% include instance-price.html active="false" family="m7i" ap-northeast-1="0.0651" ap-south-1="0.053025" eu-central-1="0.060375" eu-west-1="0.056175" eu-west-2="0.058275" us-east-1="0.0504" us-west-2="0.0504" %}
-    {% include instance-price.html active="true" family="m7i-flex" ap-northeast-1="0.061845" ap-south-1="0.050375" eu-central-1="0.057355" eu-west-1="0.053365" eu-west-2="0" us-east-1="0.04788" us-west-2="0.04788" %}
+    {% include instance-price.html active="true" family="m7i-flex" ap-northeast-1="0.061845" ap-south-1="0.050375" eu-central-1="0.057355" eu-west-1="0.053365" eu-west-2="0.05536" us-east-1="0.04788" us-west-2="0.04788" %}
     {% include instance-price.html active="false" family="r5" ap-northeast-1="0.076" ap-south-1="0.065" eu-central-1="0.076" eu-west-1="0.0705" eu-west-2="0.074" us-east-1="0.063" us-west-2="0.063" %}
     {% include instance-price.html active="false" family="r6i" ap-northeast-1="0.076" ap-south-1="0.065" eu-central-1="0.076" eu-west-1="0.0705" eu-west-2="0.074" us-east-1="0.063" us-west-2="0.063" %}
     {% include instance-price.html active="false" family="r7i" ap-northeast-1="0.0798" ap-south-1="0.06825" eu-central-1="0.0798" eu-west-1="0.074025" eu-west-2="0.0777" us-east-1="0.06615" us-west-2="0.06615" %}
@@ -64,7 +64,7 @@ If your jobs can tolerate it, consider **switching to a more cost-effective regi
 <div class="tab-content">
     {% include instance-price.html active="false" family="c5a" ap-northeast-1="0.048" ap-south-1="0.0235" eu-central-1="0.0435" eu-west-1="0.043" eu-west-2="0.0455" us-east-1="0.0385" us-west-2="0.0385" %}
     {% include instance-price.html active="false" family="c6a" ap-northeast-1="0.04815" ap-south-1="0.023375" eu-central-1="0.04365" eu-west-1="0.04104" eu-west-2="0.04545" us-east-1="0.03825" us-west-2="0.03825" %}
-    {% include instance-price.html active="false" family="c7a" ap-northeast-1="0.0646" ap-south-1="0" eu-central-1="0.058565" eu-west-1="0.05506" eu-west-2="0" us-east-1="0.05132" us-west-2="0.05132" %}
+    {% include instance-price.html active="false" family="c7a" ap-northeast-1="0.0646" ap-south-1="0" eu-central-1="0.058565" eu-west-1="0.05506" eu-west-2="0.06098" us-east-1="0.05132" us-west-2="0.05132" %}
     {% include instance-price.html active="false" family="m5a" ap-northeast-1="0.056" ap-south-1="0.028" eu-central-1="0.052" eu-west-1="0.048" eu-west-2="0.05" us-east-1="0.043" us-west-2="0.043" %}
     {% include instance-price.html active="false" family="m6a" ap-northeast-1="0.0558" ap-south-1="0.027775" eu-central-1="0.05175" eu-west-1="0.04815" eu-west-2="0.04995" us-east-1="0.0432" us-west-2="0.0432" %}
     {% include instance-price.html active="true" family="m7a" ap-northeast-1="0.074865" ap-south-1="0" eu-central-1="0.06943" eu-west-1="0.0646" eu-west-2="0" us-east-1="0.05796" us-west-2="0.05796" %}
