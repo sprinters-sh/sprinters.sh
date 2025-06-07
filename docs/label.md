@@ -47,7 +47,6 @@ The following label parts can be added or modified to customize the image, place
 - [AWS Spot Instances](#spot)
 - [AWS Instance Profile](#instance-profile)
 - [Root Volume](#root)
-- [Swap Volume](#swap)
 - [Temp Volume](#temp)
 - [Runner Lifecycle Events](#events)
 
@@ -328,51 +327,6 @@ To increase the root volume to the maximum number of IOPS for its size and the m
 
 <div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
     <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:<span class="fw-bold fst-italic text-warning">root=gp3/max/max</span></pre>
-</div>
-
----
-{: .mb-7 }
-
-
-{% include h3.html id="swap" text="Swap Volume" %}
-You can adjust the size and performance of the [swap volume](/docs/volumes) by modifying the label.
-
-{% include h4.html text="Formats" %}
-- swap=_size-in-gib_
-- swap=_size-in-gib_/_volume-type_/_iops_/_throughput_
-
-{% include h4.html text="Default" %}
-`4` GiB `gp3` volume with `3000` IOPS and `150` MiB/s throughput.
-
-{% include h4.html text="Size" %}
-
-Sizes from `1` GiB to `16384` GiB are supported.
-
-{% include h4.html text="Volume Type" %}
-
-Only `gp3` volumes are supported for now.
-
-{% include h4.html text="IOPS" %}
-
-Between `3000` and `16000` IOPS are supported, depending on the size of the volume.
-Use `max` for the maximum number of IOPS for the current volume size.
-
-{% include h4.html text="Throughput" %}
-
-Between `125` and `1000` MiB/s are supported, depending on the number of IOPS of the volume.
-Use `max` for the maximum throughput for the current number of IOPS.
-
-{% include h4.html text="Examples" %}
-To set the swap size to `64` GiB, change the label to:
-
-<div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
-    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:<span class="fw-bold fst-italic text-warning">swap=64</span></pre>
-</div>
-
-To set the swap size to `64` GiB and max out the volume performance, change the label to:
-
-<div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
-    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:<span class="fw-bold fst-italic text-warning">swap=64/gp3/max/max</span></pre>
 </div>
 
 ---
