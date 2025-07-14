@@ -84,7 +84,6 @@ _image-name_
 | Image | Description |
 +-|-|-+
 | `ubuntu-22.04-arm`{: .text-nowrap } | Identical to the one available for GitHub-hosted runners |
-| `ubuntu-22.04-arm-slim`{: .text-nowrap } | Identical to the one available for GitHub-hosted runners, minus Android, CodeQL, Haskell and Julia |
 | `ubuntu-22.04-arm-minimal`{: .text-nowrap } | Minimal, fast-booting image containing only Git, Git LFS, the GitHub CLI and Docker |
 {: .table }
 
@@ -92,7 +91,6 @@ _image-name_
 | Image | Description |
 +-|-|-+
 | `ubuntu-22.04-arm`{: .text-nowrap } | Identical to the one available for GitHub-hosted runners |
-| `ubuntu-22.04-arm-slim`{: .text-nowrap } | Identical to the one available for GitHub-hosted runners, minus Android, CodeQL, Haskell and Julia |
 | `ubuntu-22.04-arm-minimal`{: .text-nowrap } | Minimal, fast-booting image containing only Git, Git LFS, the GitHub CLI and Docker |
 {: .table }
 

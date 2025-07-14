@@ -107,12 +107,6 @@ In every [supported AWS region](/docs/label#placement), Sprinters offers the fol
             <td class="text-end">20-40s</td>
         </tr>
         <tr>
-            <td><code>ubuntu-24.04-arm-slim</code></td>
-            <td>Slim</td>
-            <td class="text-end text-nowrap">5 GiB</td>
-            <td class="text-end">18-35s</td>
-        </tr>
-        <tr>
             <td><code>ubuntu-24.04-arm-minimal</code></td>
             <td>Minimal</td>
             <td class="text-end text-nowrap">1 GiB</td>
@@ -174,12 +168,6 @@ In every [supported AWS region](/docs/label#placement), Sprinters offers the fol
             <td>Full</td>
             <td class="text-end text-nowrap">7 GiB</td>
             <td class="text-end">20-40s</td>
-        </tr>
-        <tr>
-            <td><code>ubuntu-22.04-arm-slim</code></td>
-            <td>Slim</td>
-            <td class="text-end text-nowrap">6 GiB</td>
-            <td class="text-end">19-38s</td>
         </tr>
         <tr>
             <td><code>ubuntu-22.04-arm-minimal</code></td>
