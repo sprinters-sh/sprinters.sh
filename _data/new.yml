@@ -1,3 +1,9 @@
+- date: "2025-07-30"
+  title: "AWS <code>ca-central-1</code> and <code>me-central-1</code> region support"
+  href: "/docs/label#placement"
+  image: "/assets/new/2025-07-30-came-central-1.png"
+  details: "With <code>ca-central-1</code> and <code>me-central-1</code>, Sprinters now supports AWS regions in Canada and the Middle East."
+
 - date: "2025-06-05"
   title: "AWS <code>ap-south-1</code> region support"
   href: "/docs/label#placement"

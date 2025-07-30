@@ -5,6 +5,9 @@
 {% if include.ap-south-1 > highest %}
     {% assign highest = include.ap-south-1 %}
 {% endif %}
+{% if include.ca-central-1 > highest %}
+    {% assign highest = include.ca-central-1 %}
+{% endif %}
 {% if include.eu-central-1 > highest %}
     {% assign highest = include.eu-central-1 %}
 {% endif %}
@@ -13,6 +16,9 @@
 {% endif %}
 {% if include.eu-west-2 > highest %}
     {% assign highest = include.eu-west-2 %}
+{% endif %}
+{% if include.me-central-1 > highest %}
+    {% assign highest = include.me-central-1 %}
 {% endif %}
 {% if include.us-west-2 > highest %}
     {% assign highest = include.us-west-2 %}
@@ -25,6 +31,9 @@
 {% if include.ap-south-1 != "0" and include.ap-south-1 < lowest %}
     {% assign lowest = include.ap-south-1 %}
 {% endif %}
+{% if include.ca-central-1 != "0" and include.ca-central-1 < lowest %}
+    {% assign lowest = include.ca-central-1 %}
+{% endif %}
 {% if include.eu-central-1 != "0" and include.eu-central-1 < lowest %}
     {% assign lowest = include.eu-central-1 %}
 {% endif %}
@@ -34,6 +43,9 @@
 {% if include.eu-west-2 != "0" and include.eu-west-2 < lowest %}
     {% assign lowest = include.eu-west-2 %}
 {% endif %}
+{% if include.me-central-1 != "0" and include.me-central-1 < lowest %}
+    {% assign lowest = include.me-central-1 %}
+{% endif %}
 {% if include.us-west-2 != "0" and include.us-west-2 < lowest %}
     {% assign lowest = include.us-west-2 %}
 {% endif %}
@@ -42,9 +54,11 @@
     <table class="table mb-0 fs-7 border-dark-subtle table-sm table-hover mb-4">
         {% include instance-price-region.html region="ap-northeast-1" price=include.ap-northeast-1 lowest=lowest highest=highest %}
         {% include instance-price-region.html region="ap-south-1" price=include.ap-south-1 lowest=lowest highest=highest %}
+        {% include instance-price-region.html region="ca-central-1" price=include.ca-central-1 lowest=lowest highest=highest %}
         {% include instance-price-region.html region="eu-central-1" price=include.eu-central-1 lowest=lowest highest=highest %}
         {% include instance-price-region.html region="eu-west-1" price=include.eu-west-1 lowest=lowest highest=highest %}
         {% include instance-price-region.html region="eu-west-2" price=include.eu-west-2 lowest=lowest highest=highest %}
+        {% include instance-price-region.html region="me-central-1" price=include.me-central-1 lowest=lowest highest=highest %}
         {% include instance-price-region.html region="us-east-1" price=include.us-east-1 lowest=lowest highest=highest %}
         {% include instance-price-region.html region="us-west-2" price=include.us-west-2 lowest=lowest highest=highest %}
     </table>

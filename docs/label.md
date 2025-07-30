@@ -122,9 +122,11 @@ _aws-region_/_aws-availability-zone_/_aws-subnet-id_
 +-|-|-+
 | `ap-northeast-1` | Tokyo |
 | `ap-south-1` | Mumbai |
+| `ca-central-1` | Canada |
 | `eu-central-1` | Frankfurt |
 | `eu-west-1` | Ireland |
 | `eu-west-2` | London |
+| `me-central-1` | UAE |
 | `us-east-1` | N. Virginia |
 | `us-west-2` | Oregon |
 {: .table }
