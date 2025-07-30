@@ -4,71 +4,75 @@ title: "Run your GitHub Actions jobs 10x cheaper on your own AWS account"
 ---
 
 <div class="container">
-
-<div class="mt-5 mb-6 mx-auto text-center">
-    {% assign entry = site.data.new | first %}
-    <a href="/new#{{ entry.date }}" class="px-3 py-2 bg-info-subtle rounded-pill border border-info text-info fs-8 fs-md-6 d-inline-block">
-        <strong class="text-body me-2">{{ entry.date }}</strong>{{ entry.title }}
-        <i class="bi bi-arrow-right"></i>
-    </a>
-</div>
-
-<div class="col-md-8 mx-auto text-center">
-    <img src="/assets/logo/sprinters.svg" width="200" height="200" alt="Sprinters" class="d-block mx-auto mt-5 mb-3">
-    <h1 class="mb-3 fw-semibold fs-0 text-warning">
-        Run your GitHub Actions jobs<br>10x cheaper<br>on your own AWS account
-    </h1>
-    <p class="lead">
-        Secure, ephemeral, high-performance, low-cost runners within the privacy of your own VPC.
-    </p>
-    <p class="lead">
-        Launch in the region and subnet of your choice, right-size your instances and disks,
-        and directly access all required services without having to expose them over the public internet.
-    </p>
-    <p class="lead mb-0">
-        All with a simple one line change in your GitHub Actions workflow yml:
-    </p>
-    <div class="d-flex flex-column align-items-md-stretch justify-content-md-center gap-3 mb-4">
-        <div class="d-inline-block v-align-middle">
-            <code class="code fs-5 text-start d-inline-block mt-4 mb-4">
-                <span class="text-secondary text-decoration-line-through">runs-on: ubuntu-latest</span><br>
-                <span class="text-warning">runs-on:</span> <span class="text-info">sprinters:aws:ubuntu-latest</span>
-            </code>
-        </div>
-        <a href="https://console.sprinters.sh/login"
-           class="btn btn-lg btn-primary fw-semibold">
-            <div><i class='bi bi-github me-2'></i>Log in with GitHub to get started</div>
-            <div class="fs-8 mt-1 fw-normal">1000 jobs FREE in your first 30 days</div>
+    <div class="mt-5 mb-6 mx-auto text-center">
+        {% assign entry = site.data.new | first %}
+        <a href="/new#{{ entry.date }}"
+           class="px-3 py-2 bg-info-subtle rounded-pill border border-info text-info fs-8 fs-md-6 d-inline-block">
+            <strong class="text-body me-2">{{ entry.date }}</strong>{{ entry.title }}
+            <i class="bi bi-arrow-right"></i>
         </a>
-        <a href="/docs"
-           class="btn btn-lg btn-secondary d-flex align-items-center justify-content-center fw-semibold">Read the docs</a>
     </div>
-    <p class="text-secondary mb-0">
-        <i class="bi bi-ubuntu"></i> Ubuntu <span class="px-1">&middot;</span> <i class="bi bi-cpu"></i> x64 <span
-                class="px-1">&middot;</span> <i class="bi bi-cpu"></i> arm64
-    </p>
-</div>
 
-<div class="col-md-8 mx-auto text-center mt-5">
-    <h2 class="pt-7 fw-semibold text-warning-emphasis fs-1">Your runners, on your AWS account.</h2>
-    <h4 class="mb-5 text-secondary">On demand, ephemeral and with zero maintenance.</h4>
-
-    <img src="/assets/overview.svg">
-
-    <div class="mt-3 row">
-        {% include feature.html icon="magic" title="On Demand" text="Sprinters launches runners on demand on your AWS account. No pre-provisioning, no idle capacity." %}
-        {% include feature.html icon="plus-square-dotted" title="Ephemeral" text="Each runner is an ephemeral EC2 instance that launches when a job starts and automatically terminates when it completes." %}
-        {% include feature.html icon="clipboard-check" title="Zero Maintenance" text="One instance per job, always fresh, up to date and launched in seconds. No images to maintain. No infrastructure to run." %}
+    <div class="col-md-8 mx-auto text-center">
+        <img src="/assets/logo/sprinters.svg" width="200" height="200" alt="Sprinters"
+             class="d-block mx-auto mt-5 mb-3">
+        <h1 class="mb-3 fw-semibold fs-0 text-warning">
+            Run your GitHub Actions jobs<br>10x cheaper<br>on your own AWS account
+        </h1>
+        <p class="lead">
+            Secure, ephemeral, high-performance, low-cost runners within the privacy of your own VPC.
+        </p>
+        <p class="lead">
+            Launch in the region and subnet of your choice, right-size your instances and disks,
+            and directly access all required services without having to expose them over the public internet.
+        </p>
+        <p class="lead mb-0">
+            All with a simple one line change in your GitHub Actions workflow yml:
+        </p>
+        <div class="d-flex flex-column align-items-md-stretch justify-content-md-center gap-3 mb-4">
+            <div class="d-inline-block v-align-middle">
+                <code class="code fs-5 text-start d-inline-block mt-4 mb-4">
+                    <span class="text-secondary text-decoration-line-through">runs-on: ubuntu-latest</span><br>
+                    <span class="text-warning">runs-on:</span> <span
+                            class="text-info">sprinters:aws:ubuntu-latest</span>
+                </code>
+            </div>
+            <a href="https://console.sprinters.sh/login"
+               class="btn btn-lg btn-primary fw-semibold">
+                <div><i class='bi bi-github me-2'></i>Log in with GitHub to get started</div>
+                <div class="fs-8 mt-1 fw-normal">1000 jobs FREE in your first 30 days</div>
+            </a>
+            <a href="/docs"
+               class="btn btn-lg btn-secondary d-flex align-items-center justify-content-center fw-semibold">Read the
+                docs</a>
+        </div>
+        <p class="text-secondary mb-0">
+            <i class="bi bi-ubuntu"></i> Ubuntu <span class="px-1">&middot;</span> <i class="bi bi-cpu"></i> x64 <span
+                    class="px-1">&middot;</span> <i class="bi bi-cpu"></i> arm64
+        </p>
     </div>
-</div>
 
+    <div class="col-md-8 mx-auto text-center mt-5">
+        <h2 class="pt-7 fw-semibold text-warning-emphasis fs-1">Your runners, on your AWS account.</h2>
+        <h4 class="mb-5 text-secondary">On demand, ephemeral and with zero maintenance.</h4>
+
+        <img src="/assets/overview.svg">
+
+        <div class="mt-3 row">
+            {% include feature.html icon="magic" title="On Demand" text="Sprinters launches runners on demand on your AWS account. No pre-provisioning, no idle capacity." %}
+            {% include feature.html icon="plus-square-dotted" title="Ephemeral" text="Each runner is an ephemeral EC2 instance that launches when a job starts and automatically terminates when it completes." %}
+            {% include feature.html icon="clipboard-check" title="Zero Maintenance" text="One instance per job, always fresh, up to date and launched in seconds. No images to maintain. No infrastructure to run." %}
+        </div>
+    </div>
 </div>
 
 <div class="w-100 bg-info-subtle mt-7 text-info border-top border-bottom border-info">
     <div class="container p-3">
         <figure class="text-center">
             <blockquote class="blockquote fs-3 fst-italic">
-                <p>After we moved our infrastructure from the US to the EU, our deployments got incredibly slow due to latency. I was sure I would need a full day to configure self-hosted runners on AWS. Then I found Sprinters and got it working in under 15 minutes. Awesome! Super happy!!</p>
+                <p>After we moved our infrastructure from the US to the EU, our deployments got incredibly slow due to
+                    latency. I was sure I would need a full day to configure self-hosted runners on AWS. Then I found
+                    Sprinters and got it working in under 15 minutes. Awesome! Super happy!!</p>
             </blockquote>
             <figcaption class="blockquote-footer fs-4">
                 Sjoerd van Bekhoven, <cite title="Source Title">Co-founder, Root Sustainability</cite>
@@ -78,82 +82,82 @@ title: "Run your GitHub Actions jobs 10x cheaper on your own AWS account"
 </div>
 
 <div class="container">
+    <div class="col-md-8 mx-auto text-center mt-5">
+        <h2 class="pt-7 fw-semibold text-warning-emphasis fs-1">Larger runners. Larger disks. x64 and arm64.</h2>
+        <h4 class="mb-5 text-secondary">Runners in all sizes. From tiny to humongous, and everything in between.</h4>
 
-<div class="col-md-8 mx-auto text-center mt-5">
-    <h2 class="pt-7 fw-semibold text-warning-emphasis fs-1">Larger runners. Larger disks. x64 and arm64.</h2>
-    <h4 class="mb-5 text-secondary">Runners in all sizes. From tiny to humongous, and everything in between.</h4>
-
-    <div class="table-responsive">
-        <table class="table">
-            <thead>
-            <tr>
-                <th></th>
-                <th class="bg-body-secondary text-warning">Sprinters</th>
-                <th>GitHub (Private Repo)</th>
-                <th>GitHub (Public Repo)</th>
-                <th>GitHub (Larger Runners)</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <th>vCPU</th>
-                <td class="bg-body-secondary">1 - 192</td>
-                <td>2</td>
-                <td>4</td>
-                <td>2 - 96</td>
-            </tr>
-            <tr>
-                <th>RAM</th>
-                <td class="bg-body-secondary">0.5 - 1536 GB</td>
-                <td>7 GB</td>
-                <td>16 GB</td>
-                <td>8 - 384 GB</td>
-            </tr>
-            <tr>
-                <th>Storage</th>
-                <td class="bg-body-secondary">1 - 16384 GB</td>
-                <td>14 GB</td>
-                <td>14 GB</td>
-                <td>75 - 2040</td>
-            </tr>
-            <tr>
-                <th>CPU Arch</th>
-                <td class="bg-body-secondary">x64 + arm64</td>
-                <td>x64</td>
-                <td>x64 + arm64 (beta)</td>
-                <td>x64 + arm64</td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="row">
-        {% include feature.html icon="motherboard" title="Scalable Instances" text="Need lots of CPU? Plenty of RAM? Or
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th></th>
+                    <th class="bg-body-secondary text-warning">Sprinters</th>
+                    <th>GitHub (Private Repo)</th>
+                    <th>GitHub (Public Repo)</th>
+                    <th>GitHub (Larger Runners)</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th>vCPU</th>
+                    <td class="bg-body-secondary">1 - 192</td>
+                    <td>2</td>
+                    <td>4</td>
+                    <td>2 - 96</td>
+                </tr>
+                <tr>
+                    <th>RAM</th>
+                    <td class="bg-body-secondary">0.5 - 1536 GB</td>
+                    <td>7 GB</td>
+                    <td>16 GB</td>
+                    <td>8 - 384 GB</td>
+                </tr>
+                <tr>
+                    <th>Storage</th>
+                    <td class="bg-body-secondary">1 - 16384 GB</td>
+                    <td>14 GB</td>
+                    <td>14 GB</td>
+                    <td>75 - 2040</td>
+                </tr>
+                <tr>
+                    <th>CPU Arch</th>
+                    <td class="bg-body-secondary">x64 + arm64</td>
+                    <td>x64</td>
+                    <td>x64 + arm64 (beta)</td>
+                    <td>x64 + arm64</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="row">
+            {% include feature.html icon="motherboard" title="Scalable Instances" text="Need lots of CPU? Plenty of RAM? Or
         very little? Select the right instance type from a wide array of choices." %}
-        {% include feature.html icon="nvme" title="Scalable Disks" text="Freely adjust the runner disk space from a few
+            {% include feature.html icon="nvme" title="Scalable Disks" text="Freely adjust the runner disk space from a few
         GB to multiple TB." %}
-        {% include feature.html icon="cpu" title="x64 and arm64" text="Pick the best CPU architecture for the job.
+            {% include feature.html icon="cpu" title="x64 and arm64" text="Pick the best CPU architecture for the job.
         Intel, AMD and ARM instances are fully supported." %}
+        </div>
     </div>
-</div>
 
-<div class="col-md-8 mx-auto text-center mt-5">
-    <h2 class="pt-7 fw-semibold text-warning-emphasis fs-1">Where, which and how. The choice is yours.</h2>
-    <h4 class="mb-3 text-secondary">Flexible placement of runners across AWS accounts, regions and markets.</h4>
+    <div class="col-md-8 mx-auto text-center mt-5">
+        <h2 class="pt-7 fw-semibold text-warning-emphasis fs-1">Where, which and how. The choice is yours.</h2>
+        <h4 class="mb-3 text-secondary">Flexible placement of runners across AWS accounts, regions and markets.</h4>
 
-    <div class="row">
-        {% include feature.html icon="cloud-check" title="Multiple Accounts" text="Launch all your runners in the same AWS account. Or use a different one per repository, workflow or job. The choice is yours." %}
-        {% include feature.html icon="globe" title="Multiple Regions" text="Put your runners next to the infrastructure they need. Pick the required region, VPC or subnet and never unnecesarily expose a resource over the public internet again." %}
-        {% include feature.html icon="flower1" title="On-Demand or Spot" text="Go uninterrupted with On-Demand instances. Or go for maximum savings with Spot. Optionally with cheapest availability zone auto-selection." %}
+        <div class="row">
+            {% include feature.html icon="cloud-check" title="Multiple Accounts" text="Launch all your runners in the same AWS account. Or use a different one per repository, workflow or job. The choice is yours." %}
+            {% include feature.html icon="globe" title="Multiple Regions" text="Put your runners next to the infrastructure they need. Pick the required region, VPC or subnet and never unnecesarily expose a resource over the public internet again." %}
+            {% include feature.html icon="flower1" title="On-Demand or Spot" text="Go uninterrupted with On-Demand instances. Or go for maximum savings with Spot. Optionally with cheapest availability zone auto-selection." %}
+        </div>
     </div>
-</div>
-
 </div>
 
 <div class="w-100 bg-info-subtle mt-7 text-info border-top border-bottom border-info">
     <div class="container p-3">
         <figure class="text-center">
             <blockquote class="blockquote fs-3 fst-italic">
-                <p>I’m currently an ops team of one, so anything I don’t have to manage is hugely helpful. Sprinters is so simple and helps us as we’re getting bitten by ever increasing Actions costs. Overall, lovely product and I’m kicking myself I didn’t think of it!</p>
+                <p>I’m currently an ops team of one, so anything I don’t have to manage is hugely helpful. Sprinters is
+                    so simple and helps us as we’re getting bitten by ever increasing Actions costs. Overall, lovely
+                    product and I’m kicking myself I didn’t think of it!</p>
             </blockquote>
             <figcaption class="blockquote-footer fs-4">
                 Immanuel Potter, <cite title="Source Title">Ops, RiskSmart</cite>
@@ -163,84 +167,89 @@ title: "Run your GitHub Actions jobs 10x cheaper on your own AWS account"
 </div>
 
 <div class="container">
+    <div class="col-md-8 mx-auto text-center mt-5">
+        <h2 id="pricing" class="mt-7 fw-semibold text-warning-emphasis fs-1">Pricing: simple, transparent and fair.</h2>
+        <h4 class="mb-3 text-secondary">You bring your own AWS account. Sprinters runs the jobs.<br>You save ~90% per
+            build minute. Every build minute.</h4>
 
-<div class="col-md-8 mx-auto text-center mt-5">
-    <h2 id="pricing" class="mt-7 fw-semibold text-warning-emphasis fs-1">Pricing: simple, transparent and fair.</h2>
-    <h4 class="mb-3 text-secondary">You bring your own AWS account. Sprinters runs the jobs.<br>You save ~90% per build minute. Every build minute.</h4>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                <tr class="fs-5 fw-semibold">
+                    <th>Public Repository</th>
+                    <th>Private Repository</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="fs-2 fw-semibold text-warning">FREE</td>
+                    <td>
+                        <span class="fs-2 fw-semibold text-warning">$0.01 per job</span><br>
+                        <p class="fs-7 text-body mt-1 mb-2">1000 jobs free during your first 30 days</p>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
 
-    <div class="table-responsive">
-        <table class="table">
-            <thead>
-            <tr class="fs-5 fw-semibold">
-                <th>Public Repository</th>
-                <th>Private Repository</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td class="fs-2 fw-semibold text-warning">FREE</td>
-                <td>
-                    <span class="fs-2 fw-semibold text-warning">$0.01 per job</span><br>
-                    <p class="fs-7 text-body mt-1 mb-2">1000 jobs free during your first 30 days</p>
-                </td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <div class="row">
-        {% include feature.html icon="clock-history" title="Per job pricing" text="No monthly subscriptions. No long term commitments or contracts. No hidden costs. Simple per minute pricing. You only pay for what you use." %}
-        {% include feature.html icon="fire" title="10x cheaper" text="Total cost per minute is usually around 10x cheaper
+        <div class="row">
+            {% include feature.html icon="clock-history" title="Per job pricing" text="No monthly subscriptions. No long term commitments or contracts. No hidden costs. Simple per minute pricing. You only pay for what you use." %}
+            {% include feature.html icon="fire" title="10x cheaper" text="Total cost per minute is usually around 10x cheaper
         than the equivalent runner from GitHub. Much more compute at the same price or the same compute at a much lower price. The choice is yours." %}
-        {% include feature.html icon="arrow-down-up" title="Scale to zero" text="Scale to zero. Or to infinity. No management infrastructure to run. Just your runners. For the duration of your jobs. At an unbeatable price." %}
-    </div>
-
-    <div class="mt-3">
-    <a href="/pricing"
-       class="btn btn-lg btn-secondary fw-semibold">Pricing details <i class="bi bi-arrow-right"></i></a>
-    </div>
-</div>
-
-<div class="col-md-8 mx-auto text-center mt-5">
-    <h2 class="pt-7 fw-semibold text-warning-emphasis fs-1">Get started with a one-line change.</h2>
-    <h4 class="mb-5 text-secondary">Easy to try. Easy to leave. No complicated migrations. No lock-in.</h4>
-
-    <p class="fs-5">To migrate to Sprinters, simply set up your AWS account and<br>change one line in your GitHub Actions workflow yml:</p>
-
-    <div class="d-inline-block v-align-middle">
-        <code class="code fs-5 text-start d-inline-block mt-3 mb-4">
-            <span class="text-secondary text-decoration-line-through">runs-on: ubuntu-latest</span><br>
-            <span class="text-warning">runs-on:</span> <span class="text-info">sprinters:aws:ubuntu-latest</span>
-        </code>
-    </div>
-
-    <p class="fs-5 pb-3">That's it. Literally.</p>
-
-    <a href="https://console.sprinters.sh/login"
-       class="btn btn-lg btn-primary fw-semibold">
-        <div><i class='bi bi-github me-2'></i>Log in with GitHub to get started</div>
-        <div class="fs-8 mt-1 fw-normal">1000 jobs FREE in your first 30 days</div>
-    </a>
-</div>
-
-<div class="mt-7 text-center">
-    <p><strong class="fs-4">Stay updated</strong><br>Once a month we share product updates, new releases and other tidbits we think you’ll find interesting.</p>
-
-    <form method="post" id="newsletter-form">
-        <div style="position: absolute; left: -5000px;" aria-hidden="true">
-            /* real people should not fill this in and expect good things - do not remove this or risk form bot signups */
-            <input type="text" name="b_9fdbd60c88530df7c7e182221_1758545ed5" tabindex="-1" value="">
-        </div>
-        <div class="input-group mb-1 mx-auto mw-100" style="width: 500px">
-            <input type="email" name="EMAIL" class="form-control d-inline-block border-info" id="newsletter-email" required="required" placeholder="Type your email ...">
-            <input type="submit" name="subscribe" class="btn btn-info text-white fw-bold" value="Subscribe">
+            {% include feature.html icon="arrow-down-up" title="Scale to zero" text="Scale to zero. Or to infinity. No management infrastructure to run. Just your runners. For the duration of your jobs. At an unbeatable price." %}
         </div>
 
-        <p class="fs-8 text-body-secondary">Unsubscribe at any time. No spam ever. We hate it just as much as you do.</p>
-    </form>
+        <div class="mt-3">
+            <a href="/pricing"
+               class="btn btn-lg btn-secondary fw-semibold">Pricing details <i class="bi bi-arrow-right"></i></a>
+        </div>
+    </div>
 
-    <p id="newsletter-confirm" class="fs-5 text-info d-none"></p>
-</div>
+    <div class="col-md-8 mx-auto text-center mt-5">
+        <h2 class="pt-7 fw-semibold text-warning-emphasis fs-1">Get started with a one-line change.</h2>
+        <h4 class="mb-5 text-secondary">Easy to try. Easy to leave. No complicated migrations. No lock-in.</h4>
+
+        <p class="fs-5">To migrate to Sprinters, simply set up your AWS account and<br>change one line in your GitHub
+            Actions workflow yml:</p>
+
+        <div class="d-inline-block v-align-middle">
+            <code class="code fs-5 text-start d-inline-block mt-3 mb-4">
+                <span class="text-secondary text-decoration-line-through">runs-on: ubuntu-latest</span><br>
+                <span class="text-warning">runs-on:</span> <span class="text-info">sprinters:aws:ubuntu-latest</span>
+            </code>
+        </div>
+
+        <p class="fs-5 pb-3">That's it. Literally.</p>
+
+        <a href="https://console.sprinters.sh/login"
+           class="btn btn-lg btn-primary fw-semibold">
+            <div><i class='bi bi-github me-2'></i>Log in with GitHub to get started</div>
+            <div class="fs-8 mt-1 fw-normal">1000 jobs FREE in your first 30 days</div>
+        </a>
+    </div>
+
+    <div class="mt-7 text-center">
+        <p><strong class="fs-4">Stay updated</strong><br>Once a month we share product updates, new releases and other
+            tidbits we think you’ll find interesting.</p>
+
+        <form method="post" id="newsletter-form">
+            <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                /* real people should not fill this in and expect good things - do not remove this or risk form bot
+                signups */
+                <input type="text" name="b_9fdbd60c88530df7c7e182221_1758545ed5" tabindex="-1" value="">
+            </div>
+            <div class="input-group mb-1 mx-auto mw-100" style="width: 500px">
+                <input type="email" name="EMAIL" class="form-control d-inline-block border-info" id="newsletter-email"
+                       required="required" placeholder="Type your email ...">
+                <input type="submit" name="subscribe" class="btn btn-info text-white fw-bold" value="Subscribe">
+            </div>
+
+            <p class="fs-8 text-body-secondary">Unsubscribe at any time. No spam ever. We hate it just as much as you
+                do.</p>
+        </form>
+
+        <p id="newsletter-confirm" class="fs-5 text-info d-none"></p>
+    </div>
 </div>
 
 <script>
