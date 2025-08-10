@@ -41,6 +41,7 @@ Sprinters will launch a runner in the `eu-central-1` region using the `ubuntu-22
 
 The following label parts can be added or modified to customize the image, placement and capacity of the runner instance:
 
+- [Job Pinning Discriminator](#discriminator)
 - [Image](#image)
 - [AWS Region / Availability Zone / Subnet](#placement)
 - [AWS Instance Type](#instance-type)
@@ -52,6 +53,55 @@ The following label parts can be added or modified to customize the image, place
 
 ---
 {: .mb-7 }
+
+{% include h3.html id="discriminator" text="Job Pinning Discriminator" %}
+In high-concurrency scenarios, a runner can sometimes be "stolen" by a job other than the one that launched it,
+potentially leading to jobs no longer having a runner available or runners timing out before executing a job.
+
+To ensure a runner is only assigned to the job that launched it, you can add a _job pinning discriminator_ to the label
+as follows:
+
+<div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
+    <pre class="mb-0 p-2 fs-7">runs-on: sprinters<span class="fw-bold fst-italic text-warning">/job-pinning-discriminator</span>:aws:ubuntu-latest</pre>
+</div>
+
+Unfortunately, GitHub doesn't offer access to a job's unique ID, but by combining attributes jobs can still be uniquely identified.
+
+{% include h4.html text="Regular Jobs" %}
+
+The following attributes uniquely identify a regular job:
+
+| Attribute | Description |
++-|-+
+| `github.run_id` | The unique ID of the current workflow run. |
+| `github.run_attempt` | The attempt number of the current workflow run. |
+| _job_name_ | The name of the current job. |
+{: .table }
+
+For a job named `test-job`, the label would look like this:
+
+<div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
+    <pre class="mb-0 p-2 fs-7">runs-on: sprinters<span class="fw-bold fst-italic text-warning">{% raw %}/${{ github.run_id }}-${{ github.run_attempt }}-test-job{% endraw %}</span>:aws:ubuntu-latest</pre>
+</div>
+
+{% include h4.html text="Matrix Jobs" %}
+
+The attributes above are still identical for each job in a matrix. To differentiate between matrix jobs, we must add the following additional attribute:
+
+| Attribute | Description |
++-|-+
+| `strategy.job-index` | The position of the job within the matrix. |
+{: .table }
+
+The complete label for a matrix job named `test-matrix-job` now looks like this:
+
+<div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
+    <pre class="mb-0 p-2 fs-7">runs-on: sprinters<span class="fw-bold fst-italic text-warning">{% raw %}/${{ github.run_id }}-${{ github.run_attempt }}-test-matrix-job-${{ strategy.job-index }}{% endraw %}</span>:aws:ubuntu-latest</pre>
+</div>
+
+---
+{: .mb-7 }
+
 
 {% include h3.html id="image" text="Image" %}
 You can set the [image](/docs/images) for the runner by replacing the one in the label.

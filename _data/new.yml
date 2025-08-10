@@ -1,3 +1,9 @@
+- date: "2025-08-10"
+  title: "Runner job pinning support"
+  href: "/docs/label#discriminator"
+  image: "/assets/new/2025-08-10-discriminator.png"
+  details: "You can now pin jobs to their respective runners, by appending a discriminator to the job label. This ensures the runner isn't &quot;stolen&quot; by another job, effectively preventing scenarios where jobs no longer have a runner available or runners time out before executing a job."
+
 - date: "2025-07-30"
   title: "AWS <code>ca-central-1</code> and <code>me-central-1</code> region support"
   href: "/docs/label#placement"
