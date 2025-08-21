@@ -28,6 +28,8 @@ If your jobs can tolerate it, consider **switching to a more cost-effective regi
         <button class="nav-link" id="nav-price-r5-tab" data-bs-toggle="tab" data-bs-target="#nav-price-r5" type="button" role="tab" aria-controls="nav-price-r5" aria-selected="false">r5</button>
         <button class="nav-link" id="nav-price-r6i-tab" data-bs-toggle="tab" data-bs-target="#nav-price-r6i" type="button" role="tab" aria-controls="nav-price-r6i" aria-selected="false">r6i</button>
         <button class="nav-link" id="nav-price-r7i-tab" data-bs-toggle="tab" data-bs-target="#nav-price-r7i" type="button" role="tab" aria-controls="nav-price-r7i" aria-selected="false">r7i</button>
+        <button class="nav-link" id="nav-price-r8i-tab" data-bs-toggle="tab" data-bs-target="#nav-price-r8i" type="button" role="tab" aria-controls="nav-price-r8i" aria-selected="false">r8i</button>
+        <button class="nav-link" id="nav-price-r8i-flex-tab" data-bs-toggle="tab" data-bs-target="#nav-price-r8i-flex" type="button" role="tab" aria-controls="nav-price-r8i-flex" aria-selected="false">r8i-flex</button>
         <button class="nav-link" id="nav-price-t3-tab" data-bs-toggle="tab" data-bs-target="#nav-price-t3" type="button" role="tab" aria-controls="nav-price-t3" aria-selected="false">t3</button>
     </div>
 </nav>
@@ -43,6 +45,8 @@ If your jobs can tolerate it, consider **switching to a more cost-effective regi
     {% include instance-price.html active="false" family="r5" ap-northeast-1="0.076" ap-south-1="0.065" ca-central-1="0.069" eu-central-1="0.076" eu-west-1="0.0705" eu-west-2="0.074" me-central-1="0.0775" us-east-1="0.063" us-west-2="0.063" %}
     {% include instance-price.html active="false" family="r6i" ap-northeast-1="0.076" ap-south-1="0.065" ca-central-1="0.069" eu-central-1="0.076" eu-west-1="0.0705" eu-west-2="0.074" me-central-1="0.07755" us-east-1="0.063" us-west-2="0.063" %}
     {% include instance-price.html active="false" family="r7i" ap-northeast-1="0.0798" ap-south-1="0.06825" ca-central-1="0.07245" eu-central-1="0.0798" eu-west-1="0.074025" eu-west-2="0.0777" me-central-1="0" us-east-1="0.06615" us-west-2="0.06615" %}
+    {% include instance-price.html active="false" family="r8i" ap-northeast-1="0" ap-south-1="0" ca-central-1="0" eu-central-1="0" eu-west-1="0" eu-west-2="0" me-central-1="0" us-east-1="0.06946" us-west-2="0.06946" %}
+    {% include instance-price.html active="false" family="r8i-flex" ap-northeast-1="0" ap-south-1="0" ca-central-1="0" eu-central-1="0" eu-west-1="0" eu-west-2="0" me-central-1="0" us-east-1="0.065985" us-west-2="0.065985" %}
     {% include instance-price.html active="false" family="t3" ap-northeast-1="0.0544" ap-south-1="0.0448" ca-central-1="0.0464" eu-central-1="0.048" eu-west-1="0.0456" eu-west-2="0.0472" me-central-1="0.05015" us-east-1="0.0416" us-west-2="0.0416" %}
 </div>
 

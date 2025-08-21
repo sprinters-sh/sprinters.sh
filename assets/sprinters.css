@@ -213,3 +213,8 @@ img {
 .bg-yellow-200 {
     background-color: #ffe69c;
 }
+
+.badge-super {
+    vertical-align: super;
+    font-size: calc(var(--bs-badge-font-size) * 0.8);
+}

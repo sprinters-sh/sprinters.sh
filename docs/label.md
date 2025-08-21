@@ -238,6 +238,8 @@ _aws-instance-type_
 | r5 | `r5.large` , `r5.xlarge` , `r5.2xlarge` , `r5.4xlarge` , `r5.8xlarge` , `r5.12xlarge` , `r5.16xlarge` , `r5.24xlarge` |
 | r6i | `r6i.large` , `r6i.xlarge` , `r6i.2xlarge` , `r6i.4xlarge` , `r6i.8xlarge` , `r6i.12xlarge` , `r6i.16xlarge` , `r6i.24xlarge` , `r6i.32xlarge` |
 | r7i | `r7i.large` , `r7i.xlarge` , `r7i.2xlarge` , `r7i.4xlarge` , `r7i.8xlarge` , `r7i.12xlarge` , `r7i.16xlarge` , `r7i.24xlarge` , `r7i.48xlarge` |
+| <nobr>r8i  <span class="badge badge-super rounded-pill text-bg-primary">New</span></nobr> | `r8i.large` , `r8i.xlarge` , `r8i.2xlarge` , `r8i.4xlarge` , `r8i.8xlarge` , `r8i.12xlarge` , `r8i.16xlarge` , `r8i.24xlarge` , `r8i.32xlarge` , `r8i.48xlarge` , `r8i.96xlarge` |
+| <nobr>r8i-flex  <span class="badge badge-super rounded-pill text-bg-primary">New</span></nobr> | `r8i-flex.large` , `r8i-flex.xlarge` , `r8i-flex.2xlarge` , `r8i-flex.4xlarge` , `r8i-flex.8xlarge` , `r8i-flex.12xlarge` , `r8i-flex.16xlarge` |
 | t3 | `t3.nano` , `t3.micro` , `t3.small` , `t3.medium` , `t3.large` , `t3.xlarge` , `t3.2xlarge` |
 {: .table #instance-types }
 
