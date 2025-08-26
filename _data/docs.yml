@@ -9,6 +9,7 @@
   indent: true
 - path: "docs/volumes.md"
 - path: "docs/aws-resources.md"
+- path: "docs/pinning.md"
 - path: "docs/security.md"
 - path: "docs/tips.md"
 - path: "docs/benchmarks.md"
