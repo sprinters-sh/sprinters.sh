@@ -3,7 +3,7 @@ layout: docs
 title: "runs-on: label"
 ---
 
-<p class="mb-1">To tell GitHub to run your workflow jobs using Sprinters on AWS instead of GitHub hosted runners,
+<p class="mb-1">To instruct GitHub to run your workflow jobs using Sprinters on AWS instead of GitHub hosted runners,
     locate the <code>runs-on:</code> label in your workflow yml:</p>
 <div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
     <pre class="mb-0 p-2 fs-7">runs-on: ubuntu-latest</pre>
@@ -14,41 +14,27 @@ title: "runs-on: label"
     <pre class="mb-0 p-2 fs-7">runs-on: <span class="fw-bold fst-italic text-warning">sprinters:aws:</span>ubuntu-latest</pre>
 </div>
 
-This label tells Sprinters to connect to your AWS account
-and launch a runner instance using the `ubuntu-latest` image, which is identical to the one provided by GitHub.
+Now, whenever this job is run, Sprinters will automatically launch this runner on your AWS account as
+a `t3.large` (x64, 2 vCPUs, 8 GiB RAM) EC2 instance with `14` GiB of temp disk space and `4` GiB of swap
+in the default VPC of the `us-east-1` region using the `ubuntu-latest` [image](/docs/image).
 
-A number of defaults will also be applied automatically to most closely matches the capacity of GitHub hosted runners:
-
-- The instance will be a `t3.large` (x64 with 2 vCPUs and 8 GiB RAM).
-- It will have `14` GiB of temp disk space and `4` GiB of swap.
-
-The instance placement will be as follows:
-- It will be launched in the `us-east-1` region in your account's default VPC.
-- Sprinters will automatically pick the availability zone that currently has the lowest spot price.
-- Sprinters will attempt to launch the instance as spot and automatically fall back to on-demand if AWS has insufficient spot capacity available.
+This default most closely matches what you get with GitHub-hosted runners, at a fraction of the price.
 
 {% include h2.html id="customization" text="Customization" %}
 
-You can fully customize this by adding various parts to the label. The order doesn't matter. All parts are separated by a colon (`:`).
+You can customize the [image](#image), the [AWS region/az/subnet](#placement), the [EC2 instance type](#instance-type),
+whether to use [spot instances](#spot),
+the performance of the [root volume](#root), the performance and size of the [temp volume](#temp) and
+whether to use [runner lifecycle events](#events)
+by adding or changing various parts to the label. All parts are separated by a colon (`:`) and may appear in any order.
 
-Here is a more complex example:
+For example:
 
 <div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
-    <pre class="mb-0 p-2 fs-7">runs-on: <span class="fw-bold fst-italic text-warning">sprinters:aws:eu-central-1:ubuntu-22.04:m7i.24xlarge:temp=64</span></pre>
+    <pre class="mb-0 p-2 fs-7">runs-on: <span class="fw-bold fst-italic text-warning-emphasis">sprinters:aws:<span class="text-warning">eu-central-1:ubuntu-22.04:m7i.24xlarge:temp=64</span></span></pre>
 </div>
 
-Sprinters will launch a runner in the `eu-central-1` region using the `ubuntu-22.04` image on a `m7i.24xlarge` instance with `64` GiB of temp space.
-
-The following label parts can be added or modified to customize the image, placement and capacity of the runner instance:
-
-- [Image](#image)
-- [AWS Region / Availability Zone / Subnet](#placement)
-- [AWS Instance Type](#instance-type)
-- [AWS Spot Instances](#spot)
-- [AWS Instance Profile](#instance-profile)
-- [Root Volume](#root)
-- [Temp Volume](#temp)
-- [Runner Lifecycle Events](#events)
+This instructs Sprinters to launch a runner in the `eu-central-1` region using the `ubuntu-22.04` image on a `m7i.24xlarge` instance with `64` GiB of temp space.
 
 ---
 {: .mb-7 }
@@ -266,31 +252,6 @@ To force the use of much cheaper spot instances, change the label to:
 <div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
     <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:<span class="fw-bold fst-italic text-warning">spot=true</span></pre>
 </div>
-
----
-{: .mb-7 }
-
-
-{% include h3.html id="instance-profile" text="AWS Instance Profile" %}
-To access resources in your AWS account without the need to store long-lived AWS credentials as GitHub Actions secrets,
-you can {% include external-link.html text="associate an IAM instance profile" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html" %} with
-your runner instance. The instance will then automatically have AWS credentials available with the permissions of
-the IAM role linked to the instance profile.
-
-{% include h4.html text="Format" %}
-profile=_instance-profile-name_
-
-{% include h4.html text="Default" %}
-_none_
-
-{% include h4.html text="Example" %}
-To associate your instance with the `my-instance-profile` instance profile, change the label to:
-
-<div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
-    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:<span class="fw-bold fst-italic text-warning">profile=my-instance-profile</span></pre>
-</div>
-
-See also: [Accessing AWS Resources](/docs/aws-resources#instance-profile) for more info.
 
 ---
 {: .mb-7 }
