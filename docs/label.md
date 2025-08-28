@@ -3,22 +3,27 @@ layout: docs
 title: "runs-on: label"
 ---
 
-<p class="mb-1">To instruct GitHub to run your workflow jobs using Sprinters on AWS instead of GitHub hosted runners,
-    locate the <code>runs-on:</code> label in your workflow yml:</p>
+GitHub uses the `runs-on:` label in your workflow yml to determine which runner to use for a job.
+
+Migrating from GitHub-hosted runners to Sprinters-powered runners on AWS is easy.
+
+All you need to do, is locate the <code>runs-on:</code> label in your workflow yml:
+{: .mb-1 }
 <div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
     <pre class="mb-0 p-2 fs-7">runs-on: ubuntu-latest</pre>
 </div>
 
-<p class="mb-1">And adjust it to:</p>
+And adjust it to:
+{: .mb-1 }
 <div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
     <pre class="mb-0 p-2 fs-7">runs-on: <span class="fw-bold fst-italic text-warning">sprinters:aws:</span>ubuntu-latest</pre>
 </div>
 
-Now, whenever this job is run, Sprinters will automatically launch this runner on your AWS account as
+Now, whenever this job is started, Sprinters will automatically launch a runner for it on your AWS account as
 a `t3.large` (x64, 2 vCPUs, 8 GiB RAM) EC2 instance with `14` GiB of temp disk space and `4` GiB of swap
 in the default VPC of the `us-east-1` region using the `ubuntu-latest` [image](/docs/image).
 
-This default most closely matches what you get with GitHub-hosted runners, at a fraction of the price.
+This default most closely matches GitHub-hosted runners, at a fraction of the price.
 
 {% include h2.html id="customization" text="Customization" %}
 
@@ -29,6 +34,7 @@ whether to use [runner lifecycle events](#events)
 by adding or changing various parts to the label. All parts are separated by a colon (`:`) and may appear in any order.
 
 For example:
+{: .mb-1 }
 
 <div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
     <pre class="mb-0 p-2 fs-7">runs-on: <span class="fw-bold fst-italic text-warning-emphasis">sprinters:aws:<span class="text-warning">eu-central-1:ubuntu-22.04:m7i.24xlarge:temp=64</span></span></pre>
