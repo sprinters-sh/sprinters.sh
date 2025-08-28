@@ -112,6 +112,10 @@ img {
     max-width: 100%;
 }
 
+.nav-link-current {
+    font-weight: bold;
+    color: var(--bs-body-color);
+}
 @media (min-width: 992px) {
     .navbar-nav {
         text-align: left;

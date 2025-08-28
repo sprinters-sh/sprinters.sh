@@ -14,12 +14,7 @@ title: "Docs"
                         aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
-                <ul class="nav nav-pills flex-column w-100">
-                    <li class="nav-item">
-                        <a class="nav-link disabled d-none d-lg-block fw-bold text-body fs-5 px-0 mt-4"
-                           aria-disabled="true">Docs</a>
-                    </li>
-
+                <ul class="nav nav-pills flex-column w-100 pt-4">
                     {% for entry in site.data.docs %}
                         {% include nav-item.html path=entry.path indent=entry.indent %}
                         {% if entry.path == page.path %}
