@@ -1,3 +1,9 @@
+- date: "2025-08-28"
+  title: "Multiple AWS accounts support"
+  href: "/docs/aws-accounts#multiple"
+  image: "/assets/new/2025-08-28-multiple-aws-accounts.png"
+  details: "AWS accounts are regularly used to fence off different environments or projects within the same AWS organization. You can now run your jobs on any number of AWS accounts, exactly where you want them."
+
 - date: "2025-08-21"
   title: "AWS <code>r8i</code> and <code>r8i-flex</code> instance support"
   href: "/docs/label#instance-type"

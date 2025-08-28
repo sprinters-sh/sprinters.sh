@@ -27,8 +27,8 @@ This default most closely matches GitHub-hosted runners, at a fraction of the pr
 
 {% include h2.html id="customization" text="Customization" %}
 
-You can customize the [image](#image), the [AWS region/az/subnet](#placement), the [EC2 instance type](#instance-type),
-whether to use [spot instances](#spot),
+You can adjust the [image](#image), the [AWS account](#account), the [AWS region/az/subnet](#placement),
+the [EC2 instance type](#instance-type), whether to use [spot instances](#spot),
 the performance of the [root volume](#root), the performance and size of the [temp volume](#temp) and
 whether to use [runner lifecycle events](#events)
 by adding or changing various parts to the label. All parts are separated by a colon (`:`) and may appear in any order.
@@ -42,9 +42,9 @@ For example:
 
 This instructs Sprinters to launch a runner in the `eu-central-1` region using the `ubuntu-22.04` image on a `m7i.24xlarge` instance with `64` GiB of temp space.
 
----
-{: .mb-7 }
+{% include h2.html id="parts" text="Parts" %}
 
+You can customize the label with the following parts:
 
 {% include h3.html id="image" text="Image" %}
 You can set the [image](/docs/images) for the runner by replacing the one in the label.
@@ -95,8 +95,6 @@ To set the image to `ubuntu-24.04-minimal`, change the label to:
 </div>
 
 ---
-{: .mb-7 }
-
 
 {% include h3.html id="placement" text="AWS Region / Availability Zone / Subnet" %}
 You can specify where the runner instance is launched by appending a _region_, _availability zone_ and _subnet id_ to the label.
@@ -153,8 +151,24 @@ To use the `subnet-0123456789abcdef0` subnet in the `us-east-1` region, change t
 </div>
 
 ---
-{: .mb-7 }
 
+{% include h3.html id="account" text="AWS Account" %}
+When using [multiple AWS accounts](/docs/aws-accounts#multiple), you can specify the desired account ID in the label.
+
+{% include h4.html text="Format" %}
+_aws-account-id_
+
+{% include h4.html text="Default" %}
+The id of your [default AWS account](/docs/aws-accounts#default).
+
+{% include h4.html text="Example" %}
+To launch the runner in your `123456789012` AWS account, change the label to:
+
+<div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
+    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws<span class="fw-bold fst-italic text-warning">/123456789012</span>:ubuntu-latest</pre>
+</div>
+
+---
 
 {% include h3.html id="instance-type" text="AWS Instance Type" %}
 You can set the [AWS EC2 instance type](/docs/instances#type) on which launch the runner by appending it to the label.
@@ -227,8 +241,6 @@ To set the instance type to `m7i.8xlarge`, change the label to:
 </div>
 
 ---
-{: .mb-7 }
-
 
 {% include h3.html id="spot" text="AWS Spot Instances" %}
 To save significant amounts of money at a slight risk of being interrupted, the instance can be launched as a [spot instance](/docs/instances/spot).
@@ -260,8 +272,6 @@ To force the use of much cheaper spot instances, change the label to:
 </div>
 
 ---
-{: .mb-7 }
-
 
 {% include h3.html id="root" text="Root Volume" %}
 You can adjust the performance of the [root volume](/docs/volumes) by appending a performance specification to the label.
@@ -300,8 +310,6 @@ To increase the root volume to the maximum number of IOPS for its size and the m
 </div>
 
 ---
-{: .mb-7 }
-
 
 {% include h3.html id="temp" text="Temp Volume" %}
 You can adjust the size and performance of the [temp volume](/docs/volumes) by modifying the label.
@@ -345,8 +353,6 @@ To set the temp size to `64` GiB and max out the volume throughput, change the l
 </div>
 
 ---
-{: .mb-7 }
-
 
 {% include h3.html id="events" text="Runner Lifecycle Events" %}
 In order to react more quickly to instances becoming unhealthy, runners {% include external-link.html text="publish lifecycle events"

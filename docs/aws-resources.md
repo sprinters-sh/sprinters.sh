@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: "AWS resources"
+title: "AWS Resources"
 ---
 
 It is common for runners to need to access resources in your AWS account such as S3 buckets, RDS databases or EC2 instances.

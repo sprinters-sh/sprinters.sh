@@ -8,6 +8,7 @@
 - path: "docs/instances/spot.md"
   indent: true
 - path: "docs/volumes.md"
+- path: "docs/aws-accounts.md"
 - path: "docs/aws-resources.md"
 - path: "docs/pinning.md"
 - path: "docs/security.md"
