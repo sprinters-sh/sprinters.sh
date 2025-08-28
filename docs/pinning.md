@@ -31,7 +31,7 @@ For a regular job named _test-job_, the _job pinning discriminator_ would then b
 
 {% include h3.html text="Matrix Jobs" %}
 
-The attributes above are still identical for each job in a matrix. To differentiate between matrix jobs, we must add the following additional attribute:
+The following attributes uniquely identify a matrix job:
 
 | Attribute | Description |
 +-|-+
