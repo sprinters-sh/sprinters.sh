@@ -23,6 +23,10 @@ code {
     font-size: 0.670rem !important;
 }
 
+.fs-10 {
+    font-size: 0.587rem !important;
+}
+
 @media (min-width: 768px) {
     .fs-md-5 {
         font-size: 1.25rem !important;

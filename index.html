@@ -191,6 +191,13 @@ title: "Run your GitHub Actions jobs 10x cheaper on your own AWS account"
         <h2 class="pt-7 fw-semibold text-warning-emphasis fs-1">Larger runners. Larger disks. x64 and arm64.</h2>
         <h4 class="mb-5 text-secondary">Runners in all sizes. From tiny to humongous, and everything in between.</h4>
 
+        <div class="d-inline-block v-align-middle">
+            <code class="code fs-6 text-start d-inline-block mt-4 mb-4">
+                <span class="text-warning">runs-on:</span> <span
+                        class="text-info">sprinters:aws:ubuntu-24.04-arm:r8g.48xlarge:temp=16384</span>
+            </code>
+        </div>
+
         <div class="table-responsive">
             <table class="table">
                 <thead>
@@ -245,12 +252,19 @@ title: "Run your GitHub Actions jobs 10x cheaper on your own AWS account"
     </div>
 
     <div class="col-md-8 mx-auto text-center mt-5">
-        <h2 class="pt-7 fw-semibold text-warning-emphasis fs-1">Where, which and how. The choice is yours.</h2>
-        <h4 class="mb-3 text-secondary">Flexible placement of runners across AWS accounts, regions and markets.</h4>
+        <h2 class="pt-7 fw-semibold text-warning-emphasis fs-1">Multiple AWS accounts, regions and subnets.</h2>
+        <h4 class="mb-3 text-secondary">Launch your runners exactly where you need them.</h4>
+
+        <div class="d-inline-block v-align-middle">
+            <code class="code fs-6 text-start d-inline-block mt-4 mb-4">
+                <span class="text-warning">runs-on:</span> <span
+                        class="text-info">sprinters:aws/123456789012:eu-central-1/subnet-01234567890abcdef:ubuntu-latest</span>
+            </code>
+        </div>
 
         <div class="row">
-            {% include feature.html icon="cloud-check" title="Multiple Accounts" text="Launch all your runners in the same AWS account. Or use a different one per repository, workflow or job. The choice is yours." %}
-            {% include feature.html icon="globe" title="Multiple Regions" text="Put your runners next to the infrastructure they need. Pick the required region, VPC or subnet and never unnecesarily expose a resource over the public internet again." %}
+            {% include feature.html icon="cloud-check" title="Multiple AWS Accounts" new="true" text="Launch all your runners in the same AWS account. Or use a different one per repository, environment or project. The choice is yours." %}
+            {% include feature.html icon="globe" title="9 AWS Regions" text="Put your runners next to the infrastructure they need. Pick the required region, VPC or subnet and never unnecesarily expose a resource over the public internet again." %}
             {% include feature.html icon="flower1" title="On-Demand or Spot" text="Go uninterrupted with On-Demand instances. Or go for maximum savings with Spot. Optionally with cheapest availability zone auto-selection." %}
         </div>
     </div>
