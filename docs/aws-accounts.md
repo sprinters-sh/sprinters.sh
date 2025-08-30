@@ -77,7 +77,7 @@ Imagine you defined your variables as follows:
 
 You can now {% include external-link.html text="use them in your workflows" href="https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/store-information-in-variables#using-the-vars-context-to-access-configuration-variable-values" %} like this:
 {: .mb-1 }
-<div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
+<div class="alert alert-info font-monospace p-0 mb-1 position-relative" role="alert">
     <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws/<span class="fw-bold fst-italic text-warning">{% raw %}${{ vars.AWS_ACCOUNT_ID_DEV }}{% endraw %}</span>:ubuntu-latest</pre>
 </div>
 
@@ -87,7 +87,7 @@ You can now {% include external-link.html text="use them in your workflows" href
 
 As expected, they will be substituted at runtime for their actual values:
 {: .mb-1 }
-<div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
+<div class="alert alert-info font-monospace p-0 mb-1 position-relative" role="alert">
     <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws/<span class="fw-bold fst-italic text-warning">111122223333</span>:ubuntu-latest</pre>
 </div>
 
