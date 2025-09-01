@@ -1,20 +1,34 @@
 ---
 layout: docs
-title: "On-Demand"
+title: "AWS Regions"
 ---
 
-On-demand instances are a great default choice as they provide significant savings over GitHub-hosted runners
-without any risk of interruption.
+You can choose from 9 different AWS regions across the globe where to launch your [instances](/docs/instances):
+
+| Region | Location |
++-|-|-+
+| `ap-northeast-1` | Tokyo |
+| `ap-south-1` | Mumbai |
+| `ca-central-1` | Canada |
+| `eu-central-1` | Frankfurt |
+| `eu-west-1` | Ireland |
+| `eu-west-2` | London |
+| `me-central-1` | UAE |
+| `us-east-1` | N. Virginia |
+| `us-west-2` | Oregon |
+{: .table }
+
+Need a different region? [Simply request it in the issue tracker](https://github.com/sprinters-sh/sprinters/issues).
 
 {% include h2.html text="Pricing" %}
 
-AWS charges vastly different amounts for EC2 on-demand instances in each region.
+AWS charges vastly different amounts for EC2 instances in each region.
 
-If your jobs can tolerate it, consider **switching to a more cost-effective region** as other regions can be **over to 2X cheaper** for the same instance type:
+If your jobs can tolerate it, consider **switching to a more cost-effective region** as other regions can be **over to 2X cheaper** for the same instance type.
 
-{% include h3.html text="x64" %}
-{% include h4.html text="Intel" %}
+Here are the relative prices for the different instance types in each region.
 
+{% include h3.html text="x64 (Intel)" %}
 <nav>
     <div class="nav nav-tabs" role="tablist">
         <button class="nav-link" id="nav-price-c5-tab" data-bs-toggle="tab" data-bs-target="#nav-price-c5" type="button" role="tab" aria-controls="nav-price-c5" aria-selected="false">c5</button>
@@ -25,6 +39,8 @@ If your jobs can tolerate it, consider **switching to a more cost-effective regi
         <button class="nav-link" id="nav-price-m6i-tab" data-bs-toggle="tab" data-bs-target="#nav-price-m6i" type="button" role="tab" aria-controls="nav-price-m6i" aria-selected="false">m6i</button>
         <button class="nav-link" id="nav-price-m7i-tab" data-bs-toggle="tab" data-bs-target="#nav-price-m7i" type="button" role="tab" aria-controls="nav-price-m7i" aria-selected="false">m7i</button>
         <button class="nav-link active" id="nav-price-m7i-flex-tab" data-bs-toggle="tab" data-bs-target="#nav-price-m7i-flex" type="button" role="tab" aria-controls="nav-price-m7i-flex" aria-selected="true">m7i-flex</button>
+        <button class="nav-link" id="nav-price-m8i-tab" data-bs-toggle="tab" data-bs-target="#nav-price-m8i" type="button" role="tab" aria-controls="nav-price-m8i" aria-selected="false">m8i</button>
+        <button class="nav-link" id="nav-price-m8i-flex-tab" data-bs-toggle="tab" data-bs-target="#nav-price-m8i-flex" type="button" role="tab" aria-controls="nav-price-m8i-flex" aria-selected="false">m8i-flex</button>
         <button class="nav-link" id="nav-price-r5-tab" data-bs-toggle="tab" data-bs-target="#nav-price-r5" type="button" role="tab" aria-controls="nav-price-r5" aria-selected="false">r5</button>
         <button class="nav-link" id="nav-price-r6i-tab" data-bs-toggle="tab" data-bs-target="#nav-price-r6i" type="button" role="tab" aria-controls="nav-price-r6i" aria-selected="false">r6i</button>
         <button class="nav-link" id="nav-price-r7i-tab" data-bs-toggle="tab" data-bs-target="#nav-price-r7i" type="button" role="tab" aria-controls="nav-price-r7i" aria-selected="false">r7i</button>
@@ -42,6 +58,8 @@ If your jobs can tolerate it, consider **switching to a more cost-effective regi
     {% include instance-price.html active="false" family="m6i" ap-northeast-1="0.062" ap-south-1="0.0505" ca-central-1="0.0535" eu-central-1="0.0575" eu-west-1="0.0535" eu-west-2="0.0555" me-central-1="0.05885" us-east-1="0.048" us-west-2="0.048" %}
     {% include instance-price.html active="false" family="m7i" ap-northeast-1="0.0651" ap-south-1="0.053025" ca-central-1="0.056175" eu-central-1="0.060375" eu-west-1="0.056175" eu-west-2="0.058275" me-central-1="0.061795" us-east-1="0.0504" us-west-2="0.0504" %}
     {% include instance-price.html active="true" family="m7i-flex" ap-northeast-1="0.061845" ap-south-1="0.050375" ca-central-1="0.053365" eu-central-1="0.057355" eu-west-1="0.053365" eu-west-2="0.05536" me-central-1="0" us-east-1="0.04788" us-west-2="0.04788" %}
+    {% include instance-price.html active="false" family="m8i" ap-northeast-1="0" ap-south-1="0" ca-central-1="0" eu-central-1="0" eu-west-1="0" eu-west-2="0" me-central-1="0" us-east-1="0.05292" us-west-2="0.05292" %}
+    {% include instance-price.html active="false" family="m8i-flex" ap-northeast-1="0" ap-south-1="0" ca-central-1="0" eu-central-1="0" eu-west-1="0" eu-west-2="0" me-central-1="0" us-east-1="0.050275" us-west-2="0.050275" %}
     {% include instance-price.html active="false" family="r5" ap-northeast-1="0.076" ap-south-1="0.065" ca-central-1="0.069" eu-central-1="0.076" eu-west-1="0.0705" eu-west-2="0.074" me-central-1="0.0775" us-east-1="0.063" us-west-2="0.063" %}
     {% include instance-price.html active="false" family="r6i" ap-northeast-1="0.076" ap-south-1="0.065" ca-central-1="0.069" eu-central-1="0.076" eu-west-1="0.0705" eu-west-2="0.074" me-central-1="0.07755" us-east-1="0.063" us-west-2="0.063" %}
     {% include instance-price.html active="false" family="r7i" ap-northeast-1="0.0798" ap-south-1="0.06825" ca-central-1="0.07245" eu-central-1="0.0798" eu-west-1="0.074025" eu-west-2="0.0777" me-central-1="0" us-east-1="0.06615" us-west-2="0.06615" %}
@@ -50,7 +68,7 @@ If your jobs can tolerate it, consider **switching to a more cost-effective regi
     {% include instance-price.html active="false" family="t3" ap-northeast-1="0.0544" ap-south-1="0.0448" ca-central-1="0.0464" eu-central-1="0.048" eu-west-1="0.0456" eu-west-2="0.0472" me-central-1="0.05015" us-east-1="0.0416" us-west-2="0.0416" %}
 </div>
 
-{% include h4.html text="AMD" %}
+{% include h3.html text="x64 (AMD)" %}
 <nav>
     <div class="nav nav-tabs" role="tablist">
         <button class="nav-link" id="nav-price-c5a-tab" data-bs-toggle="tab" data-bs-target="#nav-price-c5a" type="button" role="tab" aria-controls="nav-price-c5a" aria-selected="false">c5a</button>

@@ -97,7 +97,7 @@ To set the image to `ubuntu-24.04-minimal`, change the label to:
 ---
 
 {% include h3.html id="placement" text="AWS Region / Availability Zone / Subnet" %}
-You can specify where the runner instance is launched by appending a _region_, _availability zone_ and _subnet id_ to the label.
+You can specify where the runner instance is launched by appending a [region](/docs/aws-regions), _availability zone_ and _subnet id_ to the label.
 
 At least one of _region_ and _availability zone_ must be specified. _subnet id_ is optional.
 All parts are separated by a `/`.
@@ -109,20 +109,7 @@ _aws-region_/_aws-availability-zone_/_aws-subnet-id_
 `us-east-1` (random subnet of a random availability zone of the default VPC of `us-east-1`)
 
 {% include h4.html text="Supported Regions" %}
-| Region | Location |
-+-|-|-+
-| `ap-northeast-1` | Tokyo |
-| `ap-south-1` | Mumbai |
-| `ca-central-1` | Canada |
-| `eu-central-1` | Frankfurt |
-| `eu-west-1` | Ireland |
-| `eu-west-2` | London |
-| `me-central-1` | UAE |
-| `us-east-1` | N. Virginia |
-| `us-west-2` | Oregon |
-{: .table }
-
-Need a different region? [Simply request it in the issue tracker](https://github.com/sprinters-sh/sprinters/issues).
+You can choose from a large range of [supported AWS regions](/docs/aws-regions) across the globe.
 
 {% include h4.html text="Notes" %}
 
@@ -132,10 +119,10 @@ Need a different region? [Simply request it in the issue tracker](https://github
 - If you specify both an _availability zone_ and a _subnet id_, you must ensure the _subnet_ resides in that _availability zone_.
 
 {% include h4.html text="Examples" %}
-To launch the runner using the `ubuntu-24.04-minimal` image in the `eu-central-1` region, change the label to:
+To launch the runner using the `ubuntu-24.04-minimal` image in the `ca-central-1` region, change the label to:
 
 <div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
-    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-24.04-minimal:<span class="fw-bold fst-italic text-warning">eu-central-1</span></pre>
+    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-24.04-minimal:<span class="fw-bold fst-italic text-warning">ca-central-1</span></pre>
 </div>
 
 To use the `eu-central-1c` availability zone, change the label to:
@@ -170,8 +157,8 @@ To launch the runner in your `123456789012` AWS account, change the label to:
 
 ---
 
-{% include h3.html id="instance-type" text="AWS Instance Type" %}
-You can set the [AWS EC2 instance type](/docs/instances#type) on which launch the runner by appending it to the label.
+{% include h3.html id="instance-type" text="EC2 Instance Type" %}
+You can set the type of [instance](/docs/instances) on which launch the runner by appending it to the label.
 
 {% include h4.html text="Format" %}
 _aws-instance-type_
@@ -179,59 +166,11 @@ _aws-instance-type_
 {% include h4.html text="Default" %}
 `t3.large` for x64 images, `t4g.large` for arm64 images.
 
-{% include h4.html text="Supported <strong>x64</strong> Instance Types" %}
+{% include h4.html text="Supported Instance Types" %}
+Sprinters supports over 300 different EC2 instance types, across all modern generations of the `m`, `c`, `r` and `t` families,
+using either **x64** (Intel and AMD) or **arm64** (AWS Graviton) processors.
 
-{% include h5.html text="Intel" %}
-| Family | Sizes |
-+-|-|-+
-| c5 | `c5.large` , `c5.xlarge` , `c5.2xlarge` , `c5.4xlarge` , `c5.9xlarge` , `c5.12xlarge` , `c5.18xlarge` , `c5.24xlarge` |
-| c6i | `c6i.large` , `c6i.xlarge` , `c6i.2xlarge` , `c6i.4xlarge` , `c6i.8xlarge` , `c6i.12xlarge` , `c6i.16xlarge` , `c6i.24xlarge` , `c6i.32xlarge` |
-| c7i | `c7i.large` , `c7i.xlarge` , `c7i.2xlarge` , `c7i.4xlarge` , `c7i.8xlarge` , `c7i.12xlarge` , `c7i.16xlarge` , `c7i.24xlarge` , `c7i.48xlarge` |
-| c7i-flex | `c7i-flex.large` , `c7i-flex.xlarge` , `c7i-flex.2xlarge` , `c7i-flex.4xlarge` , `c7i-flex.8xlarge` , `c7i-flex.12xlarge` , `c7i-flex.16xlarge` |
-| m5 | `m5.large` , `m5.xlarge` , `m5.2xlarge` , `m5.4xlarge` , `m5.8xlarge` , `m5.12xlarge` , `m5.16xlarge` , `m5.24xlarge` |
-| m6i | `m6i.large` , `m6i.xlarge` , `m6i.2xlarge` , `m6i.4xlarge` , `m6i.8xlarge` , `m6i.12xlarge` , `m6i.16xlarge` , `m6i.24xlarge` , `m6i.32xlarge` |
-| m7i | `m7i.large` , `m7i.xlarge` , `m7i.2xlarge` , `m7i.4xlarge` , `m7i.8xlarge` , `m7i.12xlarge` , `m7i.16xlarge` , `m7i.24xlarge` , `m7i.48xlarge` |
-| m7i-flex | `m7i-flex.large` , `m7i-flex.xlarge` , `m7i-flex.2xlarge` , `m7i-flex.4xlarge` , `m7i-flex.8xlarge` , `m7i-flex.12xlarge` , `m7i-flex.16xlarge` |
-| r5 | `r5.large` , `r5.xlarge` , `r5.2xlarge` , `r5.4xlarge` , `r5.8xlarge` , `r5.12xlarge` , `r5.16xlarge` , `r5.24xlarge` |
-| r6i | `r6i.large` , `r6i.xlarge` , `r6i.2xlarge` , `r6i.4xlarge` , `r6i.8xlarge` , `r6i.12xlarge` , `r6i.16xlarge` , `r6i.24xlarge` , `r6i.32xlarge` |
-| r7i | `r7i.large` , `r7i.xlarge` , `r7i.2xlarge` , `r7i.4xlarge` , `r7i.8xlarge` , `r7i.12xlarge` , `r7i.16xlarge` , `r7i.24xlarge` , `r7i.48xlarge` |
-| <nobr>r8i <span class="badge badge-super rounded-pill text-bg-primary">New</span></nobr> | `r8i.large` , `r8i.xlarge` , `r8i.2xlarge` , `r8i.4xlarge` , `r8i.8xlarge` , `r8i.12xlarge` , `r8i.16xlarge` , `r8i.24xlarge` , `r8i.32xlarge` , `r8i.48xlarge` , `r8i.96xlarge` |
-| <nobr>r8i-flex <span class="badge badge-super rounded-pill text-bg-primary">New</span></nobr> | `r8i-flex.large` , `r8i-flex.xlarge` , `r8i-flex.2xlarge` , `r8i-flex.4xlarge` , `r8i-flex.8xlarge` , `r8i-flex.12xlarge` , `r8i-flex.16xlarge` |
-| t3 | `t3.nano` , `t3.micro` , `t3.small` , `t3.medium` , `t3.large` , `t3.xlarge` , `t3.2xlarge` |
-{: .table #instance-types }
-
-{% include h5.html text="AMD" %}
-| Family | Sizes |
-+-|-|-+
-| c5a | `c5a.large` , `c5a.xlarge` , `c5a.2xlarge` , `c5a.4xlarge` , `c5a.8xlarge` , `c5a.12xlarge` , `c5a.16xlarge` , `c5a.24xlarge` |
-| c6a | `c6a.large` , `c6a.xlarge` , `c6a.2xlarge` , `c6a.4xlarge` , `c6a.8xlarge` , `c6a.12xlarge` , `c6a.16xlarge` , `c6a.24xlarge` , `c6a.32xlarge` , `c6a.48xlarge` |
-| c7a | `c7a.medium` , `c7a.large` , `c7a.xlarge` , `c7a.2xlarge` , `c7a.4xlarge` , `c7a.8xlarge` , `c7a.12xlarge` , `c7a.16xlarge` , `c7a.24xlarge` , `c7a.32xlarge` , `c7a.48xlarge` |
-| m5a | `m5a.large` , `m5a.xlarge` , `m5a.2xlarge` , `m5a.4xlarge` , `m5a.8xlarge` , `m5a.12xlarge` , `m5a.16xlarge` , `m5a.24xlarge` |
-| m6a | `m6a.large` , `m6a.xlarge` , `m6a.2xlarge` , `m6a.4xlarge` , `m6a.8xlarge` , `m6a.12xlarge` , `m6a.16xlarge` , `m6a.24xlarge` , `m6a.32xlarge` , `m6a.48xlarge` |
-| m7a | `m7a.medium` , `m7a.large` , `m7a.xlarge` , `m7a.2xlarge` , `m7a.4xlarge` , `m7a.8xlarge` , `m7a.12xlarge` , `m7a.16xlarge` , `m7a.24xlarge` , `m7a.32xlarge` , `m7a.48xlarge` |
-| r5a | `r5a.large` , `r5a.xlarge` , `r5a.2xlarge` , `r5a.4xlarge` , `r5a.8xlarge` , `r5a.12xlarge` , `r5a.16xlarge` , `r5a.24xlarge` |
-| r6a | `r6a.large` , `r6a.xlarge` , `r6a.2xlarge` , `r6a.4xlarge` , `r6a.8xlarge` , `r6a.12xlarge` , `r6a.16xlarge` , `r6a.24xlarge` , `r6a.32xlarge` , `r6a.48xlarge` |
-| r7a | `r7a.medium` , `r7a.large` , `r7a.xlarge` , `r7a.2xlarge` , `r7a.4xlarge` , `r7a.8xlarge` , `r7a.12xlarge` , `r7a.16xlarge` , `r7a.24xlarge` , `r7a.32xlarge` , `r7a.48xlarge` |
-| t3a | `t3a.nano` , `t3a.micro` , `t3a.small` , `t3a.medium` , `t3a.large` , `t3a.xlarge` , `t3a.2xlarge` |
-{: .table #instance-types }
-
-{% include h4.html text="Supported <strong>arm64</strong> Instance Types" %}
-
-| Family | Sizes |
-+-|-|-+
-| c6g | `c6g.medium` , `c6g.large` , `c6g.xlarge` , `c6g.2xlarge` , `c6g.4xlarge` , `c6g.8xlarge` , `c6g.12xlarge` , `c6g.16xlarge` |
-| c7g | `c7g.medium` , `c7g.large` , `c7g.xlarge` , `c7g.2xlarge` , `c7g.4xlarge` , `c7g.8xlarge` , `c7g.12xlarge` , `c7g.16xlarge` |
-| c8g | `c8g.medium` , `c8g.large` , `c8g.xlarge` , `c8g.2xlarge` , `c8g.4xlarge` , `c8g.8xlarge` , `c8g.12xlarge` , `c8g.16xlarge` , `c8g.24xlarge` , `c8g.48xlarge` |
-| m6g | `m6g.medium` , `m6g.large` , `m6g.xlarge` , `m6g.2xlarge` , `m6g.4xlarge` , `m6g.8xlarge` , `m6g.12xlarge` , `m6g.16xlarge` |
-| m7g | `m7g.medium` , `m7g.large` , `m7g.xlarge` , `m7g.2xlarge` , `m7g.4xlarge` , `m7g.8xlarge` , `m7g.12xlarge` , `m7g.16xlarge` |
-| m8g | `m8g.medium` , `m8g.large` , `m8g.xlarge` , `m8g.2xlarge` , `m8g.4xlarge` , `m8g.8xlarge` , `m8g.12xlarge` , `m8g.16xlarge` , `m8g.24xlarge` , `m8g.48xlarge` |
-| r6g | `r6g.medium` , `r6g.large` , `r6g.xlarge` , `r6g.2xlarge` , `r6g.4xlarge` , `r6g.8xlarge` , `r6g.12xlarge` , `r6g.16xlarge` |
-| r7g | `r7g.medium` , `r7g.large` , `r7g.xlarge` , `r7g.2xlarge` , `r7g.4xlarge` , `r7g.8xlarge` , `r7g.12xlarge` , `r7g.16xlarge` |
-| r8g | `r8g.medium` , `r8g.large` , `r8g.xlarge` , `r8g.2xlarge` , `r8g.4xlarge` , `r8g.8xlarge` , `r8g.12xlarge` , `r8g.16xlarge` , `r8g.24xlarge` , `r8g.48xlarge` |
-| t4g | `t4g.nano` , `t4g.micro` , `t4g.small` , `t4g.medium` , `t4g.large` , `t4g.xlarge` , `t4g.2xlarge` |
-{: .table #instance-types }
-
-Need a different instance family? [Simply request it in the issue tracker](https://github.com/sprinters-sh/sprinters/issues).
+Pick the one that best suits your needs from the [complete list of supported instance types](/docs/instances#types).
 
 {% include h4.html text="Example" %}
 To set the instance type to `m7i.8xlarge`, change the label to:
@@ -242,8 +181,8 @@ To set the instance type to `m7i.8xlarge`, change the label to:
 
 ---
 
-{% include h3.html id="spot" text="AWS Spot Instances" %}
-To save significant amounts of money at a slight risk of being interrupted, the instance can be launched as a [spot instance](/docs/instances/spot).
+{% include h3.html id="spot" text="Spot Instances" %}
+To save significant amounts of money at a slight risk of being interrupted, the instance can be launched as a [spot instance](/docs/spot).
 
 {% include h4.html text="Format" %}
 spot=_`auto|true|false`_
@@ -262,7 +201,8 @@ spot=_`auto|true|false`_
 
 {% include h4.html text="Note" %}
 
-If neither a _subnet id_ nor an _availability zone_ was specified, Sprinters will automatically select the _availability zone_ with the cheapest spot price.
+If neither a _subnet id_ nor an _availability zone_ was specified, Sprinters will automatically select the _availability zone_
+with the cheapest spot price at the time of launch.
 
 {% include h4.html text="Example" %}
 To force the use of much cheaper spot instances, change the label to:

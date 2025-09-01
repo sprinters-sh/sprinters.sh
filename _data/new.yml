@@ -1,3 +1,9 @@
+- date: "2025-09-01"
+  title: "AWS <code>m8i</code> and <code>m8i-flex</code> instance support"
+  href: "/docs/instances#types"
+  image: "/assets/new/2025-09-01-m8i.png"
+  details: "The newest generation of Intel Xeon-based general-purpose instances has arrived! Sprinters now supports <code>m8i</code> and <code>m8i-flex</code> instances with up to <strong>384 vCPUs</strong>!"
+
 - date: "2025-08-28"
   title: "Multiple AWS accounts support"
   href: "/docs/aws-accounts#multiple"
@@ -6,7 +12,7 @@
 
 - date: "2025-08-21"
   title: "AWS <code>r8i</code> and <code>r8i-flex</code> instance support"
-  href: "/docs/label#instance-type"
+  href: "/docs/instances#types"
   image: "/assets/new/2025-08-21-r8i.png"
   details: "Need lots of memory for your runners? Sprinters now supports <code>r8i</code> and <code>r8i-flex</code> instances with up to <strong>384 vCPUs</strong> and <strong>3072 GiB</strong> of RAM!"
 
@@ -30,7 +36,7 @@
 
 - date: "2025-05-27"
   title: "AWS <code>r5</code>, <code>r5a</code>, <code>r6a</code>, <code>r6i</code> and <code>r7a</code> instance support"
-  href: "/docs/label#instance-type"
+  href: "/docs/instances#types"
   image: "/assets/new/2025-05-27-r567ia.png"
   details: "Need memory-optimized x64 instances with high spot savings? Sprinters has you covered with <code>r5</code>, <code>r5a</code>, <code>r6a</code>, <code>r6i</code> and <code>r7a</code> instances."
 
@@ -48,7 +54,7 @@
 
 - date: "2025-05-12"
   title: "AWS <code>c5</code>, <code>c5a</code>, <code>c6a</code>, <code>c6i</code> and <code>c7a</code> instance support"
-  href: "/docs/label#instance-type"
+  href: "/docs/instances#types"
   image: "/assets/new/2025-05-12-c567ia.png"
   details: "Need compute-optimized x64 instances with high spot savings? Sprinters has you covered with <code>c5</code>, <code>c5a</code>, <code>c6a</code>, <code>c6i</code> and <code>c7a</code> instances."
 
@@ -60,7 +66,7 @@
 
 - date: "2025-03-12"
   title: "AWS <code>c6g</code>, <code>c7g</code>, <code>c8g</code>, <code>r6g</code>, <code>r7g</code> and <code>r8g</code> instance support"
-  href: "/docs/label#instance-type"
+  href: "/docs/instances#types"
   image: "/assets/new/2025-03-12-cr678g.png"
   details: "Need more compute, but not more RAM? Or more RAM, but not more compute? You can now right-size your AWS arm64 runners by picking compute-optimized <code>c6g</code>, <code>c7g</code> and <code>c8g</code> instances and RAM-optimized <code>r6g</code>, <code>r7g</code> and <code>r8g</code> instances."
 
@@ -84,7 +90,7 @@
 
 - date: "2025-02-19"
   title: "AWS <code>m5</code>, <code>m5a</code>, <code>m6a</code>, <code>m6i</code> and <code>m7a</code> instance support"
-  href: "/docs/label#instance-type"
+  href: "/docs/instances#types"
   image: "/assets/new/2025-02-19-m567ai.png"
   details: "Looking for the lowest-cost per hour general purpose x64 instances that don't depend on CPU credits? Sprinters now has you covered with <code>m5</code>, <code>m5a</code>, <code>m6a</code>, <code>m6i</code> and <code>m7a</code> instances."
 
@@ -96,7 +102,7 @@
 
 - date: "2025-02-13"
   title: "AWS <code>c7i</code>, <code>c7i-flex</code> and <code>r7i</code> instance support"
-  href: "/docs/label#instance-type"
+  href: "/docs/instances#types"
   image: "/assets/new/2025-02-13-cr7i.png"
   details: "Need more compute, but not more RAM? Or more RAM, but not more compute? You can now right-size your AWS x64 runners by picking compute-optimized <code>c7i</code> and <code>c7i-flex</code> instances and RAM-optimized <code>r7i</code> instances."
 
@@ -120,7 +126,7 @@
 
 - date: "2025-02-07"
   title: "AWS <code>m6g</code>, <code>m7g</code> and <code>m8g</code> instance support"
-  href: "/docs/label#instance-type"
+  href: "/docs/instances#types"
   image: "/assets/new/2025-02-07-m678g.png"
   details: "Good news for arm64 users! You can now launch your runners on AWS using <code>m6g</code>, <code>m7g</code> and <code>m8g</code> instances."
 
@@ -132,7 +138,7 @@
 
 - date: "2025-01-27"
   title: "AWS <code>m7i-flex.12xlarge</code> and <code>m7i-flex.16xlarge</code> instance support"
-  href: "/docs/label#instance-type"
+  href: "/docs/instances#types"
   image: "/assets/new/2025-01-27-m7i-flex.png"
   details: "You can now launch your runners on AWS using <code>m7i-flex.12xlarge</code> and <code>m7i-flex.16xlarge</code> instances."
 

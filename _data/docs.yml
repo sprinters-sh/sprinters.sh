@@ -2,13 +2,11 @@
 - path: "docs/setup.md"
 - path: "docs/label.md"
 - path: "docs/images.md"
-- path: "docs/instances/index.md"
-- path: "docs/instances/on-demand.md"
-  indent: true
-- path: "docs/instances/spot.md"
-  indent: true
+- path: "docs/instances.md"
+- path: "docs/spot.md"
 - path: "docs/volumes.md"
 - path: "docs/aws-accounts.md"
+- path: "docs/aws-regions.md"
 - path: "docs/aws-resources.md"
 - path: "docs/pinning.md"
 - path: "docs/security.md"
