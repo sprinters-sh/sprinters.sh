@@ -12,9 +12,10 @@ This discriminator is unique and shared by both the job and its runner and ensur
 The easiest way to do this would have been to use the job's unique ID, but unfortunately, GitHub doesn't let you access that from within the workflow yml.
 We can however achieve the same result by combining various job attributes, depending on whether the job is a _regular job_ or a _matrix job_.
 
-{% include h3.html id="regular" text="Regular Jobs" %}
+{% include h2.html id="regular" text="Regular Jobs" %}
 
 The following attributes uniquely identify a regular job:
+{: .mb-1 }
 
 | Attribute | Description |
 +-|-+
@@ -23,15 +24,24 @@ The following attributes uniquely identify a regular job:
 | _job_name_ | The name of the current job. |
 {: .table }
 
-For a regular job named _test-job_, the _job pinning discriminator_ would then be:
+The _job pinning discriminator_ would therefore be
+<code>{% raw %}${{ github.run_id }}-${{ github.run_attempt }}{% endraw %}-<em>job_name</em></code>
 
-```
-{% raw %}${{ github.run_id }}-${{ github.run_attempt }}-test-job{% endraw %}
-```
+Simply add it as an additional [label](/docs/label) (all variables will be replaced at runtime):
+{: .mb-1 }
+<div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
+    <pre class="mb-0 p-2 fs-7">
+runs-on:
+  - sprinters:aws:ubuntu-latest
+  - <span class="fw-bold fst-italic text-warning">{% raw %}${{ github.run_id }}-${{ github.run_attempt }}-my-regular-job{% endraw %}</span></pre>
+</div>
 
-{% include h3.html id="matrix" text="Matrix Jobs" %}
+Your regular job will now be pinned to the correct runner.
+
+{% include h2.html id="matrix" text="Matrix Jobs" %}
 
 The following attributes uniquely identify a matrix job:
+{: .mb-1 }
 
 | Attribute | Description |
 +-|-+
@@ -41,18 +51,11 @@ The following attributes uniquely identify a matrix job:
 | `strategy.job-index` | The position of the job within the matrix. |
 {: .table }
 
-For a matrix job named _test-matrix-job_, the _job pinning discriminator_ would then be:
+For a matrix job named _test-matrix-job_, the _job pinning discriminator_ would then be
+<code>{% raw %}${{ github.run_id }}-${{ github.run_attempt }}{% endraw %}-<em>job_name</em>-{% raw %}${{ strategy.job-index }}{% endraw %}</code>
 
-```
-{% raw %}${{ github.run_id }}-${{ github.run_attempt }}-test-matrix-job-${{ strategy.job-index }}{% endraw %}
-```
-
-{% include h2.html id="label" text="Label" %}
-
-To activate job pinning, simply add the _job pinning discriminator_ to the job's labels.
-
-You can either add it as an additional label:
-
+Simply add it as an additional [label](/docs/label) (all variables will be replaced at runtime):
+{: .mb-1 }
 <div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
     <pre class="mb-0 p-2 fs-7">
 runs-on:
@@ -60,10 +63,4 @@ runs-on:
   - <span class="fw-bold fst-italic text-warning">{% raw %}${{ github.run_id }}-${{ github.run_attempt }}-test-matrix-job-${{ strategy.job-index }}{% endraw %}</span></pre>
 </div>
 
-or inline:
-
-<div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
-    <pre class="mb-0 p-2 fs-7">runs-on: sprinters<span class="fw-bold fst-italic text-warning">{% raw %}/${{ github.run_id }}-${{ github.run_attempt }}-test-job{% endraw %}</span>:aws:ubuntu-latest</pre>
-</div>
-
-GitHub will then replace all variables before passing the labels to Sprinters.
+Your matrix job will now be pinned to the correct runner.
