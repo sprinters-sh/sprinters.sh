@@ -13,7 +13,7 @@ The first choice you need to make is the type of temp storage:
 - Need lots of temp space? Stick to the default EBS [gp3](#gp3) volumes.
 - Need a smaller amount of storage with maximum I/O performance and no EBS costs? Go for [zram](#zram) and don't look back!
 
-{% include h2.html id="gp3" text="EBS gp3 volume (largest size)" %}
+{% include h2.html id="gp3" text="gp3 (largest size)" %}
 
 By default a `14` GiB `gp3` EBS volume with `3000` IOPS and `150` MiB/s throughput is attached to your instance as temp storage.
 
@@ -81,7 +81,7 @@ Or both:
     <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:<span class="text-warning">temp=100/gp3/max/max</span></pre>
 </div>
 
-{% include h2.html id="zram" new="true" text="Zram volume (highest performance)" %}
+{% include h2.html id="zram" new="true" text="zram (highest performance)" %}
 
 When the need for temp storage is low or when I/O performance is most critical, you can forego EBS entirely and use a
 zstd-compressed RAM disk instead:
@@ -95,8 +95,8 @@ Being in RAM, this disk is automatically wiped on boot and discarded on shutdown
 It gives you the highest possible I/O performance _and_ completely eliminates your EBS costs!
 
 RAM is not pre-allocated and an empty zram disk does not use any memory.
-Data you add to it is first compressed using zstd, therefore, depending on how compressible it is, using only half or a third of its original size.
+Data you add to it is first compressed with zstd. If it is highly compressible, it will only use half or a third of its original size.
 
-A runner with `16` GiB RAM dealing with compressible temp data can therefore easily accommodate a `16` GiB zram disk, and possibly even a larger one.
+A runner with `16` GiB RAM dealing with compressible temp data can therefore easily accommodate a `16` GiB zram disk, and possibly even a larger one!
 But remember that the RAM it occupies isn't available to other processes. So, keep a close eye on usage
 and consider moving to a larger or [memory-optimzed instance](/docs/instances) if needed.
