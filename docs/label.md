@@ -264,7 +264,7 @@ You can adjust the type, size and performance of the [temp storage](/docs/temp) 
 
 {% include h4.html text="Type" %}
 
-`zram` or `gp3` (more info in the [temp storage](/docs/temp) docs)
+`zram` or `gp3` (more info on which one to choose in the [temp storage](/docs/temp) docs)
 
 {% include h4.html text="Size" %}
 
@@ -293,7 +293,7 @@ To set the temp size to `64` GiB and max out the volume throughput, change the l
     <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:<span class="fw-bold fst-italic text-warning">temp=gp3/64/3000/max</span></pre>
 </div>
 
-To move temp storage to a `8` GiB zstd-compressed RAM disk, change the label to:
+To move temp storage to an `8` GiB zstd-compressed RAM disk, change the label to:
 {: .mb-1 }
 <div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
     <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:<span class="fw-bold fst-italic text-warning">temp=zram/8</span></pre>
