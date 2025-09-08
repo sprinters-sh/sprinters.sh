@@ -1,3 +1,9 @@
+- date: "2025-09-08"
+  title: "Blazing fast zram temp storage"
+  href: "/docs/temp#zram"
+  image: "/assets/new/2025-09-08-temp-zram.png"
+  details: "With zram, temp storage just got a whole lot faster! You can now store your temp files on blazing fast zstd-compressed RAM disk for maximum I/O performance with zero EBS costs."
+
 - date: "2025-09-01"
   title: "AWS <code>m8i</code> and <code>m8i-flex</code> instance support"
   href: "/docs/instances#types"
