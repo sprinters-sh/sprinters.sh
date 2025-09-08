@@ -29,7 +29,7 @@ This default most closely matches GitHub-hosted runners, at a fraction of the pr
 
 You can adjust the [image](#image), the [AWS account](#account), the [AWS region/az/subnet](#placement),
 the [EC2 instance type](#instance-type), whether to use [spot instances](#spot),
-the performance of the [root volume](#root), the performance and size of the [temp volume](#temp) and
+the performance of the [root volume](#root), the type, size and performance of the [temp storage](#temp) and
 whether to use [runner lifecycle events](#events)
 by adding or changing various parts to the label. All parts are separated by a colon (`:`) and may appear in any order.
 
@@ -37,10 +37,10 @@ For example:
 {: .mb-1 }
 
 <div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
-    <pre class="mb-0 p-2 fs-7">runs-on: <span class="fw-bold fst-italic text-warning-emphasis">sprinters:aws:<span class="text-warning">eu-central-1:ubuntu-22.04:m7i.24xlarge:temp=64</span></span></pre>
+    <pre class="mb-0 p-2 fs-7">runs-on: <span class="fw-bold fst-italic text-warning-emphasis">sprinters:aws:<span class="text-warning">eu-central-1:ubuntu-22.04:m7i.24xlarge:temp=gp3/64</span></span></pre>
 </div>
 
-This instructs Sprinters to launch a runner in the `eu-central-1` region using the `ubuntu-22.04` image on a `m7i.24xlarge` instance with `64` GiB of temp space.
+This instructs Sprinters to launch a runner in the `eu-central-1` region using the `ubuntu-22.04` image on a `m7i.24xlarge` instance with a `gp3` temp volume with `64` GiB of storage.
 
 {% include h2.html id="parts" text="Parts" %}
 
@@ -89,7 +89,7 @@ _image-name_
 
 {% include h4.html text="Example" %}
 To set the image to `ubuntu-24.04-minimal`, change the label to:
-
+{: .mb-1 }
 <div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
     <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:<span class="fw-bold fst-italic text-warning">ubuntu-24.04-minimal</span></pre>
 </div>
@@ -120,19 +120,19 @@ You can choose from a large range of [supported AWS regions](/docs/aws-regions) 
 
 {% include h4.html text="Examples" %}
 To launch the runner using the `ubuntu-24.04-minimal` image in the `ca-central-1` region, change the label to:
-
+{: .mb-1 }
 <div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
     <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-24.04-minimal:<span class="fw-bold fst-italic text-warning">ca-central-1</span></pre>
 </div>
 
 To use the `eu-central-1c` availability zone, change the label to:
-
+{: .mb-1 }
 <div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
     <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:<span class="fw-bold fst-italic text-warning">eu-central-1c</span></pre>
 </div>
 
 To use the `subnet-0123456789abcdef0` subnet in the `us-east-1` region, change the label to:
-
+{: .mb-1 }
 <div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
     <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:<span class="fw-bold fst-italic text-warning">us-east-1/subnet-0123456789abcdef0</span>:ubuntu-latest</pre>
 </div>
@@ -150,7 +150,7 @@ The id of your [default AWS account](/docs/aws-accounts#default).
 
 {% include h4.html text="Example" %}
 To launch the runner in your `123456789012` AWS account, change the label to:
-
+{: .mb-1 }
 <div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
     <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws<span class="fw-bold fst-italic text-warning">/123456789012</span>:ubuntu-latest</pre>
 </div>
@@ -174,7 +174,7 @@ Pick the one that best suits your needs from the [complete list of supported ins
 
 {% include h4.html text="Example" %}
 To set the instance type to `m7i.8xlarge`, change the label to:
-
+{: .mb-1 }
 <div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
     <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:<span class="fw-bold fst-italic text-warning">m7i.8xlarge</span></pre>
 </div>
@@ -206,7 +206,7 @@ with the cheapest spot price at the time of launch.
 
 {% include h4.html text="Example" %}
 To force the use of much cheaper spot instances, change the label to:
-
+{: .mb-1 }
 <div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
     <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:<span class="fw-bold fst-italic text-warning">spot=true</span></pre>
 </div>
@@ -238,58 +238,65 @@ Use `max` for the maximum throughput for the current number of IOPS.
 
 {% include h4.html text="Examples" %}
 To increase the root volume to `4000` IOPS and `1000` MiB/s throughput, change the label to:
-
+{: .mb-1 }
 <div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
     <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:<span class="fw-bold fst-italic text-warning">root=gp3/4000/1000</span></pre>
 </div>
 
 To increase the root volume to the maximum number of IOPS for its size and the maximum throughput for these IOPS, change the label to:
-
+{: .mb-1 }
 <div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
     <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:<span class="fw-bold fst-italic text-warning">root=gp3/max/max</span></pre>
 </div>
 
 ---
 
-{% include h3.html id="temp" text="Temp Volume" %}
-You can adjust the size and performance of the [temp volume](/docs/volumes) by modifying the label.
+{% include h3.html id="temp" text="Temp Storage" %}
+You can adjust the type, size and performance of the [temp storage](/docs/temp) by modifying the label.
 
 {% include h4.html text="Formats" %}
-- temp=_size-in-gib_
-- temp=_size-in-gib_/_volume-type_/_iops_/_throughput_
+- temp=zram/_size-in-gib_
+- temp=gp3/_size-in-gib_
+- temp=gp3/_size-in-gib_/_iops_/_throughput_
 
 {% include h4.html text="Default" %}
-`4` GiB `gp3` volume with `3000` IOPS and `150` MiB/s throughput.
+`gp3` volume with `4` GiB of storage, `3000` IOPS and `150` MiB/s throughput.
+
+{% include h4.html text="Type" %}
+
+`zram` or `gp3` (more info in the [temp storage](/docs/temp) docs)
 
 {% include h4.html text="Size" %}
 
 Sizes from `1` GiB to `16384` GiB are supported.
 
-{% include h4.html text="Volume Type" %}
-
-Only `gp3` volumes are supported for now.
-
-{% include h4.html text="IOPS" %}
+{% include h4.html text="IOPS (gp3 only)" %}
 
 Between `3000` and `16000` IOPS are supported, depending on the size of the volume.
 Use `max` for the maximum number of IOPS for the current volume size.
 
-{% include h4.html text="Throughput" %}
+{% include h4.html text="Throughput (gp3 only)" %}
 
 Between `125` and `1000` MiB/s are supported, depending on the number of IOPS of the volume.
 Use `max` for the maximum throughput for the current number of IOPS.
 
 {% include h4.html text="Examples" %}
 To set the temp size to `64` GiB, change the label to:
-
+{: .mb-1 }
 <div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
-    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:<span class="fw-bold fst-italic text-warning">temp=64</span></pre>
+    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:<span class="fw-bold fst-italic text-warning">temp=gp3/64</span></pre>
 </div>
 
 To set the temp size to `64` GiB and max out the volume throughput, change the label to:
-
+{: .mb-1 }
 <div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
-    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:<span class="fw-bold fst-italic text-warning">temp=64/gp3/3000/max</span></pre>
+    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:<span class="fw-bold fst-italic text-warning">temp=gp3/64/3000/max</span></pre>
+</div>
+
+To move temp storage to a `8` GiB zstd-compressed RAM disk, change the label to:
+{: .mb-1 }
+<div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
+    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:<span class="fw-bold fst-italic text-warning">temp=zram/8</span></pre>
 </div>
 
 ---
@@ -306,7 +313,7 @@ events=_`true|false`_
 
 {% include h4.html text="Example" %}
 To disable the instance lifecycle events publishing (at the cost of longer timeouts when an instance becomes unhealthy or is terminated as part of a spot capacity reclaim), change the label to:
-
+{: .mb-1 }
 <div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
     <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:<span class="fw-bold fst-italic text-warning">events=false</span></pre>
 </div>

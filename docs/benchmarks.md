@@ -56,8 +56,8 @@ Also note:
 {% include benchmark.html
         org="gohugoio" repo="hugo" org-user-id="29385237"
         github-duration="2636" github-cost="0.70400"
-        sprinters-mxl-config="temp=32" sprinters-mxl-duration="2210" sprinters-mxl-cost-ec2="0.11810" sprinters-mxl-cost-ebs="0.00324" sprinters-mxl-spot-discount-percentage="62"
-        sprinters-c4xl-config="temp=32" sprinters-c4xl-duration="1541" sprinters-c4xl-cost-ec2="0.29394" sprinters-c4xl-cost-ebs="0.00228" sprinters-c4xl-spot-discount-percentage="65"
+        sprinters-mxl-config="temp=gp3/32" sprinters-mxl-duration="2210" sprinters-mxl-cost-ec2="0.11810" sprinters-mxl-cost-ebs="0.00324" sprinters-mxl-spot-discount-percentage="62"
+        sprinters-c4xl-config="temp=gp3/32" sprinters-c4xl-duration="1541" sprinters-c4xl-cost-ec2="0.29394" sprinters-c4xl-cost-ebs="0.00228" sprinters-c4xl-spot-discount-percentage="65"
 %}
 
 {% include benchmark.html

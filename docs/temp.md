@@ -3,10 +3,9 @@ layout: docs
 title: "Temp Storage"
 ---
 
-By default, every Sprinters-powered runner comes with `14` GiB of temp storage (just like GitHub-hosted runners) on a `gp3`
-EBS volume with `3000` IOPS and `150` MiB/s throughput.
+By default, every Sprinters-powered runner has a `gp3` EBS temp volume with `14` GiB of storage (just like GitHub-hosted runners), `3000` IOPS and `150` MiB/s throughput.
 
-The size, the type and the performance of this temp storage are all fully configurable via the [runs-on: label](/docs/label#temp)
+The type, the size and the performance of this temp storage are all fully configurable via the [runs-on: label](/docs/label#temp)
 in your workflow yml.
 
 The first choice you need to make is the type of temp storage:
@@ -28,7 +27,7 @@ actions like _jlumbroso/free-disk-space_.
 Instead, you can freely pick the exact amount of temp space you need, between `1` and `16384` GiB by specifying it in the [label](/docs/label#temp):
 {: .mb-1 }
 <div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
-    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:<span class="text-warning">temp=256</span></pre>
+    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:<span class="text-warning">temp=gp3/256</span></pre>
 </div>
 
 {% include h4.html id="gp3-size-optimization" text="Optimization" %}
@@ -43,7 +42,7 @@ If your temp volume was say `100` GiB and utilization was 38%,
 you can safely slash your EBS costs in half by adjusting its size to `50` GiB for future runs with enough room to spare:
 {: .mb-1 }
 <div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
-    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:<span class="text-warning">temp=50</span></pre>
+    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:<span class="text-warning">temp=gp3/50</span></pre>
 </div>
 
 {% include h3.html id="gp3-performance" text="Performance" %}
@@ -56,7 +55,7 @@ You can freely scale it from `3000` to `16000` IOPS and `150` to `1000` MiB/s th
 To do so, specify the desired IOPS (`4000` in this example) and throughput (`750` MiB/s in this example) in the [label](/docs/label#temp):
 {: .mb-1 }
 <div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
-    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:<span class="text-warning">temp=100/gp3/4000/750</span></pre>
+    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:<span class="text-warning">temp=gp3/100/4000/750</span></pre>
 </div>
 
 The exact EBS performance upper limits depend on the size and IOPS of the `gp3` volume. The IOPS:GiB ratio is limited at 500:1
@@ -66,19 +65,19 @@ for both IOPS and throughput to automatically calculate the maximum supported pe
 To use the maximum supported number of IOPS for this size, you can therefore specify:
 {: .mb-1 }
 <div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
-    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:<span class="text-warning">temp=100/gp3/max/750</span></pre>
+    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:<span class="text-warning">temp=gp3/100/max/750</span></pre>
 </div>
 
 Or the maximum supported throughput for these IOPS:
 {: .mb-1 }
 <div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
-    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:<span class="text-warning">temp=100/gp3/4000/max</span></pre>
+    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:<span class="text-warning">temp=gp3/100/4000/max</span></pre>
 </div>
 
 Or both:
 {: .mb-1 }
 <div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
-    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:<span class="text-warning">temp=100/gp3/max/max</span></pre>
+    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:<span class="text-warning">temp=gp3/100/max/max</span></pre>
 </div>
 
 {% include h2.html id="zram" new="true" text="zram (highest performance)" %}
@@ -87,7 +86,7 @@ When the need for temp storage is low or when I/O performance is most critical, 
 zstd-compressed RAM disk instead:
 {: .mb-1 }
 <div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
-    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:<span class="text-warning">temp=16/zram</span></pre>
+    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:<span class="text-warning">temp=zram/16</span></pre>
 </div>
 
 Being in RAM, this disk is automatically wiped on boot and discarded on shutdown.
