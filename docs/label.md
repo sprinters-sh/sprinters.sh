@@ -167,8 +167,8 @@ _aws-instance-type_
 `t3.large` for x64 images, `t4g.large` for arm64 images.
 
 {% include h4.html text="Supported Instance Types" %}
-Sprinters supports over 300 different EC2 instance types, across all modern generations of the `m`, `c`, `r` and `t` families,
-using either **x64** (Intel and AMD) or **arm64** (AWS Graviton) processors.
+Sprinters supports **467 different EC2 instance types**, across all modern generations of the `m`, `c`, `r` and `t` families,
+using either **x64** (Intel and AMD) or **arm64** (AWS Graviton) processors, with or without ephemeral storage.
 
 Pick the one that best suits your needs from the [complete list of supported instance types](/docs/instances#types).
 
@@ -255,20 +255,31 @@ To increase the root volume to the maximum number of IOPS for its size and the m
 You can adjust the type, size and performance of the [temp storage](/docs/temp) by modifying the label.
 
 {% include h4.html text="Formats" %}
-- temp=zram/_size-in-gib_
-- temp=gp3/_size-in-gib_
-- temp=gp3/_size-in-gib_/_iops_/_throughput_
+- temp=_size_
+- temp=_type_
+- temp=_type/size_
+- temp=_type/size/iops/throughput_
 
-{% include h4.html text="Default" %}
-`gp3` volume with `4` GiB of storage, `3000` IOPS and `150` MiB/s throughput.
+{% include h4.html text="Types" %}
 
-{% include h4.html text="Type" %}
+`auto`, `zram`, `ephemeral` or `gp3`
 
-`zram` or `gp3` (more info on which one to choose in the [temp storage](/docs/temp) docs)
+`auto` dynamically selects the storage type as follows:
+- if the instance has 3x (or more) RAM than the storage size (default: `10` GiB), `zram` is used
+- otherwise, if the instance has ephemeral storage, `ephemeral` is used
+- otherwise, `gp3` with `3000` IOPS and `150` MiB/s throughput is used
+
+More info on which one to choose in the [temp storage](/docs/temp) docs.
 
 {% include h4.html text="Size" %}
 
-Sizes from `1` GiB to `16384` GiB are supported.
+| Type | Default Size (in GiB) | Min Size (in GiB) | Max Size (in GiB) |
++-|-|-|-+
+| `auto` | See selected storage type | See selected storage type | See selected storage type |
+| `zram` | `10` | `1` | 2x to 3x the size of the instance RAM (depending on how compressible the temp data is) |
+| `ephemeral` | Instance's ephemeral storage size | Instance's ephemeral storage size | Instance's ephemeral storage size |
+| `gp3` | `10` | `1` | `16384` |
+{: .table }
 
 {% include h4.html text="IOPS (gp3 only)" %}
 
@@ -280,14 +291,63 @@ Use `max` for the maximum number of IOPS for the current volume size.
 Between `125` and `1000` MiB/s are supported, depending on the number of IOPS of the volume.
 Use `max` for the maximum throughput for the current number of IOPS.
 
-{% include h4.html text="Examples" %}
-To set the temp size to `64` GiB, change the label to:
+{% include h4.html text="Default" %}
+`auto` (automatically select the best type of storage for the default `10` GiB of temp)
+
+All these are equivalent:
 {: .mb-1 }
+<div class="alert alert-info font-monospace p-0 mb-1 position-relative" role="alert">
+    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest</pre>
+</div>
+<div class="alert alert-info font-monospace p-0 mb-1 position-relative" role="alert">
+    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:<span class="fw-bold fst-italic text-warning">temp=auto</span></pre>
+</div>
+<div class="alert alert-info font-monospace p-0 mb-1 position-relative" role="alert">
+    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:<span class="fw-bold fst-italic text-warning">temp=10</span></pre>
+</div>
+<div class="alert alert-info font-monospace p-0 mb-1 position-relative" role="alert">
+    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:<span class="fw-bold fst-italic text-warning">temp=auto/10</span></pre>
+</div>
 <div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
-    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:<span class="fw-bold fst-italic text-warning">temp=gp3/64</span></pre>
+    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:<span class="fw-bold fst-italic text-warning">temp=gp3/10/3000/150</span></pre>
 </div>
 
-To set the temp size to `64` GiB and max out the volume throughput, change the label to:
+For a `m6id.large` instance (with built-in ephemeral storage), these would be equivalent instead:
+{: .mb-1 }
+<div class="alert alert-info font-monospace p-0 mb-1 position-relative" role="alert">
+    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:m6id.large:<span class="fw-bold fst-italic text-warning">temp=auto</span></pre>
+</div>
+<div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
+    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:m6id.large:<span class="fw-bold fst-italic text-warning">temp=ephemeral</span></pre>
+</div>
+
+And for a `m6i.2xlarge` instance (with `32` GiB of RAM), these would be equivalent:
+{: .mb-1 }
+<div class="alert alert-info font-monospace p-0 mb-1 position-relative" role="alert">
+    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:m6i.2xlarge:<span class="fw-bold fst-italic text-warning">temp=auto</span></pre>
+</div>
+<div class="alert alert-info font-monospace p-0 mb-1 position-relative" role="alert">
+    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:m6i.2xlarge:<span class="fw-bold fst-italic text-warning">temp=10</span></pre>
+</div>
+<div class="alert alert-info font-monospace p-0 mb-1 position-relative" role="alert">
+    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:m6i.2xlarge:<span class="fw-bold fst-italic text-warning">temp=auto/10</span></pre>
+</div>
+<div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
+    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:m6i.2xlarge:<span class="fw-bold fst-italic text-warning">temp=zram/10</span></pre>
+</div>
+
+
+{% include h4.html text="Examples" %}
+To set the temp size to `64` GiB and auto-select the storage type, change the label to any of these:
+{: .mb-1 }
+<div class="alert alert-info font-monospace p-0 mb-1 position-relative" role="alert">
+    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:<span class="fw-bold fst-italic text-warning">temp=64</span></pre>
+</div>
+<div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
+    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:<span class="fw-bold fst-italic text-warning">temp=auto/64</span></pre>
+</div>
+
+To set the temp size to `64` GiB on a `gp3` volume and max out the throughput, change the label to:
 {: .mb-1 }
 <div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
     <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:<span class="fw-bold fst-italic text-warning">temp=gp3/64/3000/max</span></pre>
@@ -297,6 +357,12 @@ To move temp storage to an `8` GiB zstd-compressed RAM disk, change the label to
 {: .mb-1 }
 <div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
     <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:<span class="fw-bold fst-italic text-warning">temp=zram/8</span></pre>
+</div>
+
+To use the instance's first ephemeral instance store volume (must have at least one!) as temp storage, change the label to:
+{: .mb-1 }
+<div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
+    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-24.04-arm:m8gd.medium:<span class="fw-bold fst-italic text-warning">temp=ephemeral</span></pre>
 </div>
 
 ---

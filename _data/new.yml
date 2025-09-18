@@ -1,3 +1,9 @@
+- date: "2025-09-18"
+  title: "Ephemeral high-performance instance store temp storage"
+  href: "/docs/temp#ephemeral"
+  image: "/assets/new/2025-09-18-temp-ephemeral.png"
+  details: "You can now use <code>c5d</code>, <code>c5ad</code>, <code>c6gd</code>, <code>c6id</code>, <code>c7gd</code>, <code>c8gd</code>, <code>m5d</code>, <code>m5ad</code>, <code>m6gd</code>, <code>m6id</code>, <code>m7gd</code>, <code>m8gd</code>, <code>r5d</code>, <code>r5ad</code>, <code>r6gd</code>, <code>r6id</code>, <code>r7gd</code>, and <code>r8gd</code> instances and make full use of their ephemeral instance store for temp storage at much higher performance and zero EBS costs!"
+
 - date: "2025-09-08"
   title: "Blazing fast zram temp storage"
   href: "/docs/temp#zram"

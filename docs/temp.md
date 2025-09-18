@@ -3,18 +3,92 @@ layout: docs
 title: "Temp Storage"
 ---
 
-By default, every Sprinters-powered runner has a `gp3` EBS temp volume with `14` GiB of storage (just like GitHub-hosted runners), `3000` IOPS and `150` MiB/s throughput.
+By default, every Sprinters-powered runner comes with `10` GiB of temp storage (just like GitHub-hosted runners).
 
 The type, the size and the performance of this temp storage are all fully configurable via the [runs-on: label](/docs/label#temp)
 in your workflow yml.
 
-The first choice you need to make is the type of temp storage:
-- Need lots of temp space? Stick to the default EBS [gp3](#gp3) volumes.
-- Need a smaller amount of storage with maximum I/O performance and no EBS costs? Go for [zram](#zram) and don't look back!
+There are 3 types of temp storage available: [gp3](#gp3), [zram](#zram) and [ephemeral](#ephemeral):
 
-{% include h2.html id="gp3" text="gp3 (largest size)" %}
+<div class="table-responsive">
+    <table class="table table-sm">
+        <thead>
+        <tr>
+            <th>Type</th>
+            <th>Description</th>
+            <th>Availability</th>
+            <th>Size</th>
+            <th>Performance</th>
+            <th>EBS costs</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><code>gp3</code></td>
+            <td>gp3 EBS volume</td>
+            <td>all instance types</td>
+            <td><code>1</code> to <code>16384</code> GiB<br>(configurable, default: <code>10</code> GiB)</td>
+            <td><code>3000</code> to <code>16000</code> IOPS<br>(configurable, default: <code>3000</code> IOPS)<br><br><code>150</code> to <code>1000</code> MiB/s throughput<br>(configurable, default: <code>150</code> MiB/s)</td>
+            <td>size, IOPS above <code>3000</code> and throughput above <code>150</code> MiB/s</td>
+        </tr>
+        <tr>
+            <td><code>zram</code></td>
+            <td>zstd-compressed RAM disk</td>
+            <td>all instance types</td>
+            <td><code>1</code> GiB to 2x or 3x RAM size<br>(default: <code>10</code> GiB)</td>
+            <td>several million IOPS</td>
+            <td class="fst-italic">None</td>
+        </tr>
+        <tr>
+            <td><code>ephemeral</code></td>
+            <td>instance store NVMe volume</td>
+            <td>instances with <a href="/docs/instances#ephemeral">ephemeral NVMe storage</a> only</td>
+            <td><code>55</code> to <code>1770</code> GiB<br>(depending on instance type)</td>
+            <td><code>16771</code> to <code>3,219,996</code> IOPS<br>(depending on instance type)</td>
+            <td class="fst-italic">None</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
 
-By default a `14` GiB `gp3` EBS volume with `3000` IOPS and `150` MiB/s throughput is attached to your instance as temp storage.
+By default, the storage type is auto-selected based on the following criteria, in this order:
+- If RAM is at least 3x larger than the desired temp space, [zram](#zram) is used.
+- If not and the [instance type](/docs/instances#ephemeral) has ephemeral NVMe storage, [ephemeral](#ephemeral) is used.
+- Otherwise, [gp3](#gp3) is used.
+
+You can set the size of the auto-selected temp storage via the [label](/docs/label#temp):
+{: .mb-1 }
+<div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
+    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:m7i.large:<span class="text-warning">temp=64</span></pre>
+</div>
+
+This will auto-select the optimal storage for the specified instance type using the formula above for `64` GiB of temp storage.
+For the `m7i.large` instance in this example, this will result in a `64` GiB `gp3` EBS volume with `3000` IOPS and `150` MiB/s throughput.
+
+The auto-selection can be overridden by explicitly specifying one of the available storage types below.
+
+{% include h2.html id="zram" new="true" text="zram" %}
+
+When all the temp storage fits in RAM, you can forego EBS entirely and use an ultra-fast zstd-compressed RAM disk instead:
+{: .mb-1 }
+<div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
+    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:<span class="text-warning">temp=zram/16</span></pre>
+</div>
+
+This gives you the highest possible I/O performance _and_ completely eliminates your EBS costs!
+
+RAM is **not pre-allocated** and an empty zram temp disk does not use any memory.
+The size in the label merely serves as an upper bound for the size of the uncompressed data.
+Data you add to the zram disk is first **zstd-compressed**, and will, depending on how compressible it is, only consume
+about half or a third of its size in RAM. And when the runner terminates, the entire zram disk is automatically discarded.
+
+A runner with `16` GiB RAM with compressible temp data can therefore easily accommodate a `16` GiB (or larger!) zram disk.
+But remember that the RAM the zram disk occupies isn't available to other processes. So, keep a close eye on usage
+and consider moving to a larger or [memory-optimzed instance](/docs/instances) if needed.
+
+{% include h2.html id="gp3" text="gp3" %}
+
+When using `gp3` EBS volumes, by default a `10` GiB `gp3` EBS volume with `3000` IOPS and `150` MiB/s throughput is attached to your instance as temp storage.
 
 The volume is reformatted on every boot and destroyed after the job completes.
 
@@ -80,22 +154,15 @@ Or both:
     <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:<span class="text-warning">temp=gp3/100/max/max</span></pre>
 </div>
 
-{% include h2.html id="zram" new="true" text="zram (highest performance)" %}
+{% include h2.html id="ephemeral" new="true" text="ephemeral" %}
 
-When the need for temp storage is low or when I/O performance is most critical, you can forego EBS entirely and use a
-zstd-compressed RAM disk instead:
+Instances that have [ephemeral NVMe storage](/docs/instances#ephemeral) can make use of their much faster internal store volumes instead:
 {: .mb-1 }
 <div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
-    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:<span class="text-warning">temp=zram/16</span></pre>
+    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:c6id.8xlarge:<span class="text-warning">temp=ephemeral</span></pre>
 </div>
 
-Being in RAM, this disk is automatically wiped on boot and discarded on shutdown.
+The first `ephemeral` volume of the instance is then fully used for temp storage.
 
-It gives you the highest possible I/O performance _and_ completely eliminates your EBS costs!
-
-RAM is not pre-allocated and an empty zram disk does not use any memory.
-Data you add to it is first compressed with zstd. If it is highly compressible, it will only use half or a third of its original size.
-
-A runner with `16` GiB RAM dealing with compressible temp data can therefore easily accommodate a `16` GiB zram disk, and possibly even a larger one!
-But remember that the RAM it occupies isn't available to other processes. So, keep a close eye on usage
-and consider moving to a larger or [memory-optimzed instance](/docs/instances) if needed.
+In this case, with a `c6id.large` instance,
+this gives you `1900` GB of ephemeral storage with `536,666` IOPS _and_ zero EBS costs!
