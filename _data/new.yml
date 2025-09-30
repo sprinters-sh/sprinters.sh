@@ -1,3 +1,9 @@
+- date: "2025-09-30"
+  title: "Larger and faster gp3 temp storage"
+  href: "/docs/temp#gp3"
+  image: "/assets/new/2025-09-30-gp3-80000.png"
+  details: "Need lots of temp storage? gp3 temp storage can now be up to 65536 GiB in size, with up to 80000 IOPS and 2000 MiB/s throughput!"
+
 - date: "2025-09-18"
   title: "Ephemeral high-performance instance store temp storage"
   href: "/docs/temp#ephemeral"

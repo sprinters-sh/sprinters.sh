@@ -27,8 +27,8 @@ There are 3 types of temp storage available: [gp3](#gp3), [zram](#zram) and [eph
             <td><code>gp3</code></td>
             <td>gp3 EBS volume</td>
             <td>all instance types</td>
-            <td><code>1</code> to <code>16384</code> GiB<br>(configurable, default: <code>10</code> GiB)</td>
-            <td><code>3000</code> to <code>16000</code> IOPS<br>(configurable, default: <code>3000</code> IOPS)<br><br><code>150</code> to <code>1000</code> MiB/s throughput<br>(configurable, default: <code>150</code> MiB/s)</td>
+            <td><code>1</code> to <code>65536</code> GiB<br>(configurable, default: <code>10</code> GiB)</td>
+            <td><code>3000</code> to <code>80000</code> IOPS<br>(configurable, default: <code>3000</code> IOPS)<br><br><code>150</code> to <code>2000</code> MiB/s throughput<br>(configurable, default: <code>150</code> MiB/s)</td>
             <td>size, IOPS above <code>3000</code> and throughput above <code>150</code> MiB/s</td>
         </tr>
         <tr>
@@ -98,7 +98,7 @@ Unlike GitHub-hosted runners, **Sprinters-powered runners are not restricted by 
 needs more temp space, you do not need to resort to brittle hacks like deleting the preinstalled software using
 actions like _jlumbroso/free-disk-space_.
 
-Instead, you can freely pick the exact amount of temp space you need, between `1` and `16384` GiB by specifying it in the [label](/docs/label#temp):
+Instead, you can freely pick the exact amount of temp space you need, between `1` and `65536` GiB by specifying it in the [label](/docs/label#temp):
 {: .mb-1 }
 <div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
     <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:<span class="text-warning">temp=gp3/256</span></pre>
@@ -124,7 +124,7 @@ you can safely slash your EBS costs in half by adjusting its size to `50` GiB fo
 By default `gp3` volumes are provisioned with `3000` IOPS and `150` MiB/s throughput.
 
 For I/O-intensive jobs, Sprinters gives you full control over the performance (and EBS costs!) of your temp volume.
-You can freely scale it from `3000` to `16000` IOPS and `150` to `1000` MiB/s throughput.
+You can freely scale it from `3000` to `80000` IOPS and `150` to `2000` MiB/s throughput.
 
 To do so, specify the desired IOPS (`4000` in this example) and throughput (`750` MiB/s in this example) in the [label](/docs/label#temp):
 {: .mb-1 }

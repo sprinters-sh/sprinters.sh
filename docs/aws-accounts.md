@@ -24,7 +24,7 @@ For an AWS account with the ID `123456789012` the label would then look like thi
 </div>
 
 
-{% include h2.html id="multiple" text="Multiple AWS Accounts (advanced)" new="true" %}
+{% include h2.html id="multiple" text="Multiple AWS Accounts (advanced)" %}
 
 AWS accounts are regularly used to fence off different environments or projects within the same AWS organization.
 

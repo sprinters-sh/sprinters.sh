@@ -139,7 +139,7 @@ To use the `subnet-0123456789abcdef0` subnet in the `us-east-1` region, change t
 
 ---
 
-{% include h3.html id="account" text="AWS Account" new="true" %}
+{% include h3.html id="account" text="AWS Account" %}
 When using [multiple AWS accounts](/docs/aws-accounts#multiple), you can specify the desired account ID in the label.
 
 {% include h4.html text="Format" %}
@@ -278,17 +278,17 @@ More info on which one to choose in the [temp storage](/docs/temp) docs.
 | `auto` | See selected storage type | See selected storage type | See selected storage type |
 | `zram` | `10` | `1` | 2x to 3x the size of the instance RAM (depending on how compressible the temp data is) |
 | `ephemeral` | Instance's ephemeral storage size | Instance's ephemeral storage size | Instance's ephemeral storage size |
-| `gp3` | `10` | `1` | `16384` |
+| `gp3` | `10` | `1` | `65536` |
 {: .table }
 
 {% include h4.html text="IOPS (gp3 only)" %}
 
-Between `3000` and `16000` IOPS are supported, depending on the size of the volume.
+Between `3000` and `80000` IOPS are supported, depending on the size of the volume.
 Use `max` for the maximum number of IOPS for the current volume size.
 
 {% include h4.html text="Throughput (gp3 only)" %}
 
-Between `125` and `1000` MiB/s are supported, depending on the number of IOPS of the volume.
+Between `125` and `2000` MiB/s are supported, depending on the number of IOPS of the volume.
 Use `max` for the maximum throughput for the current number of IOPS.
 
 {% include h4.html text="Default" %}
