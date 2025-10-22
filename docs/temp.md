@@ -67,7 +67,7 @@ For the `m7i.large` instance in this example, this will result in a `64` GiB `gp
 
 The auto-selection can be overridden by explicitly specifying one of the available storage types below.
 
-{% include h2.html id="zram" new="true" text="zram" %}
+{% include h2.html id="zram" text="zram" %}
 
 When all the temp storage fits in RAM, you can forego EBS entirely and use an ultra-fast zstd-compressed RAM disk instead:
 {: .mb-1 }
@@ -154,7 +154,7 @@ Or both:
     <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:<span class="text-warning">temp=gp3/100/max/max</span></pre>
 </div>
 
-{% include h2.html id="ephemeral" new="true" text="ephemeral" %}
+{% include h2.html id="ephemeral" text="ephemeral" %}
 
 Instances that have [ephemeral NVMe storage](/docs/instances#ephemeral) can make use of their much faster internal store volumes instead:
 {: .mb-1 }
