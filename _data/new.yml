@@ -1,3 +1,9 @@
+- date: "2025-10-22"
+  title: "AWS <code>c8i</code> and <code>c8i-flex</code> instance support"
+  href: "/docs/instances#types"
+  image: "/assets/new/2025-10-22-c8i.png"
+  details: "The newest generation of Intel Xeon-based compute-optimized instances has arrived! Sprinters now supports <code>c8i</code> and <code>c8i-flex</code> instances!"
+
 - date: "2025-09-30"
   title: "Larger and faster gp3 temp storage"
   href: "/docs/temp#gp3"
