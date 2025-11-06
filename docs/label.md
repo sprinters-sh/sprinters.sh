@@ -167,7 +167,7 @@ _aws-instance-type_
 `t3.large` for x64 images, `t4g.large` for arm64 images.
 
 {% include h4.html text="Supported Instance Types" %}
-Sprinters supports **485 different EC2 instance types**, across all modern generations of the `m`, `c`, `r` and `t` families,
+Sprinters supports **505 different EC2 instance types**, across all modern generations of the `m`, `c`, `r` and `t` families,
 using either **x64** (Intel and AMD) or **arm64** (AWS Graviton) processors, with or without ephemeral storage.
 
 Pick the one that best suits your needs from the [complete list of supported instance types](/docs/instances#types).

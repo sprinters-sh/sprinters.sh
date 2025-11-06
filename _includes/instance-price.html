@@ -1,4 +1,10 @@
-{% assign highest = include.us-east-1 %}
+{% if include.us-east-1 != "0" %}
+    {% assign highest = include.us-east-1 %}
+{% else %}
+    {% assign highest = include.us-west-2 %}
+{% endif %}
+{% assign lowest = highest %}
+
 {% if include.ap-northeast-1 > highest %}
     {% assign highest = include.ap-northeast-1 %}
 {% endif %}
@@ -24,7 +30,6 @@
     {% assign highest = include.us-west-2 %}
 {% endif %}
 
-{% assign lowest = include.us-east-1 %}
 {% if include.ap-northeast-1 != "0" and include.ap-northeast-1 < lowest %}
     {% assign lowest = include.ap-northeast-1 %}
 {% endif %}

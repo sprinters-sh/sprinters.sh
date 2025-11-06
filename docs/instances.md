@@ -24,7 +24,7 @@ Jobs requiring more memory for the same number of vCPUs are most cost-effective 
 And equally, jobs requiring more vCPUs for the same amount of memory are best run on _compute-optimized_ instances.
 
 {% include h2.html id="types" text="Types" %}
-Sprinters supports 485 different EC2 instance types, across all modern generations of these families,
+Sprinters supports 505 different EC2 instance types, across all modern generations of these families,
 using either **x64** (Intel and AMD) or **arm64** (AWS Graviton) processors.
 
 These instances support between 1 and 384 vCPUs and 0.5 and 3072 GiB of RAM.
@@ -69,10 +69,12 @@ These instances support between 1 and 384 vCPUs and 0.5 and 3072 GiB of RAM.
 | m5ad | `m5ad.large` , `m5ad.xlarge` , `m5ad.2xlarge` , `m5ad.4xlarge` , `m5ad.8xlarge` , `m5ad.12xlarge` , `m5ad.16xlarge` , `m5ad.24xlarge` |
 | m6a | `m6a.large` , `m6a.xlarge` , `m6a.2xlarge` , `m6a.4xlarge` , `m6a.8xlarge` , `m6a.12xlarge` , `m6a.16xlarge` , `m6a.24xlarge` , `m6a.32xlarge` , `m6a.48xlarge` |
 | m7a | `m7a.medium` , `m7a.large` , `m7a.xlarge` , `m7a.2xlarge` , `m7a.4xlarge` , `m7a.8xlarge` , `m7a.12xlarge` , `m7a.16xlarge` , `m7a.24xlarge` , `m7a.32xlarge` , `m7a.48xlarge` |
+| <nobr>m8a <span class="badge badge-super rounded-pill text-bg-primary">New</span></nobr> | `m8a.medium` , `m8a.large` , `m8a.xlarge` , `m8a.2xlarge` , `m8a.4xlarge` , `m8a.8xlarge` , `m8a.12xlarge` , `m8a.16xlarge` , `m8a.24xlarge` , `m8a.48xlarge` |
 | r5a | `r5a.large` , `r5a.xlarge` , `r5a.2xlarge` , `r5a.4xlarge` , `r5a.8xlarge` , `r5a.12xlarge` , `r5a.16xlarge` , `r5a.24xlarge` |
 | r5ad | `r5ad.large` , `r5ad.xlarge` , `r5ad.2xlarge` , `r5ad.4xlarge` , `r5ad.8xlarge` , `r5ad.12xlarge` , `r5ad.16xlarge` , `r5ad.24xlarge` |
 | r6a | `r6a.large` , `r6a.xlarge` , `r6a.2xlarge` , `r6a.4xlarge` , `r6a.8xlarge` , `r6a.12xlarge` , `r6a.16xlarge` , `r6a.24xlarge` , `r6a.32xlarge` , `r6a.48xlarge` |
 | r7a | `r7a.medium` , `r7a.large` , `r7a.xlarge` , `r7a.2xlarge` , `r7a.4xlarge` , `r7a.8xlarge` , `r7a.12xlarge` , `r7a.16xlarge` , `r7a.24xlarge` , `r7a.32xlarge` , `r7a.48xlarge` |
+| <nobr>r8a <span class="badge badge-super rounded-pill text-bg-primary">New</span></nobr> | `r8a.medium` , `r8a.large` , `r8a.xlarge` , `r8a.2xlarge` , `r8a.4xlarge` , `r8a.8xlarge` , `r8a.12xlarge` , `r8a.16xlarge` , `r8a.24xlarge` , `r8a.48xlarge` |
 | t3a | `t3a.nano` , `t3a.micro` , `t3a.small` , `t3a.medium` , `t3a.large` , `t3a.xlarge` , `t3a.2xlarge` |
 {: .table #instance-types }
 
@@ -110,8 +112,8 @@ All instances can use EBS volumes, but some also comes with their own much faste
 
 Instances from these families only have access to EBS volumes:
 `c5`, `c5a`, `c6a`, `c6i`, `c6g`, `c7a`, `c7g`, `c7i`, `c7i-flex`, `c8g`, `c8i`, `c8i-flex`,
-`m5`, `m5a`, `m6a`, `m6g`, `m6i`, `m7a`, `m7g`, `m7i`, `m7i-flex`, `m8g`, `m8i`, `m8i-flex`,
-`r5`, `r5a`, `r6a`, `r6g`, `r6i`, `r7a`, `r7g`, `r7i`, `r8g`, `r8i`, `r8i-flex`,
+`m5`, `m5a`, `m6a`, `m6g`, `m6i`, `m7a`, `m7g`, `m7i`, `m7i-flex`, `m8a`, `m8g`, `m8i`, `m8i-flex`,
+`r5`, `r5a`, `r6a`, `r6g`, `r6i`, `r7a`, `r7g`, `r7i`, `r8a`, `r8g`, `r8i`, `r8i-flex`,
 `t3`, `t3a` and `t4g`.
 
 {% include h3.html id="ephemeral" text="Ephemeral NVMe" %}
