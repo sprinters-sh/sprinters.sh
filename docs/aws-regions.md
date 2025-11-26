@@ -79,8 +79,8 @@ Here are the relative prices for the different instance types in each region.
     {% include instance-price.html active="false" family="r6i" ap-northeast-1="0.076" ap-south-1="0.065" ca-central-1="0.069" eu-central-1="0.076" eu-west-1="0.0705" eu-west-2="0.074" me-central-1="0.07755" us-east-1="0.063" us-west-2="0.063" %}
     {% include instance-price.html active="false" family="r6id" ap-northeast-1="0.09135" ap-south-1="0.0793" ca-central-1="0" eu-central-1="0.090825" eu-west-1="0.084" eu-west-2="0.088725" me-central-1="0" us-east-1="0.0756" us-west-2="0.0756" %}
     {% include instance-price.html active="false" family="r7i" ap-northeast-1="0.0798" ap-south-1="0.06825" ca-central-1="0.07245" eu-central-1="0.0798" eu-west-1="0.074025" eu-west-2="0.0777" me-central-1="0" us-east-1="0.06615" us-west-2="0.06615" %}
-    {% include instance-price.html active="false" family="r8i" ap-northeast-1="0" ap-south-1="0" ca-central-1="0" eu-central-1="0.08379" eu-west-1="0" eu-west-2="0.081585" me-central-1="0" us-east-1="0.06946" us-west-2="0.06946" %}
-    {% include instance-price.html active="false" family="r8i-flex" ap-northeast-1="0" ap-south-1="0" ca-central-1="0" eu-central-1="0.0796" eu-west-1="0" eu-west-2="0.077505" me-central-1="0" us-east-1="0.065985" us-west-2="0.065985" %}
+    {% include instance-price.html active="false" family="r8i" ap-northeast-1="0" ap-south-1="0" ca-central-1="0.076075" eu-central-1="0.08379" eu-west-1="0" eu-west-2="0.081585" me-central-1="0" us-east-1="0.06946" us-west-2="0.06946" %}
+    {% include instance-price.html active="false" family="r8i-flex" ap-northeast-1="0" ap-south-1="0" ca-central-1="0.07227" eu-central-1="0.0796" eu-west-1="0" eu-west-2="0.077505" me-central-1="0" us-east-1="0.065985" us-west-2="0.065985" %}
     {% include instance-price.html active="false" family="t3" ap-northeast-1="0.0544" ap-south-1="0.0448" ca-central-1="0.0464" eu-central-1="0.048" eu-west-1="0.0456" eu-west-2="0.0472" me-central-1="0.05015" us-east-1="0.0416" us-west-2="0.0416" %}
 </div>
 
