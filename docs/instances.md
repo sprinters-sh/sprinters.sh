@@ -24,7 +24,7 @@ Jobs requiring more memory for the same number of vCPUs are most cost-effective 
 And equally, jobs requiring more vCPUs for the same amount of memory are best run on _compute-optimized_ instances.
 
 {% include h2.html id="types" text="Types" %}
-Sprinters supports 505 different EC2 instance types, across all modern generations of these families,
+Sprinters supports 515 different EC2 instance types, across all modern generations of these families,
 using either **x64** (Intel and AMD) or **arm64** (AWS Graviton) processors.
 
 These instances support between 1 and 384 vCPUs and 0.5 and 3072 GiB of RAM.
@@ -38,8 +38,8 @@ These instances support between 1 and 384 vCPUs and 0.5 and 3072 GiB of RAM.
 | c6id | `c6id.large` , `c6id.xlarge` , `c6id.2xlarge` , `c6id.4xlarge` , `c6id.8xlarge` , `c6id.12xlarge` , `c6id.16xlarge` , `c6id.24xlarge` , `c6id.32xlarge` |
 | c7i | `c7i.large` , `c7i.xlarge` , `c7i.2xlarge` , `c7i.4xlarge` , `c7i.8xlarge` , `c7i.12xlarge` , `c7i.16xlarge` , `c7i.24xlarge` , `c7i.48xlarge` |
 | c7i-flex | `c7i-flex.large` , `c7i-flex.xlarge` , `c7i-flex.2xlarge` , `c7i-flex.4xlarge` , `c7i-flex.8xlarge` , `c7i-flex.12xlarge` , `c7i-flex.16xlarge` |
-| <nobr>c8i <span class="badge badge-super rounded-pill text-bg-primary">New</span></nobr> | `c8i.large` , `c8i.xlarge` , `c8i.2xlarge` , `c8i.4xlarge` , `c8i.8xlarge` , `c8i.12xlarge` , `c8i.16xlarge` , `c8i.24xlarge` , `c8i.32xlarge` , `c8i.48xlarge` , `c8i.96xlarge` |
-| <nobr>c8i-flex <span class="badge badge-super rounded-pill text-bg-primary">New</span></nobr> | `c8i-flex.large` , `c8i-flex.xlarge` , `c8i-flex.2xlarge` , `c8i-flex.4xlarge` , `c8i-flex.8xlarge` , `c8i-flex.12xlarge` , `c8i-flex.16xlarge` |
+| c8i | `c8i.large` , `c8i.xlarge` , `c8i.2xlarge` , `c8i.4xlarge` , `c8i.8xlarge` , `c8i.12xlarge` , `c8i.16xlarge` , `c8i.24xlarge` , `c8i.32xlarge` , `c8i.48xlarge` , `c8i.96xlarge` |
+| c8i-flex | `c8i-flex.large` , `c8i-flex.xlarge` , `c8i-flex.2xlarge` , `c8i-flex.4xlarge` , `c8i-flex.8xlarge` , `c8i-flex.12xlarge` , `c8i-flex.16xlarge` |
 | m5 | `m5.large` , `m5.xlarge` , `m5.2xlarge` , `m5.4xlarge` , `m5.8xlarge` , `m5.12xlarge` , `m5.16xlarge` , `m5.24xlarge` |
 | m5d | `m5d.large` , `m5d.xlarge` , `m5d.2xlarge` , `m5d.4xlarge` , `m5d.8xlarge` , `m5d.12xlarge` , `m5d.16xlarge` , `m5d.24xlarge` |
 | m6i | `m6i.large` , `m6i.xlarge` , `m6i.2xlarge` , `m6i.4xlarge` , `m6i.8xlarge` , `m6i.12xlarge` , `m6i.16xlarge` , `m6i.24xlarge` , `m6i.32xlarge` |
@@ -65,6 +65,7 @@ These instances support between 1 and 384 vCPUs and 0.5 and 3072 GiB of RAM.
 | c5ad | `c5ad.large` , `c5ad.xlarge` , `c5ad.2xlarge` , `c5ad.4xlarge` , `c5ad.8xlarge` , `c5ad.12xlarge` , `c5ad.16xlarge` , `c5ad.24xlarge` |
 | c6a | `c6a.large` , `c6a.xlarge` , `c6a.2xlarge` , `c6a.4xlarge` , `c6a.8xlarge` , `c6a.12xlarge` , `c6a.16xlarge` , `c6a.24xlarge` , `c6a.32xlarge` , `c6a.48xlarge` |
 | c7a | `c7a.medium` , `c7a.large` , `c7a.xlarge` , `c7a.2xlarge` , `c7a.4xlarge` , `c7a.8xlarge` , `c7a.12xlarge` , `c7a.16xlarge` , `c7a.24xlarge` , `c7a.32xlarge` , `c7a.48xlarge` |
+| <nobr>c8a <span class="badge badge-super rounded-pill text-bg-primary">New</span></nobr> | `c8a.medium` , `c8a.large` , `c8a.xlarge` , `c8a.2xlarge` , `c8a.4xlarge` , `c8a.8xlarge` , `c8a.12xlarge` , `c8a.16xlarge` , `c8a.24xlarge` , `c8a.48xlarge` |
 | m5a | `m5a.large` , `m5a.xlarge` , `m5a.2xlarge` , `m5a.4xlarge` , `m5a.8xlarge` , `m5a.12xlarge` , `m5a.16xlarge` , `m5a.24xlarge` |
 | m5ad | `m5ad.large` , `m5ad.xlarge` , `m5ad.2xlarge` , `m5ad.4xlarge` , `m5ad.8xlarge` , `m5ad.12xlarge` , `m5ad.16xlarge` , `m5ad.24xlarge` |
 | m6a | `m6a.large` , `m6a.xlarge` , `m6a.2xlarge` , `m6a.4xlarge` , `m6a.8xlarge` , `m6a.12xlarge` , `m6a.16xlarge` , `m6a.24xlarge` , `m6a.32xlarge` , `m6a.48xlarge` |
@@ -111,7 +112,7 @@ All instances can use EBS volumes, but some also comes with their own much faste
 {% include h3.html id="ebs" text="EBS-only" %}
 
 Instances from these families only have access to EBS volumes:
-`c5`, `c5a`, `c6a`, `c6i`, `c6g`, `c7a`, `c7g`, `c7i`, `c7i-flex`, `c8g`, `c8i`, `c8i-flex`,
+`c5`, `c5a`, `c6a`, `c6i`, `c6g`, `c7a`, `c7g`, `c7i`, `c7i-flex`, `c8a`, `c8g`, `c8i`, `c8i-flex`,
 `m5`, `m5a`, `m6a`, `m6g`, `m6i`, `m7a`, `m7g`, `m7i`, `m7i-flex`, `m8a`, `m8g`, `m8i`, `m8i-flex`,
 `r5`, `r5a`, `r6a`, `r6g`, `r6i`, `r7a`, `r7g`, `r7i`, `r8a`, `r8g`, `r8i`, `r8i-flex`,
 `t3`, `t3a` and `t4g`.
