@@ -3,7 +3,8 @@ layout: docs
 title: "Notifications"
 ---
 
-By default, Sprinters sends email notifications to all team members of an organization.
+By default, Sprinters sends email notifications to all team members of an organization that have previously logged in
+to the Sprinters Console.
 
 There are two types of notifications:
 {: .mb-1 }
