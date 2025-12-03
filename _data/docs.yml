@@ -12,4 +12,5 @@
 - path: "docs/security.md"
 - path: "docs/tips.md"
 - path: "docs/benchmarks.md"
+- path: "docs/notifications.md"
 - path: "docs/troubleshooting.md"
