@@ -1,6 +1,6 @@
 - date: "2026-01-05"
   title: "Savings calculator updated for GitHub Actions' 2026 pricing"
-  href: "/pricing"
+  href: "https://console.sprinters.sh"
   image: "/assets/new/2026-01-05-savings.png"
   details: "Sprinters' savings calculator has been updated to reflect GitHub Actions' new 2026 pricing."
 
