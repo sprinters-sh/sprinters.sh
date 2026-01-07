@@ -29,6 +29,7 @@ This default most closely matches GitHub-hosted runners, at a fraction of the pr
 
 You can adjust the [image](#image), the [AWS account](#account), the [AWS region/az/subnet](#placement),
 the [EC2 instance type](#instance-type), whether to use [spot instances](#spot),
+the [security group](#security-group),
 the performance of the [root volume](#root), the type, size and performance of the [temp storage](#temp) and
 whether to use [runner lifecycle events](#events)
 by adding or changing various parts to the label. All parts are separated by a colon (`:`) and may appear in any order.
@@ -209,6 +210,29 @@ To force the use of much cheaper spot instances, change the label to:
 {: .mb-1 }
 <div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
     <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:<span class="fw-bold fst-italic text-warning">spot=true</span></pre>
+</div>
+
+---
+
+{% include h3.html id="security-group" text="Security Group" %}
+You can specify a custom security group for the runner instance.
+This is particularly useful for [accessing resources in private subnets](/docs/aws-resources#private-subnets).
+
+{% include h4.html text="Format" %}
+_security-group-id_
+
+{% include h4.html text="Default" %}
+The VPC's default security group.
+
+{% include h4.html text="Note" %}
+While the runner doesn't require open ports, 
+it is highly recommended to allow **unrestricted egress** for the runner to work as expected. 
+
+{% include h4.html text="Example" %}
+To use a custom security group `sg-01234567890abcdef`, change the label to:
+{: .mb-1 }
+<div class="alert alert-info font-monospace p-0 mb-3 position-relative" role="alert">
+    <pre class="mb-0 p-2 fs-7">runs-on: sprinters:aws:ubuntu-latest:<span class="fw-bold fst-italic text-warning">sg-01234567890abcdef</span></pre>
 </div>
 
 ---

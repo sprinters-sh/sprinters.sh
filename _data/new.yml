@@ -1,3 +1,9 @@
+- date: "2026-01-07"
+  title: "Simplified access to AWS resources in private subnets"
+  href: "/docs/aws-resources#private-subnets"
+  image: "/assets/new/2026-01-07-private-resources.png"
+  details: "Your runners can now access resources in your private subnets with Sprinters' new support for custom runner security groups."
+
 - date: "2026-01-05"
   title: "Savings calculator updated for GitHub Actions' 2026 pricing"
   href: "https://console.sprinters.sh"
