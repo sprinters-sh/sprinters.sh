@@ -1,3 +1,9 @@
+- date: "2026-01-14"
+  title: "AWS <code>ap-northeast-2</code> region support"
+  href: "/docs/aws-regions"
+  image: "/assets/new/2026-01-14-ap-northeast-2.png"
+  details: "You can now run your jobs in the South Korea by choosing the <code>ap-northeast-2</code> AWS region (Seoul)!"
+
 - date: "2026-01-07"
   title: "Simplified access to AWS resources in private subnets"
   href: "/docs/aws-resources#private-subnets"
@@ -78,13 +84,13 @@
 
 - date: "2025-07-30"
   title: "AWS <code>ca-central-1</code> and <code>me-central-1</code> region support"
-  href: "/docs/label#placement"
+  href: "/docs/aws-regions"
   image: "/assets/new/2025-07-30-came-central-1.png"
   details: "With <code>ca-central-1</code> and <code>me-central-1</code>, Sprinters now supports AWS regions in Canada and the Middle East."
 
 - date: "2025-06-05"
   title: "AWS <code>ap-south-1</code> region support"
-  href: "/docs/label#placement"
+  href: "/docs/aws-regions"
   image: "/assets/new/2025-06-05-ap-south-1.png"
   details: "With <code>ap-south-1</code> (Mumbai), Sprinters now supports AWS' most cost-effective region, by far, for x64 AMD and arm64 instances, with certain instance types costing less than half of what they cost in other regions."
 
@@ -96,7 +102,7 @@
 
 - date: "2025-05-26"
   title: "AWS <code>eu-west-2</code> region support"
-  href: "/docs/label#placement"
+  href: "/docs/aws-regions"
   image: "/assets/new/2025-05-26-eu-west-2.png"
   details: "You can now run your jobs in the UK by choosing the <code>eu-west-2</code> AWS region (London)."
 
@@ -168,7 +174,7 @@
 
 - date: "2025-02-10"
   title: "AWS <code>ap-northeast-1</code> and <code>us-west-2</code> region support"
-  href: "/docs/label#placement"
+  href: "/docs/aws-regions"
   image: "/assets/new/2025-02-10-us-west-2.png"
   details: "You now have two more AWS regions to choose from: <code>ap-northeast-1</code> (Tokyo) and <code>us-west-2</code> (Oregon)."
 
@@ -198,7 +204,7 @@
 
 - date: "2025-01-14"
   title: "AWS <code>eu-west-1</code> region support"
-  href: "/docs/label#placement"
+  href: "/docs/aws-regions"
   image: "/assets/new/2025-01-14-eu-west-1.png"
   details: "You can now launch your runners in the <code>eu-west-1</code> (Ireland) AWS region."
 

@@ -110,7 +110,7 @@ _aws-region_/_aws-availability-zone_/_aws-subnet-id_
 `us-east-1` (random subnet of a random availability zone of the default VPC of `us-east-1`)
 
 {% include h4.html text="Supported Regions" %}
-You can choose from a large range of [supported AWS regions](/docs/aws-regions) across the globe.
+You can choose from a large range of [supported AWS regions](/docs/aws-regions) around the globe.
 
 {% include h4.html text="Notes" %}
 

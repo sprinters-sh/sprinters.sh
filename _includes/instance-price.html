@@ -8,6 +8,9 @@
 {% if include.ap-northeast-1 > highest %}
     {% assign highest = include.ap-northeast-1 %}
 {% endif %}
+{% if include.ap-northeast-2 > highest %}
+    {% assign highest = include.ap-northeast-2 %}
+{% endif %}
 {% if include.ap-south-1 > highest %}
     {% assign highest = include.ap-south-1 %}
 {% endif %}
@@ -32,6 +35,9 @@
 
 {% if include.ap-northeast-1 != "0" and include.ap-northeast-1 < lowest %}
     {% assign lowest = include.ap-northeast-1 %}
+{% endif %}
+{% if include.ap-northeast-2 != "0" and include.ap-northeast-2 < lowest %}
+    {% assign lowest = include.ap-northeast-2 %}
 {% endif %}
 {% if include.ap-south-1 != "0" and include.ap-south-1 < lowest %}
     {% assign lowest = include.ap-south-1 %}
@@ -58,6 +64,7 @@
 <div class="tab-pane {% if include.active == "true" %} show active{% endif %}" id="nav-price-{{ include.family }}" role="tabpanel" aria-labelledby="nav-price-{{ include.family }}-tab" tabindex="0">
     <table class="table mb-0 fs-7 border-dark-subtle table-sm table-hover mb-4">
         {% include instance-price-region.html region="ap-northeast-1" price=include.ap-northeast-1 lowest=lowest highest=highest %}
+        {% include instance-price-region.html region="ap-northeast-2" price=include.ap-northeast-2 lowest=lowest highest=highest %}
         {% include instance-price-region.html region="ap-south-1" price=include.ap-south-1 lowest=lowest highest=highest %}
         {% include instance-price-region.html region="ca-central-1" price=include.ca-central-1 lowest=lowest highest=highest %}
         {% include instance-price-region.html region="eu-central-1" price=include.eu-central-1 lowest=lowest highest=highest %}
