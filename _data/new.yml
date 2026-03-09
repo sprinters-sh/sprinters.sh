@@ -1,3 +1,9 @@
+- date: "2026-03-09"
+  title: "EC2 <code>c8id</code>, <code>m8id</code> and <code>r8id</code> instance support"
+  href: "/docs/instances#types"
+  image: "/assets/new/2026-03-09-cmr8id.png"
+  details: "The newest generation Intel-based instances with local SSDs for maximum IO performance are now available to run your jobs!"
+
 - date: "2026-01-14"
   title: "AWS <code>ap-northeast-2</code> region support"
   href: "/docs/aws-regions"

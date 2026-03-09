@@ -24,7 +24,7 @@ Jobs requiring more memory for the same number of vCPUs are most cost-effective 
 And equally, jobs requiring more vCPUs for the same amount of memory are best run on _compute-optimized_ instances.
 
 {% include h2.html id="types" text="Types" %}
-Sprinters supports 515 different EC2 instance types, across all modern generations of these families,
+Sprinters supports 548 different EC2 instance types, across all modern generations of these families,
 using either **x64** (Intel and AMD) or **arm64** (AWS Graviton) processors.
 
 These instances support between 1 and 384 vCPUs and 0.5 and 3072 GiB of RAM.
@@ -40,6 +40,7 @@ These instances support between 1 and 384 vCPUs and 0.5 and 3072 GiB of RAM.
 | c7i-flex | `c7i-flex.large` , `c7i-flex.xlarge` , `c7i-flex.2xlarge` , `c7i-flex.4xlarge` , `c7i-flex.8xlarge` , `c7i-flex.12xlarge` , `c7i-flex.16xlarge` |
 | c8i | `c8i.large` , `c8i.xlarge` , `c8i.2xlarge` , `c8i.4xlarge` , `c8i.8xlarge` , `c8i.12xlarge` , `c8i.16xlarge` , `c8i.24xlarge` , `c8i.32xlarge` , `c8i.48xlarge` , `c8i.96xlarge` |
 | c8i-flex | `c8i-flex.large` , `c8i-flex.xlarge` , `c8i-flex.2xlarge` , `c8i-flex.4xlarge` , `c8i-flex.8xlarge` , `c8i-flex.12xlarge` , `c8i-flex.16xlarge` |
+| <nobr>c8id <span class="badge badge-super rounded-pill text-bg-primary">New</span></nobr> | `c8id.large` , `c8id.xlarge` , `c8id.2xlarge` , `c8id.4xlarge` , `c8id.8xlarge` , `c8id.12xlarge` , `c8id.16xlarge` , `c8id.24xlarge` , `c8id.32xlarge` , `c8id.48xlarge` , `c8id.96xlarge` |
 | m5 | `m5.large` , `m5.xlarge` , `m5.2xlarge` , `m5.4xlarge` , `m5.8xlarge` , `m5.12xlarge` , `m5.16xlarge` , `m5.24xlarge` |
 | m5d | `m5d.large` , `m5d.xlarge` , `m5d.2xlarge` , `m5d.4xlarge` , `m5d.8xlarge` , `m5d.12xlarge` , `m5d.16xlarge` , `m5d.24xlarge` |
 | m6i | `m6i.large` , `m6i.xlarge` , `m6i.2xlarge` , `m6i.4xlarge` , `m6i.8xlarge` , `m6i.12xlarge` , `m6i.16xlarge` , `m6i.24xlarge` , `m6i.32xlarge` |
@@ -48,12 +49,14 @@ These instances support between 1 and 384 vCPUs and 0.5 and 3072 GiB of RAM.
 | m7i-flex | `m7i-flex.large` , `m7i-flex.xlarge` , `m7i-flex.2xlarge` , `m7i-flex.4xlarge` , `m7i-flex.8xlarge` , `m7i-flex.12xlarge` , `m7i-flex.16xlarge` |
 | m8i | `m8i.large` , `m8i.xlarge` , `m8i.2xlarge` , `m8i.4xlarge` , `m8i.8xlarge` , `m8i.12xlarge` , `m8i.16xlarge` , `m8i.24xlarge` , `m8i.32xlarge` , `m8i.48xlarge` , `m8i.96xlarge` |
 | m8i-flex | `m8i-flex.large` , `m8i-flex.xlarge` , `m8i-flex.2xlarge` , `m8i-flex.4xlarge` , `m8i-flex.8xlarge` , `m8i-flex.12xlarge` , `m8i-flex.16xlarge` |
+| <nobr>m8id <span class="badge badge-super rounded-pill text-bg-primary">New</span></nobr> | `m8id.large` , `m8id.xlarge` , `m8id.2xlarge` , `m8id.4xlarge` , `m8id.8xlarge` , `m8id.12xlarge` , `m8id.16xlarge` , `m8id.24xlarge` , `m8id.32xlarge` , `m8id.48xlarge` , `m8id.96xlarge` |
 | r5 | `r5.large` , `r5.xlarge` , `r5.2xlarge` , `r5.4xlarge` , `r5.8xlarge` , `r5.12xlarge` , `r5.16xlarge` , `r5.24xlarge` |
 | r5d | `r5d.large` , `r5d.xlarge` , `r5d.2xlarge` , `r5d.4xlarge` , `r5d.8xlarge` , `r5d.12xlarge` , `r5d.16xlarge` , `r5d.24xlarge` |
 | r6i | `r6i.large` , `r6i.xlarge` , `r6i.2xlarge` , `r6i.4xlarge` , `r6i.8xlarge` , `r6i.12xlarge` , `r6i.16xlarge` , `r6i.24xlarge` , `r6i.32xlarge` |
 | r6id | `r6id.large` , `r6id.xlarge` , `r6id.2xlarge` , `r6id.4xlarge` , `r6id.8xlarge` , `r6id.12xlarge` , `r6id.16xlarge` , `r6id.24xlarge` , `r6id.32xlarge` |
 | r7i | `r7i.large` , `r7i.xlarge` , `r7i.2xlarge` , `r7i.4xlarge` , `r7i.8xlarge` , `r7i.12xlarge` , `r7i.16xlarge` , `r7i.24xlarge` , `r7i.48xlarge` |
 | r8i | `r8i.large` , `r8i.xlarge` , `r8i.2xlarge` , `r8i.4xlarge` , `r8i.8xlarge` , `r8i.12xlarge` , `r8i.16xlarge` , `r8i.24xlarge` , `r8i.32xlarge` , `r8i.48xlarge` , `r8i.96xlarge` |
+| <nobr>r8i <span class="badge badge-super rounded-pill text-bg-primary">New</span></nobr> | `r8id.large` , `r8id.xlarge` , `r8id.2xlarge` , `r8id.4xlarge` , `r8id.8xlarge` , `r8id.12xlarge` , `r8id.16xlarge` , `r8id.24xlarge` , `r8id.32xlarge` , `r8id.48xlarge` , `r8id.96xlarge` |
 | r8i-flex | `r8i-flex.large` , `r8i-flex.xlarge` , `r8i-flex.2xlarge` , `r8i-flex.4xlarge` , `r8i-flex.8xlarge` , `r8i-flex.12xlarge` , `r8i-flex.16xlarge` |
 | t3 | `t3.nano` , `t3.micro` , `t3.small` , `t3.medium` , `t3.large` , `t3.xlarge` , `t3.2xlarge` |
 {: .table #instance-types }
@@ -65,17 +68,17 @@ These instances support between 1 and 384 vCPUs and 0.5 and 3072 GiB of RAM.
 | c5ad | `c5ad.large` , `c5ad.xlarge` , `c5ad.2xlarge` , `c5ad.4xlarge` , `c5ad.8xlarge` , `c5ad.12xlarge` , `c5ad.16xlarge` , `c5ad.24xlarge` |
 | c6a | `c6a.large` , `c6a.xlarge` , `c6a.2xlarge` , `c6a.4xlarge` , `c6a.8xlarge` , `c6a.12xlarge` , `c6a.16xlarge` , `c6a.24xlarge` , `c6a.32xlarge` , `c6a.48xlarge` |
 | c7a | `c7a.medium` , `c7a.large` , `c7a.xlarge` , `c7a.2xlarge` , `c7a.4xlarge` , `c7a.8xlarge` , `c7a.12xlarge` , `c7a.16xlarge` , `c7a.24xlarge` , `c7a.32xlarge` , `c7a.48xlarge` |
-| <nobr>c8a <span class="badge badge-super rounded-pill text-bg-primary">New</span></nobr> | `c8a.medium` , `c8a.large` , `c8a.xlarge` , `c8a.2xlarge` , `c8a.4xlarge` , `c8a.8xlarge` , `c8a.12xlarge` , `c8a.16xlarge` , `c8a.24xlarge` , `c8a.48xlarge` |
+| c8a | `c8a.medium` , `c8a.large` , `c8a.xlarge` , `c8a.2xlarge` , `c8a.4xlarge` , `c8a.8xlarge` , `c8a.12xlarge` , `c8a.16xlarge` , `c8a.24xlarge` , `c8a.48xlarge` |
 | m5a | `m5a.large` , `m5a.xlarge` , `m5a.2xlarge` , `m5a.4xlarge` , `m5a.8xlarge` , `m5a.12xlarge` , `m5a.16xlarge` , `m5a.24xlarge` |
 | m5ad | `m5ad.large` , `m5ad.xlarge` , `m5ad.2xlarge` , `m5ad.4xlarge` , `m5ad.8xlarge` , `m5ad.12xlarge` , `m5ad.16xlarge` , `m5ad.24xlarge` |
 | m6a | `m6a.large` , `m6a.xlarge` , `m6a.2xlarge` , `m6a.4xlarge` , `m6a.8xlarge` , `m6a.12xlarge` , `m6a.16xlarge` , `m6a.24xlarge` , `m6a.32xlarge` , `m6a.48xlarge` |
 | m7a | `m7a.medium` , `m7a.large` , `m7a.xlarge` , `m7a.2xlarge` , `m7a.4xlarge` , `m7a.8xlarge` , `m7a.12xlarge` , `m7a.16xlarge` , `m7a.24xlarge` , `m7a.32xlarge` , `m7a.48xlarge` |
-| <nobr>m8a <span class="badge badge-super rounded-pill text-bg-primary">New</span></nobr> | `m8a.medium` , `m8a.large` , `m8a.xlarge` , `m8a.2xlarge` , `m8a.4xlarge` , `m8a.8xlarge` , `m8a.12xlarge` , `m8a.16xlarge` , `m8a.24xlarge` , `m8a.48xlarge` |
+| m8a | `m8a.medium` , `m8a.large` , `m8a.xlarge` , `m8a.2xlarge` , `m8a.4xlarge` , `m8a.8xlarge` , `m8a.12xlarge` , `m8a.16xlarge` , `m8a.24xlarge` , `m8a.48xlarge` |
 | r5a | `r5a.large` , `r5a.xlarge` , `r5a.2xlarge` , `r5a.4xlarge` , `r5a.8xlarge` , `r5a.12xlarge` , `r5a.16xlarge` , `r5a.24xlarge` |
 | r5ad | `r5ad.large` , `r5ad.xlarge` , `r5ad.2xlarge` , `r5ad.4xlarge` , `r5ad.8xlarge` , `r5ad.12xlarge` , `r5ad.16xlarge` , `r5ad.24xlarge` |
 | r6a | `r6a.large` , `r6a.xlarge` , `r6a.2xlarge` , `r6a.4xlarge` , `r6a.8xlarge` , `r6a.12xlarge` , `r6a.16xlarge` , `r6a.24xlarge` , `r6a.32xlarge` , `r6a.48xlarge` |
 | r7a | `r7a.medium` , `r7a.large` , `r7a.xlarge` , `r7a.2xlarge` , `r7a.4xlarge` , `r7a.8xlarge` , `r7a.12xlarge` , `r7a.16xlarge` , `r7a.24xlarge` , `r7a.32xlarge` , `r7a.48xlarge` |
-| <nobr>r8a <span class="badge badge-super rounded-pill text-bg-primary">New</span></nobr> | `r8a.medium` , `r8a.large` , `r8a.xlarge` , `r8a.2xlarge` , `r8a.4xlarge` , `r8a.8xlarge` , `r8a.12xlarge` , `r8a.16xlarge` , `r8a.24xlarge` , `r8a.48xlarge` |
+| r8a | `r8a.medium` , `r8a.large` , `r8a.xlarge` , `r8a.2xlarge` , `r8a.4xlarge` , `r8a.8xlarge` , `r8a.12xlarge` , `r8a.16xlarge` , `r8a.24xlarge` , `r8a.48xlarge` |
 | t3a | `t3a.nano` , `t3a.micro` , `t3a.small` , `t3a.medium` , `t3a.large` , `t3a.xlarge` , `t3a.2xlarge` |
 {: .table #instance-types }
 
@@ -120,9 +123,9 @@ Instances from these families only have access to EBS volumes:
 {% include h3.html id="ephemeral" text="Ephemeral NVMe" %}
 
 Instances from these families, also have access to much faster internal ephemeral NVMe storage:
-`c5d`, `c5ad`, `c6gd`, `c6id`, `c7gd`, `c8gd`,
-`m5d`, `m5ad`, `m6gd`, `m6id`, `m7gd`, `m8gd`,
-`r5d`, `r5ad`, `r6gd`, `r6id`, `r7gd`, and `r8gd`.
+`c5d`, `c5ad`, `c6gd`, `c6id`, `c7gd`, `c8gd`, `c8id`,
+`m5d`, `m5ad`, `m6gd`, `m6id`, `m7gd`, `m8gd`, `m8id`,
+`r5d`, `r5ad`, `r6gd`, `r6id`, `r7gd`, `r8gd` and `r8id`.
 
 {% include h2.html text="Usage" %}
 
