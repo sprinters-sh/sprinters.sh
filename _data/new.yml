@@ -1,6 +1,6 @@
 - date: "2026-03-27"
   title: "Automatically rerun spot jobs as on-demand on instance reclaim"
-  href: "/docs/spot"
+  href: "/docs/spot#rerun"
   image: "/assets/new/2026-03-27-spot-rerun.png"
   details: "You can now specify <code>spot=rerun</code> in your job label to automatically rerun spot jobs as on-demand instances when their instance is reclaimed by AWS."
 
