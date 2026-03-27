@@ -195,9 +195,10 @@ spot=_`auto|true|false`_
 
 | Mode | Description |
 +-|-+
-| `auto`  | Attempt to launch the instance as spot. Automatically fall back to on-demand if AWS currently doesn't have enough spot capacity available. This guarantees that a job will be able to run and most of the time it will do so saving significant amounts of money using a spot instance. |
-| `true`  | Force the instance to launch as spot. Fail if AWS currently doesn't have enough spot capacity available. |
 | `false` | Always run as on-demand, foregoing the savings of spot for guaranteed execution. |
+| `true`  | Force the instance to launch as spot. Fail if AWS currently doesn't have enough spot capacity available. |
+| `auto`  | Attempt to launch the instance as spot. Automatically fall back to on-demand if AWS currently doesn't have enough spot capacity available. |
+| `rerun`  | Attempt to launch the instance as spot. Automatically fall back to on-demand if AWS currently doesn't have enough spot capacity available. If the instance is launched as spot and it is reclaimed, automatically rerun the job using an on-demand instance. |
 {: .table }
 
 {% include h4.html text="Note" %}
