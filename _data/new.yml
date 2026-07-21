@@ -1,3 +1,9 @@
+- date: "2026-07-21"
+  title: "AWS <code>c9g</code>, <code>c9gd</code>, <code>m9g</code> and <code>m9gd</code> instance support"
+  href: "/docs/instances#types"
+  image: "/assets/new/2026-07-21-cm9gd.png"
+  details: "The newest generation of AWS Graviton-based compute-optimized and general-purpose instances with and without local NVMe storage are now available to run your jobs!"
+
 - date: "2026-03-27"
   title: "Automatically rerun spot jobs as on-demand on instance reclaim"
   href: "/docs/spot#rerun"

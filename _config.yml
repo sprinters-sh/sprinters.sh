@@ -10,6 +10,7 @@ exclude:
   - docker-compose.yml
   - Dockerfile
   - README.md
+  - CLAUDE.md
   - CNAME
   - "*.pdn"
   - "*.drawio"
