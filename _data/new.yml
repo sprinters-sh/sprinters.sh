@@ -1,4 +1,10 @@
 - date: "2026-09-18"
+  title: "AWS <code>t8i</code> instance support"
+  href: "/docs/instances#types"
+  image: "/assets/new/2026-09-18-t8i.png"
+  details: "The newest generation of Intel-based burstable general-purpose instances is now available to run your jobs!"
+
+- date: "2026-09-18"
   title: "AWS <code>r9g</code> and <code>r9gd</code> instance support"
   href: "/docs/instances#types"
   image: "/assets/new/2026-09-18-r9gd.png"

@@ -45,6 +45,6 @@ Pages use two layouts defined in `_layouts/`:
 The total instance count is hardcoded in four places and must be kept in sync: `docs/instances.md`, `docs/label.md`, `index.html`, and `pricing.html`.
 
 For each new instance family, touch:
-1. **`docs/instances.md`** — add a row to the correct table (Intel / AMD / arm64), using `<nobr>family <span class="badge badge-super rounded-pill text-bg-primary">New</span></nobr>` in the Family cell. Also add the family name to either the EBS-only or Ephemeral NVMe prose list in the Storage section.
+1. **`docs/instances.md`** — add a row to the correct table (Intel / AMD / arm64), using `<nobr>family <span class="badge badge-super rounded-pill text-bg-primary">New</span></nobr>` in the Family cell. Also add the family name to either the EBS-only or Ephemeral NVMe prose list in the Storage section. Validate the family's actual available sizes against the official AWS EC2 instance types docs — don't assume they match a same-letter prior generation (e.g. `t8i` tops out at `.medium`, unlike `t3`'s `.2xlarge`). Keep the `New` badge for 1 month after the family's changelog date, then remove it (plain `family` cell, no `<nobr>`/badge).
 2. **`docs/instances.md`, `docs/label.md`, `index.html`, `pricing.html`** — update the instance count.
 3. **`_data/new.yml`** — prepend a changelog entry. Each entry requires a screenshot image under `assets/new/` that must be created separately.

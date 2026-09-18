@@ -24,7 +24,7 @@ Jobs requiring more memory for the same number of vCPUs are most cost-effective 
 And equally, jobs requiring more vCPUs for the same amount of memory are best run on _compute-optimized_ instances.
 
 {% include h2.html id="types" text="Types" %}
-Sprinters supports 608 different EC2 instance types, across all modern generations of these families,
+Sprinters supports 612 different EC2 instance types, across all modern generations of these families,
 using either **x64** (Intel and AMD) or **arm64** (AWS Graviton) processors.
 
 These instances support between 1 and 384 vCPUs and 0.5 and 3072 GiB of RAM.
@@ -59,6 +59,7 @@ These instances support between 1 and 384 vCPUs and 0.5 and 3072 GiB of RAM.
 | r8id | `r8id.large` , `r8id.xlarge` , `r8id.2xlarge` , `r8id.4xlarge` , `r8id.8xlarge` , `r8id.12xlarge` , `r8id.16xlarge` , `r8id.24xlarge` , `r8id.32xlarge` , `r8id.48xlarge` , `r8id.96xlarge` |
 | r8i-flex | `r8i-flex.large` , `r8i-flex.xlarge` , `r8i-flex.2xlarge` , `r8i-flex.4xlarge` , `r8i-flex.8xlarge` , `r8i-flex.12xlarge` , `r8i-flex.16xlarge` |
 | t3 | `t3.nano` , `t3.micro` , `t3.small` , `t3.medium` , `t3.large` , `t3.xlarge` , `t3.2xlarge` |
+| <nobr>t8i <span class="badge badge-super rounded-pill text-bg-primary">New</span></nobr> | `t8i.nano` , `t8i.micro` , `t8i.small` , `t8i.medium` |
 {: .table #instance-types }
 
 {% include h3.html id="amd" text="x64 (AMD)" %}
@@ -124,7 +125,7 @@ Instances from these families only have access to EBS volumes:
 `c5`, `c5a`, `c6a`, `c6i`, `c6g`, `c7a`, `c7g`, `c7i`, `c7i-flex`, `c8a`, `c8g`, `c8i`, `c8i-flex`, `c9g`,
 `m5`, `m5a`, `m6a`, `m6g`, `m6i`, `m7a`, `m7g`, `m7i`, `m7i-flex`, `m8a`, `m8g`, `m8i`, `m8i-flex`, `m9g`,
 `r5`, `r5a`, `r6a`, `r6g`, `r6i`, `r7a`, `r7g`, `r7i`, `r8a`, `r8g`, `r8i`, `r8i-flex`, `r9g`,
-`t3`, `t3a` and `t4g`.
+`t3`, `t3a`, `t4g` and `t8i`.
 
 {% include h3.html id="ephemeral" text="Ephemeral NVMe" %}
 
