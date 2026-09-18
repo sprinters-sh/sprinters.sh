@@ -24,7 +24,7 @@ Jobs requiring more memory for the same number of vCPUs are most cost-effective 
 And equally, jobs requiring more vCPUs for the same amount of memory are best run on _compute-optimized_ instances.
 
 {% include h2.html id="types" text="Types" %}
-Sprinters supports 588 different EC2 instance types, across all modern generations of these families,
+Sprinters supports 608 different EC2 instance types, across all modern generations of these families,
 using either **x64** (Intel and AMD) or **arm64** (AWS Graviton) processors.
 
 These instances support between 1 and 384 vCPUs and 0.5 and 3072 GiB of RAM.
@@ -92,22 +92,24 @@ These instances support between 1 and 384 vCPUs and 0.5 and 3072 GiB of RAM.
 | c7gd | `c7gd.medium` , `c7gd.large` , `c7gd.xlarge` , `c7gd.2xlarge` , `c7gd.4xlarge` , `c7gd.8xlarge` , `c7gd.12xlarge` , `c7gd.16xlarge` |
 | c8g | `c8g.medium` , `c8g.large` , `c8g.xlarge` , `c8g.2xlarge` , `c8g.4xlarge` , `c8g.8xlarge` , `c8g.12xlarge` , `c8g.16xlarge` , `c8g.24xlarge` , `c8g.48xlarge` |
 | c8gd | `c8gd.medium` , `c8gd.large` , `c8gd.xlarge` , `c8gd.2xlarge` , `c8gd.4xlarge` , `c8gd.8xlarge` , `c8gd.12xlarge` , `c8gd.16xlarge` , `c8gd.24xlarge` , `c8gd.48xlarge` |
-| <nobr>c9g <span class="badge badge-super rounded-pill text-bg-primary">New</span></nobr> | `c9g.medium` , `c9g.large` , `c9g.xlarge` , `c9g.2xlarge` , `c9g.4xlarge` , `c9g.8xlarge` , `c9g.12xlarge` , `c9g.16xlarge` , `c9g.24xlarge` , `c9g.48xlarge` |
-| <nobr>c9gd <span class="badge badge-super rounded-pill text-bg-primary">New</span></nobr> | `c9gd.medium` , `c9gd.large` , `c9gd.xlarge` , `c9gd.2xlarge` , `c9gd.4xlarge` , `c9gd.8xlarge` , `c9gd.12xlarge` , `c9gd.16xlarge` , `c9gd.24xlarge` , `c9gd.48xlarge` |
+| c9g | `c9g.medium` , `c9g.large` , `c9g.xlarge` , `c9g.2xlarge` , `c9g.4xlarge` , `c9g.8xlarge` , `c9g.12xlarge` , `c9g.16xlarge` , `c9g.24xlarge` , `c9g.48xlarge` |
+| c9gd | `c9gd.medium` , `c9gd.large` , `c9gd.xlarge` , `c9gd.2xlarge` , `c9gd.4xlarge` , `c9gd.8xlarge` , `c9gd.12xlarge` , `c9gd.16xlarge` , `c9gd.24xlarge` , `c9gd.48xlarge` |
 | m6g | `m6g.medium` , `m6g.large` , `m6g.xlarge` , `m6g.2xlarge` , `m6g.4xlarge` , `m6g.8xlarge` , `m6g.12xlarge` , `m6g.16xlarge` |
 | m6gd | `m6gd.medium` , `m6gd.large` , `m6gd.xlarge` , `m6gd.2xlarge` , `m6gd.4xlarge` , `m6gd.8xlarge` , `m6gd.12xlarge` , `m6gd.16xlarge` |
 | m7g | `m7g.medium` , `m7g.large` , `m7g.xlarge` , `m7g.2xlarge` , `m7g.4xlarge` , `m7g.8xlarge` , `m7g.12xlarge` , `m7g.16xlarge` |
 | m7gd | `m7gd.medium` , `m7gd.large` , `m7gd.xlarge` , `m7gd.2xlarge` , `m7gd.4xlarge` , `m7gd.8xlarge` , `m7gd.12xlarge` , `m7gd.16xlarge` |
 | m8g | `m8g.medium` , `m8g.large` , `m8g.xlarge` , `m8g.2xlarge` , `m8g.4xlarge` , `m8g.8xlarge` , `m8g.12xlarge` , `m8g.16xlarge` , `m8g.24xlarge` , `m8g.48xlarge` |
 | m8gd | `m8gd.medium` , `m8gd.large` , `m8gd.xlarge` , `m8gd.2xlarge` , `m8gd.4xlarge` , `m8gd.8xlarge` , `m8gd.12xlarge` , `m8gd.16xlarge` , `m8gd.24xlarge` , `m8gd.48xlarge` |
-| <nobr>m9g <span class="badge badge-super rounded-pill text-bg-primary">New</span></nobr> | `m9g.medium` , `m9g.large` , `m9g.xlarge` , `m9g.2xlarge` , `m9g.4xlarge` , `m9g.8xlarge` , `m9g.12xlarge` , `m9g.16xlarge` , `m9g.24xlarge` , `m9g.48xlarge` |
-| <nobr>m9gd <span class="badge badge-super rounded-pill text-bg-primary">New</span></nobr> | `m9gd.medium` , `m9gd.large` , `m9gd.xlarge` , `m9gd.2xlarge` , `m9gd.4xlarge` , `m9gd.8xlarge` , `m9gd.12xlarge` , `m9gd.16xlarge` , `m9gd.24xlarge` , `m9gd.48xlarge` |
+| m9g | `m9g.medium` , `m9g.large` , `m9g.xlarge` , `m9g.2xlarge` , `m9g.4xlarge` , `m9g.8xlarge` , `m9g.12xlarge` , `m9g.16xlarge` , `m9g.24xlarge` , `m9g.48xlarge` |
+| m9gd | `m9gd.medium` , `m9gd.large` , `m9gd.xlarge` , `m9gd.2xlarge` , `m9gd.4xlarge` , `m9gd.8xlarge` , `m9gd.12xlarge` , `m9gd.16xlarge` , `m9gd.24xlarge` , `m9gd.48xlarge` |
 | r6g | `r6g.medium` , `r6g.large` , `r6g.xlarge` , `r6g.2xlarge` , `r6g.4xlarge` , `r6g.8xlarge` , `r6g.12xlarge` , `r6g.16xlarge` |
 | r6gd | `r6gd.medium` , `r6gd.large` , `r6gd.xlarge` , `r6gd.2xlarge` , `r6gd.4xlarge` , `r6gd.8xlarge` , `r6gd.12xlarge` , `r6gd.16xlarge` |
 | r7g | `r7g.medium` , `r7g.large` , `r7g.xlarge` , `r7g.2xlarge` , `r7g.4xlarge` , `r7g.8xlarge` , `r7g.12xlarge` , `r7g.16xlarge` |
 | r7gd | `r7gd.medium` , `r7gd.large` , `r7gd.xlarge` , `r7gd.2xlarge` , `r7gd.4xlarge` , `r7gd.8xlarge` , `r7gd.12xlarge` , `r7gd.16xlarge` |
 | r8g | `r8g.medium` , `r8g.large` , `r8g.xlarge` , `r8g.2xlarge` , `r8g.4xlarge` , `r8g.8xlarge` , `r8g.12xlarge` , `r8g.16xlarge` , `r8g.24xlarge` , `r8g.48xlarge` |
 | r8gd | `r8gd.medium` , `r8gd.large` , `r8gd.xlarge` , `r8gd.2xlarge` , `r8gd.4xlarge` , `r8gd.8xlarge` , `r8gd.12xlarge` , `r8gd.16xlarge` , `r8gd.24xlarge` , `r8gd.48xlarge` |
+| <nobr>r9g <span class="badge badge-super rounded-pill text-bg-primary">New</span></nobr> | `r9g.medium` , `r9g.large` , `r9g.xlarge` , `r9g.2xlarge` , `r9g.4xlarge` , `r9g.8xlarge` , `r9g.12xlarge` , `r9g.16xlarge` , `r9g.24xlarge` , `r9g.48xlarge` |
+| <nobr>r9gd <span class="badge badge-super rounded-pill text-bg-primary">New</span></nobr> | `r9gd.medium` , `r9gd.large` , `r9gd.xlarge` , `r9gd.2xlarge` , `r9gd.4xlarge` , `r9gd.8xlarge` , `r9gd.12xlarge` , `r9gd.16xlarge` , `r9gd.24xlarge` , `r9gd.48xlarge` |
 | t4g | `t4g.nano` , `t4g.micro` , `t4g.small` , `t4g.medium` , `t4g.large` , `t4g.xlarge` , `t4g.2xlarge` |
 {: .table #instance-types }
 
@@ -121,7 +123,7 @@ All instances can use EBS volumes, but some also comes with their own much faste
 Instances from these families only have access to EBS volumes:
 `c5`, `c5a`, `c6a`, `c6i`, `c6g`, `c7a`, `c7g`, `c7i`, `c7i-flex`, `c8a`, `c8g`, `c8i`, `c8i-flex`, `c9g`,
 `m5`, `m5a`, `m6a`, `m6g`, `m6i`, `m7a`, `m7g`, `m7i`, `m7i-flex`, `m8a`, `m8g`, `m8i`, `m8i-flex`, `m9g`,
-`r5`, `r5a`, `r6a`, `r6g`, `r6i`, `r7a`, `r7g`, `r7i`, `r8a`, `r8g`, `r8i`, `r8i-flex`,
+`r5`, `r5a`, `r6a`, `r6g`, `r6i`, `r7a`, `r7g`, `r7i`, `r8a`, `r8g`, `r8i`, `r8i-flex`, `r9g`,
 `t3`, `t3a` and `t4g`.
 
 {% include h3.html id="ephemeral" text="Ephemeral NVMe" %}
@@ -129,7 +131,7 @@ Instances from these families only have access to EBS volumes:
 Instances from these families, also have access to much faster internal ephemeral NVMe storage:
 `c5d`, `c5ad`, `c6gd`, `c6id`, `c7gd`, `c8gd`, `c8id`, `c9gd`,
 `m5d`, `m5ad`, `m6gd`, `m6id`, `m7gd`, `m8gd`, `m8id`, `m9gd`,
-`r5d`, `r5ad`, `r6gd`, `r6id`, `r7gd`, `r8gd` and `r8id`.
+`r5d`, `r5ad`, `r6gd`, `r6id`, `r7gd`, `r8gd`, `r8id` and `r9gd`.
 
 {% include h2.html text="Usage" %}
 
