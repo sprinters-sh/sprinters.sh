@@ -20,7 +20,7 @@ And adjust it to:
 </div>
 
 Now, whenever this job is started, Sprinters will automatically launch a runner for it on your AWS account as
-a `t3.large` (x64, 2 vCPUs, 8 GiB RAM) EC2 instance with `14` GiB of temp disk space and `4` GiB of swap
+a `t3.large` (x64, 2 vCPUs, 8 GiB RAM) EC2 instance with `10` GiB of temp disk space and `4` GiB of swap
 in the default VPC of the `us-east-1` region using the `ubuntu-latest` [image](/docs/image).
 
 This default most closely matches GitHub-hosted runners, at a fraction of the price.
